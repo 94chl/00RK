@@ -1,98 +1,767 @@
-[{"ID":"DM001","sort":"재료","name":"유리병","area1":"A003","area2":"A009","area3":"A010","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM002","sort":"재료","name":"못","area1":"A016","area2":"A003","area3":"A008","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM003","sort":"재료","name":"거북이 등딱지","area1":"A013","area2":"A005","area3":"A010","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM004","sort":"재료","name":"고무","area1":"A016","area2":"A002","area3":"A010","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM005","sort":"재료","name":"고철","area1":"A014","area2":"A006","area3":"A008","area4":"A010","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM006","sort":"재료","name":"라이터","area1":"A002","area2":"A015","area3":"A008","area4":"A010","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM007","sort":"재료","name":"레이저 포인터","area1":"A015","area2":"A006","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM008","sort":"재료","name":"마패","area1":"A013","area2":"A002","area3":"A004","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM009","sort":"재료","name":"배터리","area1":"A003","area2":"A008","area3":"A010","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM010","sort":"재료","name":"알코올","area1":"A015","area2":"A006","area3":"A008","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM011","sort":"재료","name":"오일","area1":"A016","area2":"A003","area3":"A011","area4":"A008","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM012","sort":"재료","name":"옷감","area1":"A014","area2":"A003","area3":"A004","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM013","sort":"재료","name":"원석","area1":"A013","area2":"A012","area3":"A005","area4":"A004","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM014","sort":"재료","name":"접착제","area1":"A002","area2":"A006","area3":"A008","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM015","sort":"재료","name":"종이","area1":"A016","area2":"A004","area3":"A009","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM016","sort":"재료","name":"철광석","area1":"A014","area2":"A012","area3":"A007","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM017","sort":"재료","name":"캔","area1":"A015","area2":"A003","area3":"A013","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM018","sort":"재료","name":"화약","area1":"A016","area2":"A007","area3":"A004","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM019","sort":"재료","name":"가죽","area1":"*","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM020","sort":"재료","name":"돌멩이","area1":"*","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM021","sort":"재료","name":"생명의 나무","area1":"A014","area2":"A012","area3":"A007","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM022","sort":"재료","name":"운석","area1":"*","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM023","sort":"재료","name":"VF 혈액 샘플","area1":"*","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DM024","sort":"재료","name":"미스릴","area1":"*","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW001","sort":"단검","name":"가위","area1":"A015","area2":"A002","area3":"A006","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW002","sort":"단검","name":"만년필","area1":"A015","area2":"A003","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW003","sort":"단검","name":"식칼","area1":"A014","area2":"A004","area3":"A010","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW004","sort":"양손검","name":"녹슨 검","area1":"A016","area2":"A009","area3":"A010","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW005","sort":"도끼","name":"곡괭이","area1":"A013","area2":"A012","area3":"A007","area4":"A005","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW006","sort":"도끼","name":"손도끼","area1":"A013","area2":"A005","area3":"A008","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW007","sort":"글러브","name":"너클","area1":"A012","area2":"A007","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW008","sort":"글러브","name":"목장갑","area1":"A014","area2":"A006","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW009","sort":"톤파","name":"대나무","area1":"A016","area2":"A012","area3":"A007","area4":"A005","area5":A004,"area6":null,"area7":null,"area8":null},
-{"ID":"DW010","sort":"방망이","name":"단봉","area1":"A010","area2":"A005","area3":"A004","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW011","sort":"방망이","name":"나뭇가지","area1":"*","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW012","sort":"채찍","name":"채찍","area1":"A015","area2":"A009","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW013","sort":"투척","name":"쇠구슬","area1":"A016","area2":"A012","area3":"A008","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW014","sort":"투척","name":"야구공","area1":"*","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW015","sort":"암기","name":"면도칼","area1":"A015","area2":"A006","area3":"A009","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW016","sort":"암기","name":"트럼프 카드","area1":"A014","area2":"A003","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW017","sort":"암기","name":"분필","area1":"A015","area2":"A009","area3":"A008","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW018","sort":"활","name":"양궁","area1":"A016","area2":"A009","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW019","sort":"석궁","name":"석궁","area1":"A012","area2":"A008","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW020","sort":"권총","name":"발터 PPK","area1":"A014","area2":"A013","area3":"A008","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW021","sort":"돌격 소총","name":"페도로프 자동소총","area1":"A014","area2":"A008","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW022","sort":"저격총","name":"화승총","area1":"A010","area2":"A012","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW023","sort":"망치","name":"망치","area1":"A002","area2":"A005","area3":"A013","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW024","sort":"창","name":"단창","area1":"A012","area2":"A005","area3":"A004","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW025","sort":"쌍A004곤","name":"쇠사슬","area1":"A002","area2":"A013","area3":"A007","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW026","sort":"레이피어","name":"바늘","area1":"A002","area2":"A014","area3":"A006","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DW027","sort":"기타","name":"보급형 기타","area1":"*","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DC001","sort":"옷","name":"바람막이","area1":"A014","area2":"A015","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DC002","sort":"옷","name":"승복","area1":"A016","area2":"A004","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DC003","sort":"옷","name":"전신 수영복","area1":"A002","area2":"A013","area3":"A010","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DC004","sort":"옷","name":"천 갑옷","area1":"A016","area2":"A004","area3":"A007","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DH001","sort":"머리","name":"머리띠","area1":"A003","area2":"A004","area3":"A007","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DH002","sort":"머리","name":"모자","area1":"A016","area2":"A015","area3":"A005","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DH003","sort":"머리","name":"자전거 헬멧","area1":"A013","area2":"A015","area3":"A009","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DB001","sort":"팔","name":"손목시계","area1":"A014","area2":"A003","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DB002","sort":"팔","name":"붕대","area1":"A015","area2":"A006","area3":"A010","area4":"A008","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DB003","sort":"팔","name":"팔찌","area1":"A002","area2":"A005","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DS001","sort":"다리","name":"슬리퍼","area1":"A015","area2":"A003","area3":"A006","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DS002","sort":"다리","name":"운동화","area1":"A002","area2":"A016","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DS003","sort":"다리","name":"타이즈","area1":"A012","area2":"A003","area3":"A006","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DA001","sort":"장식","name":"깃털","area1":"A012","area2":"A007","area3":"A006","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DA002","sort":"장식","name":"꽃","area1":"A012","area2":"A007","area3":"A011","area4":"A005","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DA003","sort":"장식","name":"리본","area1":"A015","area2":"A005","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DA004","sort":"장식","name":"부채","area1":"A003","area2":"A012","area3":"A009","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DA005","sort":"장식","name":"불경","area1":"A004","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DA006","sort":"장식","name":"상자","area1":"A010","area2":"A009","area3":"A005","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DA007","sort":"장식","name":"성배","area1":"A009","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DA008","sort":"장식","name":"십자가","area1":"A002","area2":"A009","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DA009","sort":"장식","name":"쌍안경","area1":"A002","area2":"A014","area3":"A013","area4":"A008","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DT001","sort":"설치","name":"감시 카메라","area1":"A010","area2":"A013","area3":"A011","area4":"A003","area5":A006,"area6":A016,"area7":A007,"area8":A015},
-{"ID":"DT002","sort":"설치","name":"올가미","area1":"A010","area2":"A005","area3":"A013","area4":"A016","area5":A012,"area6":A009,"area7":null,"area8":null},
-{"ID":"DT003","sort":"설치","name":"쥐덫","area1":"A005","area2":"A013","area3":"A007","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DT004","sort":"설치","name":"피아노선","area1":"A013","area2":"A014","area3":"A009","area4":"A011","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DD001","sort":"음료","name":"꿀","area1":"A002","area2":"A003","area3":"A012","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DD002","sort":"음료","name":"물","area1":"A009","area2":"A012","area3":"A005","area4":"A014","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DD003","sort":"음료","name":"얼음","area1":"A014","area2":"A006","area3":"A007","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DD004","sort":"음료","name":"위스키","area1":"A014","area2":"A009","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DD005","sort":"음료","name":"커피콩","area1":"A010","area2":"A007","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DD006","sort":"음료","name":"탄산수","area1":"A014","area2":"A013","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DD007","sort":"음료","name":"우유","area1":"A003","area2":"A006","area3":"A009","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DD008","sort":"음식","name":"성수","area1":"*","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF001","sort":"음식","name":"감자","area1":"A002","area2":"A004","area3":"A005","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF002","sort":"음식","name":"대구","area1":"A010","area2":"A013","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF003","sort":"음식","name":"붕어","area1":"A012","area2":"A005","area3":"A007","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF004","sort":"음식","name":"레몬","area1":"A014","area2":"A006","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF005","sort":"음식","name":"마늘","area1":"A002","area2":"A004","area3":"A007","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF006","sort":"음식","name":"반창고","area1":"A006","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF007","sort":"음식","name":"빵","area1":"A010","area2":"A009","area3":"A015","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF008","sort":"음식","name":"고기","area1":"*","area2":"","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF009","sort":"음식","name":"달걀","area1":"A016","area2":"A007","area3":"A012","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF010","sort":"음식","name":"생라면","area1":"A010","area2":"A002","area3":"A004","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF011","sort":"음식","name":"약초","area1":"A005","area2":"A004","area3":"A012","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF012","sort":"음식","name":"초콜렛","area1":"A003","area2":"A016","area3":"A011","area4":"","area5":null,"area6":null,"area7":null,"area8":null},
-{"ID":"DF013","sort":"음식","name":"카레 가루","area1":"A008","area2":"A011","area3":"","area4":"","area5":null,"area6":null,"area7":null,"area8":null}]
+[{
+    "ID": "DM001",
+    "sort": "재료",
+    "name": "유리병",
+    "location1": "A003",
+    "location2": "A009",
+    "location3": "A010"
+  },
+  {
+    "ID": "DM002",
+    "sort": "재료",
+    "name": "못",
+    "location1": "A003",
+    "location2": "A008",
+    "location3": "A016"
+  },
+  {
+    "ID": "DM003",
+    "sort": "재료",
+    "name": "거북이 등딱지",
+    "location1": "A005",
+    "location2": "A010",
+    "location3": "A013"
+  },
+  {
+    "ID": "DM004",
+    "sort": "재료",
+    "name": "고무",
+    "location1": "A002",
+    "location2": "A010",
+    "location3": "A016"
+  },
+  {
+    "ID": "DM005",
+    "sort": "재료",
+    "name": "고철",
+    "location1": "A006",
+    "location2": "A008",
+    "location3": "A010",
+    "location4": "A014"
+  },
+  {
+    "ID": "DM006",
+    "sort": "재료",
+    "name": "라이터",
+    "location1": "A002",
+    "location2": "A008",
+    "location3": "A010",
+    "location4": "A015"
+  },
+  {
+    "ID": "DM007",
+    "sort": "재료",
+    "name": "레이저 포인터",
+    "location1": "A006",
+    "location2": "A011",
+    "location3": "A015"
+  },
+  {
+    "ID": "DM008",
+    "sort": "재료",
+    "name": "마패",
+    "location1": "A002",
+    "location2": "A004",
+    "location3": "A013"
+  },
+  {
+    "ID": "DM009",
+    "sort": "재료",
+    "name": "배터리",
+    "location1": "A003",
+    "location2": "A008",
+    "location3": "A010"
+  },
+  {
+    "ID": "DM010",
+    "sort": "재료",
+    "name": "알코올",
+    "location1": "A006",
+    "location2": "A008",
+    "location3": "A015"
+  },
+  {
+    "ID": "DM011",
+    "sort": "재료",
+    "name": "오일",
+    "location1": "A003",
+    "location2": "A008",
+    "location3": "A011",
+    "location4": "A016"
+  },
+  {
+    "ID": "DM012",
+    "sort": "재료",
+    "name": "옷감",
+    "location1": "A003",
+    "location2": "A004",
+    "location3": "A014"
+  },
+  {
+    "ID": "DM013",
+    "sort": "재료",
+    "name": "원석",
+    "location1": "A004",
+    "location2": "A005",
+    "location3": "A012",
+    "location4": "A013"
+  },
+  {
+    "ID": "DM014",
+    "sort": "재료",
+    "name": "접착제",
+    "location1": "A002",
+    "location2": "A006",
+    "location3": "A008"
+  },
+  {
+    "ID": "DM015",
+    "sort": "재료",
+    "name": "종이",
+    "location1": "A004",
+    "location2": "A009",
+    "location3": "A016"
+  },
+  {
+    "ID": "DM016",
+    "sort": "재료",
+    "name": "철광석",
+    "location1": "A007",
+    "location2": "A012",
+    "location3": "A014"
+  },
+  {
+    "ID": "DM017",
+    "sort": "재료",
+    "name": "캔",
+    "location1": "A003",
+    "location2": "A013",
+    "location3": "A015"
+  },
+  {
+    "ID": "DM018",
+    "sort": "재료",
+    "name": "화약",
+    "location1": "A004",
+    "location2": "A007",
+    "location3": "A016"
+  },
+  {
+    "ID": "DM019",
+    "sort": "재료",
+    "name": "가죽",
+    "location1": "A000"
+  },
+  {
+    "ID": "DM020",
+    "sort": "재료",
+    "name": "돌멩이",
+    "location1": "A000"
+  },
+  {
+    "ID": "DM021",
+    "sort": "재료",
+    "name": "생명의 나무",
+    "location1": "A007",
+    "location2": "A012",
+    "location3": "A014"
+  },
+  {
+    "ID": "DM022",
+    "sort": "재료",
+    "name": "운석",
+    "location1": "A000"
+  },
+  {
+    "ID": "DM023",
+    "sort": "재료",
+    "name": "VF 혈액 샘플",
+    "location1": "A000"
+  },
+  {
+    "ID": "DM024",
+    "sort": "재료",
+    "name": "미스릴",
+    "location1": "A000"
+  },
+  {
+    "ID": "DW001",
+    "sort": "단검",
+    "name": "가위",
+    "location1": "A002",
+    "location2": "A006",
+    "location3": "A015"
+  },
+  {
+    "ID": "DW002",
+    "sort": "단검",
+    "name": "만년필",
+    "location1": "A003",
+    "location2": "A011",
+    "location3": "A015"
+  },
+  {
+    "ID": "DW003",
+    "sort": "단검",
+    "name": "식칼",
+    "location1": "A004",
+    "location2": "A010",
+    "location3": "A014"
+  },
+  {
+    "ID": "DW004",
+    "sort": "양손검",
+    "name": "녹슨 검",
+    "location1": "A009",
+    "location2": "A010",
+    "location3": "A016"
+  },
+  {
+    "ID": "DW005",
+    "sort": "도끼",
+    "name": "곡괭이",
+    "location1": "A005",
+    "location2": "A007",
+    "location3": "A012",
+    "location4": "A013"
+  },
+  {
+    "ID": "DW006",
+    "sort": "도끼",
+    "name": "손도끼",
+    "location1": "A005",
+    "location2": "A008",
+    "location3": "A013"
+  },
+  {
+    "ID": "DW007",
+    "sort": "글러브",
+    "name": "너클",
+    "location1": "A007",
+    "location2": "A012"
+  },
+  {
+    "ID": "DW008",
+    "sort": "글러브",
+    "name": "목장갑",
+    "location1": "A006",
+    "location2": "A014"
+  },
+  {
+    "ID": "DW009",
+    "sort": "톤파",
+    "name": "대나무",
+    "location1": "A004",
+    "location2": "A005",
+    "location3": "A007",
+    "location4": "A012",
+    "location5": "A016"
+  },
+  {
+    "ID": "DW010",
+    "sort": "방망이",
+    "name": "단봉",
+    "location1": "A004",
+    "location2": "A005",
+    "location3": "A010"
+  },
+  {
+    "ID": "DW011",
+    "sort": "방망이",
+    "name": "나뭇가지",
+    "location1": "A000"
+  },
+  {
+    "ID": "DW012",
+    "sort": "채찍",
+    "name": "채찍",
+    "location1": "A009",
+    "location2": "A015"
+  },
+  {
+    "ID": "DW013",
+    "sort": "투척",
+    "name": "쇠구슬",
+    "location1": "A008",
+    "location2": "A012",
+    "location3": "A016"
+  },
+  {
+    "ID": "DW014",
+    "sort": "투척",
+    "name": "야구공",
+    "location1": "A000"
+  },
+  {
+    "ID": "DW015",
+    "sort": "암기",
+    "name": "면도칼",
+    "location1": "A006",
+    "location2": "A009",
+    "location3": "A015"
+  },
+  {
+    "ID": "DW016",
+    "sort": "암기",
+    "name": "트럼프 카드",
+    "location1": "A003",
+    "location2": "A014"
+  },
+  {
+    "ID": "DW017",
+    "sort": "암기",
+    "name": "분필",
+    "location1": "A008",
+    "location2": "A009",
+    "location3": "A015"
+  },
+  {
+    "ID": "DW018",
+    "sort": "활",
+    "name": "양궁",
+    "location1": "A009",
+    "location2": "A016"
+  },
+  {
+    "ID": "DW019",
+    "sort": "석궁",
+    "name": "석궁",
+    "location1": "A008",
+    "location2": "A012"
+  },
+  {
+    "ID": "DW020",
+    "sort": "권총",
+    "name": "발터 PPK",
+    "location1": "A008",
+    "location2": "A013",
+    "location3": "A014"
+  },
+  {
+    "ID": "DW021",
+    "sort": "돌격 소총",
+    "name": "페도로프 자동소총",
+    "location1": "A008",
+    "location2": "A014"
+  },
+  {
+    "ID": "DW022",
+    "sort": "저격총",
+    "name": "화승총",
+    "location1": "A010",
+    "location2": "A012"
+  },
+  {
+    "ID": "DW023",
+    "sort": "망치",
+    "name": "망치",
+    "location1": "A002",
+    "location2": "A005",
+    "location3": "A013"
+  },
+  {
+    "ID": "DW024",
+    "sort": "창",
+    "name": "단창",
+    "location1": "A004",
+    "location2": "A005",
+    "location3": "A012"
+  },
+  {
+    "ID": "DW025",
+    "sort": "쌍절곤",
+    "name": "쇠사슬",
+    "location1": "A002",
+    "location2": "A007",
+    "location3": "A013"
+  },
+  {
+    "ID": "DW026",
+    "sort": "레이피어",
+    "name": "바늘",
+    "location1": "A002",
+    "location2": "A006",
+    "location3": "A014"
+  },  
+  {
+    "ID": "DW027",
+    "sort": "기타",
+    "name": "보급형 기타",
+    "location1": "A000"
+  },
+  {
+    "ID": "DC001",
+    "sort": "옷",
+    "name": "바람막이",
+    "location1": "A011",
+    "location2": "A014",
+    "location3": "A015"
+  },
+  {
+    "ID": "DC002",
+    "sort": "옷",
+    "name": "승복",
+    "location1": "A004",
+    "location2": "A016"
+  },
+  {
+    "ID": "DC003",
+    "sort": "옷",
+    "name": "전신 수영복",
+    "location1": "A002",
+    "location2": "A010",
+    "location3": "A013"
+  },
+  {
+    "ID": "DC004",
+    "sort": "옷",
+    "name": "천 갑옷",
+    "location1": "A004",
+    "location2": "A007",
+    "location3": "A016"
+  },
+  {
+    "ID": "DH001",
+    "sort": "머리",
+    "name": "머리띠",
+    "location1": "A003",
+    "location2": "A004",
+    "location3": "A007"
+  },
+  {
+    "ID": "DH002",
+    "sort": "머리",
+    "name": "모자",
+    "location1": "A005",
+    "location2": "A015",
+    "location3": "A016"
+  },
+  {
+    "ID": "DH003",
+    "sort": "머리",
+    "name": "자전거 헬멧",
+    "location1": "A009",
+    "location2": "A013",
+    "location3": "A015"
+  },
+  {
+    "ID": "DB001",
+    "sort": "팔",
+    "name": "손목시계",
+    "location1": "A003",
+    "location2": "A011",
+    "location3": "A014"
+  },
+  {
+    "ID": "DB002",
+    "sort": "팔",
+    "name": "붕대",
+    "location1": "A006",
+    "location2": "A008",
+    "location3": "A010",
+    "location4": "A015"
+  },
+  {
+    "ID": "DB003",
+    "sort": "팔",
+    "name": "팔찌",
+    "location1": "A002",
+    "location2": "A005",
+    "location3": "A011"
+  },
+  {
+    "ID": "DS001",
+    "sort": "다리",
+    "name": "슬리퍼",
+    "location1": "A003",
+    "location2": "A006",
+    "location3": "A015"
+  },
+  {
+    "ID": "DS002",
+    "sort": "다리",
+    "name": "운동화",
+    "location1": "A002",
+    "location2": "A011",
+    "location3": "A016"
+  },
+  {
+    "ID": "DS003",
+    "sort": "다리",
+    "name": "타이즈",
+    "location1": "A003",
+    "location2": "A006",
+    "location3": "A012"
+  },
+  {
+    "ID": "DA001",
+    "sort": "장식",
+    "name": "깃털",
+    "location1": "A006",
+    "location2": "A007",
+    "location3": "A012"
+  },
+  {
+    "ID": "DA002",
+    "sort": "장식",
+    "name": "꽃",
+    "location1": "A005",
+    "location2": "A007",
+    "location3": "A011",
+    "location4": "A012"
+  },
+  {
+    "ID": "DA003",
+    "sort": "장식",
+    "name": "리본",
+    "location1": "A005",
+    "location2": "A011",
+    "location3": "A015"
+  },
+  {
+    "ID": "DA004",
+    "sort": "장식",
+    "name": "부채",
+    "location1": "A003",
+    "location2": "A009",
+    "location3": "A012"
+  },
+  {
+    "ID": "DA005",
+    "sort": "장식",
+    "name": "불경",
+    "location1": "A004"
+  },
+  {
+    "ID": "DA006",
+    "sort": "장식",
+    "name": "상자",
+    "location1": "A005",
+    "location2": "A009",
+    "location3": "A010"
+  },
+  {
+    "ID": "DA007",
+    "sort": "장식",
+    "name": "성배",
+    "location1": "A009"
+  },
+  {
+    "ID": "DA008",
+    "sort": "장식",
+    "name": "십자가",
+    "location1": "A002",
+    "location2": "A009"
+  },
+  {
+    "ID": "DA009",
+    "sort": "장식",
+    "name": "쌍안경",
+    "location1": "A002",
+    "location2": "A008",
+    "location3": "A013",
+    "location4": "A014"
+  },
+  {
+    "ID": "DT001",
+    "sort": "설치",
+    "name": "감시 카메라",
+    "location1": "A003",
+    "location2": "A006",
+    "location3": "A007",
+    "location4": "A010",
+    "location5": "A011",
+    "location6": "A013",
+    "location7": "A015",
+    "location8": "A016"
+  },
+  {
+    "ID": "DT002",
+    "sort": "설치",
+    "name": "올가미",
+    "location1": "A005",
+    "location2": "A009",
+    "location3": "A010",
+    "location4": "A012",
+    "location5": "A013",
+    "location6": "A016"
+  },
+  {
+    "ID": "DT003",
+    "sort": "설치",
+    "name": "쥐덫",
+    "location1": "A005",
+    "location2": "A007",
+    "location3": "A013"
+  },
+  {
+    "ID": "DT004",
+    "sort": "설치",
+    "name": "피아노선",
+    "location1": "A009",
+    "location2": "A011",
+    "location3": "A013",
+    "location4": "A014"
+  },
+  {
+    "ID": "DD001",
+    "sort": "음료",
+    "name": "꿀",
+    "location1": "A002",
+    "location2": "A003",
+    "location3": "A012"
+  },
+  {
+    "ID": "DD002",
+    "sort": "음료",
+    "name": "물",
+    "location1": "A005",
+    "location2": "A009",
+    "location3": "A012",
+    "location4": "A014"
+  },
+  {
+    "ID": "DD003",
+    "sort": "음료",
+    "name": "얼음",
+    "location1": "A006",
+    "location2": "A007",
+    "location3": "A014"
+  },
+  {
+    "ID": "DD004",
+    "sort": "음료",
+    "name": "위스키",
+    "location1": "A009",
+    "location2": "A011",
+    "location3": "A014"
+  },
+  {
+    "ID": "DD005",
+    "sort": "음료",
+    "name": "커피콩",
+    "location1": "A007",
+    "location2": "A010",
+    "location3": "A011"
+  },
+  {
+    "ID": "DD006",
+    "sort": "음료",
+    "name": "탄산수",
+    "location1": "A011",
+    "location2": "A013",
+    "location3": "A014"
+  },
+  {
+    "ID": "DD007",
+    "sort": "음료",
+    "name": "우유",
+    "location1": "A003",
+    "location2": "A006",
+    "location3": "A009"
+  },
+  {
+    "ID": "DD008",
+    "sort": "음식",
+    "name": "성수",
+    "location1": "A000"
+  },
+  {
+    "ID": "DF001",
+    "sort": "음식",
+    "name": "감자",
+    "location1": "A002",
+    "location2": "A004",
+    "location3": "A005"
+  },
+  {
+    "ID": "DF002",
+    "sort": "음식",
+    "name": "대구",
+    "location1": "A010",
+    "location2": "A013"
+  },
+  {
+    "ID": "DF003",
+    "sort": "음식",
+    "name": "붕어",
+    "location1": "A005",
+    "location2": "A007",
+    "location3": "A012"
+  },
+  {
+    "ID": "DF004",
+    "sort": "음식",
+    "name": "레몬",
+    "location1": "A006",
+    "location2": "A011",
+    "location3": "A014"
+  },
+  {
+    "ID": "DF005",
+    "sort": "음식",
+    "name": "마늘",
+    "location1": "A002",
+    "location2": "A004",
+    "location3": "A007"
+  },
+  {
+    "ID": "DF006",
+    "sort": "음식",
+    "name": "반창고",
+    "location1": "A006"
+  },
+  {
+    "ID": "DF007",
+    "sort": "음식",
+    "name": "빵",
+    "location1": "A009",
+    "location2": "A010",
+    "location3": "A015"
+  },
+  {
+    "ID": "DF008",
+    "sort": "음식",
+    "name": "고기",
+    "location1": "A000"
+  },
+  {
+    "ID": "DF009",
+    "sort": "음식",
+    "name": "달걀",
+    "location1": "A007",
+    "location2": "A012",
+    "location3": "A016"
+  },
+  {
+    "ID": "DF010",
+    "sort": "음식",
+    "name": "생라면",
+    "location1": "A002",
+    "location2": "A004",
+    "location3": "A010"
+  },
+  {
+    "ID": "DF011",
+    "sort": "음식",
+    "name": "약초",
+    "location1": "A004",
+    "location2": "A005",
+    "location3": "A012"
+  },
+  {
+    "ID": "DF012",
+    "sort": "음식",
+    "name": "초콜렛",
+    "location1": "A003",
+    "location2": "A011",
+    "location3": "A016"
+  },
+  {
+    "ID": "DF013",
+    "sort": "음식",
+    "name": "카레 가루",
+    "location1": "A008",
+    "location2": "A011"
+  }
+]

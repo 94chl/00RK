@@ -1,115 +1,807 @@
-[{"ID":"BM001","sort":"재료","name":"문스톤","material1":"DM022","material2":"DM020"},
-{"ID":"BM002","sort":"재료","name":"독약","material1":"GM007","material2":"DD002"},
-{"ID":"BM003","sort":"재료","name":"모터","material1":"GM008","material2":"DM005"},
-{"ID":"BM004","sort":"재료","name":"유리판","material1":"GA003","material2":"DM014"},
-{"ID":"BM005","sort":"재료","name":"이온 전지","material1":"GM005","material2":"DD006"},
-{"ID":"BM006","sort":"재료","name":"휴대폰","material1":"GM009","material2":"GM008"},
-{"ID":"BW001","sort":"단검","name":"장미칼","material1":"GW001","material2":"DA002"},
-{"ID":"BW002","sort":"양손검","name":"일본도","material1":"GM010","material2":"DW004"},
-{"ID":"BW003","sort":"양손검","name":"마사무네","material1":"BW002","material2":"DM011"},
-{"ID":"BW004","sort":"양손검","name":"무라마사","material1":"BW002","material2":"DM013"},
-{"ID":"BW005","sort":"양손검","name":"바스타드 소드","material1":"GM001","material2":"DW004"},
-{"ID":"BW006","sort":"양손검","name":"보검","material1":"GW002","material2":"GM004"},
-{"ID":"BW007","sort":"양손검","name":"뚜언 띠엔","material1":"BW005","material2":"DM003"},
-{"ID":"BW008","sort":"양손검","name":"플라즈마 소드","material1":"BW005","material2":"DM007"},
-{"ID":"BW009","sort":"도끼","name":"경량화 도끼","material1":"GW004","material2":"DA001"},
-{"ID":"BW010","sort":"도끼","name":"사신의 낫","material1":"GW003","material2":"DW010"},
-{"ID":"BW011","sort":"도끼","name":"대부","material1":"GW004","material2":"GM001"},
-{"ID":"BW012","sort":"쌍검","name":"피렌체식 쌍검","material1":"GW005","material2":"GM009"},
-{"ID":"BW013","sort":"글러브","name":"건틀릿","material1":"GM001","material2":"DW008"},
-{"ID":"BW014","sort":"글러브","name":"윙 너클","material1":"GW007","material2":"DA001"},
-{"ID":"BW015","sort":"글러브","name":"귀골 장갑","material1":"BW013","material2":"DM003"},
-{"ID":"BW016","sort":"글러브","name":"벽력귀투","material1":"BW013","material2":"DM018"},
-{"ID":"BW017","sort":"글러브","name":"유리 너클","material1":"GW007","material2":"GA003"},
-{"ID":"BW018","sort":"글러브","name":"회단 장갑","material1":"GW006","material2":"GM007"},
-{"ID":"BW019","sort":"톤파","name":"경찰봉","material1":"GW008","material2":"DM008"},
-{"ID":"BW020","sort":"톤파","name":"류큐톤파","material1":"GW008","material2":"GM006"},
-{"ID":"BW021","sort":"방망이","name":"도깨비 방망이","material1":"GW009","material2":"DM002"},
-{"ID":"BW022","sort":"방망이","name":"우산","material1":"GW009","material2":"DA004"},
-{"ID":"BW023","sort":"방망이","name":"횃불","material1":"GA008","material2":"GM002"},
-{"ID":"BW024","sort":"채찍","name":"바람 채찍","material1":"GW010","material2":"DA004"},
-{"ID":"BW025","sort":"채찍","name":"뇌룡편","material1":"GW011","material2":"GM011"},
-{"ID":"BW026","sort":"채찍","name":"벽력편","material1":"GW011","material2":"GM005"},
-{"ID":"BW027","sort":"투척","name":"슬링","material1":"GW014","material2":"DM004"},
-{"ID":"BW028","sort":"투척","name":"밀가루 폭탄","material1":"GM006","material2":"GW013"},
-{"ID":"BW029","sort":"투척","name":"볼 라이트닝","material1":"DW013","material2":"GM005"},
-{"ID":"BW030","sort":"투척","name":"플러버","material1":"GD001","material2":"DM004"},
-{"ID":"BW031","sort":"투척","name":"가시 탱탱볼","material1":"BW030","material2":"DM002"},
-{"ID":"BW032","sort":"암기","name":"부적","material1":"GW016","material2":"DA005"},
-{"ID":"BW033","sort":"암기","name":"유엽비도","material1":"GW018","material2":"DW011"},
-{"ID":"BW034","sort":"암기","name":"챠크람","material1":"GW017","material2":"DM008"},
-{"ID":"BW035","sort":"암기","name":"매화비표","material1":"BW033","material2":"DA002"},
-{"ID":"BW036","sort":"암기","name":"독침","material1":"DW026","material2":"BM002"},
-{"ID":"BW037","sort":"암기","name":"법륜","material1":"BW034","material2":"DA005"},
-{"ID":"BW038","sort":"암기","name":"플럼바타","material1":"GW015","material2":"GM001"},
-{"ID":"BW039","sort":"활","name":"컴포지트 보우","material1":"GW020","material2":"DM002"},
-{"ID":"BW040","sort":"활","name":"강궁","material1":"GW019","material2":"DM011"},
-{"ID":"BW041","sort":"활","name":"국궁","material1":"BW042","material2":"DM008"},
-{"ID":"BW042","sort":"활","name":"벽력궁","material1":"GW020","material2":"DM018"},
-{"ID":"BW043","sort":"활","name":"탄궁","material1":"GW019","material2":"GM012"},
-{"ID":"BW044","sort":"활","name":"화전","material1":"GW020","material2":"DM006"},
-{"ID":"BW045","sort":"석궁","name":"노","material1":"GW021","material2":"DM004"},
-{"ID":"BW046","sort":"석궁","name":"저격궁","material1":"GW022","material2":"DM007"},
-{"ID":"BW047","sort":"석궁","name":"헤비 크로스보우","material1":"GW021","material2":"GM001"},
-{"ID":"BW048","sort":"석궁","name":"철궁","material1":"GW022","material2":"GM010"},
-{"ID":"BW049","sort":"권총","name":"FN57","material1":"GW024","material2":"DM007"},
-{"ID":"BW050","sort":"권총","name":"더블 리볼버 SP","material1":"GW023","material2":"GW024"},
-{"ID":"BW051","sort":"권총","name":"매그넘-아나콘다","material1":"GW023","material2":"GM009"},
-{"ID":"BW052","sort":"돌격 소총","name":"AK-47","material1":"GW025","material2":"DT004"},
-{"ID":"BW053","sort":"돌격 소총","name":"M16A1","material1":"GW025","material2":"DM019"},
-{"ID":"BW054","sort":"저격총","name":"하푼건","material1":"GW026","material2":"DW024"},
-{"ID":"BW055","sort":"저격총","name":"금교전","material1":"GW026","material2":"GM011"},
-{"ID":"BW056","sort":"저격총","name":"레일건","material1":"GW026","material2":"GM008"},
-{"ID":"BW057","sort":"망치","name":"모닝 스타","material1":"GW027","material2":"DW013"},
-{"ID":"BW058","sort":"망치","name":"사슴 망치","material1":"GW027","material2":"DM019"},
-{"ID":"BW059","sort":"창","name":"바이던트","material1":"GW028","material2":"DW003"},
-{"ID":"BW060","sort":"창","name":"파이크","material1":"DW024","material2":"GM001"},
-{"ID":"BW061","sort":"창","name":"도끼창","material1":"DW006","material2":"BW060"},
-{"ID":"BW062","sort":"창","name":"강창","material1":"GW028","material2":"DA001"},
-{"ID":"BW063","sort":"쌍절곤","name":"샤퍼","material1":"GW029","material2":"DM002"},
-{"ID":"BW064","sort":"쌍절곤","name":"블리더","material1":"GW029","material2":"DW015"},
-{"ID":"BW065","sort":"레이피어","name":"매화검","material1":"GW030","material2":"GA002"},
-{"ID":"BW066","sort":"기타","name":"루비 스페셜","material1":"GW032","material2":"GM004"},
-{"ID":"BW067","sort":"기타","name":"험버커 픽업","material1":"GW031","material2":"GA005"},
-{"ID":"BW068","sort":"기타","name":"King-V","material1":"GW031","material2":"DW001"},
-{"ID":"BW069","sort":"기타","name":"노캐스터","material1":"GW032","material2":"GM009"},
-{"ID":"BW070","sort":"기타","name":"슈퍼스트렛","material1":"GW032","material2":"DW009"},
-{"ID":"BW071","sort":"기타","name":"야생마","material1":"GW032","material2":"DM011"},
-{"ID":"BC001","sort":"옷","name":"라이더 자켓","material1":"GC002","material2":"DW025"},
-{"ID":"BC002","sort":"옷","name":"사슬 갑옷","material1":"GC001","material2":"DW025"},
-{"ID":"BC003","sort":"옷","name":"정장","material1":"GC004","material2":"DA003"},
-{"ID":"BC004","sort":"옷","name":"치파오","material1":"GC006","material2":"DW015"},
-{"ID":"BC005","sort":"옷","name":"판금 갑옷","material1":"DC004","material2":"GM001"},
-{"ID":"BC006","sort":"옷","name":"한복","material1":"GC005","material2":"DA002"},
-{"ID":"BC007","sort":"옷","name":"방탄조끼","material1":"GC004","material2":"GM010"},
-{"ID":"BC008","sort":"옷","name":"석양의 갑옷","material1":"GC001","material2":"GM004"},
-{"ID":"BC009","sort":"옷","name":"어사의","material1":"BC006","material2":"DM008"},
-{"ID":"BH001","sort":"머리","name":"방탄모","material1":"GH003","material2":"DH003"},
-{"ID":"BH002","sort":"머리","name":"소방 헬멧","material1":"GH005","material2":"DD002"},
-{"ID":"BH003","sort":"머리","name":"티아라","material1":"GH002","material2":"DM008"},
-{"ID":"BH004","sort":"머리","name":"왕관","material1":"GH002","material2":"GM011"},
-{"ID":"BH005","sort":"머리","name":"투구","material1":"GH004","material2":"GH001"},
-{"ID":"BH006","sort":"머리","name":"오토바이 헬멧","material1":"BH002","material2":"DA009"},
-{"ID":"BB001","sort":"팔","name":"검집","material1":"DM019","material2":"GM010"},
-{"ID":"BB002","sort":"팔","name":"금팔찌","material1":"DB003","material2":"GM011"},
-{"ID":"BB003","sort":"팔","name":"바주반드","material1":"GB003","material2":"GM010"},
-{"ID":"BB004","sort":"팔","name":"진홍 팔찌","material1":"DB003","material2":"GM004"},
-{"ID":"BB005","sort":"팔","name":"강철 방패","material1":"GB001","material2":"GM001"},
-{"ID":"BB006","sort":"팔","name":"큐브 워치","material1":"DB001","material2":"BM001"},
-{"ID":"BS001","sort":"다리","name":"부츠","material1":"DS002","material2":"GM002"},
-{"ID":"BS002","sort":"다리","name":"강철 무릎 보호대","material1":"GS001","material2":"GM001"},
-{"ID":"BS003","sort":"다리","name":"매버릭 러너","material1":"GS004","material2":"GM008"},
-{"ID":"BS004","sort":"다리","name":"전투화","material1":"BS001","material2":"DM019"},
-{"ID":"BS005","sort":"다리","name":"킬힐","material1":"GS003","material2":"GA003"},
-{"ID":"BS006","sort":"다리","name":"풍화륜","material1":"GS005","material2":"GM007"},
-{"ID":"BA001","sort":"장식","name":"백우선","material1":"GA009","material2":"DA001"},
-{"ID":"BA002","sort":"장식","name":"생명의 가루","material1":"DM021","material2":"DM020"},
-{"ID":"BA003","sort":"장식","name":"우치와","material1":"GA004","material2":"DA004"},
-{"ID":"BA004","sort":"장식","name":"탄창","material1":"DA006","material2":"GM010"},
-{"ID":"BA005","sort":"장식","name":"궁기병의 화살통","material1":"GA007","material2":"GA008"},
-{"ID":"BA006","sort":"장식","name":"월왕구천","material1":"GA010","material2":"GM009"},
-{"ID":"BA007","sort":"장식","name":"달빛 펜던트","material1":"DA003","material2":"BM001"},
-{"ID":"BA008","sort":"장식","name":"슈뢰딩거의 상자","material1":"DA006","material2":"BM002"},
-{"ID":"BA009","sort":"장식","name":"진리는 나의 빛","material1":"GA006","material2":"GA001"},
-{"ID":"BT001","sort":"설치","name":"RDX","material1":"GT003","material2":"DM005"},
-{"ID":"BT002","sort":"설치","name":"미스릴 실","material1":"DM024","material2":"DT004"}]
+[
+  {
+    "ID": "BM001",
+    "sort": "재료",
+    "name": "문스톤",
+    "material1": "DM022",
+    "material2": "DM020"
+  },
+  {
+    "ID": "BM002",
+    "sort": "재료",
+    "name": "독약",
+    "material1": "GM007",
+    "material2": "DD002"
+  },
+  {
+    "ID": "BM003",
+    "sort": "재료",
+    "name": "모터",
+    "material1": "GM008",
+    "material2": "DM005"
+  },
+  {
+    "ID": "BM004",
+    "sort": "재료",
+    "name": "유리판",
+    "material1": "GA003",
+    "material2": "DM014"
+  },
+  {
+    "ID": "BM005",
+    "sort": "재료",
+    "name": "이온 전지",
+    "material1": "GM005",
+    "material2": "DD006"
+  },
+  {
+    "ID": "BM006",
+    "sort": "재료",
+    "name": "휴대폰",
+    "material1": "GM009",
+    "material2": "GM008"
+  },
+  {
+    "ID": "BW001",
+    "sort": "단검",
+    "name": "장미칼",
+    "material1": "GW001",
+    "material2": "DA002"
+  },
+  {
+    "ID": "BW002",
+    "sort": "양손검",
+    "name": "일본도",
+    "material1": "GM010",
+    "material2": "DW004"
+  },
+  {
+    "ID": "BW003",
+    "sort": "양손검",
+    "name": "마사무네",
+    "material1": "BW002",
+    "material2": "DM011"
+  },
+  {
+    "ID": "BW004",
+    "sort": "양손검",
+    "name": "무라마사",
+    "material1": "BW002",
+    "material2": "DM013"
+  },
+  {
+    "ID": "BW005",
+    "sort": "양손검",
+    "name": "바스타드 소드",
+    "material1": "GM001",
+    "material2": "DW004"
+  },
+  {
+    "ID": "BW006",
+    "sort": "양손검",
+    "name": "보검",
+    "material1": "GW002",
+    "material2": "GM004"
+  },
+  {
+    "ID": "BW007",
+    "sort": "양손검",
+    "name": "뚜언 띠엔",
+    "material1": "BW005",
+    "material2": "DM003"
+  },
+  {
+    "ID": "BW008",
+    "sort": "양손검",
+    "name": "플라즈마 소드",
+    "material1": "BW005",
+    "material2": "DM007"
+  },
+  {
+    "ID": "BW009",
+    "sort": "도끼",
+    "name": "경량화 도끼",
+    "material1": "GW004",
+    "material2": "DA001"
+  },
+  {
+    "ID": "BW010",
+    "sort": "도끼",
+    "name": "사신의 낫",
+    "material1": "GW003",
+    "material2": "DW010"
+  },
+  {
+    "ID": "BW011",
+    "sort": "도끼",
+    "name": "대부",
+    "material1": "GW004",
+    "material2": "GM001"
+  },
+  {
+    "ID": "BW012",
+    "sort": "쌍검",
+    "name": "피렌체식 쌍검",
+    "material1": "GW005",
+    "material2": "GM009"
+  },
+  {
+    "ID": "BW013",
+    "sort": "글러브",
+    "name": "건틀릿",
+    "material1": "GM001",
+    "material2": "DW008"
+  },
+  {
+    "ID": "BW014",
+    "sort": "글러브",
+    "name": "윙 너클",
+    "material1": "GW007",
+    "material2": "DA001"
+  },
+  {
+    "ID": "BW015",
+    "sort": "글러브",
+    "name": "귀골 장갑",
+    "material1": "BW013",
+    "material2": "DM003"
+  },
+  {
+    "ID": "BW016",
+    "sort": "글러브",
+    "name": "벽력귀투",
+    "material1": "BW013",
+    "material2": "DM018"
+  },
+  {
+    "ID": "BW017",
+    "sort": "글러브",
+    "name": "유리 너클",
+    "material1": "GW007",
+    "material2": "GA003"
+  },
+  {
+    "ID": "BW018",
+    "sort": "글러브",
+    "name": "회단 장갑",
+    "material1": "GW006",
+    "material2": "GM007"
+  },
+  {
+    "ID": "BW019",
+    "sort": "톤파",
+    "name": "경찰봉",
+    "material1": "GW008",
+    "material2": "DM008"
+  },
+  {
+    "ID": "BW020",
+    "sort": "톤파",
+    "name": "류큐톤파",
+    "material1": "GW008",
+    "material2": "GM006"
+  },
+  {
+    "ID": "BW021",
+    "sort": "방망이",
+    "name": "도깨비 방망이",
+    "material1": "GW009",
+    "material2": "DM002"
+  },
+  {
+    "ID": "BW022",
+    "sort": "방망이",
+    "name": "우산",
+    "material1": "GW009",
+    "material2": "DA004"
+  },
+  {
+    "ID": "BW023",
+    "sort": "방망이",
+    "name": "횃불",
+    "material1": "GA008",
+    "material2": "GM002"
+  },
+  {
+    "ID": "BW024",
+    "sort": "채찍",
+    "name": "바람 채찍",
+    "material1": "GW010",
+    "material2": "DA004"
+  },
+  {
+    "ID": "BW025",
+    "sort": "채찍",
+    "name": "뇌룡편",
+    "material1": "GW011",
+    "material2": "GM011"
+  },
+  {
+    "ID": "BW026",
+    "sort": "채찍",
+    "name": "벽력편",
+    "material1": "GW011",
+    "material2": "GM005"
+  },
+  {
+    "ID": "BW027",
+    "sort": "투척",
+    "name": "슬링",
+    "material1": "GW014",
+    "material2": "DM004"
+  },
+  {
+    "ID": "BW028",
+    "sort": "투척",
+    "name": "밀가루 폭탄",
+    "material1": "GM006",
+    "material2": "GW013"
+  },
+  {
+    "ID": "BW029",
+    "sort": "투척",
+    "name": "볼 라이트닝",
+    "material1": "DW013",
+    "material2": "GM005"
+  },
+  {
+    "ID": "BW030",
+    "sort": "투척",
+    "name": "플러버",
+    "material1": "GD001",
+    "material2": "DM004"
+  },
+  {
+    "ID": "BW031",
+    "sort": "투척",
+    "name": "가시 탱탱볼",
+    "material1": "BW030",
+    "material2": "DM002"
+  },
+  {
+    "ID": "BW032",
+    "sort": "암기",
+    "name": "부적",
+    "material1": "GW016",
+    "material2": "DA005"
+  },
+  {
+    "ID": "BW033",
+    "sort": "암기",
+    "name": "유엽비도",
+    "material1": "GW018",
+    "material2": "DW011"
+  },
+  {
+    "ID": "BW034",
+    "sort": "암기",
+    "name": "챠크람",
+    "material1": "GW017",
+    "material2": "DM008"
+  },
+  {
+    "ID": "BW035",
+    "sort": "암기",
+    "name": "매화비표",
+    "material1": "BW033",
+    "material2": "DA002"
+  },
+  {
+    "ID": "BW036",
+    "sort": "암기",
+    "name": "독침",
+    "material1": "DW026",
+    "material2": "BM002"
+  },
+  {
+    "ID": "BW037",
+    "sort": "암기",
+    "name": "법륜",
+    "material1": "BW034",
+    "material2": "DA005"
+  },
+  {
+    "ID": "BW038",
+    "sort": "암기",
+    "name": "플럼바타",
+    "material1": "GW015",
+    "material2": "GM001"
+  },
+  {
+    "ID": "BW039",
+    "sort": "활",
+    "name": "컴포지트 보우",
+    "material1": "GW020",
+    "material2": "DM002"
+  },
+  {
+    "ID": "BW040",
+    "sort": "활",
+    "name": "강궁",
+    "material1": "GW019",
+    "material2": "DM011"
+  },
+  {
+    "ID": "BW041",
+    "sort": "활",
+    "name": "국궁",
+    "material1": "BW042",
+    "material2": "DM008"
+  },
+  {
+    "ID": "BW042",
+    "sort": "활",
+    "name": "벽력궁",
+    "material1": "GW020",
+    "material2": "DM018"
+  },
+  {
+    "ID": "BW043",
+    "sort": "활",
+    "name": "탄궁",
+    "material1": "GW019",
+    "material2": "GM012"
+  },
+  {
+    "ID": "BW044",
+    "sort": "활",
+    "name": "화전",
+    "material1": "GW020",
+    "material2": "DM006"
+  },
+  {
+    "ID": "BW045",
+    "sort": "석궁",
+    "name": "노",
+    "material1": "GW021",
+    "material2": "DM004"
+  },
+  {
+    "ID": "BW046",
+    "sort": "석궁",
+    "name": "저격궁",
+    "material1": "GW022",
+    "material2": "DM007"
+  },
+  {
+    "ID": "BW047",
+    "sort": "석궁",
+    "name": "헤비 크로스보우",
+    "material1": "GW021",
+    "material2": "GM001"
+  },
+  {
+    "ID": "BW048",
+    "sort": "석궁",
+    "name": "철궁",
+    "material1": "GW022",
+    "material2": "GM010"
+  },
+  {
+    "ID": "BW049",
+    "sort": "권총",
+    "name": "FN57",
+    "material1": "GW024",
+    "material2": "DM007"
+  },
+  {
+    "ID": "BW050",
+    "sort": "권총",
+    "name": "더블 리볼버 SP",
+    "material1": "GW023",
+    "material2": "GW024"
+  },
+  {
+    "ID": "BW051",
+    "sort": "권총",
+    "name": "매그넘-아나콘다",
+    "material1": "GW023",
+    "material2": "GM009"
+  },
+  {
+    "ID": "BW052",
+    "sort": "돌격 소총",
+    "name": "AK-47",
+    "material1": "GW025",
+    "material2": "DT004"
+  },
+  {
+    "ID": "BW053",
+    "sort": "돌격 소총",
+    "name": "M16A1",
+    "material1": "GW025",
+    "material2": "DM019"
+  },
+  {
+    "ID": "BW054",
+    "sort": "저격총",
+    "name": "하푼건",
+    "material1": "GW026",
+    "material2": "DW024"
+  },
+  {
+    "ID": "BW055",
+    "sort": "저격총",
+    "name": "금교전",
+    "material1": "GW026",
+    "material2": "GM011"
+  },
+  {
+    "ID": "BW056",
+    "sort": "저격총",
+    "name": "레일건",
+    "material1": "GW026",
+    "material2": "GM008"
+  },
+  {
+    "ID": "BW057",
+    "sort": "망치",
+    "name": "모닝 스타",
+    "material1": "GW027",
+    "material2": "DW013"
+  },
+  {
+    "ID": "BW058",
+    "sort": "망치",
+    "name": "사슴 망치",
+    "material1": "GW027",
+    "material2": "DM019"
+  },
+  {
+    "ID": "BW059",
+    "sort": "창",
+    "name": "바이던트",
+    "material1": "GW028",
+    "material2": "DW003"
+  },
+  {
+    "ID": "BW060",
+    "sort": "창",
+    "name": "파이크",
+    "material1": "DW024",
+    "material2": "GM001"
+  },
+  {
+    "ID": "BW061",
+    "sort": "창",
+    "name": "도끼창",
+    "material1": "DW006",
+    "material2": "BW060"
+  },
+  {
+    "ID": "BW062",
+    "sort": "창",
+    "name": "강창",
+    "material1": "GW028",
+    "material2": "DA001"
+  },
+  {
+    "ID": "BW063",
+    "sort": "쌍절곤",
+    "name": "샤퍼",
+    "material1": "GW029",
+    "material2": "DM002"
+  },
+  {
+    "ID": "BW064",
+    "sort": "쌍절곤",
+    "name": "블리더",
+    "material1": "GW029",
+    "material2": "DW015"
+  },
+  {
+    "ID": "BW065",
+    "sort": "레이피어",
+    "name": "매화검",
+    "material1": "GW030",
+    "material2": "GA002"
+  },
+  {
+    "ID": "BW066",
+    "sort": "기타",
+    "name": "루비 스페셜",
+    "material1": "GW032",
+    "material2": "GM004"
+  },
+  {
+    "ID": "BW067",
+    "sort": "기타",
+    "name": "험버커 픽업",
+    "material1": "GW031",
+    "material2": "GA005"
+  },
+  {
+    "ID": "BW068",
+    "sort": "기타",
+    "name": "King-V",
+    "material1": "GW031",
+    "material2": "DW001"
+  },
+  {
+    "ID": "BW069",
+    "sort": "기타",
+    "name": "노캐스터",
+    "material1": "GW032",
+    "material2": "GM009"
+  },
+  {
+    "ID": "BW070",
+    "sort": "기타",
+    "name": "슈퍼스트렛",
+    "material1": "GW032",
+    "material2": "DW009"
+  },
+  {
+    "ID": "BW071",
+    "sort": "기타",
+    "name": "야생마",
+    "material1": "GW032",
+    "material2": "DM011"
+  },
+  {
+    "ID": "BC001",
+    "sort": "옷",
+    "name": "라이더 자켓",
+    "material1": "GC002",
+    "material2": "DW025"
+  },
+  {
+    "ID": "BC002",
+    "sort": "옷",
+    "name": "사슬 갑옷",
+    "material1": "GC001",
+    "material2": "DW025"
+  },
+  {
+    "ID": "BC003",
+    "sort": "옷",
+    "name": "정장",
+    "material1": "GC004",
+    "material2": "DA003"
+  },
+  {
+    "ID": "BC004",
+    "sort": "옷",
+    "name": "치파오",
+    "material1": "GC006",
+    "material2": "DW015"
+  },
+  {
+    "ID": "BC005",
+    "sort": "옷",
+    "name": "판금 갑옷",
+    "material1": "DC004",
+    "material2": "GM001"
+  },
+  {
+    "ID": "BC006",
+    "sort": "옷",
+    "name": "한복",
+    "material1": "GC005",
+    "material2": "DA002"
+  },
+  {
+    "ID": "BC007",
+    "sort": "옷",
+    "name": "방탄조끼",
+    "material1": "GC004",
+    "material2": "GM010"
+  },
+  {
+    "ID": "BC008",
+    "sort": "옷",
+    "name": "석양의 갑옷",
+    "material1": "GC001",
+    "material2": "GM004"
+  },
+  {
+    "ID": "BC009",
+    "sort": "옷",
+    "name": "어사의",
+    "material1": "BC006",
+    "material2": "DM008"
+  },
+  {
+    "ID": "BH001",
+    "sort": "머리",
+    "name": "방탄모",
+    "material1": "GH003",
+    "material2": "DH003"
+  },
+  {
+    "ID": "BH002",
+    "sort": "머리",
+    "name": "소방 헬멧",
+    "material1": "GH005",
+    "material2": "DD002"
+  },
+  {
+    "ID": "BH003",
+    "sort": "머리",
+    "name": "티아라",
+    "material1": "GH002",
+    "material2": "DM008"
+  },
+  {
+    "ID": "BH004",
+    "sort": "머리",
+    "name": "왕관",
+    "material1": "GH002",
+    "material2": "GM011"
+  },
+  {
+    "ID": "BH005",
+    "sort": "머리",
+    "name": "투구",
+    "material1": "GH004",
+    "material2": "GH001"
+  },
+  {
+    "ID": "BH006",
+    "sort": "머리",
+    "name": "오토바이 헬멧",
+    "material1": "BH002",
+    "material2": "DA009"
+  },
+  {
+    "ID": "BB001",
+    "sort": "팔",
+    "name": "검집",
+    "material1": "DM019",
+    "material2": "GM010"
+  },
+  {
+    "ID": "BB002",
+    "sort": "팔",
+    "name": "금팔찌",
+    "material1": "DB003",
+    "material2": "GM011"
+  },
+  {
+    "ID": "BB003",
+    "sort": "팔",
+    "name": "바주반드",
+    "material1": "GB003",
+    "material2": "GM010"
+  },
+  {
+    "ID": "BB004",
+    "sort": "팔",
+    "name": "진홍 팔찌",
+    "material1": "DB003",
+    "material2": "GM004"
+  },
+  {
+    "ID": "BB005",
+    "sort": "팔",
+    "name": "강철 방패",
+    "material1": "GB001",
+    "material2": "GM001"
+  },
+  {
+    "ID": "BB006",
+    "sort": "팔",
+    "name": "큐브 워치",
+    "material1": "DB001",
+    "material2": "BM001"
+  },
+  {
+    "ID": "BS001",
+    "sort": "다리",
+    "name": "부츠",
+    "material1": "DS002",
+    "material2": "GM002"
+  },
+  {
+    "ID": "BS002",
+    "sort": "다리",
+    "name": "강철 무릎 보호대",
+    "material1": "GS001",
+    "material2": "GM001"
+  },
+  {
+    "ID": "BS003",
+    "sort": "다리",
+    "name": "매버릭 러너",
+    "material1": "GS004",
+    "material2": "GM008"
+  },
+  {
+    "ID": "BS004",
+    "sort": "다리",
+    "name": "전투화",
+    "material1": "BS001",
+    "material2": "DM019"
+  },
+  {
+    "ID": "BS005",
+    "sort": "다리",
+    "name": "킬힐",
+    "material1": "GS003",
+    "material2": "GA003"
+  },
+  {
+    "ID": "BS006",
+    "sort": "다리",
+    "name": "풍화륜",
+    "material1": "GS005",
+    "material2": "GM007"
+  },
+  {
+    "ID": "BA001",
+    "sort": "장식",
+    "name": "백우선",
+    "material1": "GA009",
+    "material2": "DA001"
+  },
+  {
+    "ID": "BA002",
+    "sort": "장식",
+    "name": "생명의 가루",
+    "material1": "DM021",
+    "material2": "DM020"
+  },
+  {
+    "ID": "BA003",
+    "sort": "장식",
+    "name": "우치와",
+    "material1": "GA004",
+    "material2": "DA004"
+  },
+  {
+    "ID": "BA004",
+    "sort": "장식",
+    "name": "탄창",
+    "material1": "DA006",
+    "material2": "GM010"
+  },
+  {
+    "ID": "BA005",
+    "sort": "장식",
+    "name": "궁기병의 화살통",
+    "material1": "GA007",
+    "material2": "GA008"
+  },
+  {
+    "ID": "BA006",
+    "sort": "장식",
+    "name": "월왕구천",
+    "material1": "GA010",
+    "material2": "GM009"
+  },
+  {
+    "ID": "BA007",
+    "sort": "장식",
+    "name": "달빛 펜던트",
+    "material1": "DA003",
+    "material2": "BM001"
+  },
+  {
+    "ID": "BA008",
+    "sort": "장식",
+    "name": "슈뢰딩거의 상자",
+    "material1": "DA006",
+    "material2": "BM002"
+  },
+  {
+    "ID": "BA009",
+    "sort": "장식",
+    "name": "진리는 나의 빛",
+    "material1": "GA006",
+    "material2": "GA001"
+  },
+  {
+    "ID": "BT001",
+    "sort": "설치",
+    "name": "RDX",
+    "material1": "GT003",
+    "material2": "DM005"
+  },
+  {
+    "ID": "BT002",
+    "sort": "설치",
+    "name": "미스릴 실",
+    "material1": "DM024",
+    "material2": "DT004"
+  }
+]
