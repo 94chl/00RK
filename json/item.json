@@ -1,0 +1,3533 @@
+[{
+    "ID": "WW001",
+    "sort": "guitar",
+    "name": "보급형 기타",
+    "material1": "DW009",
+    "material2": "DT004"
+  },
+  {
+    "ID": "GM001",
+    "sort": "재료",
+    "name": "강철",
+    "material1": "DM005",
+    "material2": "DM016"
+  },
+  {
+    "ID": "GM002",
+    "sort": "재료",
+    "name": "기름먹인 천",
+    "material1": "DM011",
+    "material2": "DB002"
+  },
+  {
+    "ID": "GM003",
+    "sort": "재료",
+    "name": "뜨거운 오일",
+    "material1": "DM011",
+    "material2": "DM006"
+  },
+  {
+    "ID": "GM004",
+    "sort": "재료",
+    "name": "루비",
+    "material1": "DW023",
+    "material2": "DM013"
+  },
+  {
+    "ID": "GM005",
+    "sort": "재료",
+    "name": "방전 전지",
+    "material1": "DM009",
+    "material2": "DD002"
+  },
+  {
+    "ID": "GM006",
+    "sort": "재료",
+    "name": "백색 가루",
+    "material1": "DW017",
+    "material2": "DM020"
+  },
+  {
+    "ID": "GM007",
+    "sort": "재료",
+    "name": "재",
+    "material1": "DM015",
+    "material2": "DM006"
+  },
+  {
+    "ID": "GM008",
+    "sort": "재료",
+    "name": "전자 부품",
+    "material1": "DM009",
+    "material2": "DT004"
+  },
+  {
+    "ID": "GM009",
+    "sort": "재료",
+    "name": "정교한 도면",
+    "material1": "DM015",
+    "material2": "DW002"
+  },
+  {
+    "ID": "GM010",
+    "sort": "재료",
+    "name": "철판",
+    "material1": "DM005",
+    "material2": "DW023"
+  },
+  {
+    "ID": "GM011",
+    "sort": "재료",
+    "name": "황금",
+    "material1": "DM013",
+    "material2": "DW005"
+  },
+  {
+    "ID": "GM012",
+    "sort": "재료",
+    "name": "달궈진 돌멩이",
+    "material1": "DM020",
+    "material2": "DM006"
+  },
+  {
+    "ID": "GC001",
+    "sort": "옷",
+    "name": "가죽 갑옷",
+    "material1": "DC004",
+    "material2": "DM019",
+    "방어력": 22
+  },
+  {
+    "ID": "GC002",
+    "sort": "옷",
+    "name": "가죽 자켓",
+    "material1": "DC001",
+    "material2": "DM019",
+    "방어력": 8,
+    "체력": 70,
+    "기공뎀 감소": 6
+  },
+  {
+    "ID": "GC003",
+    "sort": "옷",
+    "name": "거북 도복",
+    "material1": "DC002",
+    "material2": "DM003",
+    "방어력": 10,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "GC004",
+    "sort": "옷",
+    "name": "군복",
+    "material1": "DC001",
+    "material2": "DW011",
+    "체력": 50,
+    "기공뎀 감소": 10
+  },
+  {
+    "ID": "GC005",
+    "sort": "옷",
+    "name": "덧댄 로브",
+    "material1": "DC002",
+    "material2": "DB002",
+    "방어력": 5,
+    "체력회복": 1,
+    "쿨타임(%)": 0.07
+  },
+  {
+    "ID": "GC006",
+    "sort": "옷",
+    "name": "드레스",
+    "material1": "DM012",
+    "material2": "DW001",
+    "공격력": 8,
+    "방어력": 8,
+    "스태회복(%)": 1
+  },
+  {
+    "ID": "GC007",
+    "sort": "옷",
+    "name": "비키니",
+    "material1": "DC003",
+    "material2": "DW001",
+    "방어력": 4,
+    "스킬뎀 감소": 0.11
+  },
+  {
+    "ID": "GC008",
+    "sort": "옷",
+    "name": "잠수복",
+    "material1": "DC003",
+    "material2": "DM004",
+    "방어력": 9,
+    "스킬뎀 감소": 0.1
+  },
+  {
+    "ID": "GH001",
+    "sort": "머리",
+    "name": "가면",
+    "material1": "DH001",
+    "material2": "DA001",
+    "방어력": 10,
+    "스태": 130,
+    "이속": 0.08
+  },
+  {
+    "ID": "GH002",
+    "sort": "머리",
+    "name": "머리테",
+    "material1": "DH001",
+    "material2": "DW011",
+    "방어력": 14,
+    "스태": 270
+  },
+  {
+    "ID": "GH003",
+    "sort": "머리",
+    "name": "베레모",
+    "material1": "DH002",
+    "material2": "DW001",
+    "방어력": 10,
+    "체력": 60,
+    "쿨타임(%)": 0.07
+  },
+  {
+    "ID": "GH004",
+    "sort": "머리",
+    "name": "사슬 코이프",
+    "material1": "DH002",
+    "material2": "DW025",
+    "방어력": 14,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "GH005",
+    "sort": "머리",
+    "name": "안전모",
+    "material1": "DH003",
+    "material2": "DM020",
+    "체력": 210
+  },
+  {
+    "ID": "GB001",
+    "sort": "팔",
+    "name": "가죽 방패",
+    "material1": "DM003",
+    "material2": "DM019",
+    "공격력": 10,
+    "방어력": 10
+  },
+  {
+    "ID": "GB002",
+    "sort": "팔",
+    "name": "분대장 완장",
+    "material1": "DB002",
+    "material2": "DW026",
+    "크리뎀": 0.15,
+    "체력회복": 1.5
+  },
+  {
+    "ID": "GB003",
+    "sort": "팔",
+    "name": "브레이서",
+    "material1": "DB002",
+    "material2": "DM019",
+    "방어력": 13,
+    "체력회복": 1
+  },
+  {
+    "ID": "GS001",
+    "sort": "다리",
+    "name": "무릎 보호대",
+    "material1": "DS003",
+    "material2": "DM019",
+    "방어력": 8,
+    "이속": 0.16
+  },
+  {
+    "ID": "GS002",
+    "sort": "다리",
+    "name": "체인 레깅스",
+    "material1": "DS003",
+    "material2": "DW025",
+    "방어력": 10,
+    "이속": 0.14
+  },
+  {
+    "ID": "GS003",
+    "sort": "다리",
+    "name": "하이힐",
+    "material1": "DS001",
+    "material2": "DM005",
+    "스태회복": 0.8,
+    "이속": 0.17
+  },
+  {
+    "ID": "GS004",
+    "sort": "다리",
+    "name": "힐리스",
+    "material1": "DS002",
+    "material2": "DW013",
+    "이속": 0.12,
+    "비전투 이속": 0.2
+  },
+  {
+    "ID": "GS005",
+    "sort": "다리",
+    "name": "덧댄 슬리퍼",
+    "material1": "DS001",
+    "material2": "DM012",
+    "스태회복": 0.5,
+    "스태회복(%)": 0.3,
+    "이속": 0.16
+  },
+  {
+    "ID": "GA001",
+    "sort": "장식",
+    "name": "성자의 유산",
+    "material1": "DA008",
+    "material2": "DA007",
+    "기공추": 8,
+    "체력회복(%)": 1.5
+  },
+  {
+    "ID": "GA002",
+    "sort": "장식",
+    "name": "운명의 꽃",
+    "material1": "DA002",
+    "material2": "DW016",
+    "크리": 0.15,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "GA003",
+    "sort": "장식",
+    "name": "유리 조각",
+    "material1": "DM001",
+    "material2": "DM020",
+    "크리": 0.13
+  },
+  {
+    "ID": "GA004",
+    "sort": "장식",
+    "name": "인형",
+    "material1": "DA003",
+    "material2": "DM012",
+    "피흡": 0.11,
+    "스태회복(%)": 1
+  },
+  {
+    "ID": "GA005",
+    "sort": "장식",
+    "name": "저격 스코프",
+    "material1": "DM007",
+    "material2": "DA009",
+    "공격력": 6,
+    "시야": 4
+  },
+  {
+    "ID": "GA006",
+    "sort": "장식",
+    "name": "진신사리",
+    "material1": "DC002",
+    "material2": "DA005",
+    "스증(%)": 0.08,
+    "쿨타임(%)": 0.08
+  },
+  {
+    "ID": "GA007",
+    "sort": "장식",
+    "name": "화살통",
+    "material1": "DW009",
+    "material2": "DM019",
+    "공속": 0.22
+  },
+  {
+    "ID": "GA008",
+    "sort": "장식",
+    "name": "먼지털이개",
+    "material1": "DW010",
+    "material2": "DA001",
+    "공격력": 9,
+    "이속": 0.1
+  },
+  {
+    "ID": "GA009",
+    "sort": "장식",
+    "name": "군선",
+    "material1": "DA004",
+    "material2": "DM002",
+    "스증": 16,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "GA010",
+    "sort": "장식",
+    "name": "비파단도",
+    "material1": "DW004",
+    "material2": "DM008",
+    "공격력": 5,
+    "스증(%)": 0.08
+  },
+  {
+    "ID": "GW001",
+    "sort": "dagger",
+    "name": "군용 나이프",
+    "material1": "DW003",
+    "material2": "DW011"
+  },
+  {
+    "ID": "GW002",
+    "sort": "twoHand",
+    "name": "샴쉬르",
+    "material1": "DW004",
+    "material2": "DM006"
+  },
+  {
+    "ID": "GW003",
+    "sort": "axe",
+    "name": "사슬 낫",
+    "material1": "DW005",
+    "material2": "DW025"
+  },
+  {
+    "ID": "GW004",
+    "sort": "axe",
+    "name": "전투 도끼",
+    "material1": "DW006",
+    "material2": "DW009"
+  },
+  {
+    "ID": "GW005",
+    "sort": "dual",
+    "name": "쌍칼",
+    "material1": "DW003",
+    "material2": "DW004"
+  },
+  {
+    "ID": "GW006",
+    "sort": "glove",
+    "name": "글러브",
+    "material1": "DW008",
+    "material2": "DM019"
+  },
+  {
+    "ID": "GW007",
+    "sort": "glove",
+    "name": "아이언 너클",
+    "material1": "DW007",
+    "material2": "DM016"
+  },
+  {
+    "ID": "GW008",
+    "sort": "tonfa",
+    "name": "톤파",
+    "material1": "DW009",
+    "material2": "DW011"
+  },
+  {
+    "ID": "GW009",
+    "sort": "bat",
+    "name": "장봉",
+    "material1": "DW010",
+    "material2": "DW009"
+  },
+  {
+    "ID": "GW010",
+    "sort": "whip",
+    "name": "오랏줄",
+    "material1": "DW012",
+    "material2": "DM008"
+  },
+  {
+    "ID": "GW011",
+    "sort": "whip",
+    "name": "철편",
+    "material1": "DW012",
+    "material2": "DW015"
+  },
+  {
+    "ID": "GW012",
+    "sort": "throw",
+    "name": "수류탄",
+    "material1": "DW013",
+    "material2": "DM018"
+  },
+  {
+    "ID": "GW013",
+    "sort": "throw",
+    "name": "화염병",
+    "material1": "DM001",
+    "material2": "DM011"
+  },
+  {
+    "ID": "GW014",
+    "sort": "throw",
+    "name": "싸인볼",
+    "material1": "DW014",
+    "material2": "DW002"
+  },
+  {
+    "ID": "GW015",
+    "sort": "shuriken",
+    "name": "다트",
+    "material1": "DW026",
+    "material2": "DA001"
+  },
+  {
+    "ID": "GW016",
+    "sort": "shuriken",
+    "name": "빈티지 카드",
+    "material1": "DW016",
+    "material2": "DW002"
+  },
+  {
+    "ID": "GW017",
+    "sort": "shuriken",
+    "name": "표창",
+    "material1": "DW015",
+    "material2": "DT004"
+  },
+  {
+    "ID": "GW018",
+    "sort": "shuriken",
+    "name": "흑건",
+    "material1": "DW015",
+    "material2": "DA008"
+  },
+  {
+    "ID": "GW019",
+    "sort": "bow",
+    "name": "목궁",
+    "material1": "DW011",
+    "material2": "DT004"
+  },
+  {
+    "ID": "GW020",
+    "sort": "bow",
+    "name": "장궁",
+    "material1": "DW018",
+    "material2": "DM004"
+  },
+  {
+    "ID": "GW021",
+    "sort": "crossbow",
+    "name": "쇠뇌",
+    "material1": "DW019",
+    "material2": "DT004"
+  },
+  {
+    "ID": "GW022",
+    "sort": "crossbow",
+    "name": "크로스보우",
+    "material1": "DW019",
+    "material2": "DW009"
+  },
+  {
+    "ID": "GW023",
+    "sort": "pistol",
+    "name": "매그넘-파이선",
+    "material1": "DW020",
+    "material2": "DM011"
+  },
+  {
+    "ID": "GW024",
+    "sort": "pistol",
+    "name": "베레타 M92F",
+    "material1": "DW020",
+    "material2": "DM019"
+  },
+  {
+    "ID": "GW025",
+    "sort": "rifle",
+    "name": "STG-44",
+    "material1": "DW021",
+    "material2": "DM018"
+  },
+  {
+    "ID": "GW026",
+    "sort": "sniper",
+    "name": "스프링필드",
+    "material1": "DW022",
+    "material2": "DM007"
+  },
+  {
+    "ID": "GW027",
+    "sort": "hammer",
+    "name": "워해머",
+    "material1": "DW023",
+    "material2": "DW010"
+  },
+  {
+    "ID": "GW028",
+    "sort": "spear",
+    "name": "죽창",
+    "material1": "DW024",
+    "material2": "DW009"
+  },
+  {
+    "ID": "GW029",
+    "sort": "nunchaku",
+    "name": "눈차크",
+    "material1": "DW025",
+    "material2": "DM005"
+  },
+  {
+    "ID": "GW030",
+    "sort": "rapier",
+    "name": "레이피어",
+    "material1": "DW026",
+    "material2": "DM016"
+  },
+  {
+    "ID": "GW031",
+    "sort": "guitar",
+    "name": "골든 브릿지",
+    "material1": "DW027",
+    "material2": "GM011"
+  },
+  {
+    "ID": "GW032",
+    "sort": "guitar",
+    "name": "싱글 픽업",
+    "material1": "DW027",
+    "material2": "GM005"
+  },
+  {
+    "ID": "GF001",
+    "sort": "음식",
+    "name": "꿀 바른 대구살",
+    "material1": "DF002",
+    "material2": "DD001"
+  },
+  {
+    "ID": "GF002",
+    "sort": "음식",
+    "name": "대구 간 통조림",
+    "material1": "DF002",
+    "material2": "DM017"
+  },
+  {
+    "ID": "GF003",
+    "sort": "음식",
+    "name": "마늘빵",
+    "material1": "DF007",
+    "material2": "DF005"
+  },
+  {
+    "ID": "GF004",
+    "sort": "음식",
+    "name": "버터",
+    "material1": "DD007",
+    "material2": "DW011"
+  },
+  {
+    "ID": "GF005",
+    "sort": "음식",
+    "name": "보약",
+    "material1": "DF011",
+    "material2": "DM003"
+  },
+  {
+    "ID": "GF006",
+    "sort": "음식",
+    "name": "붕어빵",
+    "material1": "DF007",
+    "material2": "DF003"
+  },
+  {
+    "ID": "GF007",
+    "sort": "음식",
+    "name": "지혈제",
+    "material1": "DM010",
+    "material2": "DF006"
+  },
+  {
+    "ID": "GF008",
+    "sort": "음식",
+    "name": "초코파이",
+    "material1": "DF007",
+    "material2": "DF012"
+  },
+  {
+    "ID": "GF009",
+    "sort": "음식",
+    "name": "한방침",
+    "material1": "DM010",
+    "material2": "DW026"
+  },
+  {
+    "ID": "GF010",
+    "sort": "음식",
+    "name": "난초",
+    "material1": "DF011",
+    "material2": "DA002"
+  },
+  {
+    "ID": "GF011",
+    "sort": "음식",
+    "name": "탄두리",
+    "material1": "DF013",
+    "material2": "DF008"
+  },
+  {
+    "ID": "GF012",
+    "sort": "음식",
+    "name": "마늘 베이컨 말이",
+    "material1": "DF005",
+    "material2": "DF008"
+  },
+  {
+    "ID": "GF013",
+    "sort": "음식",
+    "name": "번",
+    "material1": "DF007",
+    "material2": "DD005"
+  },
+  {
+    "ID": "GF014",
+    "sort": "음식",
+    "name": "햄버거",
+    "material1": "DF007",
+    "material2": "DF008"
+  },
+  {
+    "ID": "GF015",
+    "sort": "음식",
+    "name": "감자빵",
+    "material1": "DF001",
+    "material2": "DF007"
+  },
+  {
+    "ID": "GF016",
+    "sort": "음식",
+    "name": "감자스프",
+    "material1": "DF001",
+    "material2": "DD007"
+  },
+  {
+    "ID": "GF017",
+    "sort": "음식",
+    "name": "달걀 생선 필레",
+    "material1": "DF002",
+    "material2": "DF009"
+  },
+  {
+    "ID": "GF018",
+    "sort": "음식",
+    "name": "시트러스 케이크",
+    "material1": "DF007",
+    "material2": "DF004"
+  },
+  {
+    "ID": "GF019",
+    "sort": "음식",
+    "name": "레몬 아이스크림",
+    "material1": "DF009",
+    "material2": "DF004"
+  },
+  {
+    "ID": "GF020",
+    "sort": "음식",
+    "name": "마늘 꿀절임",
+    "material1": "DF005",
+    "material2": "DD001"
+  },
+  {
+    "ID": "GF021",
+    "sort": "음식",
+    "name": "계란빵",
+    "material1": "DF009",
+    "material2": "DF007"
+  },
+  {
+    "ID": "GF022",
+    "sort": "음식",
+    "name": "이스터 에그",
+    "material1": "DF009",
+    "material2": "DF012"
+  },
+  {
+    "ID": "GF023",
+    "sort": "음식",
+    "name": "위스키 봉봉",
+    "material1": "DD004",
+    "material2": "DF012"
+  },
+  {
+    "ID": "GF024",
+    "sort": "음식",
+    "name": "초코 아이스크림",
+    "material1": "DD003",
+    "material2": "DF012"
+  },
+  {
+    "ID": "GF025",
+    "sort": "음식",
+    "name": "카레빵",
+    "material1": "DF007",
+    "material2": "DF013"
+  },
+  {
+    "ID": "GD001",
+    "sort": "음료",
+    "name": "뜨거운 물",
+    "material1": "DD002",
+    "material2": "DM006"
+  },
+  {
+    "ID": "GD002",
+    "sort": "음료",
+    "name": "레몬에이드",
+    "material1": "DD006",
+    "material2": "DF004"
+  },
+  {
+    "ID": "GD003",
+    "sort": "음료",
+    "name": "물병",
+    "material1": "DD002",
+    "material2": "DM001"
+  },
+  {
+    "ID": "GD004",
+    "sort": "음료",
+    "name": "백주",
+    "material1": "DM010",
+    "material2": "DM006"
+  },
+  {
+    "ID": "GD005",
+    "sort": "음료",
+    "name": "소주",
+    "material1": "DM010",
+    "material2": "DD002"
+  },
+  {
+    "ID": "GD006",
+    "sort": "음료",
+    "name": "아이스 커피",
+    "material1": "DD003",
+    "material2": "DD005"
+  },
+  {
+    "ID": "GD007",
+    "sort": "음료",
+    "name": "칵테일",
+    "material1": "DD004",
+    "material2": "DF004"
+  },
+  {
+    "ID": "GD008",
+    "sort": "음료",
+    "name": "커피 리큐르",
+    "material1": "DM010",
+    "material2": "DD005"
+  },
+  {
+    "ID": "GD009",
+    "sort": "음료",
+    "name": "콜라",
+    "material1": "DD006",
+    "material2": "DD001"
+  },
+  {
+    "ID": "GD010",
+    "sort": "음료",
+    "name": "카페라테",
+    "material1": "DD007",
+    "material2": "DD005"
+  },
+  {
+    "ID": "GD011",
+    "sort": "음료",
+    "name": "꿀탄 우유",
+    "material1": "DD007",
+    "material2": "DD001"
+  },
+  {
+    "ID": "GD012",
+    "sort": "음료",
+    "name": "하이볼",
+    "material1": "DD004",
+    "material2": "DD006"
+  },
+  {
+    "ID": "GD013",
+    "sort": "음료",
+    "name": "초코 우유",
+    "material1": "DD007",
+    "material2": "DF012"
+  },
+  {
+    "ID": "GD014",
+    "sort": "음료",
+    "name": "꿀물",
+    "material1": "DD001",
+    "material2": "DD002"
+  },
+  {
+    "ID": "GD015",
+    "sort": "음료",
+    "name": "얼음물",
+    "material1": "DD003",
+    "material2": "DD002"
+  },
+  {
+    "ID": "GD016",
+    "sort": "음료",
+    "name": "온더락",
+    "material1": "DD003",
+    "material2": "DD004"
+  },
+  {
+    "ID": "GD017",
+    "sort": "음료",
+    "name": "카우보이",
+    "material1": "DD007",
+    "material2": "DD004"
+  },
+  {
+    "ID": "GT001",
+    "sort": "설치",
+    "name": "가시 발판",
+    "material1": "DT003",
+    "material2": "DM002"
+  },
+  {
+    "ID": "GT002",
+    "sort": "설치",
+    "name": "개량형 쥐덫",
+    "material1": "DT003",
+    "material2": "DM016"
+  },
+  {
+    "ID": "GT003",
+    "sort": "설치",
+    "name": "다이너마이트",
+    "material1": "DT004",
+    "material2": "DM018"
+  },
+  {
+    "ID": "GT004",
+    "sort": "설치",
+    "name": "대나무 트랩",
+    "material1": "DT002",
+    "material2": "DW009"
+  },
+  {
+    "ID": "GT005",
+    "sort": "설치",
+    "name": "부비트랩",
+    "material1": "DT002",
+    "material2": "DM014"
+  },
+  {
+    "ID": "GT006",
+    "sort": "설치",
+    "name": "소란 발생기",
+    "material1": "DM017",
+    "material2": "DW013"
+  },
+  {
+    "ID": "GT007",
+    "sort": "설치",
+    "name": "정글 기요틴",
+    "material1": "DT003",
+    "material2": "DW003"
+  },
+  {
+    "ID": "GT008",
+    "sort": "설치",
+    "name": "폭발 트랩",
+    "material1": "DT003",
+    "material2": "DM018"
+  },
+  {
+    "ID": "GT009",
+    "sort": "설치",
+    "name": "망원 카메라",
+    "material1": "DT001",
+    "material2": "DA009"
+  },
+  {
+    "ID": "BM001",
+    "sort": "재료",
+    "name": "문스톤",
+    "material1": "DM022",
+    "material2": "DM020"
+  },
+  {
+    "ID": "BM002",
+    "sort": "재료",
+    "name": "독약",
+    "material1": "GM007",
+    "material2": "DD002"
+  },
+  {
+    "ID": "BM003",
+    "sort": "재료",
+    "name": "모터",
+    "material1": "GM008",
+    "material2": "DM005"
+  },
+  {
+    "ID": "BM004",
+    "sort": "재료",
+    "name": "유리판",
+    "material1": "GA003",
+    "material2": "DM014"
+  },
+  {
+    "ID": "BM005",
+    "sort": "재료",
+    "name": "이온 전지",
+    "material1": "GM005",
+    "material2": "DD006"
+  },
+  {
+    "ID": "BM006",
+    "sort": "재료",
+    "name": "휴대폰",
+    "material1": "GM009",
+    "material2": "GM008"
+  },
+  {
+    "ID": "BW001",
+    "sort": "dagger",
+    "name": "장미칼",
+    "material1": "GW001",
+    "material2": "DA002"
+  },
+  {
+    "ID": "BW002",
+    "sort": "twoHand",
+    "name": "일본도",
+    "material1": "GM010",
+    "material2": "DW004",
+    "공격력": 35
+  },
+  {
+    "ID": "BW003",
+    "sort": "twoHand",
+    "name": "마사무네",
+    "material1": "BW002",
+    "material2": "DM011",
+    "공격력": 40,
+    "공속": 0.15
+  },
+  {
+    "ID": "BW004",
+    "sort": "twoHand",
+    "name": "무라마사",
+    "material1": "BW002",
+    "material2": "DM013",
+    "공격력": 50
+  },
+  {
+    "ID": "BW005",
+    "sort": "twoHand",
+    "name": "바스타드 소드",
+    "material1": "GM001",
+    "material2": "DW004",
+    "공격력": 45,
+    "이속": -0.05
+  },
+  {
+    "ID": "BW006",
+    "sort": "twoHand",
+    "name": "보검",
+    "material1": "GW002",
+    "material2": "GM004",
+    "공격력": 35,
+    "체력": 200
+  },
+  {
+    "ID": "BW007",
+    "sort": "twoHand",
+    "name": "뚜언 띠엔",
+    "material1": "BW005",
+    "material2": "DM003",
+    "공격력": 77,
+    "방어력": 25,
+    "이속": -0.05
+  },
+  {
+    "ID": "BW008",
+    "sort": "twoHand",
+    "name": "플라즈마 소드",
+    "material1": "BW005",
+    "material2": "DM007",
+    "공격력": 75,
+    "시야": 3
+  },
+  {
+    "ID": "BW009",
+    "sort": "axe",
+    "name": "경량화 도끼",
+    "material1": "GW004",
+    "material2": "DA001",
+    "공격력": 61,
+    "이속": 0.1
+  },
+  {
+    "ID": "BW010",
+    "sort": "axe",
+    "name": "사신의 낫",
+    "material1": "GW003",
+    "material2": "DW010",
+    "공격력": 80,
+    "사거리": 0.5
+  },
+  {
+    "ID": "BW011",
+    "sort": "axe",
+    "name": "대부",
+    "material1": "GW004",
+    "material2": "GM001",
+    "공격력": 110,
+    "이속": -0.1
+  },
+  {
+    "ID": "BW012",
+    "sort": "dual",
+    "name": "피렌체식 쌍검",
+    "material1": "GW005",
+    "material2": "GM009",
+    "공격력": 23,
+    "피흡": 0.1,
+    "공속": 0.1
+  },
+  {
+    "ID": "BW013",
+    "sort": "glove",
+    "name": "건틀릿",
+    "material1": "GM001",
+    "material2": "DW008",
+    "공격력": 32,
+    "이속": -0.1
+  },
+  {
+    "ID": "BW014",
+    "sort": "glove",
+    "name": "윙 너클",
+    "material1": "GW007",
+    "material2": "DA001",
+    "공격력": 20,
+    "이속": 0.1
+  },
+  {
+    "ID": "BW015",
+    "sort": "glove",
+    "name": "귀골 장갑",
+    "material1": "BW013",
+    "material2": "DM003",
+    "공격력": 35,
+    "방어력": 13,
+    "이속": -0.1
+  },
+  {
+    "ID": "BW016",
+    "sort": "glove",
+    "name": "벽력귀투",
+    "material1": "BW013",
+    "material2": "DM018",
+    "공격력": 32,
+    "기공추": 15,
+    "이속": -0.1
+  },
+  {
+    "ID": "BW017",
+    "sort": "glove",
+    "name": "유리 너클",
+    "material1": "GW007",
+    "material2": "GA003",
+    "공격력": 28,
+    "크리": 0.1
+  },
+  {
+    "ID": "BW018",
+    "sort": "glove",
+    "name": "회단 장갑",
+    "material1": "GW006",
+    "material2": "GM007",
+    "공격력": 27,
+    "스증": 30
+  },
+  {
+    "ID": "BW019",
+    "sort": "tonfa",
+    "name": "경찰봉",
+    "material1": "GW008",
+    "material2": "DM008",
+    "공격력": 35,
+    "방어력": 8
+  },
+  {
+    "ID": "BW020",
+    "sort": "tonfa",
+    "name": "류큐톤파",
+    "material1": "GW008",
+    "material2": "GM006",
+    "공격력": 38,
+    "방어력": 18
+  },
+  {
+    "ID": "BW021",
+    "sort": "bat",
+    "name": "도깨비 방망이",
+    "material1": "GW009",
+    "material2": "DM002",
+    "공격력": 30,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "BW022",
+    "sort": "bat",
+    "name": "우산",
+    "material1": "GW009",
+    "material2": "DA004",
+    "공격력": 30,
+    "스증": 14
+  },
+  {
+    "ID": "BW023",
+    "sort": "bat",
+    "name": "횃불",
+    "material1": "GA008",
+    "material2": "GM002",
+    "공격력": 40,
+    "체력회복": 0.5,
+    "공속": 0.1,
+    "이속": 0.1
+  },
+  {
+    "ID": "BW024",
+    "sort": "whip",
+    "name": "바람 채찍",
+    "material1": "GW010",
+    "material2": "DA004",
+    "공격력": 25,
+    "스증": 20
+  },
+  {
+    "ID": "BW025",
+    "sort": "whip",
+    "name": "뇌룡편",
+    "material1": "GW011",
+    "material2": "GM011",
+    "공격력": 55,
+    "스증(%)": 0.18
+  },
+  {
+    "ID": "BW026",
+    "sort": "whip",
+    "name": "벽력편",
+    "material1": "GW011",
+    "material2": "GM005",
+    "공격력": 41,
+    "공속": 0.2
+  },
+  {
+    "ID": "BW027",
+    "sort": "throw",
+    "name": "슬링",
+    "material1": "GW014",
+    "material2": "DM004",
+    "공격력": 42
+  },
+  {
+    "ID": "BW028",
+    "sort": "throw",
+    "name": "밀가루 폭탄",
+    "material1": "GM006",
+    "material2": "GW013",
+    "공격력": 58,
+    "공속": 0.15
+  },
+  {
+    "ID": "BW029",
+    "sort": "throw",
+    "name": "볼 라이트닝",
+    "material1": "DW013",
+    "material2": "GM005",
+    "공격력": 24,
+    "공속": 0.2
+  },
+  {
+    "ID": "BW030",
+    "sort": "throw",
+    "name": "플러버",
+    "material1": "GD001",
+    "material2": "DM004",
+    "공격력": 42
+  },
+  {
+    "ID": "BW031",
+    "sort": "throw",
+    "name": "가시 탱탱볼",
+    "material1": "BW030",
+    "material2": "DM002",
+    "공격력": 36,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "BW032",
+    "sort": "shuriken",
+    "name": "부적",
+    "material1": "GW016",
+    "material2": "DA005",
+    "공격력": 40,
+    "스증(%)": 0.1
+  },
+  {
+    "ID": "BW033",
+    "sort": "shuriken",
+    "name": "유엽비도",
+    "material1": "GW018",
+    "material2": "DW011",
+    "공격력": 17,
+    "기공추": 20
+  },
+  {
+    "ID": "BW034",
+    "sort": "shuriken",
+    "name": "챠크람",
+    "material1": "GW017",
+    "material2": "DM008",
+    "공격력": 38
+  },
+  {
+    "ID": "BW035",
+    "sort": "shuriken",
+    "name": "매화비표",
+    "material1": "BW033",
+    "material2": "DA002",
+    "공격력": 14,
+    "기공추": 30,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "BW036",
+    "sort": "shuriken",
+    "name": "독침",
+    "material1": "DW026",
+    "material2": "BM002",
+    "공격력": 55,
+    "크리뎀": 0.2,
+    "스증": 15
+  },
+  {
+    "ID": "BW037",
+    "sort": "shuriken",
+    "name": "법륜",
+    "material1": "BW034",
+    "material2": "DA005",
+    "공격력": 34,
+    "스증(%)": 0.15
+  },
+  {
+    "ID": "BW038",
+    "sort": "shuriken",
+    "name": "플럼바타",
+    "material1": "GW015",
+    "material2": "GM001",
+    "공격력": 48,
+    "크리뎀": 0.25,
+    "이속": 0.1
+  },
+  {
+    "ID": "BW039",
+    "sort": "bow",
+    "name": "컴포지트 보우",
+    "material1": "GW020",
+    "material2": "DM002",
+    "공격력": 16,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "BW040",
+    "sort": "bow",
+    "name": "강궁",
+    "material1": "GW019",
+    "material2": "DM011",
+    "공격력": 26,
+    "공속": 0.15
+  },
+  {
+    "ID": "BW041",
+    "sort": "bow",
+    "name": "국궁",
+    "material1": "BW042",
+    "material2": "DM008",
+    "공격력": 20,
+    "기공추": 25
+  },
+  {
+    "ID": "BW042",
+    "sort": "bow",
+    "name": "벽력궁",
+    "material1": "GW020",
+    "material2": "DM018",
+    "공격력": 20,
+    "기공추": 11
+  },
+  {
+    "ID": "BW043",
+    "sort": "bow",
+    "name": "탄궁",
+    "material1": "GW019",
+    "material2": "GM012",
+    "공격력": 55
+  },
+  {
+    "ID": "BW044",
+    "sort": "bow",
+    "name": "화전",
+    "material1": "GW020",
+    "material2": "DM006",
+    "공격력": 24,
+    "스증": 18
+  },
+  {
+    "ID": "BW045",
+    "sort": "crossbow",
+    "name": "노",
+    "material1": "GW021",
+    "material2": "DM004",
+    "공격력": 42
+  },
+  {
+    "ID": "BW046",
+    "sort": "crossbow",
+    "name": "저격궁",
+    "material1": "GW022",
+    "material2": "DM007",
+    "공격력": 30,
+    "시야": 2.5
+  },
+  {
+    "ID": "BW047",
+    "sort": "crossbow",
+    "name": "헤비 크로스보우",
+    "material1": "GW021",
+    "material2": "GM001",
+    "공격력": 72,
+    "이속": -0.1
+  },
+  {
+    "ID": "BW048",
+    "sort": "crossbow",
+    "name": "철궁",
+    "material1": "GW022",
+    "material2": "GM010",
+    "공격력": 60
+  },
+  {
+    "ID": "BW049",
+    "sort": "pistol",
+    "name": "FN57",
+    "material1": "GW024",
+    "material2": "DM007",
+    "공격력": 29,
+    "이속": 0.1,
+    "시야": 2.5
+  },
+  {
+    "ID": "BW050",
+    "sort": "pistol",
+    "name": "더블 리볼버 SP",
+    "material1": "GW023",
+    "material2": "GW024",
+    "공격력": 40,
+    "공속": 0.1,
+    "이속": 0.1
+  },
+  {
+    "ID": "BW051",
+    "sort": "pistol",
+    "name": "매그넘-아나콘다",
+    "material1": "GW023",
+    "material2": "GM009",
+    "공격력": 43,
+    "피흡": 0.1,
+    "공속": 0.1,
+    "이속": 0.1
+  },
+  {
+    "ID": "BW052",
+    "sort": "rifle",
+    "name": "AK-47",
+    "material1": "GW025",
+    "material2": "DT004",
+    "공격력": 29,
+    "기공추": 2,
+    "시야": 1.5
+  },
+  {
+    "ID": "BW053",
+    "sort": "rifle",
+    "name": "M16A1",
+    "material1": "GW025",
+    "material2": "DM019",
+    "공격력": 25,
+    "기공추": 4,
+    "시야": 1.5
+  },
+  {
+    "ID": "BW054",
+    "sort": "sniper",
+    "name": "하푼건",
+    "material1": "GW026",
+    "material2": "DW024",
+    "공격력": 64,
+    "이속": -0.07,
+    "시야": 2
+  },
+  {
+    "ID": "BW055",
+    "sort": "sniper",
+    "name": "금교전",
+    "material1": "GW026",
+    "material2": "GM011",
+    "공격력": 56,
+    "스증(%)": 0.18,
+    "이속": -0.07,
+    "시야": 2.5
+  },
+  {
+    "ID": "BW056",
+    "sort": "sniper",
+    "name": "레일건",
+    "material1": "GW026",
+    "material2": "GM008",
+    "공격력": 78,
+    "공속": 0.2,
+    "이속": -0.03,
+    "시야": 2
+  },
+  {
+    "ID": "BW057",
+    "sort": "hammer",
+    "name": "모닝 스타",
+    "material1": "GW027",
+    "material2": "DW013",
+    "공격력": 55
+  },
+  {
+    "ID": "BW058",
+    "sort": "hammer",
+    "name": "사슴 망치",
+    "material1": "GW027",
+    "material2": "DM019",
+    "공격력": 56
+  },
+  {
+    "ID": "BW059",
+    "sort": "spear",
+    "name": "바이던트",
+    "material1": "GW028",
+    "material2": "DW003",
+    "공격력": 52
+  },
+  {
+    "ID": "BW060",
+    "sort": "spear",
+    "name": "파이크",
+    "material1": "DW024",
+    "material2": "GM001",
+    "공격력": 67,
+    "이속": -0.1
+  },
+  {
+    "ID": "BW061",
+    "sort": "spear",
+    "name": "도끼창",
+    "material1": "DW006",
+    "material2": "BW060",
+    "공격력": 90,
+    "이속": -0.1
+  },
+  {
+    "ID": "BW062",
+    "sort": "spear",
+    "name": "강창",
+    "material1": "GW028",
+    "material2": "DA001",
+    "공격력": 40,
+    "이속": 0.1
+  },
+  {
+    "ID": "BW063",
+    "sort": "nunchaku",
+    "name": "샤퍼",
+    "material1": "GW029",
+    "material2": "DM002",
+    "공격력": 19,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "BW064",
+    "sort": "nunchaku",
+    "name": "블리더",
+    "material1": "GW029",
+    "material2": "DW015",
+    "공격력": 38
+  },
+  {
+    "ID": "BW065",
+    "sort": "rapier",
+    "name": "매화검",
+    "material1": "GW030",
+    "material2": "GA002",
+    "공격력": 21,
+    "크리": 0.1,
+    "크리뎀": 0.25,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "BW066",
+    "sort": "guitar",
+    "name": "루비 스페셜",
+    "material1": "GW032",
+    "material2": "GM004",
+    "공격력": 20,
+    "기공추": 2,
+    "체력": 300,
+    "공속": 0.2
+  },
+  {
+    "ID": "BW067",
+    "sort": "guitar",
+    "name": "험버커 픽업",
+    "material1": "GW031",
+    "material2": "GA005",
+    "공격력": 25,
+    "스증(%)": 0.15,
+    "시야": 3
+  },
+  {
+    "ID": "BW068",
+    "sort": "guitar",
+    "name": "King-V",
+    "material1": "GW031",
+    "material2": "DW001",
+    "공격력": 13,
+    "스증(%)": 0.16
+  },
+  {
+    "ID": "BW069",
+    "sort": "guitar",
+    "name": "노캐스터",
+    "material1": "GW032",
+    "material2": "GM009",
+    "공격력": 15,
+    "기공추": 10,
+    "피흡": 0.1,
+    "공속": 0.2
+  },
+  {
+    "ID": "BW070",
+    "sort": "guitar",
+    "name": "슈퍼스트렛",
+    "material1": "GW032",
+    "material2": "DW009",
+    "공격력": 19,
+    "기공추": 2,
+    "공속": 0.15
+  },
+  {
+    "ID": "BW071",
+    "sort": "guitar",
+    "name": "야생마",
+    "material1": "GW032",
+    "material2": "DM011",
+    "공격력": 9,
+    "기공추": 6,
+    "공속": 0.25
+  },
+  {
+    "ID": "BC001",
+    "sort": "옷",
+    "name": "라이더 자켓",
+    "material1": "GC002",
+    "material2": "DW025",
+    "방어력": 11,
+    "체력": 70,
+    "기공뎀 감소": 9
+  },
+  {
+    "ID": "BC002",
+    "sort": "옷",
+    "name": "사슬 갑옷",
+    "material1": "GC001",
+    "material2": "DW025",
+    "방어력": 30
+  },
+  {
+    "ID": "BC003",
+    "sort": "옷",
+    "name": "정장",
+    "material1": "GC004",
+    "material2": "DA003",
+    "피흡": 0.05,
+    "기공뎀 감소": 12
+  },
+  {
+    "ID": "BC004",
+    "sort": "옷",
+    "name": "치파오",
+    "material1": "GC006",
+    "material2": "DW015",
+    "공격력": 10,
+    "방어력": 10,
+    "스태회복(%)": 1.5
+  },
+  {
+    "ID": "BC005",
+    "sort": "옷",
+    "name": "판금 갑옷",
+    "material1": "DC004",
+    "material2": "GM001",
+    "방어력": 38,
+    "체력": 100,
+    "이속": -0.1
+  },
+  {
+    "ID": "BC006",
+    "sort": "옷",
+    "name": "한복",
+    "material1": "GC005",
+    "material2": "DA002",
+    "방어력": 12,
+    "체력회복": 1,
+    "쿨타임(%)": 0.08
+  },
+  {
+    "ID": "BC007",
+    "sort": "옷",
+    "name": "방탄조끼",
+    "material1": "GC004",
+    "material2": "GM010",
+    "방어력": 10,
+    "체력": 130,
+    "기공뎀 감소": 10
+  },
+  {
+    "ID": "BC008",
+    "sort": "옷",
+    "name": "석양의 갑옷",
+    "material1": "GC001",
+    "material2": "GM004",
+    "방어력": 28,
+    "체력": 450
+  },
+  {
+    "ID": "BC009",
+    "sort": "옷",
+    "name": "어사의",
+    "material1": "BC006",
+    "material2": "DM008",
+    "방어력": 23,
+    "체력회복": 2.5,
+    "쿨타임(%)": 0.15
+  },
+  {
+    "ID": "BH001",
+    "sort": "머리",
+    "name": "방탄모",
+    "material1": "GH003",
+    "material2": "DH003",
+    "방어력": 15,
+    "체력": 90,
+    "쿨타임(%)": 0.08
+  },
+  {
+    "ID": "BH002",
+    "sort": "머리",
+    "name": "소방 헬멧",
+    "material1": "GH005",
+    "material2": "DD002",
+    "피흡": 280
+  },
+  {
+    "ID": "BH003",
+    "sort": "머리",
+    "name": "티아라",
+    "material1": "GH002",
+    "material2": "DM008",
+    "방어력": 14,
+    "스태": 460
+  },
+  {
+    "ID": "BH004",
+    "sort": "머리",
+    "name": "왕관",
+    "material1": "GH002",
+    "material2": "GM011",
+    "스증(%)": 0.08,
+    "방어력": 16,
+    "스태": 360
+  },
+  {
+    "ID": "BH005",
+    "sort": "머리",
+    "name": "투구",
+    "material1": "GH004",
+    "material2": "GH001",
+    "방어력": 20,
+    "스태": 130,
+    "쿨타임(%)": 0.1,
+    "이속": 0.1
+  },
+  {
+    "ID": "BH006",
+    "sort": "머리",
+    "name": "오토바이 헬멧",
+    "material1": "BH002",
+    "material2": "DA009",
+    "공격력": 10,
+    "피흡": 300,
+    "시야": 1.5
+  },
+  {
+    "ID": "BB001",
+    "sort": "팔",
+    "name": "검집",
+    "material1": "DM019",
+    "material2": "GM010",
+    "공격력": 18,
+    "기공뎀 감소": 2
+  },
+  {
+    "ID": "BB002",
+    "sort": "팔",
+    "name": "금팔찌",
+    "material1": "DB003",
+    "material2": "GM011",
+    "스증": 0.12,
+    "스태": 220
+  },
+  {
+    "ID": "BB003",
+    "sort": "팔",
+    "name": "바주반드",
+    "material1": "GB003",
+    "material2": "GM010",
+    "공격력": 25,
+    "기공뎀 감소": 8
+  },
+  {
+    "ID": "BB004",
+    "sort": "팔",
+    "name": "진홍 팔찌",
+    "material1": "DB003",
+    "material2": "GM004",
+    "체력": 200,
+    "스태": 250
+  },
+  {
+    "ID": "BB005",
+    "sort": "팔",
+    "name": "강철 방패",
+    "material1": "GB001",
+    "material2": "GM001",
+    "공격력": 23,
+    "방어력": 20,
+    "이속": -0.05
+  },
+  {
+    "ID": "BB006",
+    "sort": "팔",
+    "name": "큐브 워치",
+    "material1": "DB001",
+    "material2": "BM001",
+    "방어력": 27,
+    "공속": 0.5
+  },
+  {
+    "ID": "BS001",
+    "sort": "다리",
+    "name": "부츠",
+    "material1": "DS002",
+    "material2": "GM002",
+    "체력회복": 0.6,
+    "공속": 0.02,
+    "이속": 0.22
+  },
+  {
+    "ID": "BS002",
+    "sort": "다리",
+    "name": "강철 무릎 보호대",
+    "material1": "GS001",
+    "material2": "GM001",
+    "방어력": 20,
+    "이속": 0.24
+  },
+  {
+    "ID": "BS003",
+    "sort": "다리",
+    "name": "매버릭 러너",
+    "material1": "GS004",
+    "material2": "GM008",
+    "공속": 0.15,
+    "이속": 0.25,
+    "비전투 이속": 0.5
+  },
+  {
+    "ID": "BS004",
+    "sort": "다리",
+    "name": "전투화",
+    "material1": "BS001",
+    "material2": "DM019",
+    "체력회복": 0.6,
+    "공속": 0.07,
+    "이속": 0.27
+  },
+  {
+    "ID": "BS005",
+    "sort": "다리",
+    "name": "킬힐",
+    "material1": "GS003",
+    "material2": "GA003",
+    "공격력": 5,
+    "크리": 0.1,
+    "스태회복": 0.8,
+    "이속": 0.16
+  },
+  {
+    "ID": "BS006",
+    "sort": "다리",
+    "name": "풍화륜",
+    "material1": "GS005",
+    "material2": "GM007",
+    "스증": 10,
+    "스태회복": 0.7,
+    "스태회복(%)": 0.5,
+    "이속": 0.35
+  },
+  {
+    "ID": "BA001",
+    "sort": "장식",
+    "name": "백우선",
+    "material1": "GA009",
+    "material2": "DA001",
+    "스증": 16,
+    "이속": 0.1,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "BA002",
+    "sort": "장식",
+    "name": "생명의 가루",
+    "material1": "DM021",
+    "material2": "DM020",
+    "체력회복": 1.5,
+    "스태회복": 1.5
+  },
+  {
+    "ID": "BA003",
+    "sort": "장식",
+    "name": "우치와",
+    "material1": "GA004",
+    "material2": "DA004",
+    "스증": 21,
+    "피흡": 0.15,
+    "스태회복(%)": 1
+  },
+  {
+    "ID": "BA004",
+    "sort": "장식",
+    "name": "탄창",
+    "material1": "DA006",
+    "material2": "GM010",
+    "체력": 0.5,
+    "기공뎀 감소": 6
+  },
+  {
+    "ID": "BA005",
+    "sort": "장식",
+    "name": "궁기병의 화살통",
+    "material1": "GA007",
+    "material2": "GA008",
+    "공격력": 10,
+    "공속": 0.3,
+    "이속": 0.1
+  },
+  {
+    "ID": "BA006",
+    "sort": "장식",
+    "name": "월왕구천",
+    "material1": "GA010",
+    "material2": "GM009",
+    "공격력": 10,
+    "스증(%)": 0.2
+  },
+  {
+    "ID": "BA007",
+    "sort": "장식",
+    "name": "달빛 펜던트",
+    "material1": "DA003",
+    "material2": "BM001",
+    "공격력": 20,
+    "피흡": 0.2
+  },
+  {
+    "ID": "BA008",
+    "sort": "장식",
+    "name": "슈뢰딩거의 상자",
+    "material1": "DA006",
+    "material2": "BM002",
+    "스증": 7,
+    "체력": 420
+  },
+  {
+    "ID": "BA009",
+    "sort": "장식",
+    "name": "진리는 나의 빛",
+    "material1": "GA006",
+    "material2": "GA001",
+    "기공추": 12,
+    "스증(%)": 0.08,
+    "체력회복(%)": 1.5,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "BT001",
+    "sort": "설치",
+    "name": "RDX",
+    "material1": "GT003",
+    "material2": "DM005"
+  },
+  {
+    "ID": "BT002",
+    "sort": "설치",
+    "name": "미스릴 실",
+    "material1": "DM024",
+    "material2": "DT004"
+  },
+  {
+    "ID": "PM001",
+    "sort": "재료",
+    "name": "포스 코어",
+    "material1": "BA002",
+    "material2": "DM022"
+  },
+  {
+    "ID": "PW001",
+    "sort": "dagger",
+    "name": "카른웬난",
+    "material1": "BW001",
+    "material2": "GA001",
+    "공격력": 37,
+    "기공추": 29,
+    "체력회복": 1.5,
+    "쿨타임(%)": 0.1,
+    "이속": 0.1
+  },
+  {
+    "ID": "PW002",
+    "sort": "dagger",
+    "name": "파산검",
+    "material1": "BW001",
+    "material2": "GM007",
+    "공격력": 38,
+    "스증": 30,
+    "쿨타임(%)": 0.1,
+    "이속": 0.1
+  },
+  {
+    "ID": "PW003",
+    "sort": "dagger",
+    "name": "초진동나이프",
+    "material1": "GW001",
+    "material2": "BM003",
+    "공격력": 57,
+    "공속": 0.35,
+    "이속": 0.1
+  },
+  {
+    "ID": "PW004",
+    "sort": "twoHand",
+    "name": "아론다이트",
+    "material1": "BW003",
+    "material2": "DA008",
+    "공격력": 50,
+    "기공추": 25,
+    "공속": 0.25
+  },
+  {
+    "ID": "PW005",
+    "sort": "twoHand",
+    "name": "엑스칼리버",
+    "material1": "BW006",
+    "material2": "DA007",
+    "공격력": 60,
+    "체력": 400,
+    "체력회복(%)": 2
+  },
+  {
+    "ID": "PW006",
+    "sort": "twoHand",
+    "name": "모노호시자오",
+    "material1": "BW004",
+    "material2": "GM009",
+    "공격력": 74,
+    "피흡": 0.18
+  },
+  {
+    "ID": "PW007",
+    "sort": "twoHand",
+    "name": "호푸어드",
+    "material1": "BW006",
+    "material2": "GA003",
+    "공격력": 45,
+    "크리": 0.2,
+    "체력": 300
+  },
+  {
+    "ID": "PW008",
+    "sort": "axe",
+    "name": "빔 엑스",
+    "material1": "BW011",
+    "material2": "DM007",
+    "공격력": 137,
+    "이속": -0.1,
+    "시야": 4
+  },
+  {
+    "ID": "PW009",
+    "sort": "axe",
+    "name": "산타 무에르테",
+    "material1": "BW010",
+    "material2": "GM004",
+    "공격력": 100,
+    "피흡": 0.15,
+    "체력": 450,
+    "사거리": 0.5
+  },
+  {
+    "ID": "PW010",
+    "sort": "axe",
+    "name": "스퀴테",
+    "material1": "BW010",
+    "material2": "GM011",
+    "공격력": 130,
+    "스증(%)": 0.18,
+    "사거리": 1
+  },
+  {
+    "ID": "PW011",
+    "sort": "axe",
+    "name": "파라슈",
+    "material1": "BW009",
+    "material2": "GA006",
+    "공격력": 115,
+    "쿨타임(%)": 0.1,
+    "이속": 0.15
+  },
+  {
+    "ID": "PW012",
+    "sort": "axe",
+    "name": "하르페",
+    "material1": "BW010",
+    "material2": "BA001",
+    "공격력": 105,
+    "스증": 33,
+    "이속": 0.1,
+    "치유감소": 0.4,
+    "사거리": 0.5
+  },
+  {
+    "ID": "PW013",
+    "sort": "dual",
+    "name": "이천일류",
+    "material1": "BW012",
+    "material2": "DM002",
+    "공격력": 44,
+    "피흡": 0.18,
+    "공속": 0.1,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "PW014",
+    "sort": "dual",
+    "name": "자웅일대검",
+    "material1": "GW005",
+    "material2": "BM001",
+    "공격력": 55,
+    "공속": 0.5
+  },
+  {
+    "ID": "PW015",
+    "sort": "dual",
+    "name": "디오스쿠로이",
+    "material1": "GW005",
+    "material2": "BM005",
+    "공격력": 40,
+    "공속": 0.5
+  },
+  {
+    "ID": "PW016",
+    "sort": "dual",
+    "name": "로이거 차르",
+    "material1": "GW005",
+    "material2": "BM002",
+    "공격력": 33,
+    "스증": 36,
+    "공속": 0.2
+  },
+  {
+    "ID": "PW017",
+    "sort": "glove",
+    "name": "단영촌천투",
+    "material1": "BW015",
+    "material2": "GA004",
+    "공격력": 50,
+    "피흡": 0.1,
+    "방어력": 25,
+    "스태회복(%)": 0.5
+  },
+  {
+    "ID": "PW018",
+    "sort": "glove",
+    "name": "디바인 피스트",
+    "material1": "BW016",
+    "material2": "DA008",
+    "공격력": 46,
+    "기공추": 33,
+    "이속": -0.05
+  },
+  {
+    "ID": "PW019",
+    "sort": "glove",
+    "name": "블러드윙 너클",
+    "material1": "BW014",
+    "material2": "GM004",
+    "공격력": 53,
+    "방어력": 250,
+    "이속": 0.1
+  },
+  {
+    "ID": "PW020",
+    "sort": "glove",
+    "name": "빙화현옥수",
+    "material1": "BW018",
+    "material2": "DD003",
+    "공격력": 27,
+    "스증": 38,
+    "쿨타임(%)": 0.15
+  },
+  {
+    "ID": "PW021",
+    "sort": "glove",
+    "name": "여래수투",
+    "material1": "BW018",
+    "material2": "GA006",
+    "공격력": 33,
+    "스증(%)": 0.18,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "PW022",
+    "sort": "glove",
+    "name": "브레이질 건틀릿",
+    "material1": "BW015",
+    "material2": "GM002",
+    "공격력": 48,
+    "방어력": 13,
+    "체력회복": 1,
+    "공속": 0.3,
+    "이속": -0.05
+  },
+  {
+    "ID": "PW023",
+    "sort": "glove",
+    "name": "소수",
+    "material1": "BW017",
+    "material2": "GM006",
+    "공격력": 55,
+    "크리": 20
+  },
+  {
+    "ID": "PW024",
+    "sort": "glove",
+    "name": "천잠장갑",
+    "material1": "BT002",
+    "material2": "GW006",
+    "공격력": 85,
+    "이속": 0.1
+  },
+  {
+    "ID": "PW025",
+    "sort": "tonfa",
+    "name": "택티컬 톤파",
+    "material1": "BW019",
+    "material2": "GM009",
+    "공격력": 74,
+    "피흡": 0.25,
+    "방어력": 10
+  },
+  {
+    "ID": "PW026",
+    "sort": "tonfa",
+    "name": "마이쏙",
+    "material1": "BW020",
+    "material2": "DW010",
+    "공격력": 54,
+    "방어력": 20,
+    "체력회복(%)": 1
+  },
+  {
+    "ID": "PW027",
+    "sort": "tonfa",
+    "name": "플라즈마 톤파",
+    "material1": "BW020",
+    "material2": "DM007",
+    "공격력": 65,
+    "방어력": 18,
+    "시야": 2.5
+  },
+  {
+    "ID": "PW028",
+    "sort": "bat",
+    "name": "구원의 여신상",
+    "material1": "BW023",
+    "material2": "GA004",
+    "공격력": 90,
+    "피흡": 0.1,
+    "체력회복": 0.6,
+    "스태회복(%)": 0.6,
+    "공속": 0.15,
+    "이속": 0.1
+  },
+  {
+    "ID": "PW029",
+    "sort": "bat",
+    "name": "타구봉",
+    "material1": "BW021",
+    "material2": "BM003",
+    "공격력": 80,
+    "공속": 0.5,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "PW030",
+    "sort": "bat",
+    "name": "스파이의 우산",
+    "material1": "BW022",
+    "material2": "BM002",
+    "공격력": 65,
+    "스증": 25
+  },
+  {
+    "ID": "PW031",
+    "sort": "whip",
+    "name": "글레이프니르",
+    "material1": "BW024",
+    "material2": "GF001",
+    "공격력": 58,
+    "스증": 35
+  },
+  {
+    "ID": "PW032",
+    "sort": "whip",
+    "name": "플라즈마 윕",
+    "material1": "BW026",
+    "material2": "DM007",
+    "공격력": 54,
+    "공속": 0.3,
+    "시야": 2.3
+  },
+  {
+    "ID": "PW033",
+    "sort": "throw",
+    "name": "소이탄",
+    "material1": "GW013",
+    "material2": "BW029",
+    "공격력": 70,
+    "공속": 0.5
+  },
+  {
+    "ID": "PW034",
+    "sort": "throw",
+    "name": "안티오크의 수류탄",
+    "material1": "PW035",
+    "material2": "DA008",
+    "공격력": 85,
+    "기공추": 80
+  },
+  {
+    "ID": "PW035",
+    "sort": "throw",
+    "name": "고폭 수류탄",
+    "material1": "GW012",
+    "material2": "BT001",
+    "공격력": 56,
+    "기공추": 60
+  },
+  {
+    "ID": "PW036",
+    "sort": "throw",
+    "name": "다비드슬링",
+    "material1": "BW027",
+    "material2": "GA001",
+    "공격력": 75,
+    "기공추": 30,
+    "체력회복(%)": 1.5
+  },
+  {
+    "ID": "PW037",
+    "sort": "throw",
+    "name": "연막탄",
+    "material1": "BW028",
+    "material2": "GD009",
+    "공격력": 90,
+    "공속": 0.4
+  },
+  {
+    "ID": "PW038",
+    "sort": "throw",
+    "name": "루테늄 구슬",
+    "material1": "BW031",
+    "material2": "GM011",
+    "공격력": 80,
+    "스증(%)": 0.2,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "PW039",
+    "sort": "shuriken",
+    "name": "미치광이왕의 카드",
+    "material1": "GW016",
+    "material2": "BM005",
+    "공격력": 49,
+    "크리": 0.2,
+    "공속": 0.3
+  },
+  {
+    "ID": "PW040",
+    "sort": "shuriken",
+    "name": "옥전결",
+    "material1": "BW032",
+    "material2": "GM007",
+    "공격력": 60,
+    "스증(%)": 0.15
+  },
+  {
+    "ID": "PW041",
+    "sort": "shuriken",
+    "name": "풍마 수리검",
+    "material1": "BW035",
+    "material2": "DM010",
+    "공격력": 48,
+    "기공추": 36,
+    "쿨타임(%)": 0.15
+  },
+  {
+    "ID": "PW042",
+    "sort": "shuriken",
+    "name": "빙백은침",
+    "material1": "BW036",
+    "material2": "DD003",
+    "공격력": 80,
+    "크리뎀": 0.5,
+    "스증": 20
+  },
+  {
+    "ID": "PW043",
+    "sort": "shuriken",
+    "name": "푸른색 단도",
+    "material1": "GW018",
+    "material2": "BM002",
+    "공격력": 20,
+    "기공추": 29,
+    "스증": 24
+  },
+  {
+    "ID": "PW044",
+    "sort": "shuriken",
+    "name": "플레셋",
+    "material1": "BW038",
+    "material2": "GM006",
+    "공격력": 85,
+    "크리뎀": 0.4,
+    "이속": 0.2
+  },
+  {
+    "ID": "PW045",
+    "sort": "shuriken",
+    "name": "건곤권",
+    "material1": "BW037",
+    "material2": "DW009",
+    "공격력": 55,
+    "스증(%)": 0.2
+  },
+  {
+    "ID": "PW046",
+    "sort": "shuriken",
+    "name": "생사부",
+    "material1": "BW032",
+    "material2": "DM021",
+    "공격력": 80,
+    "스증(%)": 0.23
+  },
+  {
+    "ID": "PW047",
+    "sort": "bow",
+    "name": "편전",
+    "material1": "BW041",
+    "material2": "DW009",
+    "공격력": 55,
+    "기공추": 40
+  },
+  {
+    "ID": "PW048",
+    "sort": "bow",
+    "name": "골든래쇼 보우",
+    "material1": "BW043",
+    "material2": "GM011",
+    "공격력": 68,
+    "스증(%)": 0.2
+  },
+  {
+    "ID": "PW049",
+    "sort": "bow",
+    "name": "트윈보우",
+    "material1": "BW040",
+    "material2": "BW039",
+    "공격력": 70,
+    "공속": 0.5,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "PW050",
+    "sort": "bow",
+    "name": "엘리멘탈 보우",
+    "material1": "BW044",
+    "material2": "BA001",
+    "공격력": 60,
+    "스증": 41,
+    "이속": 0.1,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "PW051",
+    "sort": "crossbow",
+    "name": "대황",
+    "material1": "BW048",
+    "material2": "GM002",
+    "공격력": 75,
+    "체력회복": 2,
+    "공속": 0.5
+  },
+  {
+    "ID": "PW052",
+    "sort": "crossbow",
+    "name": "발리스타",
+    "material1": "BW047",
+    "material2": "DW024",
+    "공격력": 115,
+    "공속": -0.05
+  },
+  {
+    "ID": "PW053",
+    "sort": "crossbow",
+    "name": "저격 크로스보우",
+    "material1": "BW046",
+    "material2": "GA005",
+    "공격력": 85,
+    "사거리": 1,
+    "시야": 3.5
+  },
+  {
+    "ID": "PW054",
+    "sort": "crossbow",
+    "name": "영광금귀신기노",
+    "material1": "BW045",
+    "material2": "BT001",
+    "공격력": 70,
+    "기공추": 37
+  },
+  {
+    "ID": "PW055",
+    "sort": "pistol",
+    "name": "마탄의 사수",
+    "material1": "BW050",
+    "material2": "GM007",
+    "공격력": 30,
+    "스증": 40,
+    "공속": 0.1,
+    "이속": 0.1
+  },
+  {
+    "ID": "PW056",
+    "sort": "pistol",
+    "name": "엘레강스",
+    "material1": "BW049",
+    "material2": "GA008",
+    "공격력": 90,
+    "이속": 0.2,
+    "시야": 5
+  },
+  {
+    "ID": "PW057",
+    "sort": "pistol",
+    "name": "일렉트론 블라스터",
+    "material1": "GW024",
+    "material2": "BM005",
+    "공격력": 65,
+    "기공추": 28,
+    "공속": 0.5,
+    "이속": 0.1
+  },
+  {
+    "ID": "PW058",
+    "sort": "pistol",
+    "name": "매그넘-보아",
+    "material1": "BW051",
+    "material2": "GM001",
+    "공격력": 90,
+    "피흡": 0.2,
+    "공속": 0.25,
+    "이속": 0.1,
+    "시야": 3.5
+  },
+  {
+    "ID": "PW059",
+    "sort": "rifle",
+    "name": "기관총",
+    "material1": "GW025",
+    "material2": "BM003",
+    "공격력": 20,
+    "공속": 0.1,
+    "시야": 1.5
+  },
+  {
+    "ID": "PW060",
+    "sort": "rifle",
+    "name": "개틀링건",
+    "material1": "PW059",
+    "material2": "DM011",
+    "공격력": 50,
+    "기공추": 12,
+    "공속": 0.15,
+    "시야": 1.5
+  },
+  {
+    "ID": "PW061",
+    "sort": "rifle",
+    "name": "AK-12",
+    "material1": "BW052",
+    "material2": "BM004",
+    "공격력": 94,
+    "크리": 0.2,
+    "시야": 1.5
+  },
+  {
+    "ID": "PW062",
+    "sort": "rifle",
+    "name": "XCR",
+    "material1": "BW053",
+    "material2": "BA004",
+    "공격력": 63,
+    "기공추": 10,
+    "체력": 350,
+    "시야": 1.5
+  },
+  {
+    "ID": "PW063",
+    "sort": "sniper",
+    "name": "Tac-50",
+    "material1": "BW054",
+    "material2": "GM009",
+    "공격력": 140,
+    "피흡": 0.2,
+    "시야": 2.5
+  },
+  {
+    "ID": "PW064",
+    "sort": "sniper",
+    "name": "인터벤션",
+    "material1": "BW054",
+    "material2": "GT009",
+    "공격력": 115,
+    "사거리": 1,
+    "시야": 4.5
+  },
+  {
+    "ID": "PW065",
+    "sort": "sniper",
+    "name": "NTW-20",
+    "material1": "BW055",
+    "material2": "GM010",
+    "공격력": 95,
+    "스증(%)": 0.22,
+    "이속": -0.07,
+    "시야": 2.5
+  },
+  {
+    "ID": "PW066",
+    "sort": "sniper",
+    "name": "폴라리스",
+    "material1": "BW056",
+    "material2": "GM006",
+    "공격력": 135,
+    "공속": 0.4,
+    "이속": -0.03,
+    "시야": 2
+  },
+  {
+    "ID": "PW067",
+    "sort": "hammer",
+    "name": "낭아봉",
+    "material1": "BW057",
+    "material2": "GM012",
+    "공격력": 55,
+    "스증": 31
+  },
+  {
+    "ID": "PW068",
+    "sort": "hammer",
+    "name": "다그다의 망치",
+    "material1": "BW058",
+    "material2": "GA001",
+    "공격력": 95,
+    "기공추": 20,
+    "체력회복(%)": 1.5
+  },
+  {
+    "ID": "PW069",
+    "sort": "hammer",
+    "name": "토르의 망치",
+    "material1": "BW058",
+    "material2": "BM005",
+    "공격력": 120,
+    "공속": 0.4
+  },
+  {
+    "ID": "PW070",
+    "sort": "hammer",
+    "name": "개밥바라기",
+    "material1": "BW057",
+    "material2": "BM001",
+    "공격력": 150
+  },
+  {
+    "ID": "PW071",
+    "sort": "hammer",
+    "name": "마법봉",
+    "material1": "GW027",
+    "material2": "BA007",
+    "공격력": 65,
+    "스증(%)": 0.27,
+    "피흡": 0.3
+  },
+  {
+    "ID": "PW072",
+    "sort": "spear",
+    "name": "애각창",
+    "material1": "BW062",
+    "material2": "GM006",
+    "공격력": 105,
+    "이속": 0.2
+  },
+  {
+    "ID": "PW073",
+    "sort": "spear",
+    "name": "장팔사모",
+    "material1": "BW062",
+    "material2": "BM005",
+    "공격력": 100,
+    "공속": 0.4
+  },
+  {
+    "ID": "PW074",
+    "sort": "spear",
+    "name": "코스믹 바이던트",
+    "material1": "BW059",
+    "material2": "BM001",
+    "공격력": 150
+  },
+  {
+    "ID": "PW075",
+    "sort": "spear",
+    "name": "트리아이나",
+    "material1": "BW059",
+    "material2": "BW060",
+    "공격력": 120
+  },
+  {
+    "ID": "PW076",
+    "sort": "spear",
+    "name": "방천화극",
+    "material1": "BW061",
+    "material2": "GA009",
+    "공격력": 88,
+    "스증": 31,
+    "이속": -0.1,
+    "치유감소": -0.4
+  },
+  {
+    "ID": "PW077",
+    "sort": "spear",
+    "name": "청룡언월도",
+    "material1": "BW061",
+    "material2": "GM010",
+    "공격력": 130,
+    "이속": -0.05
+  },
+  {
+    "ID": "PW078",
+    "sort": "nunchaku",
+    "name": "대소반룡곤",
+    "material1": "BW063",
+    "material2": "GM007",
+    "공격력": 50,
+    "스증": 14,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "PW079",
+    "sort": "nunchaku",
+    "name": "초진동눈차크",
+    "material1": "BW064",
+    "material2": "BM003",
+    "공격력": 65,
+    "공속": 0.5
+  },
+  {
+    "ID": "PW080",
+    "sort": "rapier",
+    "name": "활빈검",
+    "material1": "GW030",
+    "material2": "BC009",
+    "공격력": 30,
+    "크리뎀": 0.25,
+    "체력회복": 1.5,
+    "스태회복(%)": 2,
+    "쿨타임(%)": 0.12
+  },
+  {
+    "ID": "PW081",
+    "sort": "rapier",
+    "name": "듀랜달 Mk2",
+    "material1": "BW065",
+    "material2": "DM007",
+    "공격력": 51,
+    "크리": 0.1,
+    "크리뎀": 0.25,
+    "쿨타임(%)": 0.1,
+    "시야": 3
+  },
+  {
+    "ID": "PW082",
+    "sort": "rapier",
+    "name": "볼틱레토",
+    "material1": "BW065",
+    "material2": "GM008",
+    "공격력": 47,
+    "크리": 0.1,
+    "크리뎀": 0.25,
+    "공속": 0.35,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "PW083",
+    "sort": "rapier",
+    "name": "유성검",
+    "material1": "BW065",
+    "material2": "DM022",
+    "공격력": 75,
+    "크리뎀": 0.3,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "PW084",
+    "sort": "rapier",
+    "name": "주와이외즈",
+    "material1": "GW030",
+    "material2": "DM024",
+    "공격력": 75,
+    "크리뎀": 0.3,
+    "이속": 0.2
+  },
+  {
+    "ID": "PW085",
+    "sort": "guitar",
+    "name": "보헤미안",
+    "material1": "BW066",
+    "material2": "DW016",
+    "공격력": 50,
+    "크리": 0.2,
+    "기공추": 2,
+    "체력": 380,
+    "공속": 0.2
+  },
+  {
+    "ID": "PW086",
+    "sort": "guitar",
+    "name": "천국의 계단",
+    "material1": "BW067",
+    "material2": "DA007",
+    "공격력": 56,
+    "스증(%)": 0.2,
+    "체력회복(%)": 2,
+    "시야": 4
+  },
+  {
+    "ID": "PW087",
+    "sort": "guitar",
+    "name": "퍼플 헤이즈",
+    "material1": "BW068",
+    "material2": "GM007",
+    "공격력": 85,
+    "스증(%)": 0.21
+  },
+  {
+    "ID": "PW088",
+    "sort": "guitar",
+    "name": "새티스팩션",
+    "material1": "BW069",
+    "material2": "DM020",
+    "공격력": 30,
+    "기공추": 11,
+    "피흡": 0.1,
+    "공속": 0.3
+  },
+  {
+    "ID": "PW089",
+    "sort": "guitar",
+    "name": "원더풀 투나잇",
+    "material1": "BW070",
+    "material2": "DM022",
+    "공격력": 100,
+    "기공추": 2,
+    "공속": 0.18
+  },
+  {
+    "ID": "PW090",
+    "sort": "guitar",
+    "name": "더 월",
+    "material1": "BW070",
+    "material2": "GM006",
+    "공격력": 70,
+    "기공추": 2,
+    "공속": 0.18
+  },
+  {
+    "ID": "PW091",
+    "sort": "guitar",
+    "name": "틴 스피릿",
+    "material1": "BW071",
+    "material2": "GA006",
+    "공격력": 10,
+    "기공추": 20,
+    "공속": 0.25
+  },
+  {
+    "ID": "PC001",
+    "sort": "옷",
+    "name": "광학미채 슈트",
+    "material1": "GC008",
+    "material2": "BM004",
+    "공격력": 10,
+    "크리": 0.22,
+    "방어력": 20,
+    "스킬뎀 감소": 0.1
+  },
+  {
+    "ID": "PC002",
+    "sort": "옷",
+    "name": "락커의 자켓",
+    "material1": "BC001",
+    "material2": "GT006",
+    "공격력": 30,
+    "방어력": 11,
+    "기공뎀 감소": 11,
+    "비전투 이속": 0.15,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "PC003",
+    "sort": "옷",
+    "name": "미스릴 갑옷",
+    "material1": "GC001",
+    "material2": "DM024",
+    "방어력": 65,
+    "공속": 0.12,
+    "이속": 0.2
+  },
+  {
+    "ID": "PC004",
+    "sort": "옷",
+    "name": "성기사의 갑옷",
+    "material1": "BC005",
+    "material2": "GA001",
+    "기공추": 15,
+    "방어력": 30,
+    "체력회복(%)": 2,
+    "이속": -0.02
+  },
+  {
+    "ID": "PC005",
+    "sort": "옷",
+    "name": "아마조네스 아머",
+    "material1": "BC005",
+    "material2": "GC007",
+    "방어력": 28,
+    "체력": 120,
+    "스킬뎀 감소": 0.2
+  },
+  {
+    "ID": "PC006",
+    "sort": "옷",
+    "name": "용의 도복",
+    "material1": "BC004",
+    "material2": "GC003",
+    "공격력": 11,
+    "방어력": 10,
+    "스태회복(%)": 1.5,
+    "쿨타임(%)": 0.1,
+    "사거리": 1
+  },
+  {
+    "ID": "PC007",
+    "sort": "옷",
+    "name": "지휘관의 갑옷",
+    "material1": "BC002",
+    "material2": "GM011",
+    "스증(%)": 0.18,
+    "방어력": 20
+  },
+  {
+    "ID": "PC008",
+    "sort": "옷",
+    "name": "집사복",
+    "material1": "BC003",
+    "material2": "GA008",
+    "공격력": 30,
+    "피흡": 0.2,
+    "기공뎀 감소": 10,
+    "이속": 0.1
+  },
+  {
+    "ID": "PC009",
+    "sort": "옷",
+    "name": "배틀 슈트",
+    "material1": "BC007",
+    "material2": "GC008",
+    "방어력": 25,
+    "체력": 140,
+    "기공뎀 감소": 12,
+    "스킬뎀 감소": 0.12
+  },
+  {
+    "ID": "PC010",
+    "sort": "옷",
+    "name": "EOD 슈트",
+    "material1": "BC007",
+    "material2": "GC005",
+    "방어력": 15,
+    "체력": 300,
+    "체력회복": 1,
+    "기공뎀 감소": 12,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "PH001",
+    "sort": "머리",
+    "name": "미스릴 투구",
+    "material1": "GH004",
+    "material2": "DM024",
+    "방어력": 38,
+    "공속": 0.12,
+    "쿨타임(%)": 0.15,
+    "이속": 0.2
+  },
+  {
+    "ID": "PH002",
+    "sort": "머리",
+    "name": "수정 티아라",
+    "material1": "BH003",
+    "material2": "GA003",
+    "크리": 0.22,
+    "방어력": 14,
+    "스태": 700
+  },
+  {
+    "ID": "PH003",
+    "sort": "머리",
+    "name": "전술-OPS 헬멧",
+    "material1": "BH001",
+    "material2": "GM008",
+    "방어력": 15,
+    "체력": 120,
+    "공속": 0.2,
+    "쿨타임(%)": 0.15
+  },
+  {
+    "ID": "PH004",
+    "sort": "머리",
+    "name": "기사단장의 투구",
+    "material1": "BH005",
+    "material2": "DM004",
+    "방어력": 20,
+    "스킬뎀 감소": 0.11,
+    "스태": 200,
+    "쿨타임(%)": 0.1,
+    "이속": 0.1
+  },
+  {
+    "ID": "PH005",
+    "sort": "머리",
+    "name": "제국 왕관",
+    "material1": "BH004",
+    "material2": "GM004",
+    "스증(%)": 0.08,
+    "방어력": 18,
+    "체력": 300,
+    "스태": 500
+  },
+  {
+    "ID": "PH006",
+    "sort": "머리",
+    "name": "왕실 부르고넷",
+    "material1": "BH005",
+    "material2": "GM011",
+    "스증(%)": 0.18,
+    "방어력": 10,
+    "스태": 200,
+    "쿨타임(%)": 0.1,
+    "이속": 0.1
+  },
+  {
+    "ID": "PH007",
+    "sort": "머리",
+    "name": "변검",
+    "material1": "GH001",
+    "material2": "DM023",
+    "피흡": 0.22,
+    "방어력": 16,
+    "스태": 300,
+    "이속": 0.1,
+    "비전투 이속": 0.4
+  },
+  {
+    "ID": "PB001",
+    "sort": "팔",
+    "name": "소드 스토퍼",
+    "material1": "BB003",
+    "material2": "DM002",
+    "방어력": 32,
+    "기공뎀 감소": 11,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "PB002",
+    "sort": "팔",
+    "name": "드라우프니르",
+    "material1": "BB002",
+    "material2": "GB003",
+    "스증": 0.15,
+    "방어력": 10,
+    "체력회복": 1,
+    "스태": 240
+  },
+  {
+    "ID": "PB003",
+    "sort": "팔",
+    "name": "미스릴 방패",
+    "material1": "GB001",
+    "material2": "DM024",
+    "공격력": 30,
+    "방어력": 30,
+    "공속": 0.12,
+    "이속": 0.1
+  },
+  {
+    "ID": "PB004",
+    "sort": "팔",
+    "name": "바이탈 센서",
+    "material1": "BM006",
+    "material2": "DB001",
+    "방어력": 15,
+    "공속": 0.3
+  },
+  {
+    "ID": "PB005",
+    "sort": "팔",
+    "name": "기사의 신조",
+    "material1": "BB005",
+    "material2": "GB002",
+    "공격력": 30,
+    "크리뎀": 0.2,
+    "방어력": 20,
+    "체력회복": 1.5,
+    "이속": -0.05
+  },
+  {
+    "ID": "PB006",
+    "sort": "팔",
+    "name": "샤자한의 검집",
+    "material1": "BB001",
+    "material2": "GM004",
+    "공격력": 25,
+    "체력": 300,
+    "기공뎀 감소": 2
+  },
+  {
+    "ID": "PS001",
+    "sort": "다리",
+    "name": "경량화 부츠",
+    "material1": "BS004",
+    "material2": "DA001",
+    "체력회복": 1,
+    "공속": 0.35,
+    "이속": 0.4
+  },
+  {
+    "ID": "PS002",
+    "sort": "다리",
+    "name": "미스릴 부츠",
+    "material1": "GS002",
+    "material2": "DM024",
+    "방어력": 22,
+    "공속": 0.12,
+    "이속": 0.45
+  },
+  {
+    "ID": "PS003",
+    "sort": "다리",
+    "name": "부케팔로스",
+    "material1": "BS005",
+    "material2": "GS002",
+    "공격력": 5,
+    "크리": 0.17,
+    "방어력": 5,
+    "스태회복": 1,
+    "이속": 0.33
+  },
+  {
+    "ID": "PS004",
+    "sort": "다리",
+    "name": "클링온 부츠",
+    "material1": "BS004",
+    "material2": "DM002",
+    "체력회복": 0.7,
+    "공속": 0.15,
+    "이속": 0.35,
+    "치유감소": 0.4
+  },
+  {
+    "ID": "PA001",
+    "sort": "장식",
+    "name": "만년빙",
+    "material1": "BA002",
+    "material2": "DD003",
+    "스증": 18,
+    "체력회복": 1.5,
+    "스태회복": 1.5
+  },
+  {
+    "ID": "PA002",
+    "sort": "장식",
+    "name": "삼매진화",
+    "material1": "BA002",
+    "material2": "DM006",
+    "기공추": 13,
+    "체력회복": 1.5,
+    "스태회복": 1.5
+  },
+  {
+    "ID": "PT001",
+    "sort": "설치",
+    "name": "폭뢰침",
+    "material1": "BT001",
+    "material2": "GT001"
+  },
+  {
+    "ID": "YW001",
+    "sort": "dagger",
+    "name": "프라가라흐",
+    "material1": "GW001",
+    "material2": "PM001",
+    "공격력": 90,
+    "이속": 0.2
+  },
+  {
+    "ID": "YW002",
+    "sort": "twoHand",
+    "name": "레바테인",
+    "material1": "GW002",
+    "material2": "PA002",
+    "공격력": 75,
+    "기공추": 20,
+    "체력회복": 1.5,
+    "스태회복": 1.5
+  },
+  {
+    "ID": "YW003",
+    "sort": "twoHand",
+    "name": "다인슬라이프",
+    "material1": "BW002",
+    "material2": "DM023",
+    "공격력": 80,
+    "피흡": 0.2
+  },
+  {
+    "ID": "YW004",
+    "sort": "bat",
+    "name": "여의봉",
+    "material1": "GW009",
+    "material2": "PM001",
+    "공격력": 150,
+    "사거리": 1
+  },
+  {
+    "ID": "YW005",
+    "sort": "whip",
+    "name": "혈화구절편",
+    "material1": "BW024",
+    "material2": "DM023",
+    "공격력": 65,
+    "스증": 40,
+    "피흡": 0.2
+  },
+  {
+    "ID": "YW006",
+    "sort": "shuriken",
+    "name": "수다르사나",
+    "material1": "GW017",
+    "material2": "PM001",
+    "공격력": 125
+  },
+  {
+    "ID": "YW007",
+    "sort": "shuriken",
+    "name": "만천화우",
+    "material1": "PT001",
+    "material2": "PW042",
+    "공격력": 80,
+    "크리뎀": 0.5,
+    "기공추": 130,
+    "스증": 25
+  },
+  {
+    "ID": "YW008",
+    "sort": "bow",
+    "name": "페일노트",
+    "material1": "BW040",
+    "material2": "DM023",
+    "공격력": 100,
+    "피흡": 0.15,
+    "공속": 0.15
+  },
+  {
+    "ID": "YW009",
+    "sort": "crossbow",
+    "name": "샤릉가",
+    "material1": "GW022",
+    "material2": "PM001",
+    "공격력": 140
+  },
+  {
+    "ID": "YW010",
+    "sort": "pistol",
+    "name": "악켈테",
+    "material1": "GW024",
+    "material2": "PM001",
+    "공격력": 120,
+    "이속": 0.2
+  },
+  {
+    "ID": "YW011",
+    "sort": "sniper",
+    "name": "사사성광",
+    "material1": "BW055",
+    "material2": "BM001",
+    "공격력": 95,
+    "스증(%)": 0.3,
+    "이속": -0.07,
+    "시야": 2.5
+  },
+  {
+    "ID": "YW012",
+    "sort": "spear",
+    "name": "화첨창",
+    "material1": "GW028",
+    "material2": "PA002",
+    "공격력": 110,
+    "기공추": 30,
+    "체력회복": 1.5,
+    "스태회복": 1.5
+  },
+  {
+    "ID": "YW013",
+    "sort": "spear",
+    "name": "롱기누스의 창",
+    "material1": "BW060",
+    "material2": "DM023",
+    "공격력": 140,
+    "피흡": 0.2
+  },
+  {
+    "ID": "YW014",
+    "sort": "rapier",
+    "name": "미스틸테인",
+    "material1": "PW080",
+    "material2": "DW011",
+    "공격력": 30,
+    "크리뎀": 0.25,
+    "스증(%)": 0.15,
+    "체력회복": 1.5,
+    "스태회복(%)": 2,
+    "쿨타임(%)": 0.12
+  },
+  {
+    "ID": "YC001",
+    "sort": "옷",
+    "name": "불꽃 드레스",
+    "material1": "GC006",
+    "material2": "PA002",
+    "기공추": 18,
+    "방어력": 25,
+    "체력회복": 2.5,
+    "스태회복": 3,
+    "스태회복(%)": 0.75
+  },
+  {
+    "ID": "YC002",
+    "sort": "옷",
+    "name": "카바나",
+    "material1": "PC007",
+    "material2": "DM022",
+    "스증(%)": 0.2,
+    "방어력": 36
+  },
+  {
+    "ID": "YC003",
+    "sort": "옷",
+    "name": "퀸 오브 하트",
+    "material1": "BC006",
+    "material2": "DM023",
+    "방어력": 45,
+    "체력회복": 3,
+    "쿨타임(%)": 0.25
+  },
+  {
+    "ID": "YH001",
+    "sort": "머리",
+    "name": "월계관",
+    "material1": "GH002",
+    "material2": "PA002",
+    "기공추": 15,
+    "방어력": 18,
+    "체력회복": 1.5,
+    "스태": 580,
+    "스태회복": 2
+  },
+  {
+    "ID": "YB001",
+    "sort": "팔",
+    "name": "스카디의 팔찌",
+    "material1": "BB004",
+    "material2": "PA001",
+    "스증": 20,
+    "체력": 200,
+    "체력회복": 2,
+    "스태": 250,
+    "스태회복": 2
+  },
+  {
+    "ID": "YB002",
+    "sort": "팔",
+    "name": "레이더",
+    "material1": "PB004",
+    "material2": "BM004",
+    "크리": 0.2,
+    "방어력": 15,
+    "공속": 0.4
+  },
+  {
+    "ID": "YB003",
+    "sort": "팔",
+    "name": "오토-암즈",
+    "material1": "GB003",
+    "material2": "PM001",
+    "공격력": 40,
+    "방어력": 35,
+    "체력회복": 1.5
+  },
+  {
+    "ID": "YS001",
+    "sort": "다리",
+    "name": "EOD 부츠",
+    "material1": "BS001",
+    "material2": "BS002",
+    "방어력": 23,
+    "체력회복": 1,
+    "이속": 0.33
+  },
+  {
+    "ID": "YS002",
+    "sort": "다리",
+    "name": "글레이셜 슈즈",
+    "material1": "GS005",
+    "material2": "PA001",
+    "스증": 15,
+    "체력회복": 2,
+    "스태회복": 2,
+    "스태회복(%)": 0.6,
+    "이속": 0.15,
+    "비전투 이속": 0.5
+  },
+  {
+    "ID": "YS003",
+    "sort": "다리",
+    "name": "헤르메스의 부츠",
+    "material1": "GS004",
+    "material2": "PM001",
+    "방어력": 40,
+    "이속": 0.4,
+    "비전투 이속": 0.2
+  },
+  {
+    "ID": "YS004",
+    "sort": "다리",
+    "name": "분홍신",
+    "material1": "BS005",
+    "material2": "DM023",
+    "공격력": 5,
+    "크리": 0.1,
+    "피흡": 0.15,
+    "스태회복": 1,
+    "이속": 0.4
+  },
+  {
+    "ID": "YA001",
+    "sort": "장식",
+    "name": "에메랄드 타블렛",
+    "material1": "GA002",
+    "material2": "PM001",
+    "공격력": 10,
+    "크리": 0.15,
+    "방어력": 10,
+    "쿨타임(%)": 0.1
+  },
+  {
+    "ID": "YT001",
+    "sort": "설치",
+    "name": "리모트 마인",
+    "material1": "GT001",
+    "material2": "PM001"
+  },
+  {
+    "ID": "YT002",
+    "sort": "설치",
+    "name": "스마트 폭탄",
+    "material1": "BT001",
+    "material2": "BM006"
+  }
+]

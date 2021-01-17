@@ -1,0 +1,238 @@
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.checkedMA {
+  text-decoration: line-through;
+  color:#999;
+}
+
+.checkedME {
+  color:red
+}
+
+.closeBtn {
+  position:absolute;
+  right:0;
+  top:0;
+  background: #fff;
+  width:30px;
+  height:30px;
+  line-height: 30px;
+  text-align: center;
+  border:none;
+}
+
+#headerWrap {
+  position: fixed;
+  right:0;
+  top:0;
+}
+
+#headerWrap #logo {
+  background: #ddd;
+  font-weight: bold;
+  font-size: 2em;
+  border-left:1px solid #999;
+  border-bottom:1px solid #999;
+}
+
+#headerWrap .mapBtn {
+  float: right;
+  border-radius: 15px;
+  width: 50px;
+  height:30px;
+  margin: 5px;
+  background: #fff;
+  border: 1px solid #999;
+}
+
+#headerWrap #mapWrap {
+  width: 100%;
+  position: relative;
+}
+
+#headerWrap #mapWrap img {
+  width: 100%;
+}
+
+.selectCategory {
+  height:2.5em;
+  line-height: 2.5em;
+  border-bottom: 1px solid #777;
+  box-sizing: border-box;
+}
+
+select {
+  height: 1.5em;
+  margin: 0;
+}
+
+.tabBtn {
+  height: 2em;
+  background: #ddd;
+  line-height: 2em;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.tabBtn.description {
+  border:none;
+}
+
+ul.scroll {
+  padding: 5px 10px;
+  background:#fff;
+}
+
+.materials .description{
+  height:30px;
+  line-height: 30px;
+  background: #ddd;
+  text-indent: 10px;
+}
+
+#equipInfo {
+  display: block;
+  background:#ddd;
+  width: 100%x;
+  min-height: 30px;
+}
+
+#equipBox .tab {
+  border-bottom: 1px solid #999;
+}
+
+#equipBox .tabBtn {
+  margin-left: 20px;
+  text-indent: 5px;
+}
+
+.downArrowIcon {
+  height:50%;
+  margin:5px;
+}
+
+#equipInfo .drops span{
+  margin-right: 5px;
+}
+
+.needM {
+  float: left;
+  margin-right: 5px;
+}
+
+.dropM {
+  display: block;
+  float: left;
+}
+
+.selectedAll {
+  margin:5px 0;
+}
+
+.selectedAll .dropM {
+  margin: 3px;
+}
+
+.dropM .mNumber {
+  font-size: 0.8em;
+  margin-right: 5px;
+}
+
+.area {
+  width:30%;
+  min-height: 100px;
+  float: left;
+  margin-left:2%;
+  margin-top: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.area label {
+  background: #ddd;
+  width:100%;
+  height: 20px;
+  display: block
+}
+
+.area label.route0 {
+  background: rgb(255, 128, 128);
+}
+
+.area label.route1 {
+  background: rgb(255, 185, 106);
+}
+
+.area label.route2 {
+  background: rgb(250, 247, 60);
+}
+
+.area label.route3 {
+  background: rgb(191, 255, 107);
+}
+
+.area label.route4 {
+  background: rgb(89, 194, 255);
+}
+
+.area label.route5 {
+  background: rgb(130, 102, 255);
+}
+
+.area label.route6 {
+  background: rgb(255, 131, 245);
+}
+
+.area label.route7 {
+  background: rgb(111, 255, 207);
+}
+
+.area label.route8 {
+  background: rgb(197, 155, 76);
+}
+
+.area label.route9 {
+  background: rgb(134, 134, 134);
+}
+
+.area label.route10 {
+  background: rgb(252, 255, 71);
+}
+
+.area label.route11 {
+  background: rgb(255, 255, 255);
+}
+
+.area label.route12 {
+  background: rgb(252, 113, 113);
+}
+
+.area label.route13 {
+  background: rgb(18, 255, 18);
+}
+
+.area label.route14 {
+  background: rgb(207, 161, 130);
+}
+
+.area label strong {
+  font-size: 0.5em;
+}
+
+.checkBoxA {
+  width: 10px;
+  display:none;
+}
+
+.drops .dropM{
+  width: 100%;
+}
