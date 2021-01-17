@@ -14,7 +14,7 @@ $(document).ready(function () {
   let area = [];
   let dropArea = [];
   let cleanDA = [];
-
+  let checkedAOrder = [];
 
   $.getJSON("./json/item.json", function (data) {
     $.each(data, function () {
@@ -198,6 +198,8 @@ $(document).ready(function () {
             }
           }
           selected.splice(selected.indexOf(getById(oldEquip.ID,selected)),1)
+          checkedAOrder.splice(0);
+          $(".active").removeClass();
         }
         
         //선택 장비 정보 표시
@@ -260,7 +262,7 @@ $(document).ready(function () {
           sortedDA();    
           sortedM();  
           showDA();
-          equipInfo(selectedW);
+          equipInfo(selectedW);          
         })
         $("#clothesS").on("change", function () {
           changeEquip(selectedC);
@@ -323,7 +325,7 @@ $(document).ready(function () {
             }
           }
         })
-        let checkedAOrder = [];
+        
         //위치 체크박스 클릭시
         $(".checkboxA").on("change", function() {
           $(".materials .selectedAll").children().removeClass('checkedMA')
