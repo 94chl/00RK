@@ -62,6 +62,10 @@
   width: 100%;
 }
 
+body {
+  max-width: 768px;
+}
+
 .selectCategory {
   height:2.5em;
   line-height: 2.5em;
