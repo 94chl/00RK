@@ -366,11 +366,25 @@ $(document).ready(function () {
 
         $(".mapBtn").on("click", function() {
           $("#mapWrap").removeClass("hide");
-          $(".mapBtn").addClass("hide");
         })
         $(".closeBtn").on("click", function() {
           $("#mapWrap").addClass("hide")
-          $(".mapBtn").removeClass("hide");
+        })
+        
+        $(".summaryBtn").on("click", function() {
+          $("#equipWrap").children().remove();
+          $("#routeWrap").children().remove();
+          $("#summaryWrap").toggleClass("hide");
+          $("#equipBox .name").each(function() {
+            $("#equipWrap").append("<li class='"+$(this).children("p").attr("class")+"'>"+$(this).children("p").text()+"</li");
+          })
+          for(i=0; i<checkedAOrder.length; i++) {
+            $("#routeWrap").append("<li class='route"+(i+1)+"'>"+(i+1)+" : "+getById(checkedAOrder[i],area).name+"</li>")
+          }
+        })
+
+        $("#summaryWrap .closeBtn").on("click", function() {
+          $("#summaryWrap").addClass("hide")
         })
         
         disassemble(selectedW);
