@@ -35,7 +35,8 @@
   right:0;
   top:0;
   z-index: 10;
-  max-width: 768px;
+  width: 80px;
+  text-align: center;
 }
 
 #headerWrap #logo {
@@ -47,7 +48,7 @@
 }
 
 #headerWrap .mapBtn {
-  float: right;
+  float:right;
   border-radius: 15px;
   width: 50px;
   height:30px;
@@ -66,6 +67,16 @@
   width: 100%;
 }
 
+.summaryBtn {
+  float:right;
+  border-radius: 15px;
+  width: 50px;
+  height:30px;
+  margin: 5px;
+  background: #fff;
+  border: 1px solid #999;
+}
+
 #summaryWrap {
   padding-top: 50px;
   width: 100%;
@@ -82,6 +93,7 @@
   text-align: center;
   font-size: 1.5em;
   border-bottom: 1px solid #000;
+  width: 100%;
 }
 
 #summaryWrap #equipWrap {
@@ -209,13 +221,10 @@ ul.scroll {
   margin:5px;
 }
 
-#equipInfo .drops span{
-  margin-right: 5px;
-}
-
 .needM {
   float: left;
   margin-right: 5px;
+  margin-top:5px;
 }
 
 .dropM {
