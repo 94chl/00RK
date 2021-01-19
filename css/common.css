@@ -19,20 +19,23 @@
 
 .closeBtn {
   position:absolute;
-  right:0;
-  top:0;
+  right:5px;
+  top:5px;
   background: #fff;
   width:30px;
   height:30px;
   line-height: 30px;
   text-align: center;
   border:none;
+  z-index: 10;
 }
 
 #headerWrap {
   position: fixed;
   right:0;
   top:0;
+  z-index: 10;
+  max-width: 768px;
 }
 
 #headerWrap #logo {
@@ -56,14 +59,68 @@
 #headerWrap #mapWrap {
   width: 100%;
   position: relative;
+  background: #fff;
 }
 
 #headerWrap #mapWrap img {
   width: 100%;
 }
 
+#summaryWrap {
+  padding-top: 50px;
+  width: 100%;
+  position: fixed;
+  top:5%;
+  right:0;
+  height: 70%;
+  background: #fff;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+#summaryWrap .summarySort {
+  text-align: center;
+  font-size: 1.5em;
+  border-bottom: 1px solid #000;
+}
+
+#summaryWrap #equipWrap {
+  border: none;
+  width: 100%;
+}
+
+#summaryWrap #equipWrap li {
+  border: none;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  margin: 5px;
+  width: 30%;
+  text-align: center;
+}
+
+#summaryWrap #routeWrap.area {
+  border: none;
+  width: 100%;
+}
+
+#summaryWrap #routeWrap.area li {
+  border: none;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  margin: 5px;
+  width: 30%;
+  text-align: center;
+}
+
 body {
   max-width: 768px;
+  position: relative;
+}
+
+#equipSelect {
+  margin-top: 10px;
 }
 
 .selectCategory {
@@ -71,6 +128,7 @@ body {
   line-height: 2.5em;
   border-bottom: 1px solid #777;
   box-sizing: border-box;
+  padding-left: 20px;
 }
 
 select {
@@ -115,6 +173,32 @@ ul.scroll {
   border-bottom: 1px solid #999;
 }
 
+#equipBox li {
+  margin-top: 5px;
+}
+
+#equipBox .name p {
+  display:inline;
+  padding: 3px;
+}
+
+.gradeG{
+  background: rgb(116, 255, 104);
+}
+
+.gradeB{
+  background: rgb(52, 214, 255);
+}
+
+.gradeP{
+  color: rgb(253, 255, 129);
+  background: rgb(156, 1, 187);
+}
+
+.gradeY{
+  background: rgb(255, 238, 0);
+}
+
 #equipBox .tabBtn {
   margin-left: 20px;
   text-indent: 5px;
@@ -152,13 +236,14 @@ ul.scroll {
   margin-right: 5px;
 }
 
-.area {
+#area .area {
   width:30%;
   min-height: 100px;
   float: left;
   margin-left:2%;
   margin-top: 10px;
   border-bottom: 1px solid #ddd;
+  position: relative;
 }
 
 .area label {
@@ -168,64 +253,76 @@ ul.scroll {
   display: block
 }
 
-.area label.route0 {
+.area .flag {
+  position: absolute;
+  top:-10px;
+  right: 0;
+  border-radius: 10px;
+  width:15px;
+  height:15px;
+  line-height: 15px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.area .route1 {
   background: rgb(255, 128, 128);
 }
 
-.area label.route1 {
+.area .route2 {
   background: rgb(255, 185, 106);
 }
 
-.area label.route2 {
+.area .route3 {
   background: rgb(250, 247, 60);
 }
 
-.area label.route3 {
+.area .route4 {
   background: rgb(191, 255, 107);
 }
 
-.area label.route4 {
+.area .route5 {
   background: rgb(89, 194, 255);
 }
 
-.area label.route5 {
+.area .route6 {
   background: rgb(130, 102, 255);
 }
 
-.area label.route6 {
+.area .route7 {
   background: rgb(255, 131, 245);
 }
 
-.area label.route7 {
+.area .route8 {
   background: rgb(111, 255, 207);
 }
 
-.area label.route8 {
+.area .route9 {
   background: rgb(197, 155, 76);
 }
 
-.area label.route9 {
+.area .route10 {
   background: rgb(134, 134, 134);
 }
 
-.area label.route10 {
+.area .route11 {
   background: rgb(252, 255, 71);
 }
 
-.area label.route11 {
-  background: rgb(255, 255, 255);
+.area .route12 {
+  background: rgb(253, 54, 54);
 }
 
-.area label.route12 {
-  background: rgb(252, 113, 113);
-}
-
-.area label.route13 {
+.area .route13 {
   background: rgb(18, 255, 18);
 }
 
-.area label.route14 {
+.area .route14 {
   background: rgb(207, 161, 130);
+}
+
+.area .route15 {
+  background: rgb(163, 138, 138);
 }
 
 .area label strong {
@@ -239,4 +336,12 @@ ul.scroll {
 
 .drops .dropM{
   width: 100%;
+}
+
+#footerWrap {
+  margin-top: 10px;
+}
+
+#footerWrap span {
+  font-size: 10px;
 }
