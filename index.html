@@ -16,9 +16,17 @@
       <button type="button" class="closeBtn">X</button>
       <img src="./img/map.PNG" alt="map">
     </div>
+    <button type="button" class="summaryBtn">요약</button>
+    <div id="summaryWrap" class="hide">
+      <button type="button" class="closeBtn">X</button>
+      <div class="summarySort">장비</div>
+      <ul id="equipWrap"></ul>
+      <div class="summarySort">루트</div>
+      <ul id="routeWrap" class="area"></ul>
+    </div>
   </div>
 
-  <body>
+  <div id="container">
     <div id="equipSelect">
       <div class="selectCategory">
         <input type="checkbox" id="weapon2" class="checkboxE">
@@ -246,7 +254,15 @@
         </div>
       </div>
     </div>
-  </body>
+  </div>
+
+  <footer>
+    <div id="footerWrap" class="clearfix">
+      <span>제작: BrownRoomFish</span>
+      <span>참고버전: 0.23.2</span>
+      <span>업데이트날짜: 2021/01/18</span>
+    </div>
+  </footer>
   
   <script src="./js/jquery-3.3.1.min.js"></script>
   <script src="./js/common.js"></script>
