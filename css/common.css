@@ -58,9 +58,11 @@
 }
 
 #headerWrap #mapWrap {
-  width: 100%;
-  position: relative;
+  position: fixed;
+  top:0;
+  right: 0;
   background: #fff;
+  height: 70%;
 }
 
 #headerWrap #mapWrap img {
