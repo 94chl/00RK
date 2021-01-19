@@ -200,6 +200,7 @@ $(document).ready(function () {
           selected.splice(selected.indexOf(getById(oldEquip.ID,selected)),1)
           checkedAOrder.splice(0);
           $(".active").removeClass();
+          $("#area .area").children(".flag").remove();    
         }
         
         //선택 장비 정보 표시
@@ -207,12 +208,13 @@ $(document).ready(function () {
           let optionKey = Object.keys(equip);
           let optionValue = Object.values(equip);
           let sort = equip.ID.substring(1, 2);
+          let grade = equip.ID.substring(0, 1);
           let equipDrops = getById(equip.ID, selected).drops;
           $("#equipInfo ul.selected" + sort + " .name").children().remove();
           $("#equipInfo ul.selected" + sort + " .option").children().remove();
           $("#equipInfo ul.selected" + sort + " .drops").children().remove();
           $("#equipInfo ul.selected" + sort + " .name").append(
-            "<p>" + equip.name + "</p>"
+            "<p class='grade"+grade+"'>" + equip.name + "</p>"
           )
           for (i = 5; i < optionKey.length; i++) {
             $("#equipInfo ul.selected" + sort+" .option").append(
@@ -328,8 +330,9 @@ $(document).ready(function () {
         
         //위치 체크박스 클릭시
         $(".checkboxA").on("change", function() {
-          $(".materials .selectedAll").children().removeClass('checkedMA')
-          $("#area .area .drops").children().removeClass("checkedMA");          
+          $(".materials .selectedAll").children().removeClass('checkedMA');
+          $("#area .area .drops").children().removeClass("checkedMA");      
+          $("#area .area").children(".flag").remove();    
           let checkedA = [];
           $(".checkboxA:checked").each(function() {
             checkedA.push($(this).parents('.area').attr("id"))
@@ -355,7 +358,8 @@ $(document).ready(function () {
           }
           $(".area label").removeClass();
           for(i=0; i<checkedAOrder.length; i++) {
-            $("#area #"+checkedAOrder[i]+" label").addClass("active route"+i)
+            $("#area #"+checkedAOrder[i]).prepend("<div class='flag route"+(i+1)+"'>"+(i+1)+"</div>");
+            $("#area #"+checkedAOrder[i]+" label").addClass("active route"+(i+1));
           }
         })
 
@@ -367,10 +371,10 @@ $(document).ready(function () {
         $(".mapBtn").on("click", function() {
           $("#mapWrap").removeClass("hide");
         })
-        $(".closeBtn").on("click", function() {
+        $("#mapWrap .closeBtn").on("click", function() {
           $("#mapWrap").addClass("hide")
         })
-        
+
         $(".summaryBtn").on("click", function() {
           $("#equipWrap").children().remove();
           $("#routeWrap").children().remove();
