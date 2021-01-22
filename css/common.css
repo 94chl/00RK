@@ -183,6 +183,10 @@ ul.scroll {
   min-height: 30px;
 }
 
+#equipInfo .option {
+  min-height: 1px;
+}
+
 #equipBox .tab {
   border-bottom: 1px solid #999;
 }
