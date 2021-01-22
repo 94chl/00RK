@@ -210,8 +210,12 @@ $(document).ready(function () {
           let sort = equip.ID.substring(1, 2);
           let grade = equip.ID.substring(0, 1);
           let equipDrops = getById(equip.ID, selected).drops;
+          let lowerM = [];
+          let lowerM1 = equip.material1;
+          let lowerM2 = equip.material2;
           $("#equipInfo ul.selected" + sort + " .name").children().remove();
           $("#equipInfo ul.selected" + sort + " .option").children().remove();
+          $("#equipInfo ul.selected" + sort + " .lowerM").children().remove();
           $("#equipInfo ul.selected" + sort + " .drops").children().remove();
           $("#equipInfo ul.selected" + sort + " .name").append(
             "<p class='grade"+grade+"'>" + equip.name + "</p>"
@@ -231,6 +235,22 @@ $(document).ready(function () {
           for (i = 0; i < needM.length; i++) {
             $(".materials .selectedAll").append(
               "<span class='dropM "+getById(needM[i].drops,drop).ID+"'>" + getById(needM[i].drops,drop).name + "<span class='mNumber'>(x"+needM[i].count+")</span></span>"
+           )
+          }
+          if(lowerM1.substring(0,1) == "D") {
+            lowerM.push({"name":getById(lowerM1, drop).name, "grade": lowerM1.substring(0,1)})
+          } else {
+            lowerM.push({"name":getById(lowerM1, item).name, "grade": lowerM1.substring(0,1)})
+          }          
+          if(lowerM2.substring(0,1) == "D") {
+            lowerM.push({"name":getById(lowerM2, drop).name, "grade": lowerM2.substring(0,1)})
+          } else {
+            lowerM.push({"name":getById(lowerM2, item).name, "grade": lowerM2.substring(0,1)})
+          }
+
+          for (i = 0; i < lowerM.length; i++) {
+            $("#equipInfo ul.selected" + sort+" .lowerM").append(
+              "<span class='grade"+lowerM[i].grade+"'>[" + lowerM[i].name + "]</span>"
            )
           }
         }
