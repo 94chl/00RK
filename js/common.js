@@ -221,10 +221,16 @@ $(document).ready(function () {
             "<p class='grade"+grade+"'>" + equip.name + "</p>"
           )
           for (i = 5; i < optionKey.length; i++) {
-            $("#equipInfo ul.selected" + sort+" .option").append(
-              "<li>" + optionKey[i] + " : " + optionValue[i] + "</li>"
-           )
-          }          
+            if(optionKey[i].includes("%")) {
+              $("#equipInfo ul.selected" + sort+" .option").append(
+                "<li>" + optionKey[i] + " : " + optionValue[i]*100 + "%</li>"
+              )
+            } else {
+              $("#equipInfo ul.selected" + sort+" .option").append(
+                "<li>" + optionKey[i] + " : " + optionValue[i] + "</li>"
+              )
+            }            
+          }         
           for (i = 0; i < equipDrops.length; i++) {
             $("#equipInfo ul.selected" + sort+" .drops").append(
               "<span>[" + getById(equipDrops[i],drop).name + "]</span>"
