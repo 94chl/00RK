@@ -223,7 +223,7 @@ $(document).ready(function () {
           for (i = 5; i < optionKey.length; i++) {
             if(optionKey[i].includes("%")) {
               $("#equipInfo ul.selected" + sort+" .option").append(
-                "<li>" + optionKey[i] + " : " + optionValue[i]*100 + "%</li>"
+                "<li>" + optionKey[i] + " : " + Math.round(optionValue[i]*100) + "%</li>"
               )
             } else {
               $("#equipInfo ul.selected" + sort+" .option").append(
