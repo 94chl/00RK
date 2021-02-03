@@ -220,7 +220,7 @@ $(document).ready(function () {
           $("#equipInfo ul.selected" + sort + " .name").append(
             "<p class='grade"+grade+"'>" + equip.name + "</p>"
           )
-          for (i = 5; i < optionKey.length; i++) {
+          for (i = 6; i < optionKey.length; i++) {
             if(optionKey[i].includes("%")) {
               $("#equipInfo ul.selected" + sort+" .option").append(
                 "<li>" + optionKey[i] + " : " + Math.round(optionValue[i]*100) + "%</li>"
