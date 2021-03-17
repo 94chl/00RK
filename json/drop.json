@@ -170,7 +170,11 @@
     "ID": "DM022",
     "sort": "재료",
     "name": "운석",
-    "location1": "A000"
+    "location1": "A002",
+    "location2": "A004",
+    "location3": "A005",
+    "location4": "A008",
+    "location5": "A015"
   },
   {
     "ID": "DM023",
