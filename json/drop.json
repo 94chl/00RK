@@ -189,6 +189,15 @@
     "location1": "A000"
   },
   {
+    "ID": "DM025",
+    "sort": "재료",
+    "name": "피아노선",
+    "location1": "A009",
+    "location2": "A011",
+    "location3": "A013",
+    "location4": "A014"
+  },
+  {
     "ID": "DW001",
     "sort": "단검",
     "name": "가위",
@@ -584,7 +593,6 @@
     "sort": "설치",
     "name": "올가미",
     "location1": "A005",
-    "location2": "A009",
     "location3": "A010",
     "location4": "A012",
     "location5": "A013",
@@ -597,15 +605,6 @@
     "location1": "A005",
     "location2": "A007",
     "location3": "A013"
-  },
-  {
-    "ID": "DT004",
-    "sort": "설치",
-    "name": "피아노선",
-    "location1": "A009",
-    "location2": "A011",
-    "location3": "A013",
-    "location4": "A014"
   },
   {
     "ID": "DD001",
