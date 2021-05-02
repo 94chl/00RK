@@ -3,44 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>00RK(Eternal Return Route Kit)</title>
+  <title>Route Kit</title>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV46BQCJVW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-QV46BQCJVW');
-  </script>
 </head>
-  
+
 <body>
   <div id="headerWrap">
     <div id="logo">00RK</div>
-    <button type="button" class="mapBtn">map</button>
-    <div id="mapWrap" class="hide">
-      <button type="button" class="closeBtn">X</button>
-      <img src="./img/map.PNG" alt="map">
-    </div>
-    <button type="button" class="summaryBtn">요약</button>
-    <div id="summaryWrap" class="hide">
-      <button type="button" class="closeBtn">X</button>
-      <div class="summarySort">장비</div>
-      <ul id="equipWrap" class="clearfix"></ul>
-      <div class="summarySort">루트</div>
-      <ul id="routeWrap" class="area clearfix"></ul>
-    </div>
+    <div id="sideMenu">
+      <button type="button" class="mapBtn">map</button>
+      <div id="mapWrap" class="hide">
+        <button type="button" class="closeBtn">X</button>
+        <img src="./img/map.PNG" alt="map">
+      </div>
+      <button type="button" class="summaryBtn">요약</button>
+      <div id="summaryWrap" class="hide">
+        <button type="button" class="closeBtn">X</button>
+        <div class="summarySort">장비</div>
+        <ul id="equipWrap" class="clearfix"></ul>
+        <div class="summarySort">루트</div>
+        <ul id="routeWrap" class="area clearfix"></ul>
+      </div>
+    </div>    
   </div>
 
   <div id="container">
     <div id="equipSelect">
       <div class="selectCategory">
-        <input type="checkbox" id="weapon2" class="checkboxE">
-        <label for="weapon2">무기</label>
-        <select name="weapon" id="weaponS">
+        <input type="radio" id="weapon" name="equip" value="weapon" class="equipSort" checked>
+        <label for="weapon">무기</label>
+        <input type="radio" id="armor" name="equip" class="equipSort" value="armor">
+        <label for="armor">방어구</label>
+        <input type="radio" id="option" name="equip" class="equipSort" value="option">
+        <label for="option">옵션 검색</label><br>
+        <select name="weaponL" id="weaponL" class="hide">
           <option value="dagger" selected>단검</option>
           <option value="twoHand">양손검</option>
           <option value="axe">도끼</option>
@@ -62,39 +59,19 @@
           <option value="nunchaku">쌍절곤</option>
           <option value="whip">채찍</option>
         </select>
-        <select name="weapon2" id="weapon2S"></select>
-      </div>    
-      
-      <div class="selectCategory">
-        <input type="checkbox" id="clothes" class="checkboxE">
-        <label for="clothes">옷</label>
-        <select name="clothes" id="clothesS"></select>
-      </div>
-      
-      <div class="selectCategory">
-        <input type="checkbox" id="helmet" class="checkboxE">
-        <label for="helmet">머리</label>
-        <select name="helmet" id="helmetS"></select>
-      </div>
-      
-      <div class="selectCategory">
-        <input type="checkbox" id="bracelet" class="checkboxE">
-        <label for="bracelet">팔</label>
-        <select name="bracelet" id="braceletS"></select>
-      </div>
-      
-      <div class="selectCategory">
-        <input type="checkbox" id="shoes" class="checkboxE">
-        <label for="shoes">다리</label>
-        <select name="shoes" id="shoesS"></select>
-      </div>
-     
-      <div class="selectCategory">
-        <input type="checkbox" id="accessory" class="checkboxE">
-        <label for="accessory">장신구</label>
-        <select name="accessory" id="accessoryS"></select>
-      </div>
-      
+        <select name="weaponD" id="weaponD" class="hide"></select>
+        <select name="armorL" id="armorL" class="hide">
+          <option value="body" selected>옷</option>
+          <option value="head">머리</option>
+          <option value="arm">팔</option>
+          <option value="leg">다리</option>
+          <option value="ice">장신구</option>
+        </select>
+        <select name="armorD" id="armorD" class="hide"></select>
+        <select name="optionL" id="optionL" class="hide"></select>
+        <select name="optionD" id="optionD" class="hide"></select>
+        <button type="button" class="addBtn">추가</button>
+      </div>                
     </div>
   
     <div class="materials">
@@ -105,86 +82,8 @@
   
     <div id="equipInfo">
       <button type="button" class="tabBtn description">장비정보<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>
-      <div id="equipBox" class="scroll hide">  
-        <div class="tab selectedW">
-          <button type="button" class="tabBtn selectedW">무기<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button> 
-          <ul class="selectedW scroll hide">
-            <li class="name"></li>
-            <li>
-              <ul class="option"></ul>
-            </li>
-            <span class="needM">하위재료:</span>
-            <li class="lowerM"></li>
-            <span class="needM">드랍재료:</span>
-            <li class="drops"></li>
-          </ul>
-        </div>
-        <div class="tab selectedC">
-          <button type="button" class="tabBtn selectedC">옷<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>   
-          <ul class="selectedC scroll hide">
-            <li class="name"></li>
-            <li>
-              <ul class="option"></ul>
-            </li>
-            <span class="needM">하위재료:</span>
-            <li class="lowerM"></li>
-            <span class="needM">드랍재료:</span>
-            <li class="drops"></li>
-          </ul>
-        </div>
-        <div class="tab selectedH">
-          <button type="button" class="tabBtn selectedH">머리<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>    
-          <ul class="selectedH scroll hide">
-            <li class="name"></li>
-            <li>
-              <ul>
-              <ul class="option"></ul></ul>
-            </li>
-            <span class="needM">하위재료:</span>
-            <li class="lowerM"></li>
-            <span class="needM">드랍재료:</span>
-            <li class="drops"></li>
-          </ul>
-        </div>
-        <div class="tab selectedB">
-          <button type="button" class="tabBtn selectedB">팔<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>    
-          <ul class="selectedB scroll hide">
-            <li class="name"></li>
-            <li>
-              <ul class="option"></ul>
-            </li>
-            <span class="needM">하위재료:</span>
-            <li class="lowerM"></li>
-            <span class="needM">드랍재료:</span>
-            <li class="drops"></li>
-          </ul>
-        </div>
-        <div class="tab selectedS">
-          <button type="button" class="tabBtn selectedS">다리<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button> 
-          <ul class="selectedS scroll hide">
-            <li class="name"></li>
-            <li>
-              <ul class="option"></ul>
-            </li>
-            <span class="needM">하위재료:</span>
-            <li class="lowerM"></li>
-            <span class="needM">드랍재료:</span>
-            <li class="drops"></li>
-          </ul>
-        </div>
-        <div class="tab selectedA">
-          <button type="button" class="tabBtn selectedA">장식<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>    
-          <ul class="selectedA scroll hide">
-            <li class="name"></li>
-            <li>
-              <ul class="option"></ul>
-            </li>
-            <span class="needM">하위재료:</span>
-            <li class="lowerM"></li>
-            <span class="needM">드랍재료:</span>
-            <li class="drops"></li>
-          </ul>
-        </div>
+      <div id="equipBox" class="scroll hide">          
+        
       </div>
     </div>
   
@@ -281,7 +180,7 @@
     <div id="footerWrap" class="clearfix">
       <span>제작: BrownRoomFish</span>
       <span>참고버전: 0.31.0</span>
-      <span>업데이트날짜: 2021/04/28</span>
+      <span>업데이트날짜: 2021/05/02</span>
     </div>
   </footer>
   
