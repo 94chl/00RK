@@ -181,17 +181,25 @@ $(document).ready(function () {
         }
         //장비 선택, 추가
         function equipAdd() {
+          let sortList = [{"dagger":"단검"}, {"twoHand":"양손검"}, {"axe":"도끼"}, {"dual":"쌍검"}, {"pistol":"권총"}, {"rifle":"돌격소총"}, {"sniper":"저격총"}, {"rapier":"레이피어"}, {"spear":"창"}, {"hammer":"망치"}, {"bat":"방망이"}, {"throw":"투척"}, {"shuriken":"암기"}, {"bow":"활"}, {"crossbow":"석궁"}, {"glove":"글러브"}, {"tonfa":"톤파"}, {"guitar":"기타"}, {"nunchaku":"쌍절곤"}, {"whip":"채찍"}, {"body":"옷"}, {"head":"머리"}, {"arm":"팔"}, {"leg":"다리"}, {"ice":"장신구"}]
           let sorted= $(".equipSort:checked").val();
           let selected = $("."+sorted+"DL:selected").val();
           let equipTemp = getById(selected,item);
+          let sortK;
+          for (i = 0; i < sortList.length; i++) {
+            if (Object.getOwnPropertyNames(sortList[i]).indexOf(equipTemp.sort)>=0) {
+              sortK = sortList[i][equipTemp.sort];
+            }
+          }
           sEquip.push(equipTemp)                  
           $("#equipBox").append(
             `<div class="tab `+equipTemp.ID+`">
               <button type="button" class="tabBtn `+equipTemp.ID+`">`+equipTemp.name+`<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>    
               <input type="checkbox" class="checkDA" id="`+equipTemp.ID+`">
-              <label for="`+equipTemp.ID+`">재료 위치</label>
+              <label for="`+equipTemp.ID+`" class="checkDALabel">재료 위치</label>
               <button type="button" class="delBtn `+equipTemp.ID+`">제거</button>
               <ul class="scroll hide `+equipTemp.ID+`">
+                <li>종류 : `+sortK+`</li>
                 <li>
                   <ul class="option"></ul>
                 </li>
@@ -348,7 +356,7 @@ $(document).ready(function () {
             mats.sort();
             for(o=0; o<mats.length; o++) {
               $(this).find(".drops").append(
-                "<span class='gradeD'>[" + getById(mats[o],drop).name + "]</span>"
+                "<span class='gradeD "+getById(mats[o],drop).ID+"'>[" + getById(mats[o],drop).name + "]</span>"
               )
             }
             getById(selItem.ID, selectedG).drops = mats;
@@ -388,6 +396,7 @@ $(document).ready(function () {
         $(document).on("change",".checkDA", function() {
           $(".materials .selectedAll").children().removeClass('checkedME')
           $("#area .area .drops").children().removeClass('checkedME')
+          $("#equipBox .tab .drops").children().removeClass('checkedME')
           let checkedE = [];
           $(".checkDA:checked").each(function() {
             let checked = getById($(this).attr("id"), selectedG)
@@ -397,6 +406,7 @@ $(document).ready(function () {
             for(o=0; o<checkedE[i].drops.length; o++){
               $(".materials .selectedAll ."+checkedE[i].drops[o]).addClass('checkedME')
               $("#area .area .drops ."+checkedE[i].drops[o]).addClass('checkedME')
+              $("#equipBox .tab .drops ."+checkedE[i].drops[o]).addClass('checkedME')
             }
           }
         })
@@ -406,6 +416,7 @@ $(document).ready(function () {
           $(".materials .selectedAll").children().removeClass('checkedMA');
           $("#area .area .drops").children().removeClass("checkedMA");      
           $("#area .area").children(".flag").remove();    
+          $("#equipBox .tab .drops").children().removeClass('checkedMA')
           let checkedA = [];
           $(".checkboxA:checked").each(function() {
             checkedA.push($(this).parents('.area').attr("id"))
@@ -419,11 +430,12 @@ $(document).ready(function () {
                 })                
               }
             }            
-          }          
+          }
           checkedAM = Array.from(new Set(checkedAM))
           for(u=0; u<checkedAM.length; u++) {
             $(".materials .selectedAll ."+checkedAM[u]).addClass('checkedMA')
             $("#area .area .drops ."+checkedAM[u]).addClass('checkedMA')
+            $("#equipBox .tab .drops ."+checkedAM[u]).addClass('checkedMA')
           }
           if($(this).siblings("label").hasClass("active")) {
             let deleteR = $(this).parents('.area').attr("id");
@@ -504,7 +516,7 @@ $(document).ready(function () {
           areaDrops()
           $(".active").removeClass();
           $("#area .area").children(".flag").remove();       
-        })  
+        }) 
         
         
       });
