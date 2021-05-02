@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let item = [];
+  let options = []
   let weapon = [];
   let clothes = [];
   let helmet = [];
@@ -12,11 +13,10 @@ $(document).ready(function () {
   let material = [];
   let drop = [];
   let area = [];
-  let dropArea = [];
-  let cleanDA = [];
   let checkedAOrder = [];
+  let sEquip = [];
 
-  $.getJSON("./json/item.json", function (data) {
+  $.getJSON("../json/item.json", function (data) {
     $.each(data, function () {
       item.push(this);
       if (this.sort == "옷") {
@@ -41,55 +41,85 @@ $(document).ready(function () {
         weapon.push(this);
       }
     });
-    $.getJSON("./json/drop.json", function (data) {
+    $.getJSON("../json/drop.json", function (data) {
       $.each(data, function () {
         drop.push(this);
       });
-      $.getJSON("./json/area.json", function (data) {
+      $.getJSON("../json/area.json", function (data) {
         $.each(data, function () {
           area.push(this);
         });
+        
+        $(item).each(function(a, list) {
+          $(Object.getOwnPropertyNames(list)).each(function(b, option){
+            if(options.indexOf(option)>=0) {
 
-        // 목록 생성
-        for (i = 0; i < clothes.length; i++) {
-          $("#clothesS").append("<option value=" + clothes[i].ID + ">" + clothes[i].name + "</option>")
-        }
-        $("#clothesS").children(":first").attr("selected");
-        for (i = 0; i < helmet.length; i++) {
-          $("#helmetS").append("<option value=" + helmet[i].ID + ">" + helmet[i].name + "</option>")
-        }
-        $("#helmetS").children(":first").attr("selected");
-        for (i = 0; i < bracelet.length; i++) {
-          $("#braceletS").append("<option value=" + bracelet[i].ID + ">" + bracelet[i].name + "</option>")
-        }
-        $("#braceletS").children(":first").attr("selected");
-        for (i = 0; i < shoes.length; i++) {
-          $("#shoesS").append("<option value=" + shoes[i].ID + ">" + shoes[i].name + "</option>")
-        }
-        $("#shoesS").children(":first").attr("selected");
-        for (i = 0; i < accessory.length; i++) {
-          $("#accessoryS").append("<option value=" + accessory[i].ID + ">" + accessory[i].name + "</option>")
-        }
-        $("#accessoryS").children(":first").attr("selected");
+            } else {
+              options.push(option)
+            }
+          })
+        })
+        options.sort();
+        options.splice(22,1)
+
+        //목록 생성
+        //무기
         for (i = 0; i < weapon.length; i++) {
-          if ($("#weaponS").val() == weapon[i].sort) {
-            $("#weapon2S").append("<option value=" + weapon[i].ID + " class='weapon2S'>" + weapon[i].name + "</option>")
+          if ($("#weaponL").val() == weapon[i].sort) {
+            $("#weaponD").append("<option value=" + weapon[i].ID + " class='weaponDL'>" + weapon[i].name + "</option>")
           }
         }
-        $("#weapon2S").children(":first").attr("selected");
-        $("#weaponS").on("change", function () {
-          $(".weapon2S").remove();
+        $("#weaponD .weaponDL:first-child").attr("selected","selected");
+        
+        $("#weaponL").on("change", function () {
+          $(".weaponDL").remove();
           for (i = 0; i < weapon.length; i++) {
-            if ($("#weaponS").val() == weapon[i].sort) {
-              $("#weapon2S").append("<option value=" + weapon[i].ID + " class='weapon2S'>" + weapon[i].name + "</option>");
-              $("#weapon2S").children(":first").attr("selected");
+            if ($("#weaponL").val() == weapon[i].sort) {
+              $("#weaponD").append("<option value=" + weapon[i].ID + " class='weaponDL'>" + weapon[i].name + "</option>")
             }
           }
+          $("#weaponD .weaponDL:first-child").attr("selected","selected");
         })
+        //방어구
+        for (i = 0; i < item.length; i++) {
+          if ($("#armorL").val() == item[i].sort) {
+            $("#armorD").append("<option value=" + item[i].ID + " class='armorDL'>" + item[i].name + "</option>")
+          }
+        }
+        $("#armorD .armorDL:first-child").attr("selected","selected");
 
-        // 계산 코드 시작 
-        let selectedW, selectedC, selectedH, selectedB, selectedS, selectedA;
-
+        $("#armorL").on("change", function () {
+          $(".armorDL").remove();
+          for (i = 0; i < item.length; i++) {
+            if ($("#armorL").val() == item[i].sort) {
+              $("#armorD").append("<option value=" + item[i].ID + " class='armorDL'>" + item[i].name + "</option>")
+            }
+          }
+          $("#armorD .armorDL:first-child").attr("selected","selected");
+        })
+        //옵션 목록
+        for (i = 6; i < options.length; i++) {
+          $("#optionL").append("<option value=" + options[i] + ">" + options[i] + "</option>")        
+        }
+        $("#optionL option:first-child").attr("selected","selected");
+        
+        $(document).on("change","#optionL", function () {
+          $(".optionDL").remove();
+          for (i = 0; i < item.length; i++) {
+            if (Object.getOwnPropertyNames(item[i]).indexOf($("#optionL").val())>=0) {
+              $("#optionD").append("<option value=" + item[i].ID + " class='optionDL'>" + item[i].name + "</option>")
+            }
+          }
+          $("#optionD .optionDL:first-child").attr("selected","selected");
+        });        
+        for (i = 0; i < item.length; i++) {
+          if (Object.getOwnPropertyNames(item[i]).indexOf($("#optionL").val())>=0) {
+            $("#optionD").append("<option value=" + item[i].ID + " class='optionDL'>" + item[i].name + "</option>")
+          }
+        }
+        $("#optionD .optionDL:first-child").attr("selected","selected");
+        
+        // 계산 코드 시작       
         // 하위재료 찾기
         function getById(id, arrays) {
           return arrays.filter(function (obj) {
@@ -99,252 +129,269 @@ $(document).ready(function () {
           })[0]
         }
 
-        selectedW = getById($("#weapon2S").val(),item);
-        selectedC = getById($("#clothesS").val(),item);
-        selectedH = getById($("#helmetS").val(),item);
-        selectedB = getById($("#braceletS").val(),item);
-        selectedS = getById($("#shoesS").val(),item);
-        selectedA = getById($("#accessoryS").val(),item);
+        let materialsG = [];
+        let needMG =[];
+        let selectedG = [];
+        let dropAreaG = [
+          {"ID":"A002", "drops":[]}, {"ID":"A003", "drops":[]}, {"ID":"A004", "drops":[]}, {"ID":"A005", "drops":[]}, {"ID":"A006", "drops":[]}, {"ID":"A007", "drops":[]}, {"ID":"A008", "drops":[]}, {"ID":"A009", "drops":[]}, {"ID":"A010", "drops":[]}, {"ID":"A011", "drops":[]}, {"ID":"A012", "drops":[]}, {"ID":"A013", "drops":[]}, {"ID":"A014", "drops":[]}, {"ID":"A015", "drops":[]}, {"ID":"A016", "drops":[]}
+        ];
+        let areaG =[
+          //골목길
+          [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+          //번화가
+          [1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0],
+          //절
+          [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          //연못
+          [0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          //병원
+          [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+          //묘지
+          [0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+          //공장
+          [0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+          //성당
+          [0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0],
+          //항구
+          [0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0],
+          //고주가
+          [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0],
+          //숲
+          [0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0],
+          //모사
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0],
+          //호텔
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1],
+          //학교
+          [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
+          //양궁장
+          [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0]
+        ];
+        //무기, 방어구 토글, 리스트 생성
+        function equipSort() {
+          $(".equipSort").each(function(){
+            if(this.checked) {
+              $("#"+this.id+"L").removeClass("hide")
+              $("#"+this.id+"D").removeClass("hide")
+            } else {
+              $("#"+this.id+"L").addClass("hide")
+              $("#"+this.id+"D").addClass("hide")
+            }
+          })
+        }
+        //장비 선택, 추가
+        function equipAdd() {
+          let sorted= $(".equipSort:checked").val();
+          let selected = $("."+sorted+"DL:selected").val();
+          let equipTemp = getById(selected,item);
+          sEquip.push(equipTemp)                  
+          $("#equipBox").append(
+            `<div class="tab `+equipTemp.ID+`">
+              <button type="button" class="tabBtn `+equipTemp.ID+`">`+equipTemp.name+`<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>    
+              <input type="checkbox" class="checkDA" id="`+equipTemp.ID+`">
+              <label for="`+equipTemp.ID+`">재료 위치</label>
+              <button type="button" class="delBtn `+equipTemp.ID+`">제거</button>
+              <ul class="scroll hide `+equipTemp.ID+`">
+                <li>
+                  <ul class="option"></ul>
+                </li>
+                <span class="needM">하위재료:</span>
+                <li class="lowerM"></li>
+                <span class="needM">드랍재료:</span>
+                <li class="drops"></li>
+              </ul>              
+            </div>`
+          )
+          sEquip.sort();
+        } 
 
-        let materials = [];
-        let needM =[];
-        let selected = [];
+        let needDrops = [];
 
         //장비의 필요 드랍 재료, 드랍 위치를 판명하여 dropArea 배열에 추가
         function disassemble(equip) {
+          //녹색
           //materials 초기화, 삽입
-          materials.splice(0);
-          materials.push(equip.material1, equip.material2);
+          materialsG.splice(0);
+          if(equip.ID.substring(0,1)=="G") {
+            materialsG.push(equip.ID)
+          } else {
+            materialsG.push(equip.material1, equip.material2);
+          }
           //materials 항목을 드랍템으로 변환
-          for (i = 0; i < materials.length;) {
-            if (materials[i].substring(0, 1) != "D") {
-              let test1 = getById(materials[i],item);
-              materials.splice(i, 1);
-              materials.push(test1.material1, test1.material2);
-            } else {
+          for (i = 0; i < materialsG.length;) {
+            let test1G = getById(materialsG[i],item);
+            if (materialsG[i].substring(0, 1) == "D"||materialsG[i].substring(0, 1) =="G") {
               i++;
+            } else {
+              materialsG.splice(i, 1);
+              materialsG.push(test1G.material1, test1G.material2);              
             }
           };
-          materials.sort();
-          let testM = [];
-          testM = testM.concat(materials);
-          selected.push({"ID":equip.ID, "drops":testM});
-
-          //dropArea = {장비, 지역, 재료} 형식의 객체배열
-          //함수가 실행될 때마다, 해당 장비에 대한 dropArea가 추가됨
-          $(materials).each(function(index, name){
-            $(area).each(function(number, areas){
-              $(areas.drop).each(function(number, drops){
-                if(drops.indexOf(name)>=0) {
-                  dropArea.push({"equip": equip.ID, "area":areas.ID, "drops" : name})                  
-                }
-              })
-            })
-          })
-          dropArea.sort(function(a, b) {
-            return a.equip < b.equip ? -1 : a.equip > b.equip ? 1 : 0; 
-          });                     
+          materialsG.sort();
+          let testMG = [];
+          testMG = testMG.concat(materialsG);
+          selectedG.push({"ID":equip.ID, "name":equip.name ,"drops":testMG});
         };
 
-        //dropArea를 참조하여 필요 갯수가 포함된 cleanDA 배열 리턴 
-        function sortedDA() {
-          cleanDA.splice(0)
-          for(i=0; i<dropArea.length; i++) {
-            let newThing = {"area":dropArea[i].area,"drops":dropArea[i].drops}
-            cleanDA.push(newThing);
-          }
-          //dda 배열을 통해 중복 확인 및 필요 갯수 표시
-          const dda = Object.values(cleanDA.reduce((r, e) => {
-            let k = `${e.area}|${e.drops}`;
-            if(!r[k]) r[k] = {...e, count: 1}
-            else r[k].count += 1;
-            return r;
-          }, {}))
-          dda.sort(function(b, a) {
-            return a.count < b.count ? -1 : a.count > b.count ? 1 : 0; 
-          });
-          cleanDA.splice(0)
-          cleanDA = cleanDA.concat(dda)
+        //녹색 이상의 제작템 스택 계산, 실제 제작 횟수 계산
+        function matCalc() {
+          //녹색
+          needMG.splice(0)
+          $(selectedG).each(function(number, selG) {
+            $(selG.drops).each(function(number, matG) {
+              if(getById(matG, needMG)) {
+                getById(matG, needMG).count++
+              } else {
+                needMG.push({"ID": matG, "count": 1});
+              }
+            })
+          })
+
+          $(needMG).each(function(number, mats){
+            if(getById(mats.ID, item)) {
+              var realCount = Math.ceil(mats.count/getById(mats.ID, item).stack,-1)
+              $(this)[0].count = realCount;
+            }
+          })
+          
+          needDrops.splice(0)
+          $(needMG).each(function(a, mats) {
+            if(mats.ID.substring(0,1) == "D") {
+              needDrops.push(mats)
+            } else {
+              let matsInfo = getById(mats.ID, item);
+              if (getById(matsInfo.material1, needDrops)) {                
+                getById(matsInfo.material1, needDrops).count++
+              } else {                
+                needDrops.push({"ID": matsInfo.material1, "count": mats.count})
+              };
+              if (getById(matsInfo.material2, needDrops)) {
+                getById(matsInfo.material2, needDrops).count++
+              } else {                
+                needDrops.push({"ID": matsInfo.material2, "count": mats.count})
+              }
+            }
+          })
+          needDrops.sort()
         }
         
-        //필요 재료 갯수 표시 (재료만)
-        function sortedM() {
-          needM.splice(0)
-          for(i=0;i<cleanDA.length;i++) {
-            needM.push({"drops":cleanDA[i].drops,"count":cleanDA[i].count});
-          }
-          //nm 배열을 통해 중복 확인 및 필요 갯수 표시
-          const nm = Object.values(needM.reduce((r, e) => {
-            let k = `${e.drops}|${e.count}`;
-            if(!r[k]) r[k] = {...e, counts: 1}
-            else r[k].counts += 1;
-            return r;
-          }, {}))
-          nm.sort(function(b, a) {
-            return a.count < b.count ? -1 : a.count > b.count ? 1 : 0; 
-          });
-          needM.splice(0)
-          needM = needM.concat(nm)
-        }
-
-        //장비 변경 시 dropArea 배열 수정
-        function changeEquip(oldEquip) {
-          $("input[type=checkbox]").prop("checked",false);
-          for(i=0; i<dropArea.length;) {
-            if(oldEquip.ID == dropArea[i].equip) {
-              dropArea.splice(i,1);
-            } else {
-              i++
-            }
-          }
-          selected.splice(selected.indexOf(getById(oldEquip.ID,selected)),1)
-          checkedAOrder.splice(0);
-          $(".active").removeClass();
-          $("#area .area").children(".flag").remove();    
+        //위치 드랍 계산
+        function areaCalc() {
+          //녹색          
+          $(dropAreaG).each(function(a, areas){
+            areas.drops = [];
+          })
+          let daTemp = []
+          $(needDrops).each(function(a, needs){
+            $(area).each(function(b, areas){
+              if((areas.drop).indexOf(needs.ID)>=0) {
+                daTemp.push({"ID":areas.ID, "drop":needs.ID, "count":needs.count})
+              }
+            })
+          })
+          $(daTemp).each(function(a, daTemps){
+            $(dropAreaG).each(function(b,areas){
+              if(daTemps.ID == areas.ID) {
+                areas.drops.push({"ID":daTemps.drop, "count":daTemps.count})
+              }
+            })
+          })
         }
         
         //선택 장비 정보 표시
-        function equipInfo(equip) {
-          let optionKey = Object.keys(equip);
-          let optionValue = Object.values(equip);
-          let sort = equip.ID.substring(1, 2);
-          let grade = equip.ID.substring(0, 1);
-          let equipDrops = getById(equip.ID, selected).drops;
-          let lowerM = [];
-          let lowerM1 = equip.material1;
-          let lowerM2 = equip.material2;
-          $("#equipInfo ul.selected" + sort + " .name").children().remove();
-          $("#equipInfo ul.selected" + sort + " .option").children().remove();
-          $("#equipInfo ul.selected" + sort + " .lowerM").children().remove();
-          $("#equipInfo ul.selected" + sort + " .drops").children().remove();
-          $("#equipInfo ul.selected" + sort + " .name").append(
-            "<p class='grade"+grade+"'>" + equip.name + "</p>"
-          )
-          for (i = 6; i < optionKey.length; i++) {
-            if(optionKey[i].includes("%")) {
-              $("#equipInfo ul.selected" + sort+" .option").append(
-                "<li>" + optionKey[i] + " : " + Math.round(optionValue[i]*100) + "%</li>"
-              )
+        function equipInfo() {
+          $(".tab .lowerM").children().remove()
+          $(".tab .drops").children().remove()
+          $(".tab .option").children().remove()
+          $(".tab").each(function(){
+            let selItem = getById(this.classList[1],item)
+            let optionKey = Object.keys(selItem);
+            let optionValue = Object.values(selItem);
+            let mat1, mat2;
+            let mats = []
+            for (u = 6; u < optionKey.length; u++) {
+              if(optionKey[u].includes("%")) {
+                $(this).find(".option").append(
+                  "<li>" + optionKey[u] + " : " + Math.round(optionValue[u]*100) + "%</li>"
+                )
+              } else {
+                $(this).find(".option").append(
+                  "<li>" + optionKey[u] + " : " + optionValue[u] + "</li>"
+                )
+              }            
+            }  
+            if(selItem.material1.substring(0,1)=="D") {
+              mat1 = getById(selItem.material1, drop)
             } else {
-              $("#equipInfo ul.selected" + sort+" .option").append(
-                "<li>" + optionKey[i] + " : " + optionValue[i] + "</li>"
+              mat1 = getById(selItem.material1, item)
+            }
+            if(selItem.material2.substring(0,1)=="D") {
+              mat2 = getById(selItem.material2, drop)
+            } else {
+              mat2 = getById(selItem.material2, item)
+            }
+            $(this).find(".lowerM").append(
+              "<span class='grade"+mat1.ID.substring(0,1)+"'>[" + mat1.name + "]</span>"
+            )
+            $(this).find(".lowerM").append(
+              "<span class='grade"+mat2.ID.substring(0,1)+"'>[" + mat2.name + "]</span>"
+            )
+            mats.push(mat1.ID, mat2.ID)
+            for (i = 0; i < mats.length;) {
+              if (mats[i].substring(0, 1) == "D") {
+                i++;
+              } else {
+                mats.push(getById(mats[i],item).material1, getById(mats[i],item).material2);              
+                mats.splice(i, 1);
+              }
+            };
+            mats.sort();
+            for(o=0; o<mats.length; o++) {
+              $(this).find(".drops").append(
+                "<span class='gradeD'>[" + getById(mats[o],drop).name + "]</span>"
               )
-            }            
-          }         
-          for (i = 0; i < equipDrops.length; i++) {
-            $("#equipInfo ul.selected" + sort+" .drops").append(
-              "<span>[" + getById(equipDrops[i],drop).name + "]</span>"
-           )
-          }
-
-          $(".materials .selectedAll").children().remove();
-          for (i = 0; i < needM.length; i++) {
-            $(".materials .selectedAll").append(
-              "<span class='dropM "+getById(needM[i].drops,drop).ID+"'>" + getById(needM[i].drops,drop).name + "<span class='mNumber'>(x"+needM[i].count+")</span></span>"
-           )
-          }
-          if(lowerM1.substring(0,1) == "D") {
-            lowerM.push({"name":getById(lowerM1, drop).name, "grade": lowerM1.substring(0,1)})
-          } else {
-            lowerM.push({"name":getById(lowerM1, item).name, "grade": lowerM1.substring(0,1)})
-          }          
-          if(lowerM2.substring(0,1) == "D") {
-            lowerM.push({"name":getById(lowerM2, drop).name, "grade": lowerM2.substring(0,1)})
-          } else {
-            lowerM.push({"name":getById(lowerM2, item).name, "grade": lowerM2.substring(0,1)})
-          }
-
-          for (i = 0; i < lowerM.length; i++) {
-            $("#equipInfo ul.selected" + sort+" .lowerM").append(
-              "<span class='grade"+lowerM[i].grade+"'>[" + lowerM[i].name + "]</span>"
-           )
-          }
+            }
+            getById(selItem.ID, selectedG).drops = mats;
+          })
         }
 
+        $(document).on("click", ".tabBtn.description", function() {
+          $("#equipBox").toggleClass("hide")
+        })
+
+        $(document).on("click", ".tab .tabBtn", function() {
+          $(this).siblings(".scroll").toggleClass("hide")
+        })
+        
         //선택 장비 드랍위치 표시
-        function showDA() {
+        function areaDrops() {
+          $(".materials .selectedAll").children().remove();
+          for (i = 0; i < needDrops.length; i++) {
+            $(".materials .selectedAll").append(
+              "<span class='dropM "+getById(needDrops[i].ID,drop).ID+"'>" + getById(needDrops[i].ID,drop).name + "<span class='mNumber'>(x"+needDrops[i].count+")</span></span>"
+           )
+          }
+
           $("#area .area .drops").children().remove();
           $("#area .area strong").text("");
-          $(cleanDA).each(function() {
-            $("#area .area#"+(this).area+" .drops").append("<li class='dropM "+(this).drops+"'>"+getById((this).drops,drop).name+"<span class='mNumber'>(x"+(this).count+")</span></li>")
+          $(dropAreaG).each(function(a, area) {
+            $(area.drops).each(function(b, areaDrops){
+              $("#area .area#"+area.ID+" .drops").append("<li class='dropM "+areaDrops.ID+"'>"+getById(areaDrops.ID, drop).name+"<span class='mNumber'>(x"+areaDrops.count+")</span></li>")
+            })            
           })
           $("#area .area .drops").each(function(i,t) {
             $(t).siblings("label").children("strong").text(" ("+$(t).children().length+"가지)")
           })
         }
-
-        // 장비 선택 변경   
-        $("#weaponS").on("change", function () {
-          changeEquip(selectedW);
-          selectedW = getById($("#weapon2S").val(),item);
-          disassemble(selectedW);
-          sortedDA();     
-          sortedM(); 
-          showDA();
-          equipInfo(selectedW);
-        })
-        $("#weapon2S").on("change", function () {
-          changeEquip(selectedW);
-          selectedW = getById($("#weapon2S").val(),item);
-          disassemble(selectedW);
-          sortedDA();    
-          sortedM();  
-          showDA();
-          equipInfo(selectedW);          
-        })
-        $("#clothesS").on("change", function () {
-          changeEquip(selectedC);
-          selectedC = getById($("#clothesS").val(),item);
-          disassemble(selectedC);
-          sortedDA();     
-          sortedM();
-          showDA()
-          equipInfo(selectedC);
-        })
-        $("#helmetS").on("change", function () {
-          changeEquip(selectedH);
-          selectedH = getById($("#helmetS").val(),item);
-          disassemble(selectedH);
-          sortedDA();    
-          sortedM();  
-          showDA()
-          equipInfo(selectedH)
-        })
-        $("#braceletS").on("change", function () {
-          changeEquip(selectedB);
-          selectedB = getById($("#braceletS").val(),item);
-          disassemble(selectedB);
-          sortedDA();   
-          sortedM();   
-          showDA()
-          equipInfo(selectedB)
-        })
-        $("#shoesS").on("change", function () {
-          changeEquip(selectedS);
-          selectedS = getById($("#shoesS").val(),item);
-          disassemble(selectedS);
-          sortedDA();   
-          sortedM();    
-          showDA()
-          equipInfo(selectedS)
-        })
-        $("#accessoryS").on("change", function () {
-          changeEquip(selectedA);
-          selectedA = getById($("#accessoryS").val(),item);
-          disassemble(selectedA);
-          sortedDA();
-          sortedM();      
-          showDA()
-          equipInfo(selectedA)
-        })
-        
+                
         //장비 체크박스 클릭시
-        $(".checkboxE").on("change", function() {
+        $(document).on("change",".checkDA", function() {
           $(".materials .selectedAll").children().removeClass('checkedME')
           $("#area .area .drops").children().removeClass('checkedME')
           let checkedE = [];
-          $(".checkboxE:checked").each(function() {
-            checkedE.push({"ID":$("#equipSelect #"+$(this).attr("id")+"S").val(),"drops":getById($("#equipSelect #"+$(this).attr("id")+"S").val(),selected).drops});
+          $(".checkDA:checked").each(function() {
+            let checked = getById($(this).attr("id"), selectedG)
+            checkedE.push({"ID":checked.ID,"drops":checked.drops});
           })
           for(i=0; i<checkedE.length; i++) {
             for(o=0; o<checkedE[i].drops.length; o++){
@@ -355,7 +402,7 @@ $(document).ready(function () {
         })
         
         //위치 체크박스 클릭시
-        $(".checkboxA").on("change", function() {
+        $(document).on("change",".checkboxA", function() {
           $(".materials .selectedAll").children().removeClass('checkedMA');
           $("#area .area .drops").children().removeClass("checkedMA");      
           $("#area .area").children(".flag").remove();    
@@ -364,13 +411,15 @@ $(document).ready(function () {
             checkedA.push($(this).parents('.area').attr("id"))
           })
           let checkedAM = [];
-          for(i=0; i<cleanDA.length; i++) {
+          for(i=0; i<dropAreaG.length; i++) {
             for(o=0; o<checkedA.length; o++) {
-              if(cleanDA[i].area == checkedA[o]){
-                checkedAM.push(cleanDA[i].drops)
+              if(dropAreaG[i].ID == checkedA[o]){
+                $(dropAreaG[i].drops).each(function() {
+                  checkedAM.push(this.ID)
+                })                
               }
             }            
-          }
+          }          
           checkedAM = Array.from(new Set(checkedAM))
           for(u=0; u<checkedAM.length; u++) {
             $(".materials .selectedAll ."+checkedAM[u]).addClass('checkedMA')
@@ -387,11 +436,6 @@ $(document).ready(function () {
             $("#area #"+checkedAOrder[i]).prepend("<div class='flag route"+(i+1)+"'>"+(i+1)+"</div>");
             $("#area #"+checkedAOrder[i]+" label").addClass("active route"+(i+1));
           }
-        })
-
-        $(".tabBtn").on("click", function(e) {
-          let target = $(e.currentTarget).siblings('.scroll')
-          target.toggleClass('hide')
         })
 
         $(".mapBtn").on("click", function() {
@@ -416,22 +460,53 @@ $(document).ready(function () {
         $("#summaryWrap .closeBtn").on("click", function() {
           $("#summaryWrap").addClass("hide")
         })
+
+        equipSort();
+        $(".equipSort").on("change", equipSort)
         
-        disassemble(selectedW);
-        disassemble(selectedC);
-        disassemble(selectedH);
-        disassemble(selectedB);
-        disassemble(selectedS);
-        disassemble(selectedA);
-        sortedDA();
-        sortedM();
-        showDA()
-        equipInfo(selectedW);
-        equipInfo(selectedC);
-        equipInfo(selectedH);
-        equipInfo(selectedB);
-        equipInfo(selectedS);
-        equipInfo(selectedA);
+        //장비 추가
+        $(".addBtn").on("click",function() {
+          let sorted= $(".equipSort:checked").val();
+          let selected = $("."+sorted+"DL:selected").val();   
+          if($(".tab."+selected).length>0) {
+            
+          } else {
+            equipAdd();
+            disassemble(sEquip[sEquip.length-1])
+            matCalc()
+            areaCalc()
+            areaDrops()
+            equipInfo();
+            $(".active").removeClass();
+            $("#area .area").children(".flag").remove();      
+          }
+        })
+           
+        //장비 제거
+        $(document).on("click",".delBtn", function() {
+          for(i=0; i<sEquip.length; i++) {
+            if(sEquip[i].ID == this.classList[1]) {
+              sEquip.splice(i,1);
+            }
+          }
+          for(i=0; i<needMG.length; i++) {
+            if(needMG[i].ID == this.classList[1]) {
+              needMG.splice(i,1);
+            }
+          }for(i=0; i<selectedG.length; i++) {
+            if(selectedG[i].ID == this.classList[1]) {
+              selectedG.splice(i,1);
+            }
+          }
+          $(this).parent().remove()
+          matCalc()
+          areaCalc()
+          areaDrops()
+          $(".active").removeClass();
+          $("#area .area").children(".flag").remove();       
+        })  
+        
+        
       });
     });
   });
