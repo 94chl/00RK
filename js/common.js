@@ -16,7 +16,7 @@ $(document).ready(function () {
   let checkedAOrder = [];
   let sEquip = [];
 
-  $.getJSON("../json/item.json", function (data) {
+  $.getJSON("./json/item.json", function (data) {
     $.each(data, function () {
       item.push(this);
       if (this.sort == "옷") {
@@ -41,11 +41,11 @@ $(document).ready(function () {
         weapon.push(this);
       }
     });
-    $.getJSON("../json/drop.json", function (data) {
+    $.getJSON("./json/drop.json", function (data) {
       $.each(data, function () {
         drop.push(this);
       });
-      $.getJSON("../json/area.json", function (data) {
+      $.getJSON("./json/area.json", function (data) {
         $.each(data, function () {
           area.push(this);
         });
