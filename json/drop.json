@@ -199,7 +199,7 @@
   },
   {
     "ID": "DW001",
-    "sort": "단검",
+    "sort": "dagger",
     "name": "가위",
     "location1": "A002",
     "location2": "A006",
@@ -207,7 +207,7 @@
   },
   {
     "ID": "DW002",
-    "sort": "단검",
+    "sort": "dagger",
     "name": "만년필",
     "location1": "A003",
     "location2": "A011",
@@ -215,7 +215,7 @@
   },
   {
     "ID": "DW003",
-    "sort": "단검",
+    "sort": "dagger",
     "name": "식칼",
     "location1": "A004",
     "location2": "A010",
@@ -223,7 +223,7 @@
   },
   {
     "ID": "DW004",
-    "sort": "양손검",
+    "sort": "twoHand",
     "name": "녹슨 검",
     "location1": "A009",
     "location2": "A010",
@@ -231,7 +231,7 @@
   },
   {
     "ID": "DW005",
-    "sort": "도끼",
+    "sort": "axe",
     "name": "곡괭이",
     "location1": "A005",
     "location2": "A007",
@@ -240,7 +240,7 @@
   },
   {
     "ID": "DW006",
-    "sort": "도끼",
+    "sort": "axe",
     "name": "손도끼",
     "location1": "A005",
     "location2": "A008",
@@ -248,21 +248,21 @@
   },
   {
     "ID": "DW007",
-    "sort": "글러브",
+    "sort": "glove",
     "name": "너클",
     "location1": "A007",
     "location2": "A012"
   },
   {
     "ID": "DW008",
-    "sort": "글러브",
+    "sort": "glove",
     "name": "목장갑",
     "location1": "A006",
     "location2": "A014"
   },
   {
     "ID": "DW009",
-    "sort": "톤파",
+    "sort": "tonfa",
     "name": "대나무",
     "location1": "A004",
     "location2": "A005",
@@ -272,7 +272,7 @@
   },
   {
     "ID": "DW010",
-    "sort": "방망이",
+    "sort": "bat",
     "name": "단봉",
     "location1": "A004",
     "location2": "A005",
@@ -280,20 +280,20 @@
   },
   {
     "ID": "DW011",
-    "sort": "방망이",
+    "sort": "bat",
     "name": "나뭇가지",
     "location1": "A000"
   },
   {
     "ID": "DW012",
-    "sort": "채찍",
+    "sort": "whip",
     "name": "채찍",
     "location1": "A009",
     "location2": "A015"
   },
   {
     "ID": "DW013",
-    "sort": "투척",
+    "sort": "throw",
     "name": "쇠구슬",
     "location1": "A008",
     "location2": "A012",
@@ -301,13 +301,13 @@
   },
   {
     "ID": "DW014",
-    "sort": "투척",
+    "sort": "throw",
     "name": "야구공",
     "location1": "A000"
   },
   {
     "ID": "DW015",
-    "sort": "암기",
+    "sort": "shuriken",
     "name": "면도칼",
     "location1": "A006",
     "location2": "A009",
@@ -315,14 +315,14 @@
   },
   {
     "ID": "DW016",
-    "sort": "암기",
+    "sort": "shuriken",
     "name": "트럼프 카드",
     "location1": "A003",
     "location2": "A014"
   },
   {
     "ID": "DW017",
-    "sort": "암기",
+    "sort": "shuriken",
     "name": "분필",
     "location1": "A008",
     "location2": "A009",
@@ -330,21 +330,21 @@
   },
   {
     "ID": "DW018",
-    "sort": "활",
+    "sort": "bow",
     "name": "양궁",
     "location1": "A009",
     "location2": "A016"
   },
   {
     "ID": "DW019",
-    "sort": "석궁",
+    "sort": "crossbow",
     "name": "석궁",
     "location1": "A008",
     "location2": "A012"
   },
   {
     "ID": "DW020",
-    "sort": "권총",
+    "sort": "pistol",
     "name": "발터 PPK",
     "location1": "A008",
     "location2": "A013",
@@ -352,21 +352,21 @@
   },
   {
     "ID": "DW021",
-    "sort": "돌격 소총",
+    "sort": "rifle",
     "name": "페도로프 자동소총",
     "location1": "A008",
     "location2": "A014"
   },
   {
     "ID": "DW022",
-    "sort": "저격총",
+    "sort": "sniper",
     "name": "화승총",
     "location1": "A010",
     "location2": "A012"
   },
   {
     "ID": "DW023",
-    "sort": "망치",
+    "sort": "hammer",
     "name": "망치",
     "location1": "A002",
     "location2": "A005",
@@ -374,7 +374,7 @@
   },
   {
     "ID": "DW024",
-    "sort": "창",
+    "sort": "spear",
     "name": "단창",
     "location1": "A004",
     "location2": "A005",
@@ -382,7 +382,7 @@
   },
   {
     "ID": "DW025",
-    "sort": "쌍절곤",
+    "sort": "nunchaku",
     "name": "쇠사슬",
     "location1": "A002",
     "location2": "A007",
@@ -390,7 +390,7 @@
   },
   {
     "ID": "DW026",
-    "sort": "레이피어",
+    "sort": "rapier",
     "name": "바늘",
     "location1": "A002",
     "location2": "A006",
@@ -398,13 +398,13 @@
   },  
   {
     "ID": "DW027",
-    "sort": "기타",
+    "sort": "guitar",
     "name": "보급형 기타",
     "location1": "A000"
   },
   {
     "ID": "DC001",
-    "sort": "옷",
+    "sort": "body",
     "name": "바람막이",
     "location1": "A011",
     "location2": "A014",
@@ -412,14 +412,14 @@
   },
   {
     "ID": "DC002",
-    "sort": "옷",
+    "sort": "body",
     "name": "승복",
     "location1": "A004",
     "location2": "A016"
   },
   {
     "ID": "DC003",
-    "sort": "옷",
+    "sort": "body",
     "name": "전신 수영복",
     "location1": "A002",
     "location2": "A010",
@@ -427,7 +427,7 @@
   },
   {
     "ID": "DC004",
-    "sort": "옷",
+    "sort": "body",
     "name": "천 갑옷",
     "location1": "A004",
     "location2": "A007",
@@ -435,7 +435,7 @@
   },
   {
     "ID": "DH001",
-    "sort": "머리",
+    "sort": "head",
     "name": "머리띠",
     "location1": "A003",
     "location2": "A004",
@@ -443,7 +443,7 @@
   },
   {
     "ID": "DH002",
-    "sort": "머리",
+    "sort": "head",
     "name": "모자",
     "location1": "A005",
     "location2": "A015",
@@ -451,7 +451,7 @@
   },
   {
     "ID": "DH003",
-    "sort": "머리",
+    "sort": "head",
     "name": "자전거 헬멧",
     "location1": "A009",
     "location2": "A013",
@@ -459,7 +459,7 @@
   },
   {
     "ID": "DB001",
-    "sort": "팔",
+    "sort": "arm",
     "name": "손목시계",
     "location1": "A003",
     "location2": "A011",
@@ -467,7 +467,7 @@
   },
   {
     "ID": "DB002",
-    "sort": "팔",
+    "sort": "arm",
     "name": "붕대",
     "location1": "A006",
     "location2": "A008",
@@ -476,7 +476,7 @@
   },
   {
     "ID": "DB003",
-    "sort": "팔",
+    "sort": "arm",
     "name": "팔찌",
     "location1": "A002",
     "location2": "A005",
@@ -484,7 +484,7 @@
   },
   {
     "ID": "DS001",
-    "sort": "다리",
+    "sort": "leg",
     "name": "슬리퍼",
     "location1": "A003",
     "location2": "A006",
@@ -492,7 +492,7 @@
   },
   {
     "ID": "DS002",
-    "sort": "다리",
+    "sort": "leg",
     "name": "운동화",
     "location1": "A002",
     "location2": "A011",
@@ -500,7 +500,7 @@
   },
   {
     "ID": "DS003",
-    "sort": "다리",
+    "sort": "leg",
     "name": "타이즈",
     "location1": "A003",
     "location2": "A006",
@@ -508,7 +508,7 @@
   },
   {
     "ID": "DA001",
-    "sort": "장식",
+    "sort": "ice",
     "name": "깃털",
     "location1": "A006",
     "location2": "A007",
@@ -516,7 +516,7 @@
   },
   {
     "ID": "DA002",
-    "sort": "장식",
+    "sort": "ice",
     "name": "꽃",
     "location1": "A005",
     "location2": "A007",
@@ -525,7 +525,7 @@
   },
   {
     "ID": "DA003",
-    "sort": "장식",
+    "sort": "ice",
     "name": "리본",
     "location1": "A005",
     "location2": "A011",
@@ -533,7 +533,7 @@
   },
   {
     "ID": "DA004",
-    "sort": "장식",
+    "sort": "ice",
     "name": "부채",
     "location1": "A003",
     "location2": "A009",
@@ -541,13 +541,13 @@
   },
   {
     "ID": "DA005",
-    "sort": "장식",
+    "sort": "ice",
     "name": "불경",
     "location1": "A004"
   },
   {
     "ID": "DA006",
-    "sort": "장식",
+    "sort": "ice",
     "name": "상자",
     "location1": "A005",
     "location2": "A009",
@@ -555,20 +555,20 @@
   },
   {
     "ID": "DA007",
-    "sort": "장식",
+    "sort": "ice",
     "name": "성배",
     "location1": "A009"
   },
   {
     "ID": "DA008",
-    "sort": "장식",
+    "sort": "ice",
     "name": "십자가",
     "location1": "A002",
     "location2": "A009"
   },
   {
     "ID": "DA009",
-    "sort": "장식",
+    "sort": "ice",
     "name": "쌍안경",
     "location1": "A002",
     "location2": "A008",
@@ -577,7 +577,7 @@
   },
   {
     "ID": "DT001",
-    "sort": "설치",
+    "sort": "trap",
     "name": "감시 카메라",
     "location1": "A003",
     "location2": "A006",
@@ -590,7 +590,7 @@
   },
   {
     "ID": "DT002",
-    "sort": "설치",
+    "sort": "trap",
     "name": "올가미",
     "location1": "A005",
     "location3": "A010",
@@ -600,7 +600,7 @@
   },
   {
     "ID": "DT003",
-    "sort": "설치",
+    "sort": "trap",
     "name": "쥐덫",
     "location1": "A005",
     "location2": "A007",
@@ -608,7 +608,7 @@
   },
   {
     "ID": "DD001",
-    "sort": "음료",
+    "sort": "drink",
     "name": "꿀",
     "location1": "A002",
     "location2": "A003",
@@ -616,7 +616,7 @@
   },
   {
     "ID": "DD002",
-    "sort": "음료",
+    "sort": "drink",
     "name": "물",
     "location1": "A005",
     "location2": "A009",
@@ -625,7 +625,7 @@
   },
   {
     "ID": "DD003",
-    "sort": "음료",
+    "sort": "drink",
     "name": "얼음",
     "location1": "A006",
     "location2": "A007",
@@ -633,7 +633,7 @@
   },
   {
     "ID": "DD004",
-    "sort": "음료",
+    "sort": "drink",
     "name": "위스키",
     "location1": "A009",
     "location2": "A011",
@@ -641,7 +641,7 @@
   },
   {
     "ID": "DD005",
-    "sort": "음료",
+    "sort": "drink",
     "name": "커피콩",
     "location1": "A007",
     "location2": "A010",
@@ -649,7 +649,7 @@
   },
   {
     "ID": "DD006",
-    "sort": "음료",
+    "sort": "drink",
     "name": "탄산수",
     "location1": "A011",
     "location2": "A013",
@@ -657,7 +657,7 @@
   },
   {
     "ID": "DD007",
-    "sort": "음료",
+    "sort": "drink",
     "name": "우유",
     "location1": "A003",
     "location2": "A006",
@@ -665,13 +665,13 @@
   },
   {
     "ID": "DD008",
-    "sort": "음식",
+    "sort": "food",
     "name": "성수",
     "location1": "A000"
   },
   {
     "ID": "DF001",
-    "sort": "음식",
+    "sort": "food",
     "name": "감자",
     "location1": "A002",
     "location2": "A004",
@@ -679,14 +679,14 @@
   },
   {
     "ID": "DF002",
-    "sort": "음식",
+    "sort": "food",
     "name": "대구",
     "location1": "A010",
     "location2": "A013"
   },
   {
     "ID": "DF003",
-    "sort": "음식",
+    "sort": "food",
     "name": "붕어",
     "location1": "A005",
     "location2": "A007",
@@ -694,7 +694,7 @@
   },
   {
     "ID": "DF004",
-    "sort": "음식",
+    "sort": "food",
     "name": "레몬",
     "location1": "A006",
     "location2": "A011",
@@ -702,7 +702,7 @@
   },
   {
     "ID": "DF005",
-    "sort": "음식",
+    "sort": "food",
     "name": "마늘",
     "location1": "A002",
     "location2": "A004",
@@ -710,13 +710,13 @@
   },
   {
     "ID": "DF006",
-    "sort": "음식",
+    "sort": "food",
     "name": "반창고",
     "location1": "A006"
   },
   {
     "ID": "DF007",
-    "sort": "음식",
+    "sort": "food",
     "name": "빵",
     "location1": "A009",
     "location2": "A010",
@@ -724,13 +724,13 @@
   },
   {
     "ID": "DF008",
-    "sort": "음식",
+    "sort": "food",
     "name": "고기",
     "location1": "A000"
   },
   {
     "ID": "DF009",
-    "sort": "음식",
+    "sort": "food",
     "name": "달걀",
     "location1": "A007",
     "location2": "A012",
@@ -738,7 +738,7 @@
   },
   {
     "ID": "DF010",
-    "sort": "음식",
+    "sort": "food",
     "name": "생라면",
     "location1": "A002",
     "location2": "A004",
@@ -746,7 +746,7 @@
   },
   {
     "ID": "DF011",
-    "sort": "음식",
+    "sort": "food",
     "name": "약초",
     "location1": "A004",
     "location2": "A005",
@@ -754,7 +754,7 @@
   },
   {
     "ID": "DF012",
-    "sort": "음식",
+    "sort": "food",
     "name": "초콜렛",
     "location1": "A003",
     "location2": "A011",
@@ -762,7 +762,7 @@
   },
   {
     "ID": "DF013",
-    "sort": "음식",
+    "sort": "food",
     "name": "카레 가루",
     "location1": "A008",
     "location2": "A011"
