@@ -8,6 +8,11 @@
   display: none;
 }
 
+body {
+  max-width: 768px;
+  position: relative;
+}
+
 .checkedMA {
   text-decoration: line-through;
   opacity:0.5;
@@ -30,12 +35,20 @@
   z-index: 10;
 }
 
+.addBtn {
+  border: 1px solid #fff;
+}
+
+.delBtn {
+  border: 1px solid #000;
+}
+
 #headerWrap {
   position: fixed;
   right:0;
   top:0;
   z-index: 10;
-  width: 80px;
+  width: 100%;
   text-align: center;
 }
 
@@ -45,6 +58,12 @@
   font-size: 2em;
   border-left:1px solid #999;
   border-bottom:1px solid #999;
+}
+
+#headerWrap #sideMenu {
+  width: 80px;
+  position: fixed;
+  right:0;
 }
 
 #headerWrap .mapBtn {
@@ -128,26 +147,17 @@
   text-align: center;
 }
 
-body {
-  max-width: 768px;
-  position: relative;
-}
 
 #equipSelect {
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .selectCategory {
-  height:2.5em;
-  line-height: 2.5em;
-  border-bottom: 1px solid #777;
+  height:3em;
   box-sizing: border-box;
-  padding-left: 20px;
-}
-
-select {
-  height: 1.5em;
-  margin: 0;
+  padding: 0 20px;
+  background: #999;
+  position: relative;
 }
 
 .tabBtn {
@@ -346,6 +356,10 @@ ul.scroll {
 
 .checkBoxA {
   width: 10px;
+  display:none;
+}
+
+.checkDA {
   display:none;
 }
 
