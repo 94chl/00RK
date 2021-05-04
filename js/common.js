@@ -107,6 +107,9 @@ $(document).ready(function () {
         let materialsG = [];
         let needMG =[];
         let selectedG = [];      
+        let dropAreaG = [
+          {"ID":"A002", "drops":[]}, {"ID":"A003", "drops":[]}, {"ID":"A004", "drops":[]}, {"ID":"A005", "drops":[]}, {"ID":"A006", "drops":[]}, {"ID":"A007", "drops":[]}, {"ID":"A008", "drops":[]}, {"ID":"A009", "drops":[]}, {"ID":"A010", "drops":[]}, {"ID":"A011", "drops":[]}, {"ID":"A012", "drops":[]}, {"ID":"A013", "drops":[]}, {"ID":"A014", "drops":[]}, {"ID":"A015", "drops":[]}, {"ID":"A016", "drops":[]}
+        ];
 
         //무기, 방어구 토글, 리스트 생성
         function equipSort() {
