@@ -75,8 +75,10 @@ body {
 
 #headerWrap #sideMenu {
   width: 80px;
-  position: fixed;
-  right:0;
+  position: relative;
+  left:100%;
+  margin-left:-80px;
+  top:0;
 }
 
 #headerWrap .dwBtn {
