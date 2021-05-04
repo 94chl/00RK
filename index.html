@@ -12,6 +12,7 @@
   <div id="headerWrap">
     <div id="logo">00RK</div>
     <div id="sideMenu">
+      <button type="button" class="dwBtn">시작 무기</button>
       <button type="button" class="mapBtn">map</button>
       <div id="mapWrap" class="hide">
         <button type="button" class="closeBtn">X</button>
@@ -71,6 +72,29 @@
         <select name="optionL" id="optionL" class="hide"></select>
         <select name="optionD" id="optionD" class="hide"></select>
         <button type="button" class="addBtn">추가</button>
+        <div class="defaultWWrap hide">
+          <select name="defaultWL" id="defaultWL">
+            <option value="dagger" class="defaultW DW003" selected>식칼</option>
+            <option value="twoHand" class="defaultW DW004">녹슨 검</option>
+            <option value="axe" class="defaultW DW006">손도끼</option>
+            <option value="pistol" class="defaultW DW020">발터 PPK</option>
+            <option value="rifle" class="defaultW DW021">페도로프 자동소총</option>
+            <option value="sniper" class="defaultW DW022">화승총</option>
+            <option value="rapier" class="defaultW DW026">바늘</option>
+            <option value="spear" class="defaultW DW024">단창</option>
+            <option value="hammer" class="defaultW DW023">망치</option>
+            <option value="bat" class="defaultW DW010">단봉</option>
+            <option value="throw" class="defaultW DW014">야구공</option>
+            <option value="shuriken" class="defaultW DW015">면도칼</option>
+            <option value="bow" class="defaultW DW018">양궁</option>
+            <option value="crossbow" class="defaultW DW019">석궁</option>
+            <option value="glove" class="defaultW DW008">목장갑</option>
+            <option value="tonfa" class="defaultW DW009">대나무</option>
+            <option value="guitar" class="defaultW DW027">보급형 기타</option>
+            <option value="nunchaku" class="defaultW DW025">쇠사슬</option>
+            <option value="whip" class="defaultW DW012">채찍</option>
+          </select>
+        </div>
       </div>                
     </div>
   
@@ -81,7 +105,7 @@
     </div>
   
     <div id="equipInfo">
-      <button type="button" class="tabBtn description">장비정보<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>
+      <button type="button" class="tabBtn description">장비정보(<span class="equipNumber">0</span>)<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>
       <div id="equipBox" class="scroll hide">          
         
       </div>
@@ -91,85 +115,91 @@
       <div class="areaWrap clearfix">
         <div class="area clearfix" id="A002">
           <input type="checkbox" class="checkboxA" id="CBA002">
-          <label for="CBA002">골목길<strong></strong></label>
+          <label class="aLabel" for="CBA002">골목길<strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A003">
           <input type="checkbox" class="checkboxA" id="CBA003">
-          <label for="CBA003">번화가<strong></strong></label>
+          <label class="aLabel" for="CBA003">번화가<strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A004">
           <input type="checkbox" class="checkboxA" id="CBA004">
-          <label for="CBA004">절<strong></strong></label>
+          <label class="aLabel" for="CBA004">절<strong></strong></label>
           <ul class="drops"></ul>
         </div>
       </div>
       <div class="areaWrap clearfix">
         <div class="area clearfix" id="A005">
           <input type="checkbox" class="checkboxA" id="CBA005">
-          <label for="CBA005">연못<strong></strong></label>
+          <label class="aLabel" for="CBA005">연못<strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A006">
           <input type="checkbox" class="checkboxA" id="CBA006">
-          <label for="CBA006">병원<strong></strong></label>
+          <label class="aLabel" for="CBA006">병원<strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A007">
           <input type="checkbox" class="checkboxA" id="CBA007">
-          <label for="CBA007">묘지<strong></strong></label>
+          <label class="aLabel" for="CBA007">묘지<strong></strong></label>
           <ul class="drops"></ul>
         </div>
       </div>
       <div class="areaWrap clearfix">
         <div class="area clearfix" id="A008">
           <input type="checkbox" class="checkboxA" id="CBA008">
-          <label for="CBA008">공장<strong></strong></label>
+          <label class="aLabel" for="CBA008">공장<strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A009">
           <input type="checkbox" class="checkboxA" id="CBA009">
-          <label for="CBA009">성당<strong></strong></label>
+          <label class="aLabel" for="CBA009">성당<strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A010">
           <input type="checkbox" class="checkboxA" id="CBA010">
-          <label for="CBA010">항구<strong></strong></label>
+          <label class="aLabel" for="CBA010">항구<strong></strong></label>
           <ul class="drops"></ul>
         </div>
       </div>
       <div class="areaWrap clearfix">
         <div class="area clearfix" id="A011">
           <input type="checkbox" class="checkboxA" id="CBA011">
-          <label for="CBA011">고급주택가<strong></strong></label>
+          <label class="aLabel" for="CBA011">고급주택가<strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A012">
           <input type="checkbox" class="checkboxA" id="CBA012">
-          <label for="CBA012">숲<strong></strong></label>
+          <label class="aLabel" for="CBA012">숲<strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A013">
           <input type="checkbox" class="checkboxA" id="CBA013">
-          <label for="CBA013">모래사장<strong></strong></label>
+          <label class="aLabel" for="CBA013">모래사장<strong></strong></label>
           <ul class="drops"></ul>
         </div>
       </div>
       <div class="areaWrap clearfix">
         <div class="area clearfix" id="A014">
           <input type="checkbox" class="checkboxA" id="CBA014">
-          <label for="CBA014">호텔<strong></strong></label>
+          <label class="aLabel" for="CBA014">호텔<strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A015">
           <input type="checkbox" class="checkboxA" id="CBA015">
-          <label for="CBA015">학교<strong></strong></label>
+          <label class="aLabel" for="CBA015">학교<strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A016">
           <input type="checkbox" class="checkboxA" id="CBA016">
-          <label for="CBA016">양궁장<strong></strong></label>
+          <label class="aLabel" for="CBA016">양궁장<strong></strong></label>
+          <ul class="drops"></ul>
+        </div>
+      </div>
+      <div class="areaWrap clearfix">
+        <div class="area clearfix" id="A000">
+          <div class="aLabel">초기 소지품 및 공통 드랍템<strong></strong></div>
           <ul class="drops"></ul>
         </div>
       </div>
@@ -179,13 +209,13 @@
   <footer>
     <div id="footerWrap" class="clearfix">
       <span>제작: BrownRoomFish</span>
-      <span>참고버전: 0.31.0</span>
-      <span>업데이트날짜: 2021/05/02</span>
+      <span>참고버전: 0.31.2</span>
+      <span>업데이트날짜: 2021/05/05</span>
     </div>
   </footer>
   
   <script src="./js/jquery-3.3.1.min.js"></script>
-  <script src="./js/common.js"></script>
+  <script type="module" src="./js/common.js"></script>
   <script src="./js/index.js"></script>
 </body>
 
