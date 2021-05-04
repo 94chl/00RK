@@ -1,56 +1,31 @@
 $(document).ready(function () {
+  let drop = [];
   let item = [];
+  let area = [];
   let options = []
   let weapon = [];
-  let clothes = [];
-  let helmet = [];
-  let bracelet = [];
-  let shoes = [];
-  let accessory = [];
-  let food = [];
-  let drink = [];
-  let trap = [];
-  let material = [];
-  let drop = [];
-  let area = [];
   let checkedAOrder = [];
-  let sEquip = [];
+  let sEquip = [];  
+  let i,e,o,u;
+  let commonD = ["DW011","DM019","DM020","DM023","DM024","DD002"]
 
-  $.getJSON("./json/item.json", function (data) {
-    $.each(data, function () {
+  $.getJSON("./json/item.json", function (itemL) {
+    $.each(itemL, function () {
       item.push(this);
-      if (this.sort == "옷") {
-        clothes.push(this);
-      } else if (this.sort == "머리") {
-        helmet.push(this);
-      } else if (this.sort == "팔") {
-        bracelet.push(this);
-      } else if (this.sort == "다리") {
-        shoes.push(this);
-      } else if (this.sort == "장식") {
-        accessory.push(this);
-      } else if (this.sort == "음식") {
-        food.push(this);
-      } else if (this.sort == "음료") {
-        drink.push(this);
-      } else if (this.sort == "설치") {
-        trap.push(this);
-      } else if (this.sort == "재료") {
-        material.push(this);
-      } else {
+      if (this.ID.substring(1,2) == "W") {        
         weapon.push(this);
       }
     });
-    $.getJSON("./json/drop.json", function (data) {
-      $.each(data, function () {
+    $.getJSON("./json/drop.json", function (dropL) {
+      $.each(dropL, function () {
         drop.push(this);
       });
-      $.getJSON("./json/area.json", function (data) {
-        $.each(data, function () {
+      $.getJSON("./json/area.json", function (areaL) {
+        $.each(areaL, function () {
           area.push(this);
         });
         
-        $(item).each(function(a, list) {
+        $(itemL).each(function(a, list) {
           $(Object.getOwnPropertyNames(list)).each(function(b, option){
             if(options.indexOf(option)>=0) {
 
@@ -64,7 +39,7 @@ $(document).ready(function () {
 
         //목록 생성
         //무기
-        for (i = 0; i < weapon.length; i++) {
+        for (i=0; i < weapon.length; i++) {
           if ($("#weaponL").val() == weapon[i].sort) {
             $("#weaponD").append("<option value=" + weapon[i].ID + " class='weaponDL'>" + weapon[i].name + "</option>")
           }
@@ -92,7 +67,7 @@ $(document).ready(function () {
           $(".armorDL").remove();
           for (i = 0; i < item.length; i++) {
             if ($("#armorL").val() == item[i].sort) {
-              $("#armorD").append("<option value=" + item[i].ID + " class='armorDL'>" + item[i].name + "</option>")
+              $("#armorD").append("<option value=" + item[i].ID + " class='armorDL'>" + L[i].name + "</option>")
             }
           }
           $("#armorD .armorDL:first-child").attr("selected","selected");
@@ -131,42 +106,8 @@ $(document).ready(function () {
 
         let materialsG = [];
         let needMG =[];
-        let selectedG = [];
-        let dropAreaG = [
-          {"ID":"A002", "drops":[]}, {"ID":"A003", "drops":[]}, {"ID":"A004", "drops":[]}, {"ID":"A005", "drops":[]}, {"ID":"A006", "drops":[]}, {"ID":"A007", "drops":[]}, {"ID":"A008", "drops":[]}, {"ID":"A009", "drops":[]}, {"ID":"A010", "drops":[]}, {"ID":"A011", "drops":[]}, {"ID":"A012", "drops":[]}, {"ID":"A013", "drops":[]}, {"ID":"A014", "drops":[]}, {"ID":"A015", "drops":[]}, {"ID":"A016", "drops":[]}
-        ];
-        let areaG =[
-          //골목길
-          [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
-          //번화가
-          [1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0],
-          //절
-          [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          //연못
-          [0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          //병원
-          [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-          //묘지
-          [0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
-          //공장
-          [0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
-          //성당
-          [0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0],
-          //항구
-          [0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0],
-          //고주가
-          [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0],
-          //숲
-          [0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0],
-          //모사
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0],
-          //호텔
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1],
-          //학교
-          [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
-          //양궁장
-          [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0]
-        ];
+        let selectedG = [];      
+
         //무기, 방어구 토글, 리스트 생성
         function equipSort() {
           $(".equipSort").each(function(){
@@ -198,6 +139,7 @@ $(document).ready(function () {
               <input type="checkbox" class="checkDA" id="`+equipTemp.ID+`">
               <label for="`+equipTemp.ID+`" class="checkDALabel">재료 위치</label>
               <button type="button" class="delBtn `+equipTemp.ID+`">제거</button>
+              <button type="button" class="routeBtn `+equipTemp.ID+`">최단 루트</button>
               <ul class="scroll hide `+equipTemp.ID+`">
                 <li>종류 : `+sortK+`</li>
                 <li>
@@ -210,8 +152,37 @@ $(document).ready(function () {
               </ul>              
             </div>`
           )
+          $("#equipInfo .equipNumber").text(sEquip.length)
           sEquip.sort();
         } 
+        //시작 무기
+        let startW = $("#defaultWL .defaultW:selected")[0].classList[1];
+        $("#area .area#A000 .drops").append(
+          "<span class='dropM checkedMA "+startW+"'>" + getById(startW,drop).name + "<span class='mNumber'>(x1)</span></span>"
+        )
+        function defaultW(){
+          var dw = $("#defaultWL .defaultW:selected")[0].classList[1]
+          $("#area .area#A000 .drops ."+startW).remove()
+          $("#area .area#A000 .drops").append(
+            "<span class='dropM "+dw+"'>" + getById(dw,drop).name + "<span class='mNumber'>(x1)</span></span>"
+          )
+
+          $(".materials .selectedAll ."+startW).removeClass('checkedMA')
+          $("#area .area .drops ."+startW).removeClass('checkedMA')
+          $("#equipBox .tab .drops ."+startW).removeClass('checkedMA')
+          
+          $(".materials .selectedAll ."+dw).addClass('checkedMA')
+          $("#area .area .drops ."+dw).addClass('checkedMA')
+          $("#equipBox .tab .drops ."+dw).addClass('checkedMA')
+        }
+
+        $("#defaultWL").on("focus",function() {
+          startW = $("#defaultWL .defaultW:selected")[0].classList[1];
+        })
+
+        $("#defaultWL").on("change",function() {
+          defaultW();        
+        })
 
         let needDrops = [];
 
@@ -281,6 +252,18 @@ $(document).ready(function () {
             }
           })
           needDrops.sort()
+          //공통재료 뒤로빼기
+          let nc =[]
+          for(i=0; i<needDrops.length;) {
+            if(commonD.indexOf(needDrops[i].ID)>=0) {
+              nc.push(needDrops[i])
+              needDrops.splice(i,1)
+            } else {
+              i++
+            }
+          }
+          nc.sort();
+          needDrops = needDrops.concat(nc)
         }
         
         //위치 드랍 계산
@@ -374,21 +357,27 @@ $(document).ready(function () {
         //선택 장비 드랍위치 표시
         function areaDrops() {
           $(".materials .selectedAll").children().remove();
-          for (i = 0; i < needDrops.length; i++) {
-            $(".materials .selectedAll").append(
-              "<span class='dropM "+getById(needDrops[i].ID,drop).ID+"'>" + getById(needDrops[i].ID,drop).name + "<span class='mNumber'>(x"+needDrops[i].count+")</span></span>"
-           )
-          }
-
           $("#area .area .drops").children().remove();
           $("#area .area strong").text("");
+          for (i = 0; i < needDrops.length; i++) {
+            $(".materials .selectedAll").append(
+              "<span class='dropM "+needDrops[i].ID+"'>" + getById(needDrops[i].ID,drop).name + "<span class='mNumber'>(x"+needDrops[i].count+")</span></span>"
+            )
+            if(commonD.indexOf(needDrops[i].ID)>=0){
+              $("#area .area#A000 .drops").append(
+                "<span class='dropM "+needDrops[i].ID+"'>" + getById(needDrops[i].ID,drop).name + "<span class='mNumber'>(x"+needDrops[i].count+")</span></span>"
+              )
+            }
+          }          
           $(dropAreaG).each(function(a, area) {
             $(area.drops).each(function(b, areaDrops){
-              $("#area .area#"+area.ID+" .drops").append("<li class='dropM "+areaDrops.ID+"'>"+getById(areaDrops.ID, drop).name+"<span class='mNumber'>(x"+areaDrops.count+")</span></li>")
+              if(commonD.indexOf(areaDrops.ID)<0) {
+                $("#area .area#"+area.ID+" .drops").append("<li class='dropM "+areaDrops.ID+"'>"+getById(areaDrops.ID, drop).name+"<span class='mNumber'>(x"+areaDrops.count+")</span></li>")
+              }         
             })            
           })
           $("#area .area .drops").each(function(i,t) {
-            $(t).siblings("label").children("strong").text(" ("+$(t).children().length+"가지)")
+            $(t).siblings(".aLabel").children("strong").text(" ("+$(t).children().length+"가지)")
           })
         }
                 
@@ -437,17 +426,24 @@ $(document).ready(function () {
             $("#area .area .drops ."+checkedAM[u]).addClass('checkedMA')
             $("#equipBox .tab .drops ."+checkedAM[u]).addClass('checkedMA')
           }
-          if($(this).siblings("label").hasClass("active")) {
+          if($(this).siblings(".aLabel").hasClass("active")) {
             let deleteR = $(this).parents('.area').attr("id");
             checkedAOrder.splice(checkedAOrder.indexOf(deleteR),1)
           } else {
             checkedAOrder.push($(this).parents('.area').attr("id"))
           }
           $(".area label").removeClass();
+          $(".area label").addClass("aLabel");
           for(i=0; i<checkedAOrder.length; i++) {
             $("#area #"+checkedAOrder[i]).prepend("<div class='flag route"+(i+1)+"'>"+(i+1)+"</div>");
-            $("#area #"+checkedAOrder[i]+" label").addClass("active route"+(i+1));
+            $("#area #"+checkedAOrder[i]+" .aLabel").addClass("active route"+(i+1));
           }
+          defaultW()
+        })
+
+        $(".dwBtn").on("click",function(){
+          $(".defaultWWrap").toggleClass("hide")
+          $(".dwBtn").toggleClass("clicked")
         })
 
         $(".mapBtn").on("click", function() {
@@ -489,6 +485,7 @@ $(document).ready(function () {
             areaCalc()
             areaDrops()
             equipInfo();
+            defaultW()
             $(".active").removeClass();
             $("#area .area").children(".flag").remove();      
           }
@@ -514,12 +511,14 @@ $(document).ready(function () {
           matCalc()
           areaCalc()
           areaDrops()
+          defaultW()
+          $("#equipInfo .equipNumber").text(sEquip.length)
+          sEquip.sort();
           $(".active").removeClass();
           $("#area .area").children(".flag").remove();       
-        }) 
+        })  
         
-        
-      });
+      });//json
     });
   });
-});
+});//docu ready
