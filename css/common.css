@@ -14,8 +14,8 @@ body {
 }
 
 #container {
-  max-width: 768px;
   width:100%;
+  position: relative;
 }
 
 .checkedMA {
@@ -37,7 +37,7 @@ body {
   line-height: 30px;
   text-align: center;
   border:none;
-  z-index: 10;
+  z-index: 30;
 }
 
 .addBtn {
@@ -54,13 +54,9 @@ body {
 }
 
 #headerWrap {
-  position: fixed;
-  left:0;
-  top:0;
-  z-index: 10;
   width: 100%;
-  max-width: 768px;
   text-align: center;
+  position: relative;
 }
 
 #headerWrap #logo {
@@ -68,6 +64,7 @@ body {
   font-weight: bold;
   font-size: 2em;
   height: 50px;
+  width: 100%;
   line-height: 50px;
   border-left:1px solid #999;
   border-bottom:1px solid #999;
@@ -75,10 +72,10 @@ body {
 
 #headerWrap #sideMenu {
   width: 80px;
-  position: relative;
+  float: right;
   left:100%;
-  margin-left:-80px;
-  top:0;
+  margin-left: -80px;
+  z-index: 10;
 }
 
 #headerWrap .dwBtn {
@@ -90,6 +87,9 @@ body {
   background: #fff;
   border: 1px solid #999;
   word-break: keep-all;
+  position: relative;
+  right:0;
+  z-index: 10;
 }
 
 #headerWrap .dwBtn.clicked {
@@ -104,6 +104,20 @@ body {
   word-break: keep-all;
 }
 
+.defaultWWrap {
+  position: absolute;
+  top:65px;
+  right: 0;
+  margin-right: 70px;
+  background: #fff;
+  z-index: 25;
+}
+
+.defaultWWrap .defaultW {
+  display: block;
+  margin : 10px 0;
+}
+
 #headerWrap .mapBtn {
   float:right;
   border-radius: 15px;
@@ -112,14 +126,18 @@ body {
   margin: 5px;
   background: #fff;
   border: 1px solid #999;
+  position: relative;
+  right:0;
+  z-index: 20;
 }
 
 #headerWrap #mapWrap {
   position: fixed;
   top:0;
-  right: 0;
+  left: 0;
   background: #fff;
   height: 70%;
+  z-index: 25;
 }
 
 #headerWrap #mapWrap img {
@@ -134,6 +152,9 @@ body {
   margin: 5px;
   background: #fff;
   border: 1px solid #999;
+  position: relative;
+  right:0;
+  z-index: 10;
 }
 
 #summaryWrap {
@@ -141,11 +162,12 @@ body {
   width: 100%;
   position: fixed;
   top:5%;
-  right:0;
+  left:0;
   height: 70%;
   background: #fff;
   border: 1px solid #000;
   box-sizing: border-box;
+  z-index: 25;
 }
 
 #summaryWrap .summarySort {
@@ -187,7 +209,6 @@ body {
 
 
 #equipSelect {
-  margin-top: 50px;
   height: 70px;
 }
 
@@ -196,7 +217,6 @@ body {
   box-sizing: border-box;
   padding: 0 20px;
   background: #999;
-  position: relative;
 }
 
 .selectCategory .equipSort {
@@ -211,18 +231,7 @@ body {
   height: 30px;
 }
 
-.selectCategory .defaultWWrap {
-  position: fixed;
-  margin-right: 70px;
-  right:0;
-  top:60px;
-  z-index: 30;
-}
 
-.selectCategory .defaultWWrap .defaultW {
-  display: block;
-  margin : 10px 0;
-}
 
 .tabBtn {
   height: 2em;
