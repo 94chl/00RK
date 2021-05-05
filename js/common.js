@@ -459,8 +459,8 @@ $(document).ready(function () {
           $("#equipWrap").children().remove();
           $("#routeWrap").children().remove();
           $("#summaryWrap").toggleClass("hide");
-          $("#equipBox .name").each(function() {
-            $("#equipWrap").append("<li class='"+$(this).children("p").attr("class")+"'>"+$(this).children("p").text()+"</li");
+          $("#equipBox .tabBtn").each(function() {
+            $("#equipWrap").append("<li class='grade"+this.classList[1].substring(0,1)+"'>"+$(this).text()+"</li>");
           })
           for(i=0; i<checkedAOrder.length; i++) {
             $("#routeWrap").append("<li class='route"+(i+1)+"'>"+(i+1)+" : "+getById(checkedAOrder[i],area).name+"</li>")
