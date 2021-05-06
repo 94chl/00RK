@@ -403,16 +403,16 @@ $(document).ready(function () {
         })
         
         //위치 체크박스 클릭시
-        $(document).on("change",".checkboxA", function() {
+        function areaClick(clickA){
+          checkedA.splice(0,)
+          checkedAM.splice(0,)
           $(".materials .selectedAll").children().removeClass('checkedMA');
           $("#area .area .drops").children().removeClass("checkedMA");      
           $("#area .area").children(".flag").remove();    
-          $("#equipBox .tab .drops").children().removeClass('checkedMA')
-          let checkedA = [];
+          $("#equipBox .tab .drops").children().removeClass('checkedMA')          
           $(".checkboxA:checked").each(function() {
-            checkedA.push($(this).parents('.area').attr("id"))
+            checkedA.push($(this).attr("id").substring(2,))
           })
-          let checkedAM = [];
           for(i=0; i<dropAreaG.length; i++) {
             for(o=0; o<checkedA.length; o++) {
               if(dropAreaG[i].ID == checkedA[o]){
@@ -428,18 +428,23 @@ $(document).ready(function () {
             $("#area .area .drops ."+checkedAM[u]).addClass('checkedMA')
             $("#equipBox .tab .drops ."+checkedAM[u]).addClass('checkedMA')
           }
-          if($(this).siblings(".aLabel").hasClass("active")) {
-            let deleteR = $(this).parents('.area').attr("id");
-            checkedAOrder.splice(checkedAOrder.indexOf(deleteR),1)
-          } else {
-            checkedAOrder.push($(this).parents('.area').attr("id"))
-          }
+                    
           $(".area label").removeClass();
           $(".area label").addClass("aLabel");
           for(i=0; i<checkedAOrder.length; i++) {
             $("#area #"+checkedAOrder[i]).prepend("<div class='flag route"+(i+1)+"'>"+(i+1)+"</div>");
-            $("#area #"+checkedAOrder[i]+" .aLabel").addClass("active route"+(i+1));
+            $("#area #"+checkedAOrder[i]+" .alabel").addClass("active route"+(i+1));
           }
+        }
+
+        $(".checkboxA").on("change", function(clickA){
+          let nowA = clickA.target.id.substring(2,);
+          if($("#area #"+nowA+" .aLabel").hasClass("active")) {            
+            checkedAOrder.splice(checkedAOrder.indexOf(nowA),1)
+          } else {
+            checkedAOrder.push(nowA)
+          }
+          areaClick(nowA)
           defaultW()
         })
 
@@ -478,6 +483,7 @@ $(document).ready(function () {
         $(".addBtn").on("click",function() {
           let sorted= $(".equipSort:checked").val();
           let selected = $("."+sorted+"DL:selected").val();   
+          let nowA = checkedA[checkedA.length -1]
           if($(".tab."+selected).length>0) {
             
           } else {
@@ -487,14 +493,14 @@ $(document).ready(function () {
             areaCalc()
             areaDrops()
             equipInfo();
-            defaultW()
-            $(".active").removeClass();
-            $("#area .area").children(".flag").remove();      
+            areaClick(nowA)
+            defaultW();  
           }
         })
            
         //장비 제거
         $(document).on("click",".delBtn", function() {
+          let nowA = checkedA[checkedA.length -1]
           for(i=0; i<sEquip.length; i++) {
             if(sEquip[i].ID == this.classList[1]) {
               sEquip.splice(i,1);
@@ -513,11 +519,10 @@ $(document).ready(function () {
           matCalc()
           areaCalc()
           areaDrops()
-          defaultW()
+          areaClick(nowA)
+          defaultW();  
           $("#equipInfo .equipNumber").text(sEquip.length)
-          sEquip.sort();
-          $(".active").removeClass();
-          $("#area .area").children(".flag").remove();       
+          sEquip.sort();    
         })  
         
       });//json
