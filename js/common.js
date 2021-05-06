@@ -8,6 +8,8 @@ $(document).ready(function () {
   let sEquip = [];  
   let i,e,o,u;
   let commonD = ["DW011","DM019","DM020","DM023","DM024","DD002"]
+  let checkedA = [];
+  let checkedAM = [];
 
   $.getJSON("./json/item.json", function (itemL) {
     $.each(itemL, function () {
