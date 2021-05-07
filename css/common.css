@@ -41,16 +41,17 @@ body {
 }
 
 .addBtn {
-  border: 1px solid #fff;
+  background: #fff;
   height: 30px;
   border-radius: 5px;
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 .delBtn {
   border: 1px solid #000;
   border-radius: 15px;
   padding: 5px;
+  color: inherit;
 }
 
 #headerWrap {
@@ -207,6 +208,39 @@ body {
   text-align: center;
 }
 
+.statBtn {
+  float:right;
+  border-radius: 15px;
+  width: 50px;
+  height:30px;
+  margin: 5px;
+  background: #fff;
+  border: 1px solid #999;
+  position: relative;
+  right:0;
+  z-index: 10;
+}
+
+#statWrap {
+  padding-top: 50px;
+  width: 100%;
+  position: fixed;
+  top:5%;
+  left:0;
+  height: 70%;
+  background: #fff;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  z-index: 25;
+}
+
+.statOpt {
+  float:left;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  width:50%;
+  text-align: left;
+}
 
 #equipSelect {
   height: 70px;
@@ -231,16 +265,14 @@ body {
   height: 30px;
 }
 
-
-
 .tabBtn {
-  height: 2em;
-  background: #ddd;
-  line-height: 2em;
+  height: 40px;
+  line-height: 40px;
   text-align: left;
   margin-left: 10px;
   margin-top: 5px;
   box-sizing: border-box;
+  color: inherit;
 }
 
 .tabBtn.description {
@@ -256,7 +288,6 @@ ul.scroll {
   height:30px;
   line-height: 30px;
   background: #ddd;
-  text-indent: 10px;
 }
 
 #equipInfo {
@@ -275,7 +306,11 @@ ul.scroll {
   min-height: 35px;
 }
 
-#equipBox li {
+#equipBox .scroll li {
+  margin-top: 5px;
+}
+
+#equipBox .scroll>span {
   margin-top: 5px;
 }
 
@@ -285,10 +320,12 @@ ul.scroll {
 }
 
 .gradeG{
+  color:#000;
   background: rgb(116, 255, 104);
 }
 
 .gradeB{
+  color:#000;
   background: rgb(52, 214, 255);
 }
 
@@ -298,12 +335,12 @@ ul.scroll {
 }
 
 .gradeY{
+  color:#000;
   background: rgb(255, 238, 0);
 }
 
 #equipBox .tabBtn {
   margin-left: 20px;
-  text-indent: 5px;
 }
 
 .downArrowIcon {
@@ -313,8 +350,6 @@ ul.scroll {
 
 .needM {
   float: left;
-  margin-right: 5px;
-  margin-top:5px;
 }
 
 .dropM {
@@ -448,6 +483,7 @@ ul.scroll {
 }
 
 .checkDALabel {
+  color: inherit;
   border: 1px solid #000;
   border-radius: 15px;
   padding: 5px;
