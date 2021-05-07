@@ -43,7 +43,7 @@ $(document).ready(function () {
         //무기
         for (i=0; i < weapon.length; i++) {
           if ($("#weaponL").val() == weapon[i].sort) {
-            $("#weaponD").append("<option value=" + weapon[i].ID + " class='weaponDL'>" + weapon[i].name + "</option>")
+            $("#weaponD").append("<option value=" + weapon[i].ID + " class='weaponDL grade"+weapon[i].ID.substring(0,1)+"'>" + weapon[i].name + "</option>")
           }
         }
         $("#weaponD .weaponDL:first-child").attr("selected","selected");
@@ -52,7 +52,7 @@ $(document).ready(function () {
           $(".weaponDL").remove();
           for (i = 0; i < weapon.length; i++) {
             if ($("#weaponL").val() == weapon[i].sort) {
-              $("#weaponD").append("<option value=" + weapon[i].ID + " class='weaponDL'>" + weapon[i].name + "</option>")
+              $("#weaponD").append("<option value=" + weapon[i].ID + " class='weaponDL grade"+weapon[i].ID.substring(0,1)+"'>" + weapon[i].name + "</option>")
             }
           }
           $("#weaponD .weaponDL:first-child").attr("selected","selected");
@@ -60,7 +60,7 @@ $(document).ready(function () {
         //방어구
         for (i = 0; i < item.length; i++) {
           if ($("#armorL").val() == item[i].sort) {
-            $("#armorD").append("<option value=" + item[i].ID + " class='armorDL'>" + item[i].name + "</option>")
+            $("#armorD").append("<option value=" + item[i].ID + " class='armorDL grade"+item[i].ID.substring(0,1)+"'>" + item[i].name + "</option>")
           }
         }
         $("#armorD .armorDL:first-child").attr("selected","selected");
@@ -69,7 +69,7 @@ $(document).ready(function () {
           $(".armorDL").remove();
           for (i = 0; i < item.length; i++) {
             if ($("#armorL").val() == item[i].sort) {
-              $("#armorD").append("<option value=" + item[i].ID + " class='armorDL'>" + L[i].name + "</option>")
+              $("#armorD").append("<option value=" + item[i].ID + " class='armorDL grade"+item[i].ID.substring(0,1)+"'>" + L[i].name + "</option>")
             }
           }
           $("#armorD .armorDL:first-child").attr("selected","selected");
@@ -84,14 +84,14 @@ $(document).ready(function () {
           $(".optionDL").remove();
           for (i = 0; i < item.length; i++) {
             if (Object.getOwnPropertyNames(item[i]).indexOf($("#optionL").val())>=0) {
-              $("#optionD").append("<option value=" + item[i].ID + " class='optionDL'>" + item[i].name + "</option>")
+              $("#optionD").append("<option value=" + item[i].ID + " class='optionDL grade"+item[i].ID.substring(0,1)+"'>" + item[i].name + "</option>")
             }
           }
           $("#optionD .optionDL:first-child").attr("selected","selected");
         });        
         for (i = 0; i < item.length; i++) {
           if (Object.getOwnPropertyNames(item[i]).indexOf($("#optionL").val())>=0) {
-            $("#optionD").append("<option value=" + item[i].ID + " class='optionDL'>" + item[i].name + "</option>")
+            $("#optionD").append("<option value=" + item[i].ID + " class='optionDL grade"+item[i].ID.substring(0,1)+"'>" + item[i].name + "</option>")
           }
         }
         $("#optionD .optionDL:first-child").attr("selected","selected");
@@ -139,19 +139,20 @@ $(document).ready(function () {
           }
           sEquip.push(equipTemp)                  
           $("#equipBox").append(
-            `<div class="tab `+equipTemp.ID+`">
+            `<div class="tab `+equipTemp.ID+` grade`+equipTemp.ID.substring(0,1)+`">
               <button type="button" class="tabBtn `+equipTemp.ID+`">`+equipTemp.name+`<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>    
               <input type="checkbox" class="checkDA" id="`+equipTemp.ID+`">
               <label for="`+equipTemp.ID+`" class="checkDALabel">재료 위치</label>
               <button type="button" class="delBtn `+equipTemp.ID+`">제거</button>
+              <button type="button" class="routeBtn `+equipTemp.ID+`">최단 루트</button>
               <ul class="scroll hide `+equipTemp.ID+`">
                 <li>종류 : `+sortK+`</li>
                 <li>
                   <ul class="option"></ul>
                 </li>
-                <span class="needM">하위재료:</span>
+                <span class="needM">하위재료 : </span>
                 <li class="lowerM"></li>
-                <span class="needM">드랍재료:</span>
+                <span class="needM">드랍재료 : </span>
                 <li class="drops"></li>
               </ul>              
             </div>`
