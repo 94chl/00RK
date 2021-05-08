@@ -69,7 +69,7 @@ $(document).ready(function () {
           $(".armorDL").remove();
           for (i = 0; i < item.length; i++) {
             if ($("#armorL").val() == item[i].sort) {
-              $("#armorD").append("<option value=" + item[i].ID + " class='armorDL grade"+item[i].ID.substring(0,1)+"'>" + L[i].name + "</option>")
+              $("#armorD").append("<option value=" + item[i].ID + " class='armorDL grade"+item[i].ID.substring(0,1)+"'>" + item[i].name + "</option>")
             }
           }
           $("#armorD .armorDL:first-child").attr("selected","selected");
