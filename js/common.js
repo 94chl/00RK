@@ -144,7 +144,6 @@ $(document).ready(function () {
               <input type="checkbox" class="checkDA" id="`+equipTemp.ID+`">
               <label for="`+equipTemp.ID+`" class="checkDALabel">재료 위치</label>
               <button type="button" class="delBtn `+equipTemp.ID+`">제거</button>
-              <button type="button" class="routeBtn `+equipTemp.ID+`">최단 루트</button>
               <ul class="scroll hide `+equipTemp.ID+`">
                 <li>종류 : `+sortK+`</li>
                 <li>
