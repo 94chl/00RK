@@ -162,13 +162,13 @@ $(document).ready(function () {
         //시작 무기
         let startW = $("#defaultWL .defaultW:selected")[0].classList[1];
         $("#area .area#A000 .drops").append(
-          "<span class='dropM checkedMA "+startW+"'>" + getById(startW,drop).name + "<span class='mNumber'>(x1)</span></span>"
+          "<span class='dropM checkedMA startW "+startW+"'>" + getById(startW,drop).name + "<span class='mNumber'>(x1)</span></span>"
         )
         function defaultW(){
           var dw = $("#defaultWL .defaultW:selected")[0].classList[1]
-          $("#area .area#A000 .drops ."+startW).remove()
+          $("#area .area#A000 .drops .startW").remove()
           $("#area .area#A000 .drops").append(
-            "<span class='dropM "+dw+"'>" + getById(dw,drop).name + "<span class='mNumber'>(x1)</span></span>"
+            "<span class='dropM startW "+dw+"'>" + getById(dw,drop).name + "<span class='mNumber'>(x1)</span></span>"
           )
 
           $(".materials .selectedAll ."+startW).removeClass('checkedMA')
