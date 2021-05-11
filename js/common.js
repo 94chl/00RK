@@ -106,7 +106,6 @@ $(document).ready(function () {
           })[0]
         }
 
-        let materialsG = [];
         let needMG =[];
         let selectedG = [];      
         let dropAreaG = [
@@ -191,19 +190,13 @@ $(document).ready(function () {
         let needDrops = [];
 
         //장비의 필요 드랍 재료, 드랍 위치를 판명하여 dropArea 배열에 추가
-        function disassemble(equip) {
-          //녹색
-          //materials 초기화, 삽입
-          materialsG.splice(0);
-          if(equip.ID.substring(0,1)=="G") {
-            materialsG.push(equip.ID)
-          } else {
-            materialsG.push(equip.material1, equip.material2);
-          }
-          //materials 항목을 드랍템으로 변환
+        function disassemble(equip) {          
+          let materialsG = [];
+          materialsG.push(equip.ID)
+          //materials 항목을 드랍템, 녹색템으로 변환
           for (i = 0; i < materialsG.length;) {
             let test1G = getById(materialsG[i],item);
-            if (materialsG[i].substring(0, 1) == "D"||materialsG[i].substring(0, 1) =="G") {
+            if (materialsG[i].substring(0, 1) == "G"||materialsG[i].substring(0, 1) =="D") {
               i++;
             } else {
               materialsG.splice(i, 1);
@@ -211,17 +204,14 @@ $(document).ready(function () {
             }
           };
           materialsG.sort();
-          let testMG = [];
-          testMG = testMG.concat(materialsG);
-          selectedG.push({"ID":equip.ID, "name":equip.name ,"drops":testMG});
+          return {"ID":equip.ID, "name":equip.name ,"dropsG":materialsG}
         };
 
         //녹색 이상의 제작템 스택 계산, 실제 제작 횟수 계산
         function matCalc() {
-          //녹색
-          needMG.splice(0)
+          needMG.splice(0, )
           $(selectedG).each(function(number, selG) {
-            $(selG.drops).each(function(number, matG) {
+            $(selG.dropsG).each(function(number, matG) {
               if(getById(matG, needMG)) {
                 getById(matG, needMG).count++
               } else {
