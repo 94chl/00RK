@@ -266,7 +266,6 @@ $(document).ready(function () {
         
         //위치 드랍 계산
         function areaCalc() {
-          //녹색          
           $(dropAreaG).each(function(a, areas){
             areas.drops = [];
           })
@@ -484,7 +483,7 @@ $(document).ready(function () {
             
           } else {
             equipAdd();
-            disassemble(sEquip[sEquip.length-1])
+            selectedG.push(disassemble(sEquip[sEquip.length-1]))
             matCalc()
             areaCalc()
             areaDrops()
