@@ -230,9 +230,13 @@ $(document).ready(function () {
           needDrops.splice(0)
           $(needMG).each(function(a, mats) {
             if(mats.ID.substring(0,1) == "D") {
-              needDrops.push(mats)
-            } else {
-              let matsInfo = getById(mats.ID, item);
+              if (getById(mats.ID, needDrops)) {                
+                getById(mats.ID, needDrops).count++
+              } else {                
+                needDrops.push(mats)
+              };              
+            } else {         
+              let matsInfo = getById(mats.ID, item);     
               if (getById(matsInfo.material1, needDrops)) {                
                 getById(matsInfo.material1, needDrops).count++
               } else {                
