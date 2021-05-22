@@ -27,6 +27,18 @@ body {
   color:red
 }
 
+.hyperLoop {
+  display:inline-block;
+  letter-spacing: -5px;
+  background: #0000ff;
+  color: #00ffff;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  border:1px solid #00ffff;
+  border-radius: 100px;
+}
+
 .closeBtn {
   position:absolute;
   right:5px;
@@ -119,29 +131,34 @@ body {
   margin : 10px 0;
 }
 
-#headerWrap .mapBtn {
+#headerWrap .totalRouteBtn {
   float:right;
   border-radius: 15px;
   width: 50px;
-  height:30px;
+  height:40px;
   margin: 5px;
   background: #fff;
   border: 1px solid #999;
+  word-break: keep-all;
   position: relative;
   right:0;
   z-index: 20;
 }
 
-#headerWrap #mapWrap {
+#headerWrap #totalRouteWrap {
   position: fixed;
-  top:0;
-  left: 0;
+  top:0%;
+  bottom:0%;
+  left:0;
+  width: 100%;
+  max-height: 40%;
   background: #fff;
-  height: 70%;
   z-index: 25;
+  overflow-y: scroll;
+  border-bottom: 5px double hotpink;
 }
 
-#headerWrap #mapWrap img {
+#headerWrap #totalRouteWrap img {
   width: 100%;
 }
 
@@ -263,6 +280,8 @@ body {
 
 .selectCategory select {
   height: 30px;
+  max-width: 120px;
+  overflow: hidden;
 }
 
 .tabBtn {
@@ -277,6 +296,10 @@ body {
 
 .tabBtn.description {
   border:none;
+  width: 100%;
+  background: #ddd;
+  margin-left: 0;
+  padding-left: 10px;
 }
 
 ul.scroll {
@@ -292,7 +315,6 @@ ul.scroll {
 
 #equipInfo {
   display: block;
-  background:#ddd;
   width: 100%;
   min-height: 30px;
 }
@@ -304,6 +326,12 @@ ul.scroll {
 #equipBox .tab {
   border-bottom: 1px solid #999;
   min-height: 35px;
+  position: relative;
+  overflow: auto;
+}
+
+#equipBox .tab .scrollBox {
+  float: left;
 }
 
 #equipBox .scroll li {
@@ -312,6 +340,60 @@ ul.scroll {
 
 #equipBox .scroll>span {
   margin-top: 5px;
+}
+
+.tab .lowerM {
+  overflow: auto;
+}
+
+.tab .lowerM span {
+  display: block;
+  float: left;
+}
+
+.tab .drops{
+  overflow: auto;
+}
+
+.tab .drops span {
+  display: block;
+  float: left;
+}
+
+#equipBox .routeBtn {
+  float: right;
+  margin-right: 5px;
+  margin-top: 8px;
+  color: inherit;
+  border: 1px solid #000;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+#equipBox .routeBtn.clicked {
+  box-shadow: 3px 3px 5px gray inset;
+  font-weight: bold;
+  background: rgb(252, 158, 255, 0.3);
+}
+
+#equipBox .routeBox {
+  position: absolute;
+  right:0;
+  padding: 5px;
+  overflow: auto;
+  background: rgb(255, 255, 255, 0.8);
+  box-sizing: border-box;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+#equipBox .refreshBtn {
+  height: 10px;
+  line-height: 10px;
+  font-size: 10px;
+  width: 100%;
+  margin: 5px 0;
+  float: left;
 }
 
 #equipBox .name p {
@@ -346,6 +428,10 @@ ul.scroll {
 .downArrowIcon {
   height:50%;
   margin:5px;
+}
+
+.refreshIcon {
+  height:100%;
 }
 
 .needM {
