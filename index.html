@@ -36,10 +36,9 @@
           <option value="whip" class="defaultW DW012">채찍</option>
         </select>
       </div>
-      <button type="button" class="mapBtn">map</button>
-      <div id="mapWrap" class="hide">
+      <button type="button" class="totalRouteBtn">전체 최단</button>
+      <div id="totalRouteWrap" class="hide">
         <button type="button" class="closeBtn">X</button>
-        <img src="./img/map.PNG" alt="map">
       </div>
       <button type="button" class="summaryBtn">요약</button>
       <div id="summaryWrap" class="hide">
@@ -94,7 +93,7 @@
         <select name="armorD" id="armorD" class="hide"></select>
         <select name="optionL" id="optionL" class="hide"></select>
         <select name="optionD" id="optionD" class="hide"></select>
-        <button type="button" class="addBtn">추가</button>
+        <button type="button" class="addBtn">추가</button>        
       </div>                
     </div>
   
@@ -115,17 +114,17 @@
       <div class="areaWrap clearfix">
         <div class="area clearfix" id="A002">
           <input type="checkbox" class="checkboxA" id="CBA002">
-          <label class="aLabel" for="CBA002">골목길<strong></strong></label>
+          <label class="aLabel" for="CBA002">골목길 <span class="hyperLoop">>></span><strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A003">
           <input type="checkbox" class="checkboxA" id="CBA003">
-          <label class="aLabel" for="CBA003">번화가<strong></strong></label>
+          <label class="aLabel" for="CBA003">번화가 <span class="hyperLoop">>></span><strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A004">
           <input type="checkbox" class="checkboxA" id="CBA004">
-          <label class="aLabel" for="CBA004">절<strong></strong></label>
+          <label class="aLabel" for="CBA004">절 <span class="hyperLoop">>></span><strong></strong></label>
           <ul class="drops"></ul>
         </div>
       </div>
@@ -137,7 +136,7 @@
         </div>
         <div class="area clearfix" id="A006">
           <input type="checkbox" class="checkboxA" id="CBA006">
-          <label class="aLabel" for="CBA006">병원<strong></strong></label>
+          <label class="aLabel" for="CBA006">병원<strong></strong> <span class="hyperLoop">>></span></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A007">
@@ -149,12 +148,12 @@
       <div class="areaWrap clearfix">
         <div class="area clearfix" id="A008">
           <input type="checkbox" class="checkboxA" id="CBA008">
-          <label class="aLabel" for="CBA008">공장<strong></strong></label>
+          <label class="aLabel" for="CBA008">공장 <span class="hyperLoop">>></span><strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A009">
           <input type="checkbox" class="checkboxA" id="CBA009">
-          <label class="aLabel" for="CBA009">성당<strong></strong></label>
+          <label class="aLabel" for="CBA009">성당<strong></strong> <span class="hyperLoop">>></span></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A010">
@@ -166,7 +165,7 @@
       <div class="areaWrap clearfix">
         <div class="area clearfix" id="A011">
           <input type="checkbox" class="checkboxA" id="CBA011">
-          <label class="aLabel" for="CBA011">고급주택가<strong></strong></label>
+          <label class="aLabel" for="CBA011">고급주택가 <span class="hyperLoop">>></span><strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A012">
@@ -183,7 +182,7 @@
       <div class="areaWrap clearfix">
         <div class="area clearfix" id="A014">
           <input type="checkbox" class="checkboxA" id="CBA014">
-          <label class="aLabel" for="CBA014">호텔<strong></strong></label>
+          <label class="aLabel" for="CBA014">호텔 <span class="hyperLoop">>></span><strong></strong></label>
           <ul class="drops"></ul>
         </div>
         <div class="area clearfix" id="A015">
@@ -209,8 +208,8 @@
   <footer>
     <div id="footerWrap" class="clearfix">
       <span>제작: BrownRoomFish</span>
-      <span>참고버전: 0.32.0</span>
-      <span>업데이트날짜: 2021/05/13</span>
+      <span>참고버전: 0.32.1</span>
+      <span>업데이트날짜: 2021/05/22</span>
     </div>
   </footer>
   
