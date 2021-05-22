@@ -12,18 +12,18 @@ $(document).ready(function () {
   let checkedA = [];
   let checkedAM = [];
 
-  $.getJSON("../json/item.json", function (itemL) {
+  $.getJSON("./json/item.json", function (itemL) {
     $.each(itemL, function () {
       item.push(this);
       if (this.ID.substring(1,2) == "W") {        
         weapon.push(this);
       }
     });
-    $.getJSON("../json/drop.json", function (dropL) {
+    $.getJSON("./json/drop.json", function (dropL) {
       $.each(dropL, function () {
         drop.push(this);
       });
-      $.getJSON("../json/area.json", function (areaL) {
+      $.getJSON("./json/area.json", function (areaL) {
         $.each(areaL, function () {
           area.push(this);
           if(this.ID == "A000") {
