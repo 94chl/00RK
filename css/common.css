@@ -29,7 +29,7 @@ body {
 
 .hyperLoop {
   display:inline-block;
-  letter-spacing: -0.3em;
+  letter-spacing: -5px;
   background: #0000ff;
   color: #00ffff;
   width: 15px;
@@ -37,15 +37,14 @@ body {
   line-height: 15px;
   border:1px solid #00ffff;
   border-radius: 100px;
-  text-align:center;
 }
 
 .closeBtn {
   position:absolute;
-  right:5px;
-  top:5px;
+  right:0;
+  top:0;
   background: #fff;
-  width:30px;
+  width:40px;
   height:30px;
   line-height: 30px;
   text-align: center;
@@ -148,19 +147,34 @@ body {
 
 #headerWrap #totalRouteWrap {
   position: fixed;
-  top:0%;
-  bottom:0%;
+  top: 40px;
+  bottom:0;
   left:0;
   width: 100%;
+  max-width: 768px;
   max-height: 40%;
   background: #fff;
   z-index: 25;
-  overflow-y: scroll;
+  overflow-y: auto;
   border-bottom: 5px double hotpink;
+  border-top: 5px double hotpink;
 }
 
-#headerWrap #totalRouteWrap img {
-  width: 100%;
+#headerWrap #totalRouteWrap .totalRouteHeader {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid hotpink
+}
+
+#headerWrap #totalRouteWrap .shortRoute {
+  height: 20px;
+  line-height: 20px;
+  padding: 5px 0;
+}
+
+#headerWrap #totalRouteWrap .shortRoute span {
+  border-bottom: 1px solid #000;
+
 }
 
 .summaryBtn {
