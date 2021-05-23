@@ -658,7 +658,7 @@ $(document).ready(function () {
           $("#totalRouteWrap").children(".shortRoute").remove();
           let routeArr = itemRoute("total", checkedAOrder)
           $(routeArr).each(function(){
-            $("#totalRouteWrap").append("<li class='shortRoute'>"+this.join(" -> ")+"</li>")
+            $("#totalRouteWrap").append("<li class='shortRoute'><span>"+this.join(" -> ")+"</span></li>")
           })
         })
         $("#totalRouteWrap .closeBtn").on("click", function() {
