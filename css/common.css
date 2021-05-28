@@ -43,7 +43,6 @@ body {
   position:absolute;
   right:0;
   top:0;
-  background: #fff;
   width:40px;
   height:30px;
   line-height: 30px;
@@ -163,7 +162,13 @@ body {
 #headerWrap #totalRouteWrap .totalRouteHeader {
   height: 30px;
   line-height: 30px;
-  border-bottom: 1px solid hotpink
+  width: 100%;
+  border-bottom: 1px solid hotpink;
+  position: fixed;
+  top:40px;
+  left:0;
+  margin-bottom: 30px;
+  background: #fff;
 }
 
 #headerWrap #totalRouteWrap .shortRoute {
