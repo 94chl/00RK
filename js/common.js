@@ -307,6 +307,10 @@ $(document).ready(function () {
 
           shortRoute(needs, bag, pathT, mapT, startPoint, routeStack)
           
+          routeArr = routeArr.filter(function (e) {
+            return e.length <= shortest;
+          });
+          
           return routeArr
           
         }//
