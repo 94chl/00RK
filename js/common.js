@@ -388,8 +388,13 @@ $(document).ready(function () {
           $("#area .area .drops ."+startW).removeClass('checkedMA')
           $("#equipBox .tab .drops ."+startW).removeClass('checkedMA')
           
-          $(".materials .selectedAll ."+dw).addClass('checkedMA')
-          $("#area .area .drops ."+dw).addClass('checkedMA')
+          
+          if($(`.materials .selectedAll .${dw} .mNumber`).text().substring(2,3)<2) {
+            $(`.materials .selectedAll .${dw}`).addClass('checkedMA')
+          }
+          if($(`#area .area .drops .${dw} .mNumber`).text().substring(2,3)<2) {
+            $(`#area .area .drops .${dw}`).addClass('checkedMA')
+          }
           $("#equipBox .tab .drops ."+dw).addClass('checkedMA')
           bag.splice(bag.indexOf(startW),1)
           bag.push(dw)
