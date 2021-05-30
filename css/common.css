@@ -130,6 +130,43 @@ body {
   margin : 10px 0;
 }
 
+#headerWrap #bagWrap {
+  width: 100%;
+  max-width: 768px;
+  height: 100px;
+  position: fixed;
+  z-index: 25;
+  top:0;
+  left:0;
+  background: lightgreen;
+}
+
+#headerWrap #bagWrap .bagHeader {
+  width: 100%;
+  max-width: 768px;
+  height: 30px;
+  line-height: 30px;
+}
+
+#headerWrap #bagWrap .bag {
+  width: 100%;
+  max-width: 768px;
+}
+
+#headerWrap #bagWrap .bag .bagEquip {
+  background: #fff;
+  height: 20px;
+  width: 15%;
+  display: inline-block;
+}
+
+#headerWrap #bagWrap .bag .pocket {
+  background: #fff;
+  height: 20px;
+  width: 15%;
+  display: inline-block;
+}
+
 #headerWrap .totalRouteBtn {
   float:right;
   border-radius: 15px;
@@ -146,7 +183,7 @@ body {
 
 #headerWrap #totalRouteWrap {
   position: fixed;
-  top: 40px;
+  top: 90px;
   bottom:0;
   left:0;
   width: 100%;
@@ -157,19 +194,31 @@ body {
   overflow-y: auto;
   border-bottom: 5px double hotpink;
   border-top: 5px double hotpink;
+  padding-top: 35px;
 }
 
 #headerWrap #totalRouteWrap .totalRouteHeader {
-  height: 30px;
-  line-height: 30px;
+  height: 35px;
+  line-height: 35px;
   width: 100%;
   max-width: 768px;
-  border-bottom: 1px solid hotpink;
   position: fixed;
-  top:40px;
+  top:90px;
   left:0;
+  border-bottom: 1px solid hotpink;
   margin-bottom: 30px;
   background: #fff;
+}
+
+#headerWrap #totalRouteWrap .totalRouteHeader .totalRouteCalcBtn {
+  background: violet;
+  color: #fff;
+  width: 50px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 14px;  
+  box-shadow: 5px 5px 3px hotpink inset;
 }
 
 #headerWrap #totalRouteWrap .shortRoute {
@@ -399,6 +448,7 @@ ul.scroll {
 
 #equipBox .routeBox {
   position: absolute;
+  top:45px;
   right:0;
   padding: 5px;
   overflow: auto;
