@@ -246,7 +246,6 @@ $(document).ready(function () {
 
           let shortest = 10;
           function shortRoute(needs, bag, path, map, idx, route){  
-            console.log(needs)    
             //출발지
             let startT = JSON.parse(JSON.stringify(idx))
             if (route.length > shortest) {
