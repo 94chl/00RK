@@ -46,7 +46,7 @@ $(document).ready(function () {
         //무기
         for (i=0; i < weapon.length; i++) {
           if ($("#weaponL").val() == weapon[i].sort) {
-            $("#weaponD").append("<option value=" + weapon[i].ID + " class='weaponDL grade"+weapon[i].ID.substring(0,1)+"'>" + weapon[i].name + "</option>")
+            $("#weaponD").append(`<option value=${weapon[i].ID} class='weaponDL grade${weapon[i].ID.substring(0,1)}'> ${weapon[i].name} </option>`)
           }
         }
         $("#weaponD .weaponDL:first-child").attr("selected","selected");
@@ -55,7 +55,7 @@ $(document).ready(function () {
           $(".weaponDL").remove();
           for (i = 0; i < weapon.length; i++) {
             if ($("#weaponL").val() == weapon[i].sort) {
-              $("#weaponD").append("<option value=" + weapon[i].ID + " class='weaponDL grade"+weapon[i].ID.substring(0,1)+"'>" + weapon[i].name + "</option>")
+              $("#weaponD").append(`<option value=${weapon[i].ID} class='weaponDL grade${weapon[i].ID.substring(0,1)}'> ${weapon[i].name} </option>`)
             }
           }
           $("#weaponD .weaponDL:first-child").attr("selected","selected");
@@ -63,7 +63,7 @@ $(document).ready(function () {
         //방어구
         for (i = 0; i < item.length; i++) {
           if ($("#armorL").val() == item[i].sort) {
-            $("#armorD").append("<option value=" + item[i].ID + " class='armorDL grade"+item[i].ID.substring(0,1)+"'>" + item[i].name + "</option>")
+            $("#armorD").append(`<option value=${item[i].ID} class='armorDL grade${item[i].ID.substring(0,1)}'> ${item[i].name} </option>`)
           }
         }
         $("#armorD .armorDL:first-child").attr("selected","selected");
@@ -72,7 +72,7 @@ $(document).ready(function () {
           $(".armorDL").remove();
           for (i = 0; i < item.length; i++) {
             if ($("#armorL").val() == item[i].sort) {
-              $("#armorD").append("<option value=" + item[i].ID + " class='armorDL grade"+item[i].ID.substring(0,1)+"'>" + item[i].name + "</option>")
+              $("#armorD").append(`<option value=${item[i].ID} class='armorDL grade${item[i].ID.substring(0,1)}'> ${item[i].name} </option>`)
             }
           }
           $("#armorD .armorDL:first-child").attr("selected","selected");
@@ -80,6 +80,7 @@ $(document).ready(function () {
         //옵션 목록
         for (i = 6; i < options.length; i++) {
           $("#optionL").append("<option value=" + options[i] + ">" + options[i] + "</option>")        
+          $("#optionL").append(`<option value=${options[i]}>" ${options[i]} </option>`)  
         }
         $("#optionL option:first-child").attr("selected","selected");
         
@@ -87,14 +88,14 @@ $(document).ready(function () {
           $(".optionDL").remove();
           for (i = 0; i < item.length; i++) {
             if (Object.getOwnPropertyNames(item[i]).indexOf($("#optionL").val())>=0) {
-              $("#optionD").append("<option value=" + item[i].ID + " class='optionDL grade"+item[i].ID.substring(0,1)+"'>" + item[i].name + "</option>")
+              $("#optionD").append(`<option value=${item[i].ID} class='optionDL grade${item[i].ID.substring(0,1)}'> ${item[i].name} </option>`)
             }
           }
           $("#optionD .optionDL:first-child").attr("selected","selected");
         });        
         for (i = 0; i < item.length; i++) {
           if (Object.getOwnPropertyNames(item[i]).indexOf($("#optionL").val())>=0) {
-            $("#optionD").append("<option value=" + item[i].ID + " class='optionDL grade"+item[i].ID.substring(0,1)+"'>" + item[i].name + "</option>")
+            $("#optionD").append(`<option value=${item[i].ID} class='optionDL grade${item[i].ID.substring(0,1)}'> ${item[i].name} </option>`)
           }
         }
         $("#optionD .optionDL:first-child").attr("selected","selected");
@@ -154,9 +155,9 @@ $(document).ready(function () {
 
         //파라미터 = 아이템 아이디
         function itemRoute(itemId, route){
-          $(".tab."+itemId+" .routeBox").toggleClass("hide")
+          $(`.tab.${itemId} .routeBox`).toggleClass("hide")
           //계산 여부 확인
-          if($(".tab."+itemId+" .routeBox .shortRoute").length>0) {
+          if($(`.tab.${itemId} .routeBox .shortRoute`).length>0) {
             return
           }
           let needs = [];
@@ -244,7 +245,8 @@ $(document).ready(function () {
           }  
 
           let shortest = 10;
-          function shortRoute(needs, bag, path, map, idx, route){      
+          function shortRoute(needs, bag, path, map, idx, route){  
+            console.log(needs)    
             //출발지
             let startT = JSON.parse(JSON.stringify(idx))
             if (route.length > shortest) {
@@ -306,7 +308,7 @@ $(document).ready(function () {
           }//shortRoute
 
           shortRoute(needs, bag, pathT, mapT, startPoint, routeStack)
-          
+
           routeArr = routeArr.filter(function (e) {
             return e.length <= shortest;
           });
@@ -319,11 +321,11 @@ $(document).ready(function () {
         function equipSort() {
           $(".equipSort").each(function(){
             if(this.checked) {
-              $("#"+this.id+"L").removeClass("hide")
-              $("#"+this.id+"D").removeClass("hide")
+              $(`#${this.id}L`).removeClass("hide")
+              $(`#${this.id}D`).removeClass("hide")
             } else {
-              $("#"+this.id+"L").addClass("hide")
-              $("#"+this.id+"D").addClass("hide")
+              $(`#${this.id}L`).addClass("hide")
+              $(`#${this.id}D`).addClass("hide")
             }
           })
         }
@@ -331,7 +333,7 @@ $(document).ready(function () {
         function equipAdd() {
           let sortList = [{"dagger":"단검"}, {"twoHand":"양손검"}, {"axe":"도끼"}, {"dual":"쌍검"}, {"pistol":"권총"}, {"rifle":"돌격소총"}, {"sniper":"저격총"}, {"rapier":"레이피어"}, {"spear":"창"}, {"hammer":"망치"}, {"bat":"방망이"}, {"throw":"투척"}, {"shuriken":"암기"}, {"bow":"활"}, {"crossbow":"석궁"}, {"glove":"글러브"}, {"tonfa":"톤파"}, {"guitar":"기타"}, {"nunchaku":"쌍절곤"}, {"whip":"채찍"}, {"body":"옷"}, {"head":"머리"}, {"arm":"팔"}, {"leg":"다리"}, {"ice":"장신구"}]
           let sorted= $(".equipSort:checked").val();
-          let selected = $("."+sorted+"DL:selected").val();
+          let selected = $(`.${sorted}DL:selected`).val();
           let equipTemp = getById(selected,item);
           let sortK;
           for (i = 0; i < sortList.length; i++) {
@@ -341,17 +343,17 @@ $(document).ready(function () {
           }
           sEquip.push(equipTemp)                  
           $("#equipBox").append(
-            `<div class="tab `+equipTemp.ID+` clearfix">
-              <div class="tabBtnBox grade`+equipTemp.ID.substring(0,1)+`">
-                <button type="button" class="tabBtn `+equipTemp.ID+`">`+equipTemp.name+`<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>    
-                <input type="checkbox" class="checkDA" id="`+equipTemp.ID+`">
-                <label for="`+equipTemp.ID+`" class="checkDALabel">재료</label>
-                <button type="button" class="delBtn `+equipTemp.ID+`">제거</button>
-                <button type="button" class="routeBtn `+equipTemp.ID+`">부위 최단</button>                
+            `<div class="tab ${equipTemp.ID} clearfix">
+              <div class="tabBtnBox grade${equipTemp.ID.substring(0,1)}">
+                <button type="button" class="tabBtn ${equipTemp.ID}">${equipTemp.name}<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>    
+                <input type="checkbox" class="checkDA" id="${equipTemp.ID}">
+                <label for="${equipTemp.ID}" class="checkDALabel">재료</label>
+                <button type="button" class="delBtn ${equipTemp.ID}">제거</button>
+                <button type="button" class="routeBtn ${equipTemp.ID}">부위 최단</button>                
               </div>
               <div class="scrollBox hide">
-                <ul class="scroll `+equipTemp.ID+` clearfix">
-                <li>종류 : `+sortK+`</li>
+                <ul class="scroll ${equipTemp.ID} clearfix">
+                <li>종류 : ${sortK}</li>
                 <li>
                   <ul class="option"></ul>
                 </li>
@@ -360,11 +362,11 @@ $(document).ready(function () {
                 <span class="needM">드랍재료 : </span>
                 <li class="drops clearfix"></li>                
                 </ul> 
-              </div>     
-              <div class="routeBox hide">
-                <button type="button" class="refreshBtn `+equipTemp.ID+`"><img src="./img/refresh.png" alt="refreshIcon" class="refreshIcon"/> 루트 지정 시 새로고침</button></br>
-                <ul class="routeList"></ul>
-              </div>                      
+                <div class="routeBox hide">
+                  <button type="button" class="refreshBtn ${equipTemp.ID}"><img src="./img/refresh.png" alt="refreshIcon" class="refreshIcon"/> 루트 지정 시 새로고침</button></br>
+                  <ul class="routeList"></ul>
+                </div>  
+              </div>                                       
             </div>`
           )
           $("#equipInfo .equipNumber").text(sEquip.length)
@@ -373,7 +375,7 @@ $(document).ready(function () {
         //시작 무기
         let startW = $("#defaultWL .defaultW:selected")[0].classList[1];
         $("#area .area#A000 .drops").append(
-          "<span class='dropM checkedMA startW "+startW+"'>" + getById(startW,drop).name + "<span class='mNumber'>(x1)</span></span>"
+          `<span class='dropM checkedMA startW ${startW}'> ${getById(startW,drop).name} <span class='mNumber'>(x1)</span></span>`
         )
         bag = bag.concat(commonD)
         bag.push(startW)
@@ -382,20 +384,18 @@ $(document).ready(function () {
           var dw = $("#defaultWL .defaultW:selected")[0].classList[1]
           $("#area .area#A000 .drops .startW").remove()
           $("#area .area#A000 .drops").append(
-            "<span class='dropM startW "+dw+"'>" + getById(dw,drop).name + "<span class='mNumber'>(x1)</span></span>"
+            `<span class='dropM startW ${dw}'> ${getById(dw,drop).name} <span class='mNumber'>(x1)</span></span>`
           )
-          $(".materials .selectedAll ."+startW).removeClass('checkedMA')
-          $("#area .area .drops ."+startW).removeClass('checkedMA')
-          $("#equipBox .tab .drops ."+startW).removeClass('checkedMA')
-          
-          
+          $(`.materials .selectedAll .${startW}`).removeClass('checkedMA')
+          $(`#area .area .drops .${startW}`).removeClass('checkedMA')
+          $(`#equipBox .tab .drops .${startW}`).removeClass('checkedMA')
           if($(`.materials .selectedAll .${dw} .mNumber`).text().substring(2,3)<2) {
             $(`.materials .selectedAll .${dw}`).addClass('checkedMA')
           }
           if($(`#area .area .drops .${dw} .mNumber`).text().substring(2,3)<2) {
             $(`#area .area .drops .${dw}`).addClass('checkedMA')
           }
-          $("#equipBox .tab .drops ."+dw).addClass('checkedMA')
+          $(`#equipBox .tab .drops .${dw}`).addClass('checkedMA')
           bag.splice(bag.indexOf(startW),1)
           bag.push(dw)
           startW = dw
@@ -514,11 +514,11 @@ $(document).ready(function () {
             for (u = 6; u < optionKey.length; u++) {
               if(optionKey[u].includes("%")) {
                 $(this).find(".option").append(
-                  "<li>" + optionKey[u] + " : " + Math.round(optionValue[u]*100) + "%</li>"
+                  `<li>${optionKey[u]} : ${Math.round(optionValue[u]*100)}%</li>`
                 )
               } else {
                 $(this).find(".option").append(
-                  "<li>" + optionKey[u] + " : " + optionValue[u] + "</li>"
+                  `<li>${optionKey[u]} : ${optionValue[u]}</li>`
                 )
               }            
             }  
@@ -533,10 +533,10 @@ $(document).ready(function () {
               mat2 = getById(selItem.material2, item)
             }
             $(this).find(".lowerM").append(
-              "<span class='grade"+mat1.ID.substring(0,1)+"'>[" + mat1.name + "]</span>"
+              `<span class='grade${mat1.ID.substring(0,1)}'>[ ${mat1.name} ]</span>`
             )
             $(this).find(".lowerM").append(
-              "<span class='grade"+mat2.ID.substring(0,1)+"'>[" + mat2.name + "]</span>"
+              `<span class='grade${mat1.ID.substring(0,1)}'>[ ${mat2.name} ]</span>`
             )
             mats.push(mat1.ID, mat2.ID)
             for (i = 0; i < mats.length;) {
@@ -550,7 +550,7 @@ $(document).ready(function () {
             mats.sort();
             for(o=0; o<mats.length; o++) {
               $(this).find(".drops").append(
-                "<span class='gradeD "+getById(mats[o],drop).ID+"'>[" + getById(mats[o],drop).name + "]</span>"
+                `<span class='gradeD ${getById(mats[o],drop).ID}'>[ ${getById(mats[o],drop).name} ]</span>`
               )
             }
             getById(selItem.ID, selectedG).drops = mats;
@@ -572,23 +572,23 @@ $(document).ready(function () {
           $("#area .area strong").text("");
           for (i = 0; i < needDrops.length; i++) {
             $(".materials .selectedAll").append(
-              "<span class='dropM "+needDrops[i].ID+"'>" + getById(needDrops[i].ID,drop).name + "<span class='mNumber'>(x"+needDrops[i].count+")</span></span>"
+              `<span class='dropM ${needDrops[i].ID}'> ${getById(needDrops[i].ID,drop).name} <span class='mNumber'>(x${needDrops[i].count})</span></span>`
             )
             if(commonD.indexOf(needDrops[i].ID)>=0){
               $("#area .area#A000 .drops").append(
-                "<span class='dropM "+needDrops[i].ID+"'>" + getById(needDrops[i].ID,drop).name + "<span class='mNumber'>(x"+needDrops[i].count+")</span></span>"
+                `<span class='dropM ${needDrops[i].ID}'> ${getById(needDrops[i].ID,drop).name} <span class='mNumber'>(x${needDrops[i].count})</span></span>`
               )
             }
           }          
           $(dropAreaG).each(function(a, area) {
             $(area.drops).each(function(b, areaDrops){
               if(commonD.indexOf(areaDrops.ID)<0) {
-                $("#area .area#"+area.ID+" .drops").append("<li class='dropM "+areaDrops.ID+"'>"+getById(areaDrops.ID, drop).name+"<span class='mNumber'>(x"+areaDrops.count+")</span></li>")
+                $(`#area .area#${area.ID} .drops`).append(`<li class='dropM ${areaDrops.ID}'>${getById(areaDrops.ID, drop).name}<span class='mNumber'>(x${areaDrops.count})</span></li>`)
               }         
             })            
           })
           $("#area .area .drops").each(function(i,t) {
-            $(t).siblings(".aLabel").children("strong").text(" ("+$(t).children().length+")")
+            $(t).siblings(".aLabel").children("strong").text(`(${$(t).children().length})`)
           })
         }
 
@@ -641,14 +641,14 @@ $(document).ready(function () {
           $(".area label").removeClass();
           $(".area label").addClass("aLabel");
           for(i=0; i<checkedAOrder.length; i++) {
-            $("#area #"+checkedAOrder[i]).prepend("<div class='flag route"+(i+1)+"'>"+(i+1)+"</div>");
+            $("#area #"+checkedAOrder[i]).prepend(`<div class='flag route${(i+1)}'>${(i+1)}</div>`);
             $("#area #"+checkedAOrder[i]+" .alabel").addClass("active route"+(i+1));
           }
         }
 
         $(".checkboxA").on("change", function(clickA){
           let nowA = clickA.target.id.substring(2,);
-          if($("#area #"+nowA+" .aLabel").hasClass("active")) {            
+          if($(`#area #${nowA} .aLabel`).hasClass("active")) {            
             checkedAOrder.splice(checkedAOrder.indexOf(nowA),1)
           } else {
             checkedAOrder.push(nowA)
@@ -662,27 +662,15 @@ $(document).ready(function () {
           $(".dwBtn").toggleClass("clicked")
         })
 
-        $(".totalRouteBtn").on("click", function() {
-          $("#totalRouteWrap").removeClass("hide");
-          $("#totalRouteWrap").children(".shortRoute").remove();
-          let routeArr = itemRoute("total", checkedAOrder)
-          $(routeArr).each(function(){
-            $("#totalRouteWrap").append("<li class='shortRoute'><span>"+this.join(" -> ")+"</span></li>")
-          })
-        })
-        $("#totalRouteWrap .closeBtn").on("click", function() {
-          $("#totalRouteWrap").addClass("hide")
-        })
-
         $(".summaryBtn").on("click", function() {
           $("#equipWrap").children().remove();
           $("#routeWrap").children().remove();
           $("#summaryWrap").toggleClass("hide");
           $("#equipBox .tabBtn").each(function() {
-            $("#equipWrap").append("<li class='grade"+this.classList[1].substring(0,1)+"'>"+$(this).text()+"</li>");
+            $("#equipWrap").append(`<li class='grade${this.classList[1].substring(0,1)}'>${$(this).text()}</li>`);
           })
           for(i=0; i<checkedAOrder.length; i++) {
-            $("#routeWrap").append("<li class='route"+(i+1)+"'>"+(i+1)+" : "+getById(checkedAOrder[i],area).name+"</li>")
+            $("#routeWrap").append(`<li class='route${(i+1)}'>${(i+1)} : ${getById(checkedAOrder[i],area).name}</li>`)
           }
         })
 
@@ -696,7 +684,7 @@ $(document).ready(function () {
         //장비 추가
         $(".addBtn").on("click",function() {
           let sorted= $(".equipSort:checked").val();
-          let selected = $("."+sorted+"DL:selected").val();   
+          let selected = $(`.${sorted}DL:selected`).val();   
           let nowA = checkedA[checkedA.length -1]
           if($(".tab."+selected).length>0) {
             
@@ -745,17 +733,34 @@ $(document).ready(function () {
           let itemId = this.classList[1]
           let routeArr = itemRoute(itemId, checkedAOrder)
           $(routeArr).each(function(){
-            $("#equipBox ."+itemId+".tab .routeBox .routeList").append("<li class='shortRoute'>"+this.join(" -> ")+"</li>")
+            $(`#equipBox .${itemId}.tab .routeBox .routeList`).append(`<li class='shortRoute'>${this.join(" -> ")}</li>`)
           })
         })  
+
         $(document).on("click",".refreshBtn", function() {
           let itemId = this.classList[1]
           $(this).siblings(".routeList").children().remove();
-          $(".tab."+itemId+" .routeBox").toggleClass("hide")
+          $(`.tab.${itemId} .routeBox`).toggleClass("hide")
           let routeArr = itemRoute(itemId, checkedAOrder)
           $(routeArr).each(function(){
-            $("#equipBox ."+itemId+".tab .routeBox .routeList").append("<li class='shortRoute'>"+this.join(" -> ")+"</li>")
+            $(`#equipBox .${itemId}.tab .routeBox .routeList`).append(`<li class='shortRoute'>${this.join(" -> ")}</li>"`)
           })
+        })          
+
+        $(".totalRouteBtn").on("click", function() {
+          $("#totalRouteWrap").removeClass("hide");          
+        })
+
+        $("#totalRouteWrap .totalRouteCalcBtn").on("click", function() {
+          $("#totalRouteWrap").children(".shortRoute").remove();
+          let routeArr = itemRoute("total", checkedAOrder)
+          $(routeArr).each(function(){
+            $("#totalRouteWrap").append(`<li class='shortRoute'><span>${this.join(" -> ")}</span></li>`)
+          })
+        })
+
+        $("#totalRouteWrap .closeBtn").on("click", function() {
+          $("#totalRouteWrap").addClass("hide")
         })  
       });//json
     });
