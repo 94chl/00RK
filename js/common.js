@@ -743,7 +743,7 @@ $(document).ready(function () {
           $(`.tab.${itemId} .routeBox`).toggleClass("hide")
           let routeArr = itemRoute(itemId, checkedAOrder)
           $(routeArr).each(function(){
-            $(`#equipBox .${itemId}.tab .routeBox .routeList`).append(`<li class='shortRoute'>${this.join(" -> ")}</li>"`)
+            $(`#equipBox .${itemId}.tab .routeBox .routeList`).append(`<li class='shortRoute'>${this.join(" -> ")}</li>`)
           })
         })          
 
