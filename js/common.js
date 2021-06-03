@@ -776,7 +776,6 @@ $(document).ready(function () {
           } else {
             $(`.pocket${index}`).append(`<button type="button" class="bagCtrlBtn bagCtrlBtn${index} ${materialInfo.ID}">${materialInfo.name}</button>`)
             bagNow[index] = {ID: materialInfo.ID, name:materialInfo.name, stack:materialInfo.pickup, limit: materialInfo.limit, location: `bagCtrlBtn${index}`}
-            console.log(bagNow)
           }
         }
 
@@ -799,8 +798,6 @@ $(document).ready(function () {
           if(btn>=0) {            
             getBag(material, btn)
           }
-          console.log(bagNow)
-          console.log(bagEquip)
         }
         
         function bagRemove(item, type, btn) {
@@ -811,8 +808,6 @@ $(document).ready(function () {
         function bagCtrl(mat) {
           let materials = [mat.ID, clickTemp.ID]
           let assembled;
-          console.log(mat)
-          console.log(clickTemp)
           item.forEach((thing)=>{
             if(thing.material.sort().toString() == materials.sort().toString()){
               assembled = thing
@@ -841,7 +836,6 @@ $(document).ready(function () {
         $(document).on("click", ".bagCtrlBtn", function(e){   
           let matType = e.target.classList[1].substring(e.target.classList[1].length-1,)
           let clickTarget = {ID: e.target.classList[2], btn:e.target.classList[1], stack:Number(matType)>=0?bagNow[matType].stack:1}
-          console.log(clickTarget)
           if (clickTemp.ID) {
             bagCtrl(clickTarget)
           } else {
