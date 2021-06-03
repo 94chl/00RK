@@ -123,9 +123,8 @@ body {
 
 .defaultWWrap {
   position: absolute;
-  top:0;
+  top:5px;
   left: 0;
-  background: #fff;
   z-index: 25;
   width: 20%;
   min-width: 85px;
@@ -134,10 +133,7 @@ body {
 .defaultWWrap #defaultWL{
   overflow: hidden;
   max-width: 100%;
-}
-
-.defaultWWrap .defaultW {
-  
+  height:25px;
 }
 
 #headerWrap #bagWrap {
@@ -150,12 +146,17 @@ body {
   background: lightgreen;
 }
 
-
 #headerWrap #bagWrap .bagHeader {
   width: 100%;
   max-width: 768px;
-  height: 20px;
+  height: 30px;
   line-height: 30px;
+  line-height: 30px;
+  padding-top: 5px;
+}
+
+#headerWrap #bagWrap .bagHeader .bagBtn {
+  height:25px;
 }
 
 #headerWrap #bagWrap .bagBox {
@@ -211,6 +212,33 @@ body {
   right:0;
   font-size: 0.8em;
   background: rgb(255, 255, 255, 0.5);
+}
+
+.bagManualBtn {
+  position: absolute;
+  top:5px;
+  right:5px;
+  width: 80px;
+  height: 25px;
+  background: yellowgreen;
+}
+
+.bagManual {
+  position: relative;
+  top:-92px;
+  right:0;
+  text-align: right;
+}
+
+.bagManual ul {
+  margin:0;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  text-align: left;
+  display: inline-block;
+  background: #fff;
+  border: 2px solid lightgreen;
+  padding: 5px;
 }
 
 #headerWrap .totalRouteBtn {
@@ -571,6 +599,19 @@ ul.scroll {
 .dropM .mNumber {
   font-size: 0.8em;
   margin-right: 5px;
+}
+
+#area .areaHeader {
+  border:none;
+  width: 100%;
+  background: #ddd;
+  margin-top: 10px;
+  height: 40px;
+  line-height: 40px;
+}
+
+#area .areaHeader>p {
+  margin-left: 10px;
 }
 
 #area .area {
