@@ -377,22 +377,24 @@ $(document).ready(function () {
         let startW;
         function defaultW(){
           var dw = $("#defaultWL .defaultW:selected")[0].classList[1]
-          getMat(dw,bagNow.indexOf("empty"))
-          if($(`.materials .selectedAll .${dw} .mNumber`).text().substring(2,3)<2) {
-            $(`.materials .selectedAll .${dw}`).addClass('checkedMA')
+          if(dw) {
+            getMat(dw,bagNow.indexOf("empty"))
+            if($(`.materials .selectedAll .${dw} .mNumber`).text().substring(2,3)<2) {
+              $(`.materials .selectedAll .${dw}`).addClass('checkedMA')
+            }
+            if($(`#area .area .drops .${dw} .mNumber`).text().substring(2,3)<2) {
+              $(`#area .area .drops .${dw}`).addClass('checkedMA')
+            }
+            $(`#equipBox .tab .drops .${dw}`).addClass('checkedMA')
+            if(startW) {
+              $(`.materials .selectedAll .${startW}`).removeClass('checkedMA')
+              $(`#area .area .drops .${startW}`).removeClass('checkedMA')
+              $(`#equipBox .tab .drops .${startW}`).removeClass('checkedMA')
+              bag.splice(bag.indexOf(startW),1)
+            }
+            bag.push(dw)
+            startW = dw
           }
-          if($(`#area .area .drops .${dw} .mNumber`).text().substring(2,3)<2) {
-            $(`#area .area .drops .${dw}`).addClass('checkedMA')
-          }
-          $(`#equipBox .tab .drops .${dw}`).addClass('checkedMA')
-          if(startW) {
-            $(`.materials .selectedAll .${startW}`).removeClass('checkedMA')
-            $(`#area .area .drops .${startW}`).removeClass('checkedMA')
-            $(`#equipBox .tab .drops .${startW}`).removeClass('checkedMA')
-            bag.splice(bag.indexOf(startW),1)
-          }
-          bag.push(dw)
-          startW = dw
         }
 
         $("#defaultWL").on("focus",function() {
@@ -809,37 +811,37 @@ $(document).ready(function () {
         function bagCtrl(mat) {
           let materials = [mat.ID, clickTemp.ID]
           let assembled;
+          console.log(mat)
+          console.log(clickTemp)
           item.forEach((thing)=>{
             if(thing.material.sort().toString() == materials.sort().toString()){
               assembled = thing
             }
           })
           if(assembled) {   
-            bagRemove(mat.ID, mat.btn.substring(mat.btn.length - 1,), mat.btn)
-            getMat(assembled.ID, mat.btn.substring(mat.btn.length-1,mat.btn.length))
-            bagRemove(clickTemp.ID, clickTemp.btn.substring(clickTemp.btn.length - 1,), clickTemp.btn) 
+            if(mat.stack < 2) {              
+              bagRemove(mat.ID, mat.btn.substring(mat.btn.length - 1,), mat.btn)
+            } else {
+              getById(mat.ID, bagNow).stack --
+              $(`.${mat.btn} .mNumber`).text(`(x${getById(mat.ID, bagNow).stack})`)
+            }
+            if(clickTemp.stack < 2) {
+              bagRemove(clickTemp.ID, clickTemp.btn.substring(clickTemp.btn.length - 1,), clickTemp.btn) 
+            } else {              
+              getById(clickTemp.ID, bagNow).stack --
+              $(`.${clickTemp.btn} .mNumber`).text(`(x${getById(clickTemp.ID, bagNow).stack})`)
+            }        
+            getMat(assembled.ID, bagNow.indexOf("empty"))
           }
           clickTemp = {ID: null, btn: null};
           $(`.clickTemp`).removeClass("clickTemp")
         }
 
-        let clickTemp = {ID: null, btn: null};
-        let touchtime = 0;
+        let clickTemp = {ID: null, btn: null, stack:0};
         $(document).on("click", ".bagCtrlBtn", function(e){   
-          let clickTarget = {ID: e.target.classList[2], btn:e.target.classList[1]}
-          if (touchtime == 0) {
-              touchtime = new Date().getTime();
-          } else {
-            if (((new Date().getTime()) - touchtime) < 300 && clickTemp.btn == clickTarget.btn) {
-              bagRemove(clickTarget.ID, clickTarget.btn.substring(clickTarget.btn.length - 1,), clickTarget.btn)    
-              touchtime = 0;
-              clickTemp = {ID: null, btn: null};
-              return
-            } else {
-              touchtime = new Date().getTime();
-            }        
-          }   
-
+          let matType = e.target.classList[1].substring(e.target.classList[1].length-1,)
+          let clickTarget = {ID: e.target.classList[2], btn:e.target.classList[1], stack:Number(matType)>=0?bagNow[matType].stack:1}
+          console.log(clickTarget)
           if (clickTemp.ID) {
             bagCtrl(clickTarget)
           } else {
@@ -848,23 +850,21 @@ $(document).ready(function () {
           }
         })
 
-        function bagMove(bag, equip) {
-          if(bag.ID.substring(bag.ID.length-1,bag.ID.length) == equip.substring(equip.length-1,equip.length)) {
-            let toBag = {ID: $(`.equip`).text(), btn: equip};
-            let toEquip = {ID: bag.ID, btn: bag.btn};
+        var timeoutId = 0;
+        $(document).bind("mousedown touchstart", ".bagCtrlBtn", function(e){  
+          let clickTarget = {ID: e.target.classList[2], btn:e.target.classList[1]}
+          if(!clickTarget.ID) {
+            return
           }
-        }
+          timeoutId = setTimeout(function(){
+            bagRemove(clickTarget.ID, clickTarget.btn.substring(clickTarget.btn.length - 1,), clickTarget.btn)
+          }, 1000);
+          
+        }).bind('mouseup mouseleave touchend touchmove', function() {
+          clearTimeout(timeoutId);
+        });
 
-        $(document).on("click", ".bagEquip", function(e){
-          console.log($(this).children(".bagCtrlBtn"))
-          if(clickTemp.ID && $(this).children(".bagCtrlBtn").length>0) {
-            console.log("exist")
-          } else if (clickTemp.ID && $(this).children(".bagCtrlBtn").length==0) {
-            console.log("none")
-          }
-        })
-
-        $(".bagBtn").on("click", function(){
+        $(".bagBtn").on("click", function(e){
           $(".bagBox").toggleClass("hide")
           if($(".bagBox").hasClass("hide")) {
             $(".bagBtn").text("가방 열기")
