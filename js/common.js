@@ -866,6 +866,10 @@ $(document).ready(function () {
             $(".bagBtn").text("가방 닫기")
           }
         })
+
+        $(".bagManualBtn").on("click", function(e){
+          $(".bagManual").toggleClass("hide")
+        })
       });//json
     });
   });
