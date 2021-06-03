@@ -765,7 +765,7 @@ $(document).ready(function () {
         function getBag(material, index) {
           let materialInfo;
           getById(material, drop) ? materialInfo = getById(material, drop) : materialInfo = getById(material, item)
-          if((["food","drink","material"]).includes(materialInfo.sort)) {
+          if((["food","drink","material","trap"]).includes(materialInfo.sort)) {
             if(!getById(materialInfo.ID, bagNow)) {
               $(`.pocket${index}`).append(`<button type="button" class="bagCtrlBtn bagCtrlBtn${index} ${materialInfo.ID}">${materialInfo.name}<span class='mNumber'>(x${materialInfo.pickup})</span></button>`)
               bagNow[index] = {ID: materialInfo.ID, name:materialInfo.name, stack:materialInfo.pickup, limit: materialInfo.limit, location: `bagCtrlBtn${index}`}
