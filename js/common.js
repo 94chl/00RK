@@ -371,23 +371,13 @@ $(document).ready(function () {
           $("#equipInfo .equipNumber").text(sEquip.length)
           sEquip.sort();
         } 
-        //시작 무기
-        let startW = $("#defaultWL .defaultW:selected")[0].classList[1];
-        $("#area .area#A000 .drops").append(
-          `<span class='dropM checkedMA startW ${startW}'> ${getById(startW,drop).name} <span class='mNumber'>(x1)</span></span>`
-        )
+        
         bag = bag.concat(commonD)
-        bag.push(startW)
 
+        let startW;
         function defaultW(){
           var dw = $("#defaultWL .defaultW:selected")[0].classList[1]
-          $("#area .area#A000 .drops .startW").remove()
-          $("#area .area#A000 .drops").append(
-            `<span class='dropM startW ${dw}'> ${getById(dw,drop).name} <span class='mNumber'>(x1)</span></span>`
-          )
-          $(`.materials .selectedAll .${startW}`).removeClass('checkedMA')
-          $(`#area .area .drops .${startW}`).removeClass('checkedMA')
-          $(`#equipBox .tab .drops .${startW}`).removeClass('checkedMA')
+          getMat(dw,bagNow.indexOf("empty"))
           if($(`.materials .selectedAll .${dw} .mNumber`).text().substring(2,3)<2) {
             $(`.materials .selectedAll .${dw}`).addClass('checkedMA')
           }
@@ -395,7 +385,12 @@ $(document).ready(function () {
             $(`#area .area .drops .${dw}`).addClass('checkedMA')
           }
           $(`#equipBox .tab .drops .${dw}`).addClass('checkedMA')
-          bag.splice(bag.indexOf(startW),1)
+          if(startW) {
+            $(`.materials .selectedAll .${startW}`).removeClass('checkedMA')
+            $(`#area .area .drops .${startW}`).removeClass('checkedMA')
+            $(`#equipBox .tab .drops .${startW}`).removeClass('checkedMA')
+            bag.splice(bag.indexOf(startW),1)
+          }
           bag.push(dw)
           startW = dw
         }
@@ -422,7 +417,7 @@ $(document).ready(function () {
               i++;
             } else {
               materialsG.splice(i, 1);
-              materialsG.push(test1G.material1, test1G.material2);              
+              materialsG = materialsG.concat(test1G.material);              
             }
           };
           materialsG.sort();
@@ -460,15 +455,15 @@ $(document).ready(function () {
               i++     
             } else {         
               let matsInfo = getById(needMG[i].ID, item); 
-              if (getById(matsInfo.material1, needDrops)) {                
-                getById(matsInfo.material1, needDrops).count++
+              if (getById(matsInfo.material[0], needDrops)) {                
+                getById(matsInfo.material[0], needDrops).count++
               } else {                
-                needMG.push({"ID": matsInfo.material1, "count": needMG[i].count})
+                needMG.push({"ID": matsInfo.material[0], "count": needMG[i].count})
               };
-              if (getById(matsInfo.material2, needDrops)) {
-                getById(matsInfo.material2, needDrops).count++
+              if (getById(matsInfo.material[1], needDrops)) {
+                getById(matsInfo.material[1], needDrops).count++
               } else {                
-                needMG.push({"ID": matsInfo.material2, "count": needMG[i].count})
+                needMG.push({"ID": matsInfo.material[1], "count": needMG[i].count})
               }
               needMG.splice(i,1)
             }
@@ -510,7 +505,7 @@ $(document).ready(function () {
             let optionValue = Object.values(selItem);
             let mat1, mat2;
             let mats = []
-            for (u = 6; u < optionKey.length; u++) {
+            for (u = 7; u < optionKey.length; u++) {
               if(optionKey[u].includes("%")) {
                 $(this).find(".option").append(
                   `<li>${optionKey[u]} : ${Math.round(optionValue[u]*100)}%</li>`
@@ -521,15 +516,15 @@ $(document).ready(function () {
                 )
               }            
             }  
-            if(selItem.material1.substring(0,1)=="D") {
-              mat1 = getById(selItem.material1, drop)
+            if(selItem.material[0].substring(0,1)=="D") {
+              mat1 = getById(selItem.material[0], drop)
             } else {
-              mat1 = getById(selItem.material1, item)
+              mat1 = getById(selItem.material[0], item)
             }
-            if(selItem.material2.substring(0,1)=="D") {
-              mat2 = getById(selItem.material2, drop)
+            if(selItem.material[1].substring(0,1)=="D") {
+              mat2 = getById(selItem.material[1], drop)
             } else {
-              mat2 = getById(selItem.material2, item)
+              mat2 = getById(selItem.material[1], item)
             }
             $(this).find(".lowerM").append(
               `<span class='grade${mat1.ID.substring(0,1)}'>[ ${mat1.name} ]</span>`
@@ -542,7 +537,7 @@ $(document).ready(function () {
               if (mats[i].substring(0, 1) == "D") {
                 i++;
               } else {
-                mats.push(getById(mats[i],item).material1, getById(mats[i],item).material2);              
+                mats.push(getById(mats[i],item).material[0], getById(mats[i],item).material[1]);              
                 mats.splice(i, 1);
               }
             };
@@ -575,14 +570,14 @@ $(document).ready(function () {
             )
             if(commonD.indexOf(needDrops[i].ID)>=0){
               $("#area .area#A000 .drops").append(
-                `<span class='dropM ${needDrops[i].ID}'> ${getById(needDrops[i].ID,drop).name} <span class='mNumber'>(x${needDrops[i].count})</span></span>`
+                `<li class='dropM ${needDrops[i].ID}'><button class="getMatBtn">${getById(needDrops[i].ID, drop).name}<span class='mNumber'>(x${needDrops[i].count})</span></button></li>`
               )
             }
           }          
           $(dropAreaG).each(function(a, area) {
             $(area.drops).each(function(b, areaDrops){
               if(commonD.indexOf(areaDrops.ID)<0) {
-                $(`#area .area#${area.ID} .drops`).append(`<li class='dropM ${areaDrops.ID}'>${getById(areaDrops.ID, drop).name}<span class='mNumber'>(x${areaDrops.count})</span></li>`)
+                $(`#area .area#${area.ID} .drops`).append(`<li class='dropM ${areaDrops.ID}'><button class="getMatBtn">${getById(areaDrops.ID, drop).name}<span class='mNumber'>(x${areaDrops.count})</span></button></li>`)
               }         
             })            
           })
@@ -760,7 +755,123 @@ $(document).ready(function () {
 
         $("#totalRouteWrap .closeBtn").on("click", function() {
           $("#totalRouteWrap").addClass("hide")
-        })  
+        })
+
+        let bagEquip = [{sort:"W", ID:"empty", location: "bagCtrlBtnW"}, {sort:"C", ID:"empty", location: "bagCtrlBtnC"},{sort:"H", ID:"empty", location: "bagCtrlBtnH"}, {sort:"B", ID:"empty", location: "bagCtrlBtnB"}, {sort:"S", ID:"empty", location: "bagCtrlBtnS"}, {sort:"A", ID:"empty", location: "bagCtrlBtnA"}]
+        let bagNow = [{ID : "DF007", name:"빵", stack:2, limit:5, location: "bagCtrlBtn0"}, {ID:"DD002", name:"물",stack:2, limit:5, location: "bagCtrlBtn1"}, "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"]
+
+        function getBag(material, index) {
+          let materialInfo;
+          getById(material, drop) ? materialInfo = getById(material, drop) : materialInfo = getById(material, item)
+          if((["food","drink","material"]).includes(materialInfo.sort)) {
+            if(!getById(materialInfo.ID, bagNow)) {
+              $(`.pocket${index}`).append(`<button type="button" class="bagCtrlBtn bagCtrlBtn${index} ${materialInfo.ID}">${materialInfo.name}<span class='mNumber'>(x${materialInfo.pickup})</span></button>`)
+              bagNow[index] = {ID: materialInfo.ID, name:materialInfo.name, stack:materialInfo.pickup, limit: materialInfo.limit, location: `bagCtrlBtn${index}`}
+            } else {
+              getById(materialInfo.ID, bagNow).stack += materialInfo.pickup;
+              $(`.bagCtrlBtn.${materialInfo.ID} .mNumber`).text(`(x${getById(materialInfo.ID, bagNow).stack})`)
+            }            
+          } else {
+            $(`.pocket${index}`).append(`<button type="button" class="bagCtrlBtn bagCtrlBtn${index} ${materialInfo.ID}">${materialInfo.name}</button>`)
+            bagNow[index] = {ID: materialInfo.ID, name:materialInfo.name, stack:materialInfo.pickup, limit: materialInfo.limit, location: `bagCtrlBtn${index}`}
+            console.log(bagNow)
+          }
+        }
+
+        $(document).on("click", ".getMatBtn", function(e){
+          let material = e.target.parentElement.classList[1]
+          getMat(material,bagNow.indexOf("empty"))
+        })
+
+        function getMat(material, btn) {
+          bagEquip.forEach((equip)=>{
+            if(material.substring(1,2) == equip.sort && equip.ID == "empty"){
+              let equipInfo;
+              equip.ID = material
+              getById(equip.ID, drop) ? equipInfo = getById(equip.ID, drop) : equipInfo = getById(equip.ID, item)
+              $(`.bagEquip.equip${equipInfo.ID.substring(1,2)}`).children().remove()
+              $(`.bagEquip.equip${equipInfo.ID.substring(1,2)}`).append(`<button type="button" class="bagCtrlBtn bagCtrlBtn${equipInfo.ID.substring(1,2)} ${equipInfo.ID}">${equipInfo.name}</button>`)
+              btn = undefined
+            }
+          })
+          if(btn>=0) {            
+            getBag(material, btn)
+          }
+          console.log(bagNow)
+          console.log(bagEquip)
+        }
+        
+        function bagRemove(item, type, btn) {
+          Number(type)>=0 ? bagNow[type] = "empty" : bagEquip.filter((equip)=>equip.ID==item)[0].ID = "empty"
+          $(`.bagCtrlBtn.${btn}`).remove()
+        }
+
+        function bagCtrl(mat) {
+          let materials = [mat.ID, clickTemp.ID]
+          let assembled;
+          item.forEach((thing)=>{
+            if(thing.material.sort().toString() == materials.sort().toString()){
+              assembled = thing
+            }
+          })
+          if(assembled) {   
+            bagRemove(mat.ID, mat.btn.substring(mat.btn.length - 1,), mat.btn)
+            getMat(assembled.ID, mat.btn.substring(mat.btn.length-1,mat.btn.length))
+            bagRemove(clickTemp.ID, clickTemp.btn.substring(clickTemp.btn.length - 1,), clickTemp.btn) 
+          }
+          clickTemp = {ID: null, btn: null};
+          $(`.clickTemp`).removeClass("clickTemp")
+        }
+
+        let clickTemp = {ID: null, btn: null};
+        let touchtime = 0;
+        $(document).on("click", ".bagCtrlBtn", function(e){   
+          let clickTarget = {ID: e.target.classList[2], btn:e.target.classList[1]}
+          if (touchtime == 0) {
+              touchtime = new Date().getTime();
+          } else {
+            if (((new Date().getTime()) - touchtime) < 300 && clickTemp.btn == clickTarget.btn) {
+              bagRemove(clickTarget.ID, clickTarget.btn.substring(clickTarget.btn.length - 1,), clickTarget.btn)    
+              touchtime = 0;
+              clickTemp = {ID: null, btn: null};
+              return
+            } else {
+              touchtime = new Date().getTime();
+            }        
+          }   
+
+          if (clickTemp.ID) {
+            bagCtrl(clickTarget)
+          } else {
+            clickTemp = clickTarget
+            $(`.${clickTemp.btn}`).toggleClass("clickTemp")
+          }
+        })
+
+        function bagMove(bag, equip) {
+          if(bag.ID.substring(bag.ID.length-1,bag.ID.length) == equip.substring(equip.length-1,equip.length)) {
+            let toBag = {ID: $(`.equip`).text(), btn: equip};
+            let toEquip = {ID: bag.ID, btn: bag.btn};
+          }
+        }
+
+        $(document).on("click", ".bagEquip", function(e){
+          console.log($(this).children(".bagCtrlBtn"))
+          if(clickTemp.ID && $(this).children(".bagCtrlBtn").length>0) {
+            console.log("exist")
+          } else if (clickTemp.ID && $(this).children(".bagCtrlBtn").length==0) {
+            console.log("none")
+          }
+        })
+
+        $(".bagBtn").on("click", function(){
+          $(".bagBox").toggleClass("hide")
+          if($(".bagBox").hasClass("hide")) {
+            $(".bagBtn").text("가방 열기")
+          } else {
+            $(".bagBtn").text("가방 닫기")
+          }
+        })
       });//json
     });
   });
