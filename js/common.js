@@ -650,7 +650,6 @@ $(document).ready(function () {
             checkedAOrder.push(nowA)
           }
           areaClick(nowA)
-          defaultW()
         })
 
         $(".dwBtn").on("click",function(){
@@ -692,7 +691,6 @@ $(document).ready(function () {
             areaDrops()
             equipInfo();
             areaClick(nowA)
-            defaultW();  
           }
         })
            
@@ -718,7 +716,6 @@ $(document).ready(function () {
           areaCalc()
           areaDrops()
           areaClick(nowA)
-          defaultW();  
           $("#equipInfo .equipNumber").text(sEquip.length)
           sEquip.sort();    
         })  
@@ -782,6 +779,7 @@ $(document).ready(function () {
         $(document).on("click", ".getMatBtn", function(e){
           let material = e.target.parentElement.classList[1]
           getMat(material,bagNow.indexOf("empty"))
+          $(this).toggleClass("checkedMA")
         })
 
         function getMat(material, btn) {
