@@ -12,29 +12,64 @@
   <div id="headerWrap">
     <div id="logo">00RK</div>
     <div id="sideMenu">
-      <button type="button" class="dwBtn">시작 무기</button>
-      <div class="defaultWWrap hide">
-        <select name="defaultWL" id="defaultWL">
-          <option value="dagger" class="defaultW DW003" selected>식칼</option>
-          <option value="twoHand" class="defaultW DW004">녹슨 검</option>
-          <option value="axe" class="defaultW DW006">손도끼</option>
-          <option value="pistol" class="defaultW DW020">발터 PPK</option>
-          <option value="rifle" class="defaultW DW021">페도로프 자동소총</option>
-          <option value="sniper" class="defaultW DW022">화승총</option>
-          <option value="rapier" class="defaultW DW026">바늘</option>
-          <option value="spear" class="defaultW DW024">단창</option>
-          <option value="hammer" class="defaultW DW023">망치</option>
-          <option value="bat" class="defaultW DW010">단봉</option>
-          <option value="throw" class="defaultW DW014">야구공</option>
-          <option value="shuriken" class="defaultW DW015">면도칼</option>
-          <option value="bow" class="defaultW DW018">양궁</option>
-          <option value="crossbow" class="defaultW DW019">석궁</option>
-          <option value="glove" class="defaultW DW008">목장갑</option>
-          <option value="tonfa" class="defaultW DW009">대나무</option>
-          <option value="guitar" class="defaultW DW027">보급형 기타</option>
-          <option value="nunchaku" class="defaultW DW025">쇠사슬</option>
-          <option value="whip" class="defaultW DW012">채찍</option>
-        </select>
+      <div id="bagWrap" class="clearfix">
+        <div class="bagHeader">
+          <button type="button" class="bagBtn">가방 열기</button>
+          <div class="defaultWWrap">
+            <select name="defaultWL" id="defaultWL">
+              <option value="dagger" class="defaultW" selected>시작무기</option>
+              <option value="dagger" class="defaultW DW003">식칼</option>
+              <option value="twoHand" class="defaultW DW004">녹슨 검</option>
+              <option value="axe" class="defaultW DW006">손도끼</option>
+              <option value="pistol" class="defaultW DW020">발터 PPK</option>
+              <option value="rifle" class="defaultW DW021">페도로프 자동소총</option>
+              <option value="sniper" class="defaultW DW022">화승총</option>
+              <option value="rapier" class="defaultW DW026">바늘</option>
+              <option value="spear" class="defaultW DW024">단창</option>
+              <option value="hammer" class="defaultW DW023">망치</option>
+              <option value="bat" class="defaultW DW010">단봉</option>
+              <option value="throw" class="defaultW DW014">야구공</option>
+              <option value="shuriken" class="defaultW DW015">면도칼</option>
+              <option value="bow" class="defaultW DW018">양궁</option>
+              <option value="crossbow" class="defaultW DW019">석궁</option>
+              <option value="glove" class="defaultW DW008">목장갑</option>
+              <option value="tonfa" class="defaultW DW009">대나무</option>
+              <option value="guitar" class="defaultW DW027">보급형 기타</option>
+              <option value="nunchaku" class="defaultW DW025">쇠사슬</option>
+              <option value="whip" class="defaultW DW012">채찍</option>
+            </select>
+          </div>
+        </div> 
+        <div class="bagBox hide">
+          <div class="bag clearfix">
+            <ul>
+              <li class="bagEquip equipW"></li>
+              <li class="bagEquip equipC"></li>
+              <li class="bagEquip equipH"></li>
+              <li class="bagEquip equipB"></li>
+              <li class="bagEquip equipL"></li>
+              <li class="bagEquip equipA"></li>
+            </ul>
+          </div>
+          <div class="bag clearfix">
+            <ul>
+              <li class="pocket pocket0"><button type="button" class="bagCtrlBtn bagCtrlBtn0 DF007">빵</button></li>
+              <li class="pocket pocket1"><button type="button" class="bagCtrlBtn bagCtrlBtn1 DD002">물</button></li>
+              <li class="pocket pocket2"></li>
+              <li class="pocket pocket3"></li>
+              <li class="pocket pocket4"></li>
+            </ul>
+          </div>
+          <div class="bag clearfix">
+            <ul>
+              <li class="pocket pocket5"></li>
+              <li class="pocket pocket6"></li>
+              <li class="pocket pocket7"></li>
+              <li class="pocket pocket8"></li>
+              <li class="pocket pocket9"></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <button type="button" class="totalRouteBtn">전체 최단</button>
       <div id="totalRouteWrap" class="hide">
@@ -42,7 +77,7 @@
           <span>전체 아이템 최단 루트</span>
           <button type="button" class="totalRouteCalcBtn">계산하기</button>
           <button type="button" class="closeBtn">X</button>
-        </div> 
+        </div>        
       </div>
       <button type="button" class="summaryBtn">요약</button>
       <div id="summaryWrap" class="hide">
@@ -202,7 +237,7 @@
       </div>
       <div class="areaWrap clearfix">
         <div class="area clearfix" id="A000">
-          <div class="aLabel">초기 소지품 및 공통 드랍템<strong></strong></div>
+          <div class="aLabel">공통 드랍템<strong></strong></div>
           <ul class="drops"></ul>
         </div>
       </div>
