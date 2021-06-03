@@ -8,7 +8,12 @@
   display: none;
 }
 
+button span {
+  pointer-events: none;
+}
+
 body {
+  width: 100%;
   max-width: 768px;
   position: relative;
 }
@@ -118,33 +123,45 @@ body {
 
 .defaultWWrap {
   position: absolute;
-  top:65px;
-  right: 0;
-  margin-right: 70px;
+  top:0;
+  left: 0;
   background: #fff;
   z-index: 25;
+  width: 20%;
+  min-width: 85px;
+}
+
+.defaultWWrap #defaultWL{
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .defaultWWrap .defaultW {
-  display: block;
-  margin : 10px 0;
+  
 }
 
 #headerWrap #bagWrap {
   width: 100%;
   max-width: 768px;
-  height: 100px;
   position: fixed;
   z-index: 25;
-  top:0;
+  bottom:0;
   left:0;
   background: lightgreen;
 }
 
+
 #headerWrap #bagWrap .bagHeader {
   width: 100%;
   max-width: 768px;
-  height: 30px;
+  height: 20px;
+  line-height: 30px;
+}
+
+#headerWrap #bagWrap .bagBox {
+  width: 100%;
+  max-width: 768px;
+  height: 130px;
   line-height: 30px;
 }
 
@@ -155,16 +172,45 @@ body {
 
 #headerWrap #bagWrap .bag .bagEquip {
   background: #fff;
-  height: 20px;
-  width: 15%;
-  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  width: 30%;
+  float: left;
+  margin-top: 5px;
+  margin-left: 2.5%;
 }
 
 #headerWrap #bagWrap .bag .pocket {
   background: #fff;
-  height: 20px;
+  height: 25px;
+  line-height: 25px;
   width: 15%;
-  display: inline-block;
+  float: left;
+  margin-left: 4%;
+  margin-top: 5px;
+}
+
+.bagCtrlBtn {
+  background: orange;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  vertical-align: top;
+  overflow: hidden;
+  word-break: keep-all;
+  position: relative;
+}
+
+.bagCtrlBtn.clickTemp {
+  box-shadow: 0px 0px 0px 3px red;
+}
+
+.bagCtrlBtn .mNumber {
+  position: absolute;
+  top:0;
+  right:0;
+  font-size: 0.8em;
+  background: rgb(255, 255, 255, 0.5);
 }
 
 #headerWrap .totalRouteBtn {
@@ -630,6 +676,13 @@ ul.scroll {
   font-size: 0.5em;
 }
 
+#area .areaWrap .area .getMatBtn{
+  width: 100%;
+  padding: 3px 0;
+  background: lightblue;
+  margin: 3px 0;
+}
+
 .checkBoxA {
   width: 10px;
   display:none;
@@ -648,6 +701,14 @@ ul.scroll {
 
 .drops .dropM{
   width: 100%;
+}
+
+#area .areaWrap .area#A000 .dropM {
+  width: 32%;
+}
+
+footer {
+  height: 25%;
 }
 
 #footerWrap {
