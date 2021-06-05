@@ -42,9 +42,9 @@
           <button type="button" class="bagHelpBtn">사용법</button>
           <div class="bagHelp hide">
             <ul>
-            <li>아이템 습득 : 지역 카테고리의 아이템 클릭</li>
-            <li>아이템 버리기 : 버릴 아이템 </li>
-            <li>아이템 조합 : 하위 재료 클릭(조합 가능한 경우만)</li>
+              <li>아이템 습득 : 지역 카테고리의 아이템 클릭</li>
+              <li>아이템 버리기 : 버릴 아이템 </li>
+              <li>아이템 조합 : 하위 재료 클릭(조합 가능한 경우만)</li>
             </ul>
           </div>
         </div> 
@@ -83,6 +83,16 @@
       <div id="totalRouteWrap" class="hide">
         <div class="totalRouteHeader">
           <span>전체 아이템 최단 루트</span>
+          <button type="button" class="totalRouteHelpBtn">도움말</button>
+          <div class="totalRouteHelp hide">
+            <ul>
+              <li>루트 탐색 기준 :<br>현재 위치한 지역에서 인접한 지역 중 필요한 드랍템이 나오는 지역을 다음 목표로 탐색</li>
+              <li>예외) 하이퍼루프 지역의 경우 모든 지역을 탐색</li>
+              <li>주의1) 추천 루트가 6지역 이상일 경우 탐색 시간이 길어짐</li>
+              <li>주의2) 가방의 소지한도를 계산하지 않기 때문에, 하단의 가방 기능으로 직접 시연 권장</li>
+              <li>주의3) 필요한 드랍템이 공통 드랍템 뿐일 경우, 추천 경로를 표시하지 않음</li>
+            </ul>
+          </div>
           <button type="button" class="totalRouteCalcBtn">계산하기</button>
           <button type="button" class="closeBtn">X</button>
         </div>        
