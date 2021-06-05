@@ -217,12 +217,26 @@ body {
   right:5px;
   width: 80px;
   height: 25px;
-  background: yellowgreen;
+  background: yellow;
+  border: 1px solid brown;
+  border-radius: 30px;
+}
+
+.bagHelpBtn.clicked {
+  position: absolute;
+  top:5px;
+  right:5px;
+  width: 80px;
+  height: 25px;
+  background: rgb(255, 245, 0);
+  border: 1px solid brown;
+  border-radius: 30px;
+  box-shadow: 3px 3px 5px gold inset;
 }
 
 .bagHelp {
   position: relative;
-  top:-92px;
+  top:-100px;
   right:0;
   text-align: right;
 }
@@ -254,7 +268,7 @@ body {
 
 #headerWrap #totalRouteWrap {
   position: fixed;
-  top: 90px;
+  top: 0;
   bottom:0;
   left:0;
   width: 100%;
@@ -274,14 +288,63 @@ body {
   width: 100%;
   max-width: 768px;
   position: fixed;
-  top:90px;
+  top:0;
   left:0;
   border-bottom: 1px solid hotpink;
   margin-bottom: 30px;
   background: #fff;
 }
 
+#headerWrap #totalRouteWrap .totalRouteHeader .totalRouteHelpBtn {
+  position: absolute;
+  top:5px;
+  left:5px;
+  width: 80px;
+  height: 25px;
+  background: yellow;
+  border: 1px solid brown;
+  border-radius: 30px;
+}
+
+#headerWrap #totalRouteWrap .totalRouteHeader .totalRouteHelpBtn.clicked {
+  position: absolute;
+  top:5px;
+  right:5px;
+  width: 80px;
+  height: 25px;
+  background: rgb(255, 245, 0);
+  border: 1px solid brown;
+  border-radius: 30px;
+  box-shadow: 3px 3px 5px gold inset;
+}
+
+#headerWrap #totalRouteWrap .totalRouteHeader .totalRouteHelp {
+  position: relative;
+  top:0;
+  right:0;
+  text-align: left;
+}
+
+#headerWrap #totalRouteWrap .totalRouteHeader .totalRouteHelp ul {
+  margin:0;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  text-align: left;
+  display: inline-block;
+  background: #fff;
+  border: 2px solid hotpink;
+  padding: 5px;
+}
+
+#headerWrap #totalRouteWrap .totalRouteHeader .totalRouteHelp ul li {
+  margin-bottom: 3px;
+}
+
 #headerWrap #totalRouteWrap .totalRouteHeader .totalRouteCalcBtn {
+  position: absolute;
+  top:5px;
+  margin-left: 70px;
+  left: 50%;
   background: violet;
   color: #fff;
   width: 70px;
