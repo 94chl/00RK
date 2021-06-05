@@ -561,6 +561,7 @@ $(document).ready(function () {
           $(this).parents(".tab").find(".scrollBox").toggleClass("hide")
         })
         
+        let showDropsAll = false;
         //선택 장비 드랍위치 표시
         function areaDrops() {
           $(".materials .selectedAll").children().remove();
@@ -576,17 +577,31 @@ $(document).ready(function () {
               )
             }
           }          
-          $(dropAreaG).each(function(a, area) {
-            $(area.drops).each(function(b, areaDrops){
-              if(commonD.indexOf(areaDrops.ID)<0) {
-                $(`#area .area#${area.ID} .drops`).append(`<li class='dropM ${areaDrops.ID}'><button class="getMatBtn">${getById(areaDrops.ID, drop).name}<span class='mNumber'>(x${areaDrops.count})</span></button></li>`)
-              }         
-            })            
-          })
-          $("#area .area .drops").each(function(i,t) {
-            $(t).siblings(".aLabel").children("strong").text(`(${$(t).children().length})`)
-          })
+          if(showDropsAll) {
+            $(area).each(function(a, areaInfo) {
+              $(areaInfo.drop).each(function(b, areaDrops){
+                $(`#area .area#${areaInfo.ID} .drops`).append(`<li class='dropM ${areaDrops}'><button class="getMatBtn">${getById(areaDrops, drop).name}<span class='mNumber'></span></button></li>`)                        
+              })            
+            })
+          } else {
+            $(dropAreaG).each(function(a, area) {
+              $(area.drops).each(function(b, areaDrops){
+                if(commonD.indexOf(areaDrops.ID)<0) {
+                  $(`#area .area#${area.ID} .drops`).append(`<li class='dropM ${areaDrops.ID}'><button class="getMatBtn">${getById(areaDrops.ID, drop).name}<span class='mNumber'>(x${areaDrops.count})</span></button></li>`)
+                }         
+              })            
+            })
+            $("#area .area .drops").each(function(i,t) {
+              $(t).siblings(".aLabel").children("strong").text(`(${$(t).children().length})`)
+            })
+          }        
         }
+
+        $(".showDropsAllBtn").on("click", function(){
+          $(".showDropsAllBtn").toggleClass("clicked")
+          showDropsAll? showDropsAll=false:showDropsAll=true
+          areaDrops()
+        })
 
         //장비 체크박스 클릭시
         $(document).on("change",".checkDA", function(e) {
@@ -788,8 +803,8 @@ $(document).ready(function () {
               let equipInfo;
               equip.ID = material
               getById(equip.ID, drop) ? equipInfo = getById(equip.ID, drop) : equipInfo = getById(equip.ID, item)
-              $(`.bagEquip.equip${equipInfo.ID.substring(1,2)}`).children().remove()
-              $(`.bagEquip.equip${equipInfo.ID.substring(1,2)}`).append(`<button type="button" class="bagCtrlBtn bagCtrlBtn${equipInfo.ID.substring(1,2)} ${equipInfo.ID}">${equipInfo.name}</button>`)
+              $(`.bagEquip.equip${equip.sort}`).children().remove()
+              $(`.bagEquip.equip${equip.sort}`).append(`<button type="button" class="bagCtrlBtn bagCtrlBtn${equipInfo.ID.substring(1,2)} ${equipInfo.ID}">${equipInfo.name}</button>`)
               btn = undefined
             }
           })
@@ -830,30 +845,31 @@ $(document).ready(function () {
           $(`.clickTemp`).removeClass("clickTemp")
         }
 
-        let clickTemp = {ID: null, btn: null, stack:0};
-        $(document).on("click", ".bagCtrlBtn", function(e){   
-          let matType = e.target.classList[1].substring(e.target.classList[1].length-1,)
-          let clickTarget = {ID: e.target.classList[2], btn:e.target.classList[1], stack:Number(matType)>=0?bagNow[matType].stack:1}
-          if (clickTemp.ID) {
-            bagCtrl(clickTarget)
-          } else {
-            clickTemp = clickTarget
-            $(`.${clickTemp.btn}`).toggleClass("clickTemp")
-          }
-        })
+        let clickTemp = {ID: null, btn: null, stack:0};        
 
-        var timeoutId = 0;
-        $(document).bind("mousedown touchstart", ".bagCtrlBtn", function(e){  
-          let clickTarget = {ID: e.target.classList[2], btn:e.target.classList[1]}
-          if(!clickTarget.ID) {
-            return
-          }
-          timeoutId = setTimeout(function(){
-            bagRemove(clickTarget.ID, clickTarget.btn.substring(clickTarget.btn.length - 1,), clickTarget.btn)
-          }, 1000);
-          
-        }).bind('mouseup mouseleave touchend touchmove', function() {
-          clearTimeout(timeoutId);
+        let tapped=false
+        $(document).on("mouseup touchend",".bagCtrlBtn", function(e){
+          console.log(e)
+          let matType = e.target.classList[1].substring(e.target.classList[1].length-1,)
+          let clickTarget = {ID: e.target.classList[2], btn:e.target.classList[1], stack: Number(matType)>=0?bagNow[matType].stack:1}
+            if(!tapped){ //if tap is not set, set up single tap
+              tapped=setTimeout(function(){
+                  //insert things you want to do when single tapped
+                  tapped=null
+                  if (clickTemp.ID) {
+                    bagCtrl(clickTarget)
+                  } else {
+                    clickTemp = clickTarget
+                    $(`.${clickTemp.btn}`).toggleClass("clickTemp")
+                  }
+              },300);   //wait 300ms then run single click code
+            } else {    //tapped within 300ms of last tap. double tap
+              clearTimeout(tapped); //stop single tap callback
+              tapped=null
+              //insert things you want to do when double tapped
+              bagRemove(clickTarget.ID, clickTarget.btn.substring(clickTarget.btn.length - 1,), clickTarget.btn)
+            }
+          e.preventDefault()
         });
 
         $(".bagBtn").on("click", function(e){
