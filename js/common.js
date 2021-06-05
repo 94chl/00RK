@@ -883,8 +883,8 @@ $(document).ready(function () {
           }
         })
 
-        $(".bagManualBtn").on("click", function(e){
-          $(".bagManual").toggleClass("hide")
+        $(".bagHelpBtn").on("click", function(e){
+          $(".bagHelp").toggleClass("hide")
         })
       });//json
     });
