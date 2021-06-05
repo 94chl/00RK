@@ -404,6 +404,267 @@
     "material": ["DF007", "DF013"]
   },
   {
+    "ID": "BF001",
+    "sort": "food",
+    "pickup": 1,
+    "limit": 5,
+    "name": "감자튀김",
+    "stack": 1,
+    "material": ["DF001", "GM003"]
+  },
+  {
+    "ID": "BF002",
+    "sort": "food",
+    "pickup": 1,
+    "limit": 5,
+    "name": "구급상자",
+    "stack": 1,
+    "material": ["GF007", "DB002"]
+  },
+  {
+    "ID": "BF003",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "구운 감자",
+    "stack": 1,
+    "material": ["DF001", "GM012"]
+  },
+  {
+    "ID": "BF004",
+    "sort": "food",
+    "pickup": 1,
+    "limit": 5,
+    "name": "구운 붕어",
+    "stack": 1,
+    "material": ["DF003", "GM012"]
+  },
+  {
+    "ID": "BF005",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "냉면",
+    "stack": 1,
+    "material": ["DF010", "GD015"]
+  },
+  {
+    "ID": "BF006",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "대환단",
+    "stack": 1,
+    "material": ["GF009", "GF005"]
+  },
+  {
+    "ID": "BF007",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "뜨거운 라면",
+    "stack": 1,
+    "material": ["DF010", "GD001"]
+  },
+  {
+    "ID": "BF008",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "마늘라면",
+    "stack": 1,
+    "material": ["BF007", "DF005"]
+  },
+  {
+    "ID": "BF009",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "매운탕",
+    "stack": 1,
+    "material": ["DF002", "GD001"]
+  },
+  {
+    "ID": "BF010",
+    "sort": "food",
+    "pickup": 3,
+    "limit": 5,
+    "name": "메로구이",
+    "stack": 1,
+    "material": ["DF002", "GM012"]
+  },
+  {
+    "ID": "BF011",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "모카빵",
+    "stack": 1,
+    "material": ["GD008", "DF007"]
+  },
+  {
+    "ID": "BF012",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "버터 감자구이",
+    "stack": 1,
+    "material": ["GF004", "DF001"]
+  },
+  {
+    "ID": "BF013",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "볶음라면",
+    "stack": 1,
+    "material": ["DF010", "GM003"]
+  },
+  {
+    "ID": "BF014",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "삶은 달걀",
+    "stack": 1,
+    "material": ["DF009", "GD001"]
+  },
+  {
+    "ID": "BF015",
+    "sort": "food",
+    "pickup": 1,
+    "limit": 5,
+    "name": "생선까스",
+    "stack": 1,
+    "material": ["DF002", "GM003"]
+  },
+  {
+    "ID": "BF016",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "성수",
+    "stack": 1,
+    "material": ["DD002", "DM024"]
+  },
+  {
+    "ID": "BF017",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "스크램블 에그",
+    "stack": 1,
+    "material": ["DF009", "GM003"]
+  },
+  {
+    "ID": "BF018",
+    "sort": "food",
+    "pickup": 4,
+    "limit": 5,
+    "name": "스테이크",
+    "stack": 1,
+    "material": ["DF008", "GM012"]
+  },
+  {
+    "ID": "BF019",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "초코칩 쿠키",
+    "stack": 1,
+    "material": ["DF012", "GF004"]
+  },
+  {
+    "ID": "BF020",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "초코파이 상자",
+    "stack": 1,
+    "material": ["GF008", "DA006"]
+  },
+  {
+    "ID": "BF021",
+    "sort": "food",
+    "pickup": 3,
+    "limit": 5,
+    "name": "카레",
+    "stack": 1,
+    "material": ["DF013", "GD001"]
+  },
+  {
+    "ID": "BF022",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "카레 고로케",
+    "stack": 1,
+    "material": ["DF013", "GM003"]
+  },
+  {
+    "ID": "BF023",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "탕약",
+    "stack": 1,
+    "material": ["DF011", "GD001"]
+  },
+  {
+    "ID": "BF024",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "파운드 케이크",
+    "stack": 1,
+    "material": ["GF004", "DF007"]
+  },
+  {
+    "ID": "BF025",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "허니버터",
+    "stack": 1,
+    "material": ["GF004", "DF001"]
+  },
+  {
+    "ID": "BF025",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "후라이드 치킨",
+    "stack": 1,
+    "material": ["DF008", "GM003"]
+  },
+  {
+    "ID": "BF025",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "힐링 포션",
+    "stack": 1,
+    "material": ["GF010", "DM001"]
+  },
+  {
+    "ID": "PF001",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "피쉬 앤 칩스",
+    "stack": 1,
+    "material": ["BF001", "BF015"]
+  },
+  {
+    "ID": "PF002",
+    "sort": "food",
+    "pickup": 2,
+    "limit": 5,
+    "name": "일레븐 세트",
+    "stack": 1,
+    "material": ["BF001", "GF014"]
+  },
+  {
     "ID": "GD001",
     "sort": "drink",
     "pickup": 3,
@@ -415,7 +676,7 @@
   {
     "ID": "GD002",
     "sort": "drink",
-    "pickup": 4,
+    "pickup": 3,
     "limit": 5,
     "name": "레몬에이드",
     "stack": 1,
@@ -460,7 +721,7 @@
   {
     "ID": "GD007",
     "sort": "drink",
-    "pickup": 2,
+    "pickup": 4,
     "limit": 5,
     "name": "칵테일",
     "stack": 1,
@@ -469,7 +730,7 @@
   {
     "ID": "GD008",
     "sort": "drink",
-    "pickup": 1,
+    "pickup": 2,
     "limit": 5,
     "name": "커피 리큐르",
     "stack": 1,
@@ -514,7 +775,7 @@
   {
     "ID": "GD013",
     "sort": "drink",
-    "pickup": 2,
+    "pickup": 3,
     "limit": 5,
     "name": "초코 우유",
     "stack": 1,
@@ -557,6 +818,105 @@
     "material": ["DD007", "DD004"]
   },
   {
+    "ID": "BD001",
+    "sort": "drink",
+    "pickup": 2,
+    "limit": 5,
+    "name": "정화수",
+    "stack": 1,
+    "material": ["GD001", "DD003"]
+  },
+  {
+    "ID": "BD002",
+    "sort": "drink",
+    "pickup": 3,
+    "limit": 5,
+    "name": "고량주",
+    "stack": 1,
+    "material": ["GD004", "DM006"]
+  },
+  {
+    "ID": "BD003",
+    "sort": "drink",
+    "pickup": 4,
+    "limit": 5,
+    "name": "깔루아 밀크",
+    "stack": 1,
+    "material": ["GD008", "DD007"]
+  },
+  {
+    "ID": "BD004",
+    "sort": "drink",
+    "pickup": 2,
+    "limit": 5,
+    "name": "뜨거운 꿀물",
+    "stack": 1,
+    "material": ["GD001", "DD001"]
+  },
+  {
+    "ID": "BD005",
+    "sort": "drink",
+    "pickup": 5,
+    "limit": 5,
+    "name": "백일취",
+    "stack": 1,
+    "material": ["GD004", "DA002"]
+  },
+  {
+    "ID": "BD006",
+    "sort": "drink",
+    "pickup": 2,
+    "limit": 5,
+    "name": "셀레네의 눈물",
+    "stack": 1,
+    "material": ["BM001", "DD002"]
+  },
+  {
+    "ID": "BD007",
+    "sort": "drink",
+    "pickup": 2,
+    "limit": 5,
+    "name": "아메리카노",
+    "stack": 1,
+    "material": ["GD001", "DD005"]
+  },
+  {
+    "ID": "BD008",
+    "sort": "drink",
+    "pickup": 5,
+    "limit": 5,
+    "name": "약주",
+    "stack": 1,
+    "material": ["GD004", "DF011"]
+  },
+  {
+    "ID": "BD009",
+    "sort": "drink",
+    "pickup": 5,
+    "limit": 5,
+    "name": "위스키콕",
+    "stack": 1,
+    "material": ["GD009", "DD004"]
+  },
+  {
+    "ID": "BD010",
+    "sort": "drink",
+    "pickup": 2,
+    "limit": 5,
+    "name": "캔콜라",
+    "stack": 1,
+    "material": ["GD009", "DM017"]
+  },
+  {
+    "ID": "BD011",
+    "sort": "drink",
+    "pickup": 4,
+    "limit": 5,
+    "name": "핫초코",
+    "stack": 1,
+    "material": ["GD001", "DF012"]
+  },
+  {
     "ID": "GT001",
     "sort": "trap",
     "pickup": 2,
@@ -568,7 +928,7 @@
   {
     "ID": "GT002",
     "sort": "trap",
-    "pickup": 3,
+    "pickup": 2,
     "limit": 5,
     "name": "개량형 쥐덫",
     "stack": 1,
@@ -595,7 +955,7 @@
   {
     "ID": "GT005",
     "sort": "trap",
-    "pickup": 1,
+    "pickup": 2,
     "limit": 5,
     "name": "부비트랩",
     "stack": 1,
@@ -638,6 +998,78 @@
     "material": ["DT001", "DA009"]
   },
   {
+    "ID": "GT010",
+    "sort": "trap",
+    "pickup": 2,
+    "limit": 6,
+    "name": "정찰 드론",
+    "stack": 3,
+    "material": ["DT001", "DM018"]
+  },
+  {
+    "ID": "BT001",
+    "sort": "trap",
+    "pickup": 1,
+    "limit": 5,
+    "name": "RDX",
+    "stack": 1,
+    "material": ["GT003", "DM005"]
+  },
+  {
+    "ID": "BT002",
+    "sort": "trap",
+    "pickup": 3,
+    "limit": 5,
+    "name": "미스릴 실",
+    "stack": 1,
+    "material": ["DM024", "DM025"]
+  },
+  {
+    "ID": "BT003",
+    "sort": "trap",
+    "pickup": 2,
+    "limit": 5,
+    "name": "펜듈럼 도끼",
+    "stack": 1,
+    "material": ["GT004", "DW006"]
+  },
+  {
+    "ID": "BT004",
+    "sort": "trap",
+    "pickup": 2,
+    "limit": 5,
+    "name": "지뢰",
+    "stack": 1,
+    "material": ["GT005", "DM018"]
+  },
+  {
+    "ID": "BT005",
+    "sort": "trap",
+    "pickup": 2,
+    "limit": 5,
+    "name": "EMP 드론",
+    "stack": 1,
+    "material": ["GT010", "GM005"]
+  },
+  {
+    "ID": "BT006",
+    "sort": "trap",
+    "pickup": 2,
+    "limit": 5,
+    "name": "히든 메이든",
+    "stack": 1,
+    "material": ["GT001", "GT007"]
+  },
+  {
+    "ID": "BT007",
+    "sort": "trap",
+    "pickup": 3,
+    "limit": 5,
+    "name": "화염 트랩",
+    "stack": 1,
+    "material": ["GT008", "GM002"]
+  },
+  {
     "ID": "PT001",
     "sort": "trap",
     "pickup": 1,
@@ -647,9 +1079,36 @@
     "material": ["BT001", "GT001"]
   },
   {
+    "ID": "PT002",
+    "sort": "trap",
+    "pickup": 3,
+    "limit": 5,
+    "name": "C-4",
+    "stack": 1,
+    "material": ["BT001", "GM006"]
+  },
+  {
+    "ID": "PT003",
+    "sort": "trap",
+    "pickup": 2,
+    "limit": 5,
+    "name": "더블 기요틴",
+    "stack": 1,
+    "material": ["BT003", "GT007"]
+  },
+  {
+    "ID": "PT004",
+    "sort": "trap",
+    "pickup": 2,
+    "limit": 5,
+    "name": "크레모어",
+    "stack": 1,
+    "material": ["BT004", "GT008"]
+  },
+  {
     "ID": "YT001",
     "sort": "trap",
-    "pickup": 1,
+    "pickup": 3,
     "limit": 5,
     "name": "리모트 마인",
     "stack": 1,
@@ -658,7 +1117,7 @@
   {
     "ID": "YT002",
     "sort": "trap",
-    "pickup": 1,
+    "pickup": 3,
     "limit": 5,
     "name": "스마트 폭탄",
     "stack": 1,
@@ -2123,33 +2582,6 @@
     "크리율(%)": 0.15,
     "방어력": 18,
     "쿨타임(%)": 0.1
-  },
-  {
-    "ID": "BD001",
-    "sort": "drink",
-    "pickup": 1,
-    "limit": 5,
-    "name": "정화수",
-    "stack": 1,
-    "material": ["GD001", "DD003"]
-  },
-  {
-    "ID": "BT001",
-    "sort": "trap",
-    "pickup": 1,
-    "limit": 5,
-    "name": "RDX",
-    "stack": 1,
-    "material": ["GT003", "DM005"]
-  },
-  {
-    "ID": "BT002",
-    "sort": "trap",
-    "pickup": 1,
-    "limit": 5,
-    "name": "미스릴 실",
-    "stack": 1,
-    "material": ["DM024", "DM025"]
   },
   {
     "ID": "GW001",
