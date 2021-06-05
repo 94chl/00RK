@@ -571,11 +571,6 @@ $(document).ready(function () {
             $(".materials .selectedAll").append(
               `<span class='dropM ${needDrops[i].ID}'> ${getById(needDrops[i].ID,drop).name} <span class='mNumber'>(x${needDrops[i].count})</span></span>`
             )
-            if(commonD.indexOf(needDrops[i].ID)>=0){
-              $("#area .area#A000 .drops").append(
-                `<li class='dropM ${needDrops[i].ID}'><button class="getMatBtn">${getById(needDrops[i].ID, drop).name}<span class='mNumber'>(x${needDrops[i].count})</span></button></li>`
-              )
-            }
           }          
           if(showDropsAll) {
             $(area).each(function(a, areaInfo) {
@@ -584,6 +579,13 @@ $(document).ready(function () {
               })            
             })
           } else {
+            for (i = 0; i < needDrops.length; i++) {
+              if(commonD.indexOf(needDrops[i].ID)>=0){
+                $("#area .area#A000 .drops").append(
+                  `<li class='dropM ${needDrops[i].ID}'><button class="getMatBtn">${getById(needDrops[i].ID, drop).name}<span class='mNumber'>(x${needDrops[i].count})</span></button></li>`
+                )
+              }
+            }   
             $(dropAreaG).each(function(a, area) {
               $(area.drops).each(function(b, areaDrops){
                 if(commonD.indexOf(areaDrops.ID)<0) {
