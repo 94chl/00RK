@@ -211,7 +211,7 @@ body {
   background: rgb(255, 255, 255, 0.5);
 }
 
-.bagManualBtn {
+.bagHelpBtn {
   position: absolute;
   top:5px;
   right:5px;
@@ -220,14 +220,14 @@ body {
   background: yellowgreen;
 }
 
-.bagManual {
+.bagHelp {
   position: relative;
   top:-92px;
   right:0;
   text-align: right;
 }
 
-.bagManual ul {
+.bagHelp ul {
   margin:0;
   font-size: 0.8em;
   line-height: 1.5em;
