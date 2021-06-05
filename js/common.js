@@ -883,9 +883,20 @@ $(document).ready(function () {
           }
         })
 
-        $(".bagHelpBtn").on("click", function(e){
+        let bagHelp = false;
+        $(".bagHelpBtn").on("click", function(){
           $(".bagHelp").toggleClass("hide")
+          $(".bagHelpBtn").toggleClass("clicked")
+          bagHelp? bagHelp=false:bagHelp=true
         })
+
+        let totalRouteHelp = false;
+        $(".totalRouteHelpBtn").on("click", function(){
+          $(".totalRouteHelpBtn").toggleClass("clicked")
+          $(".totalRouteHelp").toggleClass("hide")
+          totalRouteHelp? totalRouteHelp=false:totalRouteHelp=true
+        })
+        
       });//json
     });
   });
