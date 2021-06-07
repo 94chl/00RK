@@ -795,8 +795,11 @@ $(document).ready(function () {
 
         $(document).on("click", ".getMatBtn", function(e){
           let material = e.target.parentElement.classList[1]
-          getMat(material,bagNow.indexOf("empty"))
-          $(this).toggleClass("checkedMA")
+          if(getById(material,bagNow)){
+            getMat(material,getById(material,bagNow).location.substring(getById(material,bagNow).location.length-1,))
+          } else {
+            getMat(material,bagNow.indexOf("empty"))
+          }
         })
 
         function getMat(material, btn) {
