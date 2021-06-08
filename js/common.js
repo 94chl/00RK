@@ -774,32 +774,35 @@ $(document).ready(function () {
         })
 
         let bagEquip = [{sort:"W", ID:"empty", location: "bagCtrlBtnW"}, {sort:"C", ID:"empty", location: "bagCtrlBtnC"},{sort:"H", ID:"empty", location: "bagCtrlBtnH"}, {sort:"B", ID:"empty", location: "bagCtrlBtnB"}, {sort:"S", ID:"empty", location: "bagCtrlBtnS"}, {sort:"A", ID:"empty", location: "bagCtrlBtnA"}]
-        let bagNow = [{ID : "DF007", name:"빵", stack:2, limit:5, location: "bagCtrlBtn0"}, {ID:"DD002", name:"물",stack:2, limit:5, location: "bagCtrlBtn1"}, "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"]
+        let bagNow = [{ID : "DF007", name:"빵", stack:2, limit:5, location: "bagCtrlBtn0"}, {ID:"DD002", name:"물", stack:2, limit:5, location: "bagCtrlBtn1"}, "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"]
 
         function getBag(material, index) {
           let materialInfo;
           getById(material, drop) ? materialInfo = getById(material, drop) : materialInfo = getById(material, item)
           if((["food","drink","material","trap"]).includes(materialInfo.sort)) {
             if(!getById(materialInfo.ID, bagNow)) {
-              $(`.pocket${index}`).append(`<button type="button" class="bagCtrlBtn bagCtrlBtn${index} ${materialInfo.ID}">${materialInfo.name}<span class='mNumber'>(x${materialInfo.pickup})</span></button>`)
+              $(`.pocket${index}`).children().remove();
+              $(`.pocket${index}`).append(`<button type="button" class="bagCtrlBtn ${materialInfo.ID}">${materialInfo.name}<span class='mNumber'>(x${materialInfo.pickup})</span></button>`)
               bagNow[index] = {ID: materialInfo.ID, name:materialInfo.name, stack:materialInfo.pickup, limit: materialInfo.limit, location: `bagCtrlBtn${index}`}
             } else {
               getById(materialInfo.ID, bagNow).stack += materialInfo.pickup;
               $(`.bagCtrlBtn.${materialInfo.ID} .mNumber`).text(`(x${getById(materialInfo.ID, bagNow).stack})`)
             }            
           } else {
-            $(`.pocket${index}`).append(`<button type="button" class="bagCtrlBtn bagCtrlBtn${index} ${materialInfo.ID}">${materialInfo.name}</button>`)
+            $(`.pocket${index}`).children().remove();
+            $(`.pocket${index}`).append(`<button type="button" class="bagCtrlBtn ${materialInfo.ID}">${materialInfo.name}</button>`)
             bagNow[index] = {ID: materialInfo.ID, name:materialInfo.name, stack:materialInfo.pickup, limit: materialInfo.limit, location: `bagCtrlBtn${index}`}
           }
         }
 
         $(document).on("click", ".getMatBtn", function(e){
           let material = e.target.parentElement.classList[1]
-          if(getById(material,bagNow)){
+          if(getById(material,bagNow) && (["F","D","M","T"]).includes(material.substring(1,2))){
             getMat(material,getById(material,bagNow).location.substring(getById(material,bagNow).location.length-1,))
           } else {
             getMat(material,bagNow.indexOf("empty"))
           }
+          $(this).toggleClass("checkedMA")
         })
 
         function getMat(material, btn) {
@@ -809,7 +812,7 @@ $(document).ready(function () {
               equip.ID = material
               getById(equip.ID, drop) ? equipInfo = getById(equip.ID, drop) : equipInfo = getById(equip.ID, item)
               $(`.bagEquip.equip${equip.sort}`).children().remove()
-              $(`.bagEquip.equip${equip.sort}`).append(`<button type="button" class="bagCtrlBtn bagCtrlBtn${equipInfo.ID.substring(1,2)} ${equipInfo.ID}">${equipInfo.name}</button>`)
+              $(`.bagEquip.equip${equip.sort}`).append(`<button type="button" class="bagCtrlBtn ${equipInfo.ID}">${equipInfo.name}</button>`)
               btn = undefined
             }
           })
@@ -820,7 +823,7 @@ $(document).ready(function () {
         
         function bagRemove(item, type, btn) {
           Number(type)>=0 ? bagNow[type] = "empty" : bagEquip.filter((equip)=>equip.ID==item)[0].ID = "empty"
-          $(`.bagCtrlBtn.${btn}`).remove()
+          $(`.${btn} .bagCtrlBtn`).remove()
         }
 
         function bagCtrl(mat) {
@@ -831,7 +834,7 @@ $(document).ready(function () {
               assembled = thing
             }
           })
-          if(assembled) {   
+          if(assembled&&(mat.stack<2||clickTemp.stack<2)) {   
             if(mat.stack < 2) {              
               bagRemove(mat.ID, mat.btn.substring(mat.btn.length - 1,), mat.btn)
             } else {
@@ -844,34 +847,83 @@ $(document).ready(function () {
               getById(clickTemp.ID, bagNow).stack --
               $(`.${clickTemp.btn} .mNumber`).text(`(x${getById(clickTemp.ID, bagNow).stack})`)
             }        
-            getMat(assembled.ID, bagNow.indexOf("empty"))
+            if(bagNow.indexOf("empty")>=0){
+              getMat(assembled.ID, bagNow.indexOf("empty"))
+            } else {
+              getById(mat.ID, bagNow).stack ++
+              $(`.${mat.btn} .mNumber`).text(`(x${getById(mat.ID, bagNow).stack})`)
+              getById(clickTemp.ID, bagNow).stack ++
+              $(`.${clickTemp.btn} .mNumber`).text(`(x${getById(clickTemp.ID, bagNow).stack})`)
+            }            
+          } else {
+            let prevMat = {ID: clickTemp.ID, name: clickTemp.name, btn: clickTemp.btn, stack: clickTemp.stack == undefined ? 0 : clickTemp.stack}
+            let nowMat = {ID: mat.ID, name: mat.name, btn: mat.btn, stack: mat.stack == undefined ? 0 : mat.stack}
+            if(mat.btn.substring(0,1) == "e" && clickTemp.btn.substring(0,1) == "e") {
+              //교체 불가
+            } else if (mat.btn.substring(0,1) == "p" && clickTemp.btn.substring(0,1) == "p") {
+              //이전(빈칸) : 현재(소지)
+              if(prevMat.name == "empty" && nowMat.name != "empty") {
+                bagNow[nowMat.btn.substring(6,)] = "empty"
+                $(`.${mat.btn}`).children().remove();
+                $(`.${mat.btn}`).append(`<button type="button" class="bagCtrlBtn ${prevMat.ID}"><span class='mNumber'></span></button>`)
+                bagNow[prevMat.btn.substring(6,)] = nowMat
+                $(`.${clickTemp.btn}`).children().remove();
+                $(`.${clickTemp.btn}`).append(`<button type="button" class="bagCtrlBtn ${nowMat.ID}">${nowMat.name}<span class='mNumber'></span></button>`)
+                nowMat.stack>0?$(`.${clickTemp.btn} .${nowMat.ID} .mNumber`).text(`(x${nowMat.stack})`):null;
+              } else if(prevMat.name != "empty" && nowMat.name == "empty") {
+                bagNow[prevMat.btn.substring(6,)] = "empty"
+                $(`.${clickTemp.btn}`).children().remove();
+                $(`.${clickTemp.btn}`).append(`<button type="button" class="bagCtrlBtn ${nowMat.ID}"><span class='mNumber'></span></button>`)
+                bagNow[nowMat.btn.substring(6,)] = prevMat
+                $(`.${mat.btn}`).children().remove();
+                $(`.${mat.btn}`).append(`<button type="button" class="bagCtrlBtn ${prevMat.ID}">${prevMat.name}<span class='mNumber'></span></button>`)
+                prevMat.stack>0?$(`.${mat.btn} .${prevMat.ID} .mNumber`).text(`(x${prevMat.stack})`):null;
+              } else if(prevMat.name != "empty" && nowMat.name != "empty") {
+                bagNow[prevMat.btn.substring(6,)] = nowMat
+                $(`.${clickTemp.btn}`).children().remove();
+                $(`.${clickTemp.btn}`).append(`<button type="button" class="bagCtrlBtn ${nowMat.ID}">${nowMat.name}<span class='mNumber'></span></button>`)
+                nowMat.stack>0?$(`.${clickTemp.btn} .${nowMat.ID} .mNumber`).text(`(x${nowMat.stack})`):null;
+                bagNow[nowMat.btn.substring(6,)] = prevMat
+                $(`.${mat.btn}`).children().remove();
+                $(`.${mat.btn}`).append(`<button type="button" class="bagCtrlBtn ${prevMat.ID}">${prevMat.name}<span class='mNumber'></span></button>`)
+                prevMat.stack>0?$(`.${mat.btn} .${prevMat.ID} .mNumber`).text(`(x${prevMat.stack})`):null;
+                
+              }
+            } else {
+              let fromP = prevMat.btn.substring(0,1) == "p" ? prevMat : nowMat
+              let fromE = prevMat.btn.substring(0,1) == "e" ? prevMat : nowMat
+              if(fromE.btn == `equip${fromP.ID.substring(1,2)}`) {
+                bagEquip.filter(e=>e.sort==fromE.btn.substring(5,6))[0].ID = fromP.ID
+                $(`.${fromE.btn}`).children().remove();
+                $(`.${fromE.btn}`).append(`<button type="button" class="bagCtrlBtn ${fromP.ID}">${fromP.name}</button>`)
+                bagNow[fromP.btn.substring(6,)] = fromE
+                $(`.${fromP.btn}`).children().remove();
+                $(`.${fromP.btn}`).append(`<button type="button" class="bagCtrlBtn ${fromE.ID}">${fromE.name}<span class='mNumber'></span></button>`)
+              }
+            }
           }
           clickTemp = {ID: null, btn: null};
           $(`.clickTemp`).removeClass("clickTemp")
         }
 
-        let clickTemp = {ID: null, btn: null, stack:0};        
-
+        let clickTemp = {ID: null, name: null, btn: null, stack:0};
         let tapped=false
         $(document).on("mouseup touchend",".bagCtrlBtn", function(e){
-          console.log(e)
-          let matType = e.target.classList[1].substring(e.target.classList[1].length-1,)
-          let clickTarget = {ID: e.target.classList[2], btn:e.target.classList[1], stack: Number(matType)>=0?bagNow[matType].stack:1}
-            if(!tapped){ //if tap is not set, set up single tap
+          let matType = e.target.parentElement.classList[1].substring(e.target.parentElement.classList[1].length-1,)
+          let clickTarget = {ID: e.target.classList[1], name:getById(e.target.classList[1], drop) ? getById(e.target.classList[1], drop).name : getById(e.target.classList[1], item).name, btn:e.target.parentElement.classList[1], stack: Number(matType)>=0?bagNow[matType].stack:1}
+            if(!tapped){ 
               tapped=setTimeout(function(){
-                  //insert things you want to do when single tapped
                   tapped=null
                   if (clickTemp.ID) {
                     bagCtrl(clickTarget)
                   } else {
                     clickTemp = clickTarget
-                    $(`.${clickTemp.btn}`).toggleClass("clickTemp")
+                    $(`.${clickTemp.btn} .bagCtrlBtn`).toggleClass("clickTemp")
                   }
-              },300);   //wait 300ms then run single click code
-            } else {    //tapped within 300ms of last tap. double tap
-              clearTimeout(tapped); //stop single tap callback
+              },300);
+            } else {    
+              clearTimeout(tapped); 
               tapped=null
-              //insert things you want to do when double tapped
               bagRemove(clickTarget.ID, clickTarget.btn.substring(clickTarget.btn.length - 1,), clickTarget.btn)
             }
           e.preventDefault()
