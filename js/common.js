@@ -858,9 +858,13 @@ $(document).ready(function () {
           } else {
             let prevMat = {ID: clickTemp.ID, name: clickTemp.name, btn: clickTemp.btn, stack: clickTemp.stack == undefined ? 0 : clickTemp.stack}
             let nowMat = {ID: mat.ID, name: mat.name, btn: mat.btn, stack: mat.stack == undefined ? 0 : mat.stack}
+            let mNumberArr = ["M", "T", "D", "F"]
+            //장착-장착
             if(mat.btn.substring(0,1) == "e" && clickTemp.btn.substring(0,1) == "e") {
               //교체 불가
-            } else if (mat.btn.substring(0,1) == "p" && clickTemp.btn.substring(0,1) == "p") {
+            } 
+            //포켓-포켓
+            else if (mat.btn.substring(0,1) == "p" && clickTemp.btn.substring(0,1) == "p") {
               //이전(빈칸) : 현재(소지)
               if(prevMat.name == "empty" && nowMat.name != "empty") {
                 bagNow[nowMat.btn.substring(6,)] = "empty"
@@ -869,27 +873,33 @@ $(document).ready(function () {
                 bagNow[prevMat.btn.substring(6,)] = nowMat
                 $(`.${clickTemp.btn}`).children().remove();
                 $(`.${clickTemp.btn}`).append(`<button type="button" class="bagCtrlBtn ${nowMat.ID}">${nowMat.name}<span class='mNumber'></span></button>`)
-                nowMat.stack>0?$(`.${clickTemp.btn} .${nowMat.ID} .mNumber`).text(`(x${nowMat.stack})`):null;
-              } else if(prevMat.name != "empty" && nowMat.name == "empty") {
+                mNumberArr.includes(nowMat.ID.substring(1,2))?$(`.${clickTemp.btn} .${nowMat.ID} .mNumber`).text(`(x${nowMat.stack})`):null;
+              } 
+              //이전(소지) : 현재(빈칸)
+              else if(prevMat.name != "empty" && nowMat.name == "empty") {
                 bagNow[prevMat.btn.substring(6,)] = "empty"
                 $(`.${clickTemp.btn}`).children().remove();
                 $(`.${clickTemp.btn}`).append(`<button type="button" class="bagCtrlBtn ${nowMat.ID}"><span class='mNumber'></span></button>`)
                 bagNow[nowMat.btn.substring(6,)] = prevMat
                 $(`.${mat.btn}`).children().remove();
                 $(`.${mat.btn}`).append(`<button type="button" class="bagCtrlBtn ${prevMat.ID}">${prevMat.name}<span class='mNumber'></span></button>`)
-                prevMat.stack>0?$(`.${mat.btn} .${prevMat.ID} .mNumber`).text(`(x${prevMat.stack})`):null;
-              } else if(prevMat.name != "empty" && nowMat.name != "empty") {
+                mNumberArr.includes(prevMat.ID.substring(1,2))?$(`.${mat.btn} .${prevMat.ID} .mNumber`).text(`(x${prevMat.stack})`):null;
+              } 
+              //이전(소지) : 현재(소지)
+              else if (prevMat.name != "empty" && nowMat.name != "empty") {
                 bagNow[prevMat.btn.substring(6,)] = nowMat
                 $(`.${clickTemp.btn}`).children().remove();
                 $(`.${clickTemp.btn}`).append(`<button type="button" class="bagCtrlBtn ${nowMat.ID}">${nowMat.name}<span class='mNumber'></span></button>`)
-                nowMat.stack>0?$(`.${clickTemp.btn} .${nowMat.ID} .mNumber`).text(`(x${nowMat.stack})`):null;
+                mNumberArr.includes(nowMat.ID.substring(1,2))?$(`.${clickTemp.btn} .${nowMat.ID} .mNumber`).text(`(x${nowMat.stack})`):null;
                 bagNow[nowMat.btn.substring(6,)] = prevMat
                 $(`.${mat.btn}`).children().remove();
                 $(`.${mat.btn}`).append(`<button type="button" class="bagCtrlBtn ${prevMat.ID}">${prevMat.name}<span class='mNumber'></span></button>`)
-                prevMat.stack>0?$(`.${mat.btn} .${prevMat.ID} .mNumber`).text(`(x${prevMat.stack})`):null;
+                mNumberArr.includes(prevMat.ID.substring(1,2))?$(`.${mat.btn} .${prevMat.ID} .mNumber`).text(`(x${prevMat.stack})`):null;
                 
               }
-            } else {
+            } 
+            //장착-포켓
+            else {
               let fromP = prevMat.btn.substring(0,1) == "p" ? prevMat : nowMat
               let fromE = prevMat.btn.substring(0,1) == "e" ? prevMat : nowMat
               if(fromE.btn == `equip${fromP.ID.substring(1,2)}`) {
