@@ -236,7 +236,7 @@ body {
 
 .bagHelp {
   position: relative;
-  top:-100px;
+  top:-130px;
   right:0;
   text-align: right;
 }
@@ -244,12 +244,16 @@ body {
 .bagHelp ul {
   margin:0;
   font-size: 0.8em;
-  line-height: 1.5em;
   text-align: left;
   display: inline-block;
   background: #fff;
   border: 2px solid lightgreen;
   padding: 5px;
+}
+
+.bagHelp ul li {
+  height: 20px;
+  line-height: 20px;
 }
 
 #headerWrap .totalRouteBtn {
