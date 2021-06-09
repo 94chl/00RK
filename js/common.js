@@ -696,7 +696,6 @@ $(document).ready(function () {
         $(".addBtn").on("click",function() {
           let sorted= $(".equipSort:checked").val();
           let selected = $(`.${sorted}DL:selected`).val();   
-          let nowA = checkedA[checkedA.length -1]
           if($(".tab."+selected).length>0) {
             
           } else {
@@ -706,13 +705,12 @@ $(document).ready(function () {
             areaCalc()
             areaDrops()
             equipInfo();
-            areaClick(nowA)
+            areaClick()
           }
         })
            
         //장비 제거
         $(document).on("click",".delBtn", function() {
-          let nowA = checkedA[checkedA.length -1]
           for(i=0; i<sEquip.length; i++) {
             if(sEquip[i].ID == this.classList[1]) {
               sEquip.splice(i,1);
@@ -731,10 +729,22 @@ $(document).ready(function () {
           matCalc()
           areaCalc()
           areaDrops()
-          areaClick(nowA)
+          areaClick()
           $("#equipInfo .equipNumber").text(sEquip.length)
           sEquip.sort();    
         })  
+
+        $(".itemClearBtn").on("click", function(){
+          sEquip.splice(0,);
+          needMG.splice(0,);
+          selectedG.splice(0,);
+          $("#equipBox .tab").remove()
+          matCalc()
+          areaCalc()
+          areaDrops()
+          areaClick()
+          $("#equipInfo .equipNumber").text(sEquip.length)
+        })
 
         //최단경로
         $(document).on("click",".routeBtn", function() {
