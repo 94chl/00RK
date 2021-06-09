@@ -531,7 +531,7 @@ $(document).ready(function () {
               `<span class='grade${mat1.ID.substring(0,1)}'>[ ${mat1.name} ]</span>`
             )
             $(this).find(".lowerM").append(
-              `<span class='grade${mat1.ID.substring(0,1)}'>[ ${mat2.name} ]</span>`
+              `<span class='grade${mat2.ID.substring(0,1)}'>[ ${mat2.name} ]</span>`
             )
             mats.push(mat1.ID, mat2.ID)
             for (i = 0; i < mats.length;) {
