@@ -78,9 +78,8 @@ $(document).ready(function () {
           $("#armorD .armorDL:first-child").attr("selected","selected");
         })
         //옵션 목록
-        for (i = 6; i < options.length; i++) {
-          $("#optionL").append("<option value=" + options[i] + ">" + options[i] + "</option>")        
-          $("#optionL").append(`<option value=${options[i]}>" ${options[i]} </option>`)  
+        for (i = 7; i < options.length; i++) {
+          $("#optionL").append(`<option value=${options[i]}>${options[i]}</option>`)
         }
         $("#optionL option:first-child").attr("selected","selected");
         
