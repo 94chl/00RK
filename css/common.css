@@ -62,13 +62,6 @@ body {
   padding: 0 10px;
 }
 
-.delBtn {
-  border: 1px solid #000;
-  border-radius: 15px;
-  padding: 5px;
-  color: inherit;
-}
-
 #headerWrap {
   width: 100%;
   text-align: center;
@@ -496,29 +489,45 @@ body {
   height: 40px;
   line-height: 40px;
   text-align: left;
-  margin-left: 10px;
-  margin-top: 5px;
   box-sizing: border-box;
   color: inherit;
-}
-
-.tabBtn.description {
-  border:none;
-  width: 100%;
-  background: #ddd;
-  margin-left: 0;
-  padding-left: 10px;
-}
-
-ul.scroll {
-  padding: 5px 10px;
-  background:#fff;
 }
 
 .materials .description{
   height:30px;
   line-height: 30px;
   background: #ddd;
+}
+
+.materials .description p {
+  margin-left: 10px;
+}
+
+.equipInfoHeader {
+  border:none;
+  width: 100%;
+  background: #ddd;
+}
+
+.tabBtn.description {
+  margin-left:10px;
+}
+
+.itemClearBtn {
+  width: fit-content;  
+  padding: 5px;
+  margin-top: 6px;
+  margin-right: 10px;
+  border: 1px solid #fff;
+  font-size: 12px;
+  float: right;
+  background: rgb(180, 180, 180);
+  color: #fff;
+}
+
+ul.scroll {
+  padding: 5px 10px;
+  background:#fff;
 }
 
 #equipInfo {
@@ -569,13 +578,15 @@ ul.scroll {
 }
 
 #equipBox .routeBtn {
-  float: right;
-  margin-right: 5px;
-  margin-top: 8px;
-  color: inherit;
-  border: 1px solid #000;
-  border-radius: 15px;
+  width: fit-content;  
   padding: 5px;
+  margin-top: 6px;
+  margin-right: 10px;
+  border: 1px solid #fff;
+  font-size: 12px;
+  float: right;
+  background: rgb(180, 180, 180);
+  color: #fff;
 }
 
 #equipBox .routeBtn.clicked {
@@ -829,9 +840,24 @@ ul.scroll {
 
 .checkDALabel {
   color: inherit;
-  border: 1px solid #000;
-  border-radius: 15px;
-  padding: 5px;
+  width: fit-content;  
+  padding: 6px;
+  margin-top: 5px;
+  margin-left: 3px;
+  border-radius: 10px;
+  border: 1px solid orange;
+  font-size: 12px;
+}
+
+.delBtn {
+  width: fit-content;  
+  padding: 6px;
+  margin-top: 5px;
+  margin-left: 3px;
+  border-radius: 10px;
+  border: 1px solid orange;
+  font-size: 12px;
+  color: inherit;
 }
 
 .drops .dropM{
