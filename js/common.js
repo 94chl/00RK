@@ -32,15 +32,12 @@ $(document).ready(function () {
         });
         $(itemL).each(function(a, list) {
           $(Object.getOwnPropertyNames(list)).each(function(b, option){
-            if(options.indexOf(option)>=0) {
-
-            } else {
+            if(options.indexOf(option)<0&&!["ID", "name", "limit", "material", "pickup", "sort", "stack", "장탄수"].includes(option)) {
               options.push(option)
             }
           })
         })
-        options.sort();
-        options.splice(22,1)
+        options.sort()
 
         //목록 생성
         //무기
@@ -78,7 +75,7 @@ $(document).ready(function () {
           $("#armorD .armorDL:first-child").attr("selected","selected");
         })
         //옵션 목록
-        for (i = 7; i < options.length; i++) {
+        for (i = 0; i < options.length; i++) {
           $("#optionL").append(`<option value=${options[i]}>${options[i]}</option>`)
         }
         $("#optionL option:first-child").attr("selected","selected");
