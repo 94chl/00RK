@@ -43,6 +43,19 @@ body {
   border-radius: 100px;
 }
 
+.reincarnation {
+  display:inline-block;
+  font-weight: 900;
+  text-align: center;
+  background: #fff;
+  color: red;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  border:1px solid red;
+  border-radius: 100px;
+}
+
 .closeBtn {
   position:absolute;
   right:0;
