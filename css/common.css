@@ -217,27 +217,22 @@ body {
   background: rgb(255, 255, 255, 0.5);
 }
 
-.bagHelpBtn {
+.bagBtnWrap {
   position: absolute;
   top:5px;
   right:5px;
-  width: 80px;
+}
+
+.bagHelpBtn {
+  float: right;
+  width: 25px;
   height: 25px;
-  background: yellow;
-  border: 1px solid brown;
   border-radius: 30px;
+  margin-left: 10px;
 }
 
 .bagHelpBtn.clicked {
-  position: absolute;
-  top:5px;
-  right:5px;
-  width: 80px;
-  height: 25px;
-  background: rgb(255, 245, 0);
-  border: 1px solid brown;
-  border-radius: 30px;
-  box-shadow: 3px 3px 5px gold inset;
+  box-shadow: 3px 3px 5px #999 inset;
 }
 
 .bagHelp {
@@ -260,6 +255,13 @@ body {
 .bagHelp ul li {
   height: 20px;
   line-height: 20px;
+}
+
+.bagStatusBtn {
+  float: right;
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
 }
 
 #headerWrap .totalRouteBtn {
@@ -309,10 +311,9 @@ body {
   position: absolute;
   top:5px;
   left:5px;
-  width: 80px;
+  width: 25px;
   height: 25px;
-  background: yellow;
-  border: 1px solid brown;
+  background: #fff;
   border-radius: 30px;
 }
 
@@ -320,12 +321,11 @@ body {
   position: absolute;
   top:5px;
   right:5px;
-  width: 80px;
+  width: 25px;
   height: 25px;
-  background: rgb(255, 245, 0);
-  border: 1px solid brown;
+  background: #fff;
   border-radius: 30px;
-  box-shadow: 3px 3px 5px gold inset;
+  box-shadow: 3px 3px 5px #999 inset;
 }
 
 #headerWrap #totalRouteWrap .totalRouteHeader .totalRouteHelp {
@@ -390,14 +390,16 @@ body {
 }
 
 #summaryWrap {
-  padding-top: 50px;
-  width: 100%;
+  padding-top: 30px;
+  width: 100%;  
+  max-width: 768px;
   position: fixed;
   top:5%;
   left:0;
   height: 70%;
   background: #fff;
-  border: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
   box-sizing: border-box;
   z-index: 25;
 }
@@ -422,6 +424,7 @@ body {
   margin: 5px;
   width: 30%;
   text-align: center;
+  overflow: hidden;
 }
 
 #summaryWrap #routeWrap.area {
@@ -439,7 +442,7 @@ body {
   text-align: center;
 }
 
-.statBtn {
+.statusBtn {
   float:right;
   border-radius: 15px;
   width: 50px;
@@ -452,25 +455,95 @@ body {
   z-index: 10;
 }
 
-#statWrap {
-  padding-top: 50px;
+#statusWrap {
   width: 100%;
+  max-width: 768px;
   position: fixed;
-  top:5%;
+  top:120px;
   left:0;
   height: 70%;
   background: #fff;
-  border: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
   box-sizing: border-box;
-  z-index: 25;
+  z-index: 20;
+  overflow: auto;
 }
 
-.statOpt {
-  float:left;
-  box-sizing: border-box;
-  border: 1px solid #000;
-  width:50%;
+#statusWrap .statusEquipWrap>p {
+  margin: 0 auto;
+  width: fit-content;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 2px double indigo;
+}
+
+#statusWrap .statusEquip {
+  width: 100%;
+}
+
+#statusWrap .statusEquip li {
+  margin-top: 5px;
+  margin-left: 1%;
+  width: 32%;
+  height: 25px;
+  line-height: 25px;
+  overflow: hidden;
+  float: left;
+  word-break: break-all;
+}
+
+#statusWrap .statusInfoWrap>p {
+  margin: 0 auto;
+  width: fit-content;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 2px double indigo;
+}
+
+#statusWrap .statusInfoWrap .statusInfo{
+  background: #ddd;
+  margin-top: 5px;
+}
+
+#statusWrap .statusInfoWrap>p {
+  height: 30px;
+  line-height: 30px;
+}
+
+#statusWrap .statusInfoWrap .upperOpts {
+  margin-left: 2%;
+  width: 47%;
+  float: left;
+}
+
+#statusWrap .statusInfoWrap .upperOpts>span {
+  display: block;
+  width: 100%;
+  font-size: 0.8em;
+}
+
+#statusWrap .statusInfoWrap .upperOptsWrap:last-child .upperOpts {
+  margin-left: 2%;
+  width: 98%;
+}
+
+#statusWrap .statusInfoWrap .upperOptsWrap:last-child li {
+  width: 48%;
+  float: left;
+  margin-right: 2%;
+}
+
+#statusWrap .statusInfoWrap .upperOptsWrap .detailOpts {
   text-align: left;
+}
+
+#statusWrap .statusInfoWrap .upperOptsWrap .detailOpts>p {
+  font-size: 0.8em;
+}
+
+#statusWrap .statusInfoWrap .upperOptsWrap .detailOpts>p>span {
+  float: right;
 }
 
 #equipSelect {
@@ -504,6 +577,29 @@ body {
   text-align: left;
   box-sizing: border-box;
   color: inherit;
+}
+
+#equipInfoTempWrap .equipInfoTempTab {
+  height: 30px;
+  background: #ddd;
+  text-indent: 10px;
+}
+
+#equipInfoTempWrap .equipInfoTempTab span{
+  height:30px;
+  line-height: 30px;
+  width: 100%;
+  display: block;
+}
+
+#equipInfoTempWrap .equipInfoTemp {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 0;
+}
+
+#equipInfoTempWrap .equipInfoTemp span {
+  word-break: keep-all;
 }
 
 .materials .description{
@@ -544,7 +640,6 @@ ul.scroll {
 }
 
 #equipInfo {
-  display: block;
   width: 100%;
   min-height: 30px;
 }
@@ -554,7 +649,6 @@ ul.scroll {
 }
 
 #equipBox .tab {
-  border-bottom: 1px solid #999;
   min-height: 35px;
   position: relative;
   overflow: auto;
@@ -591,21 +685,16 @@ ul.scroll {
 }
 
 #equipBox .routeBtn {
-  width: fit-content;  
-  padding: 5px;
-  margin-top: 6px;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
   margin-right: 10px;
-  border: 1px solid #fff;
-  font-size: 12px;
-  float: right;
-  background: rgb(180, 180, 180);
-  color: #fff;
+  float: right;  
+  border-radius: 30px;
 }
 
 #equipBox .routeBtn.clicked {
-  box-shadow: 3px 3px 5px gray inset;
-  font-weight: bold;
-  background: rgb(252, 158, 255, 0.3);
+  box-shadow: 1px 1px 5px #999 inset;
 }
 
 #equipBox .routeBox {
@@ -646,7 +735,7 @@ ul.scroll {
 
 .gradeP{
   color: rgb(253, 255, 129);
-  background: rgb(156, 1, 187);
+  background: rgb(212, 114, 231);
 }
 
 .gradeY{
@@ -658,13 +747,44 @@ ul.scroll {
   margin-left: 20px;
 }
 
+.statIcon {
+  height: 100%;
+  pointer-events: none;
+}
+
 .downArrowIcon {
   height:50%;
   margin:5px;
+  pointer-events: none;
 }
 
 .refreshIcon {
   height:100%;
+  pointer-events: none;
+}
+
+.checkIcon {
+  width: 85%;
+  height: 85%;
+  pointer-events: none;
+}
+
+.removeIcon {  
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.mapIcon {  
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.helpIcon {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .needM {
@@ -731,10 +851,10 @@ ul.scroll {
 }
 
 #area .area {
-  width:30%;
+  width:32%;
   min-height: 100px;
   float: left;
-  margin-left:2%;
+  margin-left:1%;
   margin-top: 10px;
   border-bottom: 1px solid #ddd;
   position: relative;
@@ -753,7 +873,8 @@ ul.scroll {
 .area .aLabel {
   background: #ddd;
   width:100%;
-  height: 30px;
+  height: 28px;
+  line-height: 28px;
   display: block
 }
 
@@ -790,7 +911,7 @@ ul.scroll {
 }
 
 .area .route6 {
-  background: rgb(130, 102, 255);
+  background: rgb(193, 179, 255);
 }
 
 .area .route7 {
@@ -806,7 +927,7 @@ ul.scroll {
 }
 
 .area .route10 {
-  background: rgb(134, 134, 134);
+  background: rgb(165, 165, 165);
 }
 
 .area .route11 {
@@ -826,7 +947,7 @@ ul.scroll {
 }
 
 .area .route15 {
-  background: rgb(163, 138, 138);
+  background: rgb(199, 171, 171);
 }
 
 .area .aLabel strong {
@@ -852,25 +973,18 @@ ul.scroll {
 }
 
 .checkDALabel {
-  color: inherit;
-  width: fit-content;  
-  padding: 6px;
-  margin-top: 5px;
-  margin-left: 3px;
-  border-radius: 10px;
-  border: 1px solid orange;
-  font-size: 12px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;  
+  border-radius: 30px;
 }
 
 .delBtn {
-  width: fit-content;  
-  padding: 6px;
-  margin-top: 5px;
-  margin-left: 3px;
-  border-radius: 10px;
-  border: 1px solid orange;
-  font-size: 12px;
-  color: inherit;
+  width: 20px;
+  height: 20px;  
+  margin-left: 5px;
+  border-radius: 30px;
+  vertical-align: middle;
 }
 
 .drops .dropM{
