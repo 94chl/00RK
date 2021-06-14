@@ -177,6 +177,7 @@ $(document).ready(function () {
             }
             needs = needs.concat(equipMat)
           }
+
           needs = needs.reduce(function(acc,cur){
             if(acc.indexOf(cur)<0) {
               acc.push(cur)
@@ -342,9 +343,9 @@ $(document).ready(function () {
               <div class="tabBtnBox grade${equipTemp.ID.substring(0,1)}">
                 <button type="button" class="tabBtn ${equipTemp.ID}">${equipTemp.name}<img src="./img/downarrow.png" alt="downArrowIcon" class="downArrowIcon"></button>    
                 <input type="checkbox" class="checkDA" id="${equipTemp.ID}">
-                <label for="${equipTemp.ID}" class="checkDALabel">재료</label>
-                <button type="button" class="delBtn ${equipTemp.ID}">제거</button>
-                <button type="button" class="routeBtn ${equipTemp.ID}">부위 최단</button>                
+                <label for="${equipTemp.ID}" class="checkDALabel"><img src="./img/check.png" alt="checkIcon" class="checkIcon"></label>
+                <button type="button" class="delBtn ${equipTemp.ID}"><img src="./img/remove.png" alt="removeIcon" class="removeIcon"></button>
+                <button type="button" class="routeBtn ${equipTemp.ID}"><img src="./img/map.png" alt="mapIcon" class="mapIcon"></button>                
               </div>
               <div class="scrollBox hide">
                 <ul class="scroll ${equipTemp.ID} clearfix">
@@ -506,7 +507,7 @@ $(document).ready(function () {
             for (u = 7; u < optionKey.length; u++) {
               if(optionKey[u].includes("%")) {
                 $(this).find(".option").append(
-                  `<li>${optionKey[u]} : ${Math.round(optionValue[u]*100)}%</li>`
+                  `<li>${optionKey[u].substring(0,optionKey[u].length-3)} : ${Math.round(optionValue[u]*100)}%</li>`
                 )
               } else {
                 $(this).find(".option").append(
@@ -525,10 +526,10 @@ $(document).ready(function () {
               mat2 = getById(selItem.material[1], item)
             }
             $(this).find(".lowerM").append(
-              `<span class='grade${mat1.ID.substring(0,1)}'>[ ${mat1.name} ]</span>`
+              `<button class="showLower ${mat1.ID}"><span class='grade${mat1.ID.substring(0,1)}'>[ ${mat1.name} ]</span></button>`
             )
             $(this).find(".lowerM").append(
-              `<span class='grade${mat2.ID.substring(0,1)}'>[ ${mat2.name} ]</span>`
+              `<button class="showLower ${mat2.ID}"><span class='grade${mat2.ID.substring(0,1)}'>[ ${mat2.name} ]</span></button>`
             )
             mats.push(mat1.ID, mat2.ID)
             for (i = 0; i < mats.length;) {
@@ -548,6 +549,69 @@ $(document).ready(function () {
             getById(selItem.ID, selectedG).drops = mats;
           })
         }
+
+        function tempInfo(tempEquip) {
+          const optionKey = Object.keys(tempEquip)
+          let equipMaterials = [tempEquip.material[0], tempEquip.material[1]]
+          let equipDrops = [tempEquip.material[0], tempEquip.material[1]]
+          for(i=0; i< equipDrops.length;) {
+            if(equipDrops[i].substring(0,1) != "D") {
+              equipDrops = equipDrops.concat(getById(equipDrops[i], item).material)
+              equipDrops.splice(i,1)
+            } else {
+              i++
+            }
+          }
+          equipDrops.sort()
+
+          $(".equipInfoTempTab span").remove();
+          $(".equipInfoTempTab").append(`<span class="grade${tempEquip.ID.substring(0,1)}">${tempEquip.name}<span>`)
+          
+          $(".equipInfoTemp").children().remove();
+          $(".equipInfoTemp").append(
+            `<ul class="${tempEquip.ID}">
+              <li>
+                <ul class="option"></ul>
+              </li>
+              <span class="needM">하위재료 : </span>
+              <li class="lowerM clearfix">
+                <button class="showLower ${equipMaterials[0]}"><span class="grade${equipMaterials[0].substring(0,1)}">[ ${equipMaterials[0].substring(0,1) == "D" ? getById(equipMaterials[0], drop).name:getById(equipMaterials[0], item).name} ]</span></button>
+                <button class="showLower ${equipMaterials[1]}"><span class="grade${equipMaterials[1].substring(0,1)}">[ ${equipMaterials[1].substring(0,1) == "D" ? getById(equipMaterials[1], drop).name:getById(equipMaterials[1], item).name} ]</span></button>
+              </li>
+              <span class="needM">드랍재료 : </span>
+              <li class="drops clearfix"></li>                
+            </ul>`
+          );
+          for (i=0; i<equipDrops.length; i++) {
+            $(`.equipInfoTemp .${tempEquip.ID} .drops`).append(
+              `<span class="gradeD">[ ${getById(equipDrops[i], drop).name} ]</span>`
+            )
+          }
+          for (i=7; i<optionKey.length; i++) {
+            if(optionKey[i].includes("%")) {
+              $(`.equipInfoTemp .${tempEquip.ID} .option`).append(
+                `<li><p></p> ${optionKey[i].substring(0,optionKey[i].length-3)}: <span>${tempEquip[optionKey[i]]*100}%</span></li>`
+              )
+            } else {
+              $(`.equipInfoTemp .${tempEquip.ID} .option`).append(
+                `<li><p></p> ${optionKey[i]}: <span>${tempEquip[optionKey[i]]}</span></li>`
+              )
+            }            
+          }
+        }
+
+        $(document).on("change", "#weaponD, #armorD, #optionD", function(e){
+          const tempEquip = getById(e.target.value, item)
+          tempInfo(tempEquip)
+        })
+
+        $(document).on("click", ".showLower", function(e){
+          if(e.target.classList[1].substring(0,1) == "D") {
+            return
+          }
+          const tempEquip = getById(e.target.classList[1], item)
+          tempInfo(tempEquip)
+        })
 
         $(document).on("click", ".tabBtn.description", function() {
           $("#equipBox").toggleClass("hide")
@@ -604,7 +668,7 @@ $(document).ready(function () {
         //장비 체크박스 클릭시
         $(document).on("change",".checkDA", function(e) {
           $(".materials .selectedAll").children().removeClass('checkedME')
-          $("#area .area .drops").children().removeClass('checkedME')
+          $("#area .area .drops .dropM").children().removeClass('checkedME')
           $("#equipBox .tab .drops").children().removeClass('checkedME')
           let checkedE = [];
           $(".checkDA:checked").each(function() {
@@ -614,14 +678,14 @@ $(document).ready(function () {
           for(i=0; i<checkedE.length; i++) {
             for(o=0; o<checkedE[i].drops.length; o++){
               $(".materials .selectedAll ."+checkedE[i].drops[o]).addClass('checkedME')
-              $("#area .area .drops ."+checkedE[i].drops[o]).addClass('checkedME')
+              $("#area .area .drops ."+checkedE[i].drops[o]+" .getMatBtn").addClass('checkedME')
               $("#equipBox .tab .drops ."+checkedE[i].drops[o]).addClass('checkedME')
             }
           }
         })
         
         //위치 체크박스 클릭시
-        function areaClick(clickA){
+        function areaClick(){
           checkedA.splice(0,)
           checkedAM.splice(0,)
           $(".materials .selectedAll").children().removeClass('checkedMA');
@@ -662,7 +726,7 @@ $(document).ready(function () {
           } else {
             checkedAOrder.push(nowA)
           }
-          areaClick(nowA)
+          areaClick()
         })
 
         $(".dwBtn").on("click",function(){
@@ -684,6 +748,116 @@ $(document).ready(function () {
 
         $("#summaryWrap .closeBtn").on("click", function() {
           $("#summaryWrap").addClass("hide")
+        })
+
+        function showStatus(btn) {
+          $(".statusEquip").children().remove();
+          $(".detailOpts>p").children().remove();
+          $(".detailOpts").addClass("hide");
+          $(".detailOpts>p").each(function(){
+            if($(this).hasClass("doubleOpts")) {
+              $(this).append('<span><span class="optValue">0</span> / <span class="optValue">0</span></span>')
+            } else if ($(this).hasClass("doubleOptsX")) {
+              $(this).append('<span><span class="optValue"></span><span class="optValue"></span></span>')
+            } else {
+              $(this).append('<span><span class="optValue"></span></span>')
+            }
+          })
+          let totalOpts ={};
+          const exception = ["[고유]강인함", "[고유]불꽃결계", "[고유]의념", "치유감소(기공)", "치유감소(스킬)"]
+          const hp = ["체력", "레벨당체력", "체력재생", "체력재생(%)"]
+          const mp = ["스태미너", "스태미너재생", "스태미너재생(%)"]
+          const atk = ["공격력", "레벨당공격력", "크리율(%)", "크리뎀(%)", "방어력관통(%)"]
+          const def = ["방어력", "레벨당방어력", "기공뎀감소", "스킬뎀감소(고정)", "스킬뎀감소(%)", "크리뎀감소(%)", "트랩피해감소(%)"]
+          const autoAtk = ["기공추", "레벨당기공추"]
+          const skillAtk = ["스킬증폭(고정)", "스킬증폭(%)", "레벨당스킬증폭(고정)", "레벨당스킬증폭(%)"]
+          const spd = ["공격속도(%)", "레벨당공격속도(%)", "이동속도", "비전투이속"]
+          const unique = ["[고유]강인함", "[고유]불꽃결계", "[고유]의념"]
+          const etc = ["피흡(%)", "치유감소(기공)", "치유감소(스킬)",  "쿨타임감소(%)", "쿨타임감소최대치(%)", "사거리", "시야"]
+          if(btn == "statusBtn") {
+            $(".statusEquipWrap>p>span").text("")
+            $(".statusInfoWrap>p>span").text("")
+            sEquip.map((e)=> {
+              const opts = Object.keys(e)
+              for(i=7; i<opts.length; i++) {
+                if(!totalOpts[opts[i]]) {
+                  totalOpts[opts[i]] = e[opts[i]]
+                } else if(totalOpts[opts[i]]&&exception.includes(totalOpts[opts[i]])) {
+                  totalOpts[opts[i]] = Number((totalOpts[opts[i]]+e[opts[i]]).toFixed(2))
+                }
+              }
+              $(".statusEquip").append(`<li class="grade${e.ID.substring(0,1)}">${e.name}</li>`)
+            })
+          } else if(btn == "bagStatusBtn") {
+            $(".statusEquipWrap>p>span").text("(가방 기준)")
+            $(".statusInfoWrap>p>span").text("(가방 기준)")
+            bagEquip.map((e)=> {
+              if(e.ID == "empty") {
+                return
+              }
+              const bagEquipInfo = getById(e.ID,item)?getById(e.ID,item):getById(e.ID,drop)
+              const opts = Object.keys(bagEquipInfo)
+              for(i=7; i<opts.length; i++) {
+                if(!totalOpts[opts[i]]) {
+                  totalOpts[opts[i]] = bagEquipInfo[opts[i]]
+                } else if(totalOpts[opts[i]]&&exception.includes(totalOpts[opts[i]])) {
+                  totalOpts[opts[i]] = Number((totalOpts[opts[i]]+bagEquipInfo[opts[i]]).toFixed(2))
+                }
+              }
+              $(".statusEquip").append(`<li class="grade${bagEquipInfo.ID.substring(0,1)}">${bagEquipInfo.name}</li>`)
+            })
+          }  
+          let totalOptsKey = Object.keys(totalOpts)
+          totalOptsKey.filter(e=>{
+            if(hp.includes(e)) {
+              $(".upperOpts.hp .detailOpts .optValue")[hp.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
+              $(".upperOpts.hp .detailOpts .optValue")[hp.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+            } else if (mp.includes(e)) {
+              $(".upperOpts.mp .detailOpts .optValue")[mp.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
+              $(".upperOpts.hp .detailOpts .optValue")[mp.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+            } else if (atk.includes(e)) {
+              $(".upperOpts.atk .detailOpts .optValue")[atk.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
+              $(".upperOpts.atk .detailOpts .optValue")[atk.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+            } else if (def.includes(e)) {
+              $(".upperOpts.def .detailOpts .optValue")[def.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
+              $(".upperOpts.def .detailOpts .optValue")[def.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+            } else if (autoAtk.includes(e)) {
+              $(".upperOpts.autoAtk .detailOpts .optValue")[autoAtk.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
+              $(".upperOpts.autoAtk .detailOpts .optValue")[autoAtk.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+            } else if (skillAtk.includes(e)) {
+              $(".upperOpts.skillAtk .detailOpts .optValue")[skillAtk.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
+              $(".upperOpts.skillAtk .detailOpts .optValue")[skillAtk.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+            } else if (spd.includes(e)) {
+              $(".upperOpts.spd .detailOpts .optValue")[spd.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
+              $(".upperOpts.spd .detailOpts .optValue")[spd.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+            } else if (unique.includes(e)) {
+              $(".upperOpts.unique .detailOpts .optValue")[unique.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
+              $(".upperOpts.unique .detailOpts .optValue")[unique.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+            } else if (etc.includes(e)) {
+              $(".upperOpts.etc .detailOpts .optValue")[etc.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
+              if(e == "치유감소(기공)") {
+                $(".upperOpts.etc .detailOpts .optValue")[etc.indexOf(e)].innerText = "기본 공격 적중 시"
+              } else if(e == "치유감소(스킬)"){
+                $(".upperOpts.etc .detailOpts .optValue")[etc.indexOf(e)].innerText = "스킬 적중 시"
+              } else {
+                $(".upperOpts.etc .detailOpts .optValue")[etc.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+              }
+            }
+          })
+        }
+
+        $(".statusBtn").on("click", function(btn) {
+          $("#statusWrap").removeClass("hide")
+          showStatus(btn.target.classList[0])          
+        })        
+        
+        $("#statusWrap .closeBtn").on("click", function() {
+          $("#statusWrap").addClass("hide")
+        })
+
+        $(".bagStatusBtn").on("click", function(btn){
+          $("#statusWrap").removeClass("hide")
+          showStatus(btn.target.classList[0])
         })
 
         equipSort();
