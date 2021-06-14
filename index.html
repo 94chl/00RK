@@ -39,11 +39,14 @@
               <option value="whip" class="defaultW DW012">채찍</option>
             </select>
           </div>
-          <button type="button" class="bagHelpBtn">사용법</button>
+          <div class="bagBtnWrap">
+            <button type="button" class="bagHelpBtn"><img src="./img/help.png" alt="help" class="helpIcon"></button>
+            <button type="button" class="bagStatusBtn"><img src="./img/stat.png" alt="statIcon" class="statIcon"></button>
+          </div>
           <div class="bagHelp hide">
             <ul>
               <li>아이템 습득 : 지역 카테고리의 아이템 클릭</li>
-              <li>아이템 버리기 : 버릴 아이템 더블클릭 </li>
+              <li>아이템 버리기 : 버릴 아이템 더블클릭</li>
               <li>아이템 조합 : 하위 재료 클릭(조합 가능한 경우만)</li>
               <li>아이템 이동 : 옮길 아이템 클릭 후, 목표칸 클릭</li>
             </ul>
@@ -80,11 +83,12 @@
           </div>
         </div>
       </div>
+      
       <button type="button" class="totalRouteBtn">전체 최단</button>
       <div id="totalRouteWrap" class="hide">
         <div class="totalRouteHeader">
-          <span>전체 아이템 최단 루트</span>
-          <button type="button" class="totalRouteHelpBtn">도움말</button>
+          <span>전체 최단 루트</span>
+          <button type="button" class="totalRouteHelpBtn"><img src="./img/help.png" alt="help" class="helpIcon"></button>
           <div class="totalRouteHelp hide">
             <ul>
               <li>사용법 : 아이템 추가/제거 후, "계산하기" 버튼 클릭</li>
@@ -99,6 +103,7 @@
           <button type="button" class="closeBtn">X</button>
         </div>        
       </div>
+
       <button type="button" class="summaryBtn">요약</button>
       <div id="summaryWrap" class="hide">
         <button type="button" class="closeBtn">X</button>
@@ -106,6 +111,165 @@
         <ul id="equipWrap" class="clearfix"></ul>
         <div class="summarySort">루트</div>
         <ul id="routeWrap" class="area clearfix"></ul>
+      </div>
+
+      <button type="button" class="statusBtn"><img src="./img/stat.png" alt="statIcon" class="statIcon"></button>
+      <div id="statusWrap" class="hide">
+        <button type="button" class="closeBtn">X</button>
+        <div class="statusEquipWrap">
+          <p>장비<span></span></p>
+          <ul class="statusEquip clearfix"></ul>
+        </div>
+        <div class="statusInfoWrap">
+          <p>스테이터스<span></span></p>
+          <ul class="statusInfo clearfix">
+            <li class="upperOptsWrap clearfix">
+              <div class="upperOpts hp">
+                <ul>
+                  <li class="detailOpts hide clearfix">
+                    <p>체력 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>레벨당 체력 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p class="doubleOpts">체력재생 : <span><span class="optValue">0</span> / <span class="optValue">0</span></span></p>
+                  </li>
+                </ul>
+              </div>
+              <div class="upperOpts mp">
+                <ul>
+                  <li class="detailOpts hide clearfix">
+                    <p>스태미너 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p class="doubleOpts">스태미너 재생 : <span><span class="optValue">0</span> / <span class="optValue">0</span></span></p>
+                  </li>
+                </ul>
+              </div>              
+            </li>
+            <li class="upperOptsWrap clearfix">
+              <div class="upperOpts atk">
+                <ul>
+                  <li class="detailOpts hide clearfix">
+                    <p>공격력 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>레벨당 공격력 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>치명타 확률 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>치명타 피해량 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>방어력 관통 : <span><span class="optValue"></span></span></p>
+                  </li>
+                </ul>
+              </div>
+              <div class="upperOpts def">
+                <ul>
+                  <li class="detailOpts hide clearfix">
+                    <p>방어력 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>레벨당 방어력 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>기본 공격 피해 감소 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p class="doubleOpts">스킬 피해 감소 : <span><span class="optValue">0</span> / <span class="optValue">0</span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>치명타 피해 감소 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>트랩 피해 감소 : <span><span class="optValue"></span></span></p>
+                  </li>
+                </ul>
+              </div>              
+            </li>
+            <li class="upperOptsWrap clearfix">
+              <div class="upperOpts autoAtk">
+                <ul>
+                  <li class="detailOpts hide clearfix">
+                    <p>기본 공격 추가 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>레벨당 기본 공격 추가 : <span><span class="optValue"></span></span></p>
+                  </li>
+                </ul>
+              </div>
+              <div class="upperOpts skillAtk">
+                <ul>
+                  <li class="detailOpts hide clearfix">
+                    <p class="doubleOpts">스킬 공격 추가 : <span><span class="optValue">0</span> / <span class="optValue">0</span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p class="doubleOpts">레벨당 스킬 공격 추가 : <span><span class="optValue">0</span> / <span class="optValue">0</span></span></p>
+                  </li>
+                </ul>
+              </div>              
+            </li>
+            <li class="upperOptsWrap clearfix">
+              <div class="upperOpts spd">
+                <ul>
+                  <li class="detailOpts hide clearfix">
+                    <p>공격 속도 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>레벨당 공격 속도 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>이동 속도 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>비전투중 이동 속도 : <span><span class="optValue"></span></span></p>
+                  </li>
+                </ul>
+              </div>
+              <div class="upperOpts unique">
+                <ul>
+                  <li class="detailOpts hide clearfix">
+                    <p>강인함 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>불꽃결계 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>의념 : <span><span class="optValue"></span></span></p>
+                  </li>
+                </ul>
+              </div>              
+            </li>
+            <li class="upperOptsWrap clearfix">
+              <div class="upperOpts etc">
+                <ul>
+                  <li class="detailOpts hide clearfix">
+                    <p>생명력 흡수 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p class="doubleOptsX">치유 감소 : <span><span class="optValue"></span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>쿨타임 감소 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>최대 쿨타임 감소 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>기본 공격 사거리 : <span><span class="optValue"></span></span></p>
+                  </li>
+                  <li class="detailOpts hide clearfix">
+                    <p>시야 : <span><span class="optValue"></span></span></p>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>    
   </div>
@@ -118,7 +282,7 @@
         <input type="radio" id="armor" name="equip" class="equipSort" value="armor">
         <label for="armor">방어구</label>
         <input type="radio" id="option" name="equip" class="equipSort" value="option">
-        <label for="option">옵션 검색</label><br>
+        <label for="option">옵션</label><br>
         <select name="weaponL" id="weaponL" class="hide">
           <option value="dagger" selected>단검</option>
           <option value="twoHand">양손검</option>
@@ -153,11 +317,15 @@
         <select name="optionL" id="optionL" class="hide"></select>
         <select name="optionD" id="optionD" class="hide"></select>
         <button type="button" class="addBtn">추가</button>        
-      </div>                
-    </div>
+      </div>             
+    </div> 
+    <div id="equipInfoTempWrap">
+      <div class="equipInfoTempTab"><span>미리보기</span></div>
+      <div class="equipInfoTemp clearfix"></div> 
+    </div>  
   
     <div class="materials">
-      <div class="description">필요한 모든 드랍템</div>
+      <div class="description"><p>필요한 모든 드랍템</p></div>
       <div class="selectedAll clearfix">
       </div>
     </div>
