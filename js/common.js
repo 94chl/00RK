@@ -814,7 +814,7 @@ $(document).ready(function () {
               $(".upperOpts.hp .detailOpts .optValue")[hp.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
             } else if (mp.includes(e)) {
               $(".upperOpts.mp .detailOpts .optValue")[mp.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
-              $(".upperOpts.hp .detailOpts .optValue")[mp.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+              $(".upperOpts.mp .detailOpts .optValue")[mp.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
             } else if (atk.includes(e)) {
               $(".upperOpts.atk .detailOpts .optValue")[atk.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
               $(".upperOpts.atk .detailOpts .optValue")[atk.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
