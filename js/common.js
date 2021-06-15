@@ -604,6 +604,11 @@ $(document).ready(function () {
           const tempEquip = getById(e.target.value, item)
           tempInfo(tempEquip)
         })
+        
+        $(document).on("change", "#weaponL, #armorL, #optionL", function(e){
+          const tempEquip = getById($(`#${e.target.id.substring(0,e.target.id.length-1)}D`)[0].value, item)
+          tempInfo(tempEquip)
+        })
 
         $(document).on("click", ".showLower", function(e){
           if(e.target.classList[1].substring(0,1) == "D") {
