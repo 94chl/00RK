@@ -1,4 +1,11 @@
 [{
+    "ID": "DM000",
+    "sort": "material",
+    "pickup": 0,
+    "limit": 0,
+    "name": "empty"
+  },
+  {
     "ID": "DM001",
     "sort": "material",
     "pickup": 2,
@@ -776,9 +783,10 @@
     "limit": 5,
     "name": "물",
     "location1": "A005",
-    "location2": "A009",
-    "location3": "A012",
-    "location4": "A014"
+    "location2": "A007",
+    "location3": "A009",
+    "location4": "A012",
+    "location5": "A014"
   },
   {
     "ID": "DD003",
