@@ -57,6 +57,7 @@ $(document).ready(function () {
           }
           $("#weaponD .weaponDL:first-child").attr("selected","selected");
         })
+
         //방어구
         for (i = 0; i < item.length; i++) {
           if ($("#armorL").val() == item[i].sort) {
@@ -74,6 +75,7 @@ $(document).ready(function () {
           }
           $("#armorD .armorDL:first-child").attr("selected","selected");
         })
+
         //옵션 목록
         for (i = 0; i < options.length; i++) {
           $("#optionL").append(`<option value=${options[i]}>${options[i]}</option>`)
@@ -95,6 +97,40 @@ $(document).ready(function () {
           }
         }
         $("#optionD .optionDL:first-child").attr("selected","selected");
+
+        //음식, 트랩
+        for (i = 0; i < item.length; i++) {
+          if ($("#foodTrapL").val() == item[i].sort) {
+            $("#foodTrapD").append(`<option value=${item[i].ID} class='foodTrapDL grade${item[i].ID.substring(0,1)}'> ${item[i].name} </option>`)
+          }
+        }
+        $("#foodTrapD .foodTrapDL:first-child").attr("selected","selected");
+
+        $("#foodTrapL").on("change", function () {
+          $(".foodTrapDL").remove();
+          for (i = 0; i < item.length; i++) {
+            if ($("#foodTrapL").val() == item[i].sort) {
+              $("#foodTrapD").append(`<option value=${item[i].ID} class='foodTrapDL grade${item[i].ID.substring(0,1)}'> ${item[i].name} </option>`)
+            }
+          }
+          $("#foodTrapD .foodTrapDL:first-child").attr("selected","selected");
+        })
+        
+        //무기, 방어구 토글, 리스트 생성
+        function equipSort() {
+          $(".equipSort").each(function(){
+            if(this.checked) {
+              $(`#${this.id}L`).removeClass("hide")
+              $(`#${this.id}D`).removeClass("hide")
+            } else {
+              $(`#${this.id}L`).addClass("hide")
+              $(`#${this.id}D`).addClass("hide")
+            }
+          })
+        }
+        
+        equipSort();
+        $(".equipSort").on("change", equipSort)
         
         // 계산 코드 시작       
         // 하위재료 찾기
@@ -113,7 +149,7 @@ $(document).ready(function () {
         //총 선택 장비의 재료(드랍)
         let needDrops = [];
         let dropAreaG = [
-          {"ID":"A002", "drops":[]}, {"ID":"A003", "drops":[]}, {"ID":"A004", "drops":[]}, {"ID":"A005", "drops":[]}, {"ID":"A006", "drops":[]}, {"ID":"A007", "drops":[]}, {"ID":"A008", "drops":[]}, {"ID":"A009", "drops":[]}, {"ID":"A010", "drops":[]}, {"ID":"A011", "drops":[]}, {"ID":"A012", "drops":[]}, {"ID":"A013", "drops":[]}, {"ID":"A014", "drops":[]}, {"ID":"A015", "drops":[]}, {"ID":"A016", "drops":[]}
+          {"ID" : "A002", "drops":[]}, {"ID" : "A003", "drops":[]}, {"ID" : "A004", "drops":[]}, {"ID" : "A005", "drops":[]}, {"ID" : "A006", "drops":[]}, {"ID" : "A007", "drops":[]}, {"ID" : "A008", "drops":[]}, {"ID" : "A009", "drops":[]}, {"ID" : "A010", "drops":[]}, {"ID" : "A011", "drops":[]}, {"ID" : "A012", "drops":[]}, {"ID" : "A013", "drops":[]}, {"ID" : "A014", "drops":[]}, {"ID" : "A015", "drops":[]}, {"ID" : "A016", "drops":[]}
         ];
         //맵(이동정보)
         const areaPath = [
@@ -311,23 +347,11 @@ $(document).ready(function () {
           
           return routeArr
           
-        }//
-            
-        //무기, 방어구 토글, 리스트 생성
-        function equipSort() {
-          $(".equipSort").each(function(){
-            if(this.checked) {
-              $(`#${this.id}L`).removeClass("hide")
-              $(`#${this.id}D`).removeClass("hide")
-            } else {
-              $(`#${this.id}L`).addClass("hide")
-              $(`#${this.id}D`).addClass("hide")
-            }
-          })
         }
+            
         //장비 선택, 추가
         function equipAdd() {
-          let sortList = [{"dagger":"단검"}, {"twoHand":"양손검"}, {"axe":"도끼"}, {"dual":"쌍검"}, {"pistol":"권총"}, {"rifle":"돌격소총"}, {"sniper":"저격총"}, {"rapier":"레이피어"}, {"spear":"창"}, {"hammer":"망치"}, {"bat":"방망이"}, {"throw":"투척"}, {"shuriken":"암기"}, {"bow":"활"}, {"crossbow":"석궁"}, {"glove":"글러브"}, {"tonfa":"톤파"}, {"guitar":"기타"}, {"nunchaku":"쌍절곤"}, {"whip":"채찍"}, {"body":"옷"}, {"head":"머리"}, {"arm":"팔"}, {"leg":"다리"}, {"ice":"장신구"}]
+          let sortList = [{"dagger" : "단검"}, {"twoHand" : "양손검"}, {"axe" : "도끼"}, {"dual" : "쌍검"}, {"pistol" : "권총"}, {"rifle" : "돌격소총"}, {"sniper" : "저격총"}, {"rapier" : "레이피어"}, {"spear" : "창"}, {"hammer" : "망치"}, {"bat" : "방망이"}, {"throw" : "투척"}, {"shuriken" : "암기"}, {"bow" : "활"}, {"crossbow" : "석궁"}, {"glove" : "글러브"}, {"tonfa" : "톤파"}, {"guitar" : "기타"}, {"nunchaku" : "쌍절곤"}, {"whip" : "채찍"}, {"body" : "옷"}, {"head" : "머리"}, {"arm" : "팔"}, {"leg" : "다리"}, {"ice" : "장신구"}, {"food" : "음식"}, {"drink" : "음료"}, {"trap" : "함정"}]
           let sorted= $(".equipSort:checked").val();
           let selected = $(`.${sorted}DL:selected`).val();
           let equipTemp = getById(selected,item);
@@ -600,12 +624,12 @@ $(document).ready(function () {
           }
         }
 
-        $(document).on("change", "#weaponD, #armorD, #optionD", function(e){
+        $(document).on("change", "#weaponD, #armorD, #optionD, #foodTrapD", function(e){
           const tempEquip = getById(e.target.value, item)
           tempInfo(tempEquip)
         })
-        
-        $(document).on("change", "#weaponL, #armorL, #optionL", function(e){
+
+        $(document).on("change", "#weaponL, #armorL, #optionL, #foodTrapL", function(e){
           const tempEquip = getById($(`#${e.target.id.substring(0,e.target.id.length-1)}D`)[0].value, item)
           tempInfo(tempEquip)
         })
@@ -864,10 +888,7 @@ $(document).ready(function () {
           $("#statusWrap").removeClass("hide")
           showStatus(btn.target.classList[0])
         })
-
-        equipSort();
-        $(".equipSort").on("change", equipSort)
-        
+                
         //장비 추가
         $(".addBtn").on("click",function() {
           let sorted= $(".equipSort:checked").val();
