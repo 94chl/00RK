@@ -811,7 +811,7 @@ $(document).ready(function () {
               for(i=7; i<opts.length; i++) {
                 if(!totalOpts[opts[i]]) {
                   totalOpts[opts[i]] = e[opts[i]]
-                } else if(totalOpts[opts[i]]&&exception.includes(totalOpts[opts[i]])) {
+                } else if(totalOpts[opts[i]]&&!exception.includes(totalOpts[opts[i]])) {
                   totalOpts[opts[i]] = Number((totalOpts[opts[i]]+e[opts[i]]).toFixed(2))
                 }
               }
@@ -1040,27 +1040,50 @@ $(document).ready(function () {
               assembled = thing
             }
           })
-          if(assembled&&(mat.stack<2||clickTemp.stack<2)) {   
-            if(mat.stack < 2) {              
-              bagRemove(mat.ID, mat.btn.substring(mat.btn.length - 1,), mat.btn)
-            } else {
-              getById(mat.ID, bagNow).stack --
-              $(`.${mat.btn} .mNumber`).text(`(x${getById(mat.ID, bagNow).stack})`)
-            }
-            if(clickTemp.stack < 2) {
-              bagRemove(clickTemp.ID, clickTemp.btn.substring(clickTemp.btn.length - 1,), clickTemp.btn) 
-            } else {              
-              getById(clickTemp.ID, bagNow).stack --
-              $(`.${clickTemp.btn} .mNumber`).text(`(x${getById(clickTemp.ID, bagNow).stack})`)
-            }        
-            if(bagNow.indexOf("empty")>=0){
+          if(assembled) {      
+            if(bagNow.indexOf("empty")>=0){   
+              if(mat.stack < 2) {              
+                bagRemove(mat.ID, mat.btn.substring(mat.btn.length - 1,), mat.btn)
+              } else {
+                getById(mat.ID, bagNow).stack --
+                $(`.${mat.btn} .mNumber`).text(`(x${getById(mat.ID, bagNow).stack})`)
+              }
+              if(clickTemp.stack < 2) {
+                bagRemove(clickTemp.ID, clickTemp.btn.substring(clickTemp.btn.length - 1,), clickTemp.btn) 
+              } else {              
+                getById(clickTemp.ID, bagNow).stack --
+                $(`.${clickTemp.btn} .mNumber`).text(`(x${getById(clickTemp.ID, bagNow).stack})`)
+              }  
               getMat(assembled.ID, bagNow.indexOf("empty"))
-            } else {
-              getById(mat.ID, bagNow).stack ++
-              $(`.${mat.btn} .mNumber`).text(`(x${getById(mat.ID, bagNow).stack})`)
-              getById(clickTemp.ID, bagNow).stack ++
-              $(`.${clickTemp.btn} .mNumber`).text(`(x${getById(clickTemp.ID, bagNow).stack})`)
-            }            
+            } else if (getById(assembled.ID, bagNow) && mat.stack >= 2 && clickTemp.stack >= 2) {
+              if(mat.stack < 2) {              
+                bagRemove(mat.ID, mat.btn.substring(mat.btn.length - 1,), mat.btn)
+              } else {
+                getById(mat.ID, bagNow).stack --
+                $(`.${mat.btn} .mNumber`).text(`(x${getById(mat.ID, bagNow).stack})`)
+              }
+              if(clickTemp.stack < 2) {
+                bagRemove(clickTemp.ID, clickTemp.btn.substring(clickTemp.btn.length - 1,), clickTemp.btn) 
+              } else {              
+                getById(clickTemp.ID, bagNow).stack --
+                $(`.${clickTemp.btn} .mNumber`).text(`(x${getById(clickTemp.ID, bagNow).stack})`)
+              }  
+              getMat(assembled.ID, bagNow.findIndex(e => e.ID == assembled.ID))
+            } else if(!getById(assembled.ID, bagNow) &&(mat.stack < 2 || clickTemp.stack < 2)) {
+              if(mat.stack < 2) {              
+                bagRemove(mat.ID, mat.btn.substring(mat.btn.length - 1,), mat.btn)
+              } else {
+                getById(mat.ID, bagNow).stack --
+                $(`.${mat.btn} .mNumber`).text(`(x${getById(mat.ID, bagNow).stack})`)
+              }
+              if(clickTemp.stack < 2) {
+                bagRemove(clickTemp.ID, clickTemp.btn.substring(clickTemp.btn.length - 1,), clickTemp.btn) 
+              } else {              
+                getById(clickTemp.ID, bagNow).stack --
+                $(`.${clickTemp.btn} .mNumber`).text(`(x${getById(clickTemp.ID, bagNow).stack})`)
+              }  
+              getMat(assembled.ID, bagNow.indexOf("empty"))
+            }       
           } else {
             let prevMat = {ID: clickTemp.ID, name: clickTemp.name, btn: clickTemp.btn, stack: clickTemp.stack == undefined ? 0 : clickTemp.stack}
             let nowMat = {ID: mat.ID, name: mat.name, btn: mat.btn, stack: mat.stack == undefined ? 0 : mat.stack}
