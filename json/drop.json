@@ -388,7 +388,8 @@
     "pickup": 1,
     "limit": 1,
     "name": "야구공",
-    "location1": "A000"
+    "location1": "A011",
+    "location2": "A002"
   },
   {
     "ID": "DW015",
