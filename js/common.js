@@ -256,9 +256,9 @@ $(document).ready(function () {
           startPoint.sort(function(a,b) {
             return b.pt - a.pt
           })
-          //야구공, 보급형기타 없이 상위템 만들기 불가능(드랍이 안댐)
-          if(needs.indexOf("DW027")>=0||needs.indexOf("DW014")>=0) {
-            alert("시작 무기를 확인해주세요")
+          //보급형기타 없이 상위템 만들기 불가능(드랍이 안댐)
+          if(needs.indexOf("DW027")>=0) {
+            alert("보급형 기타는 시작무기를 통해 추가해주세요")
             return
           }
 
