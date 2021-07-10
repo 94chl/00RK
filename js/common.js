@@ -531,7 +531,7 @@ $(document).ready(function () {
             for (u = 7; u < optionKey.length; u++) {
               if(optionKey[u].includes("%")) {
                 $(this).find(".option").append(
-                  `<li>${optionKey[u].substring(0,optionKey[u].length-3)} : ${Math.round(optionValue[u]*100)}%</li>`
+                  `<li>${optionKey[u].substring(0,optionKey[u].length-3)} : ${parseInt(optionValue[u]*100)}%</li>`
                 )
               } else {
                 $(this).find(".option").append(
@@ -614,7 +614,7 @@ $(document).ready(function () {
           for (i=7; i<optionKey.length; i++) {
             if(optionKey[i].includes("%")) {
               $(`.equipInfoTemp .${tempEquip.ID} .option`).append(
-                `<li><p></p> ${optionKey[i].substring(0,optionKey[i].length-3)}: <span>${tempEquip[optionKey[i]]*100}%</span></li>`
+                `<li><p></p> ${optionKey[i].substring(0,optionKey[i].length-3)}: <span>${parseInt(tempEquip[optionKey[i]]*100)}%</span></li>`
               )
             } else {
               $(`.equipInfoTemp .${tempEquip.ID} .option`).append(
