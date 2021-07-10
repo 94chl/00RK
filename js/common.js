@@ -840,28 +840,28 @@ $(document).ready(function () {
           totalOptsKey.filter(e=>{
             if(hp.includes(e)) {
               $(".upperOpts.hp .detailOpts .optValue")[hp.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
-              $(".upperOpts.hp .detailOpts .optValue")[hp.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+              $(".upperOpts.hp .detailOpts .optValue")[hp.indexOf(e)].innerText = e.includes("%")?parseInt(totalOpts[e]*100)+"%":totalOpts[e]
             } else if (mp.includes(e)) {
               $(".upperOpts.mp .detailOpts .optValue")[mp.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
-              $(".upperOpts.mp .detailOpts .optValue")[mp.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+              $(".upperOpts.mp .detailOpts .optValue")[mp.indexOf(e)].innerText = e.includes("%")?parseInt(totalOpts[e]*100)+"%":totalOpts[e]
             } else if (atk.includes(e)) {
               $(".upperOpts.atk .detailOpts .optValue")[atk.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
-              $(".upperOpts.atk .detailOpts .optValue")[atk.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+              $(".upperOpts.atk .detailOpts .optValue")[atk.indexOf(e)].innerText = e.includes("%")?parseInt(totalOpts[e]*100)+"%":totalOpts[e]
             } else if (def.includes(e)) {
               $(".upperOpts.def .detailOpts .optValue")[def.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
-              $(".upperOpts.def .detailOpts .optValue")[def.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+              $(".upperOpts.def .detailOpts .optValue")[def.indexOf(e)].innerText = e.includes("%")?parseInt(totalOpts[e]*100)+"%":totalOpts[e]
             } else if (autoAtk.includes(e)) {
               $(".upperOpts.autoAtk .detailOpts .optValue")[autoAtk.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
-              $(".upperOpts.autoAtk .detailOpts .optValue")[autoAtk.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+              $(".upperOpts.autoAtk .detailOpts .optValue")[autoAtk.indexOf(e)].innerText = e.includes("%")?parseInt(totalOpts[e]*100)+"%":totalOpts[e]
             } else if (skillAtk.includes(e)) {
               $(".upperOpts.skillAtk .detailOpts .optValue")[skillAtk.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
-              $(".upperOpts.skillAtk .detailOpts .optValue")[skillAtk.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+              $(".upperOpts.skillAtk .detailOpts .optValue")[skillAtk.indexOf(e)].innerText = e.includes("%")?parseInt(totalOpts[e]*100)+"%":totalOpts[e]
             } else if (spd.includes(e)) {
               $(".upperOpts.spd .detailOpts .optValue")[spd.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
-              $(".upperOpts.spd .detailOpts .optValue")[spd.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+              $(".upperOpts.spd .detailOpts .optValue")[spd.indexOf(e)].innerText = e.includes("%")?parseInt(totalOpts[e]*100)+"%":totalOpts[e]
             } else if (unique.includes(e)) {
               $(".upperOpts.unique .detailOpts .optValue")[unique.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
-              $(".upperOpts.unique .detailOpts .optValue")[unique.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+              $(".upperOpts.unique .detailOpts .optValue")[unique.indexOf(e)].innerText = e.includes("%")?parseInt(totalOpts[e]*100)+"%":totalOpts[e]
             } else if (etc.includes(e)) {
               $(".upperOpts.etc .detailOpts .optValue")[etc.indexOf(e)].parentElement.parentElement.parentElement.classList.remove('hide')
               if(e == "치유감소(기공)") {
@@ -869,7 +869,7 @@ $(document).ready(function () {
               } else if(e == "치유감소(스킬)"){
                 $(".upperOpts.etc .detailOpts .optValue")[etc.indexOf(e)].innerText = "스킬 적중 시"
               } else {
-                $(".upperOpts.etc .detailOpts .optValue")[etc.indexOf(e)].innerText = e.includes("%")?totalOpts[e]*100+"%":totalOpts[e]
+                $(".upperOpts.etc .detailOpts .optValue")[etc.indexOf(e)].innerText = e.includes("%")?parseInt(totalOpts[e]*100)+"%":totalOpts[e]
               }
             }
           })
