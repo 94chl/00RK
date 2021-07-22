@@ -242,7 +242,8 @@
     "pickup": 1,
     "limit": 3,
     "name": "미스릴",
-    "location1": "A000"
+    "location1": "A002",
+    "location2": "A011"
   },
   {
     "ID": "DM025",
