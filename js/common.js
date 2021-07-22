@@ -256,9 +256,9 @@ $(document).ready(function () {
           startPoint.sort(function(a,b) {
             return b.pt - a.pt
           })
-          //보급형기타 없이 상위템 만들기 불가능(드랍이 안댐)
-          if(needs.indexOf("DW027")>=0) {
-            alert("보급형 기타는 시작무기를 통해 추가해주세요")
+          //렌즈, 보급형기타 없이 상위템 만들기 불가능(드랍이 안댐)
+          if(needs.indexOf("DW027")>=0||needs.indexOf("DW028")>=0) {
+            alert("보급형 기타, 렌즈는 시작무기를 통해 추가해주세요")
             return
           }
 
