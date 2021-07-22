@@ -213,7 +213,8 @@
     "name": "생명의 나무",
     "location1": "A007",
     "location2": "A012",
-    "location3": "A014"
+    "location3": "A014",
+    "location4": "A006"
   },
   {
     "ID": "DM022",
@@ -515,6 +516,14 @@
     "location1": "A000"
   },
   {
+    "ID": "DW028",
+    "sort": "camera",
+    "pickup": 1,
+    "limit": 1,
+    "name": "렌즈",
+    "location1": "A000"
+  },
+  {
     "ID": "DC001",
     "sort": "body",
     "pickup": 1,
@@ -621,7 +630,7 @@
     "limit": 1,
     "name": "슬리퍼",
     "location1": "A003",
-    "location2": "A006",
+    "location2": "A010",
     "location3": "A015"
   },
   {
@@ -900,10 +909,10 @@
   {
     "ID": "DF006",
     "sort": "food",
-    "pickup": 1,
+    "pickup": 2,
     "limit": 5,
-    "name": "반창고",
-    "location1": "A006"
+    "name": "구급상자",
+    "location1": "A000"
   },
   {
     "ID": "DF007",
@@ -912,7 +921,7 @@
     "limit": 5,
     "name": "빵",
     "location1": "A009",
-    "location2": "A010",
+    "location2": "A006",
     "location3": "A015"
   },
   {
