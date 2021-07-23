@@ -4862,7 +4862,7 @@
     "sort": "sniper",
     "pickup": 1,
     "limit": 1,
-    "name": "현자총통(미구현)",
+    "name": "현자총통",
     "stack": 1,
     "material": ["GW026", "PA002"],
     "장탄수": 1,
