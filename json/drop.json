@@ -371,7 +371,7 @@
     "pickup": 1,
     "limit": 1,
     "name": "채찍",
-    "location1": "A009",
+    "location1": "A008",
     "location2": "A015"
   },
   {
@@ -437,7 +437,7 @@
     "pickup": 1,
     "limit": 1,
     "name": "석궁",
-    "location1": "A008",
+    "location1": "A009",
     "location2": "A012"
   },
   {
@@ -456,7 +456,7 @@
     "pickup": 1,
     "limit": 1,
     "name": "페도로프 자동소총",
-    "location1": "A008",
+    "location1": "A011",
     "location2": "A014"
   },
   {
@@ -979,7 +979,6 @@
     "pickup": 1,
     "limit": 5,
     "name": "카레 가루",
-    "location1": "A008",
-    "location2": "A011"
+    "location1": "A008"
   }
 ]
