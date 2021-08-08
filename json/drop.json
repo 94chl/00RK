@@ -243,7 +243,8 @@
     "limit": 3,
     "name": "미스릴",
     "location1": "A002",
-    "location2": "A011"
+    "location2": "A008",
+    "location3": "A011"
   },
   {
     "ID": "DM025",
