@@ -449,49 +449,57 @@ $(document).ready(function () {
 
         //녹색 이상의 제작템 스택 계산, 실제 제작 횟수 계산
         function matCalc() {
-          needMG.splice(0, )
-          $(selectedG).each(function(number, selG) {
-            $(selG.dropsG).each(function(number, matG) {
-              if(getById(matG, needMG)) {
-                getById(matG, needMG).count++
+          needMG.splice(0);
+          $(selectedG).each(function (number, selG) {
+            $(selG.dropsG).each(function (number, matG) {
+              if (getById(matG, needMG)) {
+                getById(matG, needMG).count++;
               } else {
-                needMG.push({"ID": matG, "count": 1});
+                needMG.push({ ID: matG, count: 1 });
               }
-            })
-          })
+            });
+          });
 
-          $(needMG).each(function(number, mats){
-            if(getById(mats.ID, item)) {
-              var realCount = Math.ceil(mats.count/getById(mats.ID, item).stack,-1)
+          $(needMG).each(function (number, mats) {
+            if (getById(mats.ID, item)) {
+              var realCount = Math.ceil(
+                mats.count / getById(mats.ID, item).stack,
+                -1
+              );
               $(this)[0].count = realCount;
             }
-          })
-          
-          needDrops.splice(0)
-          for(let i = 0; i<needMG.length;) {
-            if(needMG[i].ID.substring(0,1) == "D") {
-              if (getById(needMG[i].ID, needDrops)) {                
-                getById(needMG[i].ID, needDrops).count++
-              } else {                
-                needDrops.push(needMG[i])
-              };         
-              i++     
-            } else {         
-              let matsInfo = getById(needMG[i].ID, item); 
-              if (getById(matsInfo.material[0], needDrops)) {                
-                getById(matsInfo.material[0], needDrops).count++
-              } else {                
-                needMG.push({"ID": matsInfo.material[0], "count": needMG[i].count})
-              };
-              if (getById(matsInfo.material[1], needDrops)) {
-                getById(matsInfo.material[1], needDrops).count++
-              } else {                
-                needMG.push({"ID": matsInfo.material[1], "count": needMG[i].count})
+          });
+
+          for (let i = 0; i < needMG.length; ) {
+            if (needMG[i].ID.substring(0, 1) == "D") {
+              if (getById(needMG[i].ID, needDrops)) {
+                getById(needMG[i].ID, needDrops).count++;
+              } else {
+                needDrops.push(needMG[i]);
               }
-              needMG.splice(i,1)
+              i++;
+            } else {
+              let matsInfo = getById(needMG[i].ID, item);
+              if (getById(matsInfo.material[0], needDrops)) {
+                getById(matsInfo.material[0], needDrops).count++;
+              } else {
+                needDrops.push({
+                  ID: matsInfo.material[0],
+                  count: needMG[i].count,
+                });
+              }
+              if (getById(matsInfo.material[1], needDrops)) {
+                getById(matsInfo.material[1], needDrops).count++;
+              } else {
+                needDrops.push({
+                  ID: matsInfo.material[1],
+                  count: needMG[i].count,
+                });
+              }
+              needMG.splice(i, 1);
             }
+            needDrops.sort();
           }
-          needDrops.sort()
         }
         
         //위치 드랍 계산
@@ -686,6 +694,7 @@ $(document).ready(function () {
               $(t).siblings(".aLabel").children("strong").text(`(${$(t).children().length})`)
             })
           }        
+          needDrops.splice(0);
         }
 
         $(".showDropsAllBtn").on("click", function(){
