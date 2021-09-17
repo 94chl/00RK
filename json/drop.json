@@ -392,7 +392,7 @@
     "limit": 1,
     "name": "야구공",
     "location1": "A011",
-    "location2": "A002"
+    "location2": "A008"
   },
   {
     "ID": "DW015",
@@ -458,7 +458,8 @@
     "limit": 1,
     "name": "페도로프 자동소총",
     "location1": "A011",
-    "location2": "A014"
+    "location2": "A014",
+    "location3": "A008"
   },
   {
     "ID": "DW022",
@@ -611,7 +612,7 @@
     "limit": 1,
     "name": "붕대",
     "location1": "A006",
-    "location2": "A008",
+    "location2": "A002",
     "location3": "A010",
     "location4": "A015"
   },
@@ -950,7 +951,7 @@
     "pickup": 1,
     "limit": 5,
     "name": "생라면",
-    "location1": "A002",
+    "location1": "A008",
     "location2": "A004",
     "location3": "A010"
   },
@@ -973,13 +974,5 @@
     "location1": "A003",
     "location2": "A011",
     "location3": "A016"
-  },
-  {
-    "ID": "DF013",
-    "sort": "food",
-    "pickup": 1,
-    "limit": 5,
-    "name": "카레 가루",
-    "location1": "A008"
   }
 ]
